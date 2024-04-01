@@ -1,0 +1,11 @@
+C:\Users\Marin\Desktop\Программирование\TNS\WebApplication1\TNS.Front-end\obj\Debug\net8.0-windows\Autorization.g.cs
+C:\Users\Marin\Desktop\Программирование\TNS\WebApplication1\TNS.Front-end\obj\Debug\net8.0-windows\Billing.g.cs
+C:\Users\Marin\Desktop\Программирование\TNS\WebApplication1\TNS.Front-end\obj\Debug\net8.0-windows\CRM.g.cs
+C:\Users\Marin\Desktop\Программирование\TNS\WebApplication1\TNS.Front-end\obj\Debug\net8.0-windows\Equipment.g.cs
+C:\Users\Marin\Desktop\Программирование\TNS\WebApplication1\TNS.Front-end\obj\Debug\net8.0-windows\FAQ.g.cs
+C:\Users\Marin\Desktop\Программирование\TNS\WebApplication1\TNS.Front-end\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\Marin\Desktop\Программирование\TNS\WebApplication1\TNS.Front-end\obj\Debug\net8.0-windows\Profile.g.cs
+C:\Users\Marin\Desktop\Программирование\TNS\WebApplication1\TNS.Front-end\obj\Debug\net8.0-windows\Support.g.cs
+C:\Users\Marin\Desktop\Программирование\TNS\WebApplication1\TNS.Front-end\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\Marin\Desktop\Программирование\TNS\WebApplication1\TNS.Front-end\obj\Debug\net8.0-windows\TNS.Front-end_MarkupCompile.cache
+C:\Users\Marin\Desktop\Программирование\TNS\WebApplication1\TNS.Front-end\obj\Debug\net8.0-windows\TNS.Front-end_MarkupCompile.lref
