@@ -1,4 +1,4 @@
-﻿namespace TNS.CORE.TNS.COMMON
+﻿namespace TNS.CORE.COMMON
 {
     [Serializable]
     public abstract class ValueObject : IComparable, IComparable<ValueObject>
