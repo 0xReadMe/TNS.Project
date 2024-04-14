@@ -5,34 +5,25 @@ namespace TNS.CORE.VO
 {
     public class Email : ValueObject
     {
-
         public string email { get; }
 
-        private Email(string email)
+        private Email(string email) => this.email = email;
+
+        public static Result<Email, Error> Create(string email)
         {
-            this.email = email;
+            if (!IsValidEmail(email)) 
+                throw new ArgumentException("Нерабочий E-mail или присутствуют лишние символы!");
+
+            return new Email(email);
         }
 
-        public static Result<Email, Error> Create(string input)
+        static bool IsValidEmail(string email)
         {
-            //if (!IsValidEmail(input)) 
-
-            //if (string.IsNullOrWhiteSpace(input))
-            //return Errors.General.ValueIsInvalid();
-
-            //if (Regex.IsMatch(input, phoneRegex) == false)
-            //return Errors.General.ValueIsInvalid();
-
-            return new Email(input);
-        }
-
-        bool IsValidEmail(string email)
-        {
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
             var trimmedEmail = email.Trim();
             if (trimmedEmail.EndsWith("."))
-            {
                 return false; // suggested by @TK-421
-            }
             try
             {
                 var addr = new System.Net.Mail.MailAddress(email);

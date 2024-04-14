@@ -17,7 +17,7 @@ namespace TNS.CORE.MODELS
         public char Gender { get; }
         public DateTime DOB { get; }
         public PhoneNumber PhoneNumber { get; }
-        public Email Email { get; } = null!;
+        public Email? Email { get; } = null!;
         public Passport Passport { get; }
     }
 }

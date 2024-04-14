@@ -14,17 +14,17 @@ namespace TNS.Controllers
     [ApiController]
     public class SubscribersController : ControllerBase
     {
-        private readonly PostgresContext _context;
+        private readonly SubscriberService _subscriberService;
 
-        public SubscribersController(PostgresContext context)
+        public SubscriberController(SubscriberService subscriberService) 
         {
-            _context = context;
+            _subscriberService = subscriberService;
         }
 
         [HttpPost]
         public async Task<ActionResult> CreateSubscriber(SubscriberDTO subscriberDTO) 
         {
-        
+            
         }
     }
 }

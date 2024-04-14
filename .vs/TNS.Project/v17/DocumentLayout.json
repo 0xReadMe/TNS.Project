@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|c:\\users\\8-bit\\desktop\\tns.project\\tns.core\\models\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|solutionrelative:tns.core\\models\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|c:\\users\\8-bit\\desktop\\tns.project\\tns.core\\models\\subscriber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|solutionrelative:tns.core\\models\\subscriber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.Back-end\\TNS.DTO\\SubscriberDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TNS.Back-end\\TNS.DTO\\SubscriberDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|c:\\users\\8-bit\\desktop\\tns.project\\tns.core\\vo\\passport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|solutionrelative:tns.core\\vo\\passport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|c:\\users\\8-bit\\desktop\\tns.project\\tns.core\\models\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|solutionrelative:tns.core\\models\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96FE4034-4D6D-487A-AE32-ABABE20282BB}|TNS.API\\TNS.API.csproj|c:\\users\\8-bit\\desktop\\tns.project\\tns.api\\tns.controllers\\subscriberscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96FE4034-4D6D-487A-AE32-ABABE20282BB}|TNS.API\\TNS.API.csproj|solutionrelative:tns.api\\tns.controllers\\subscriberscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96FE4034-4D6D-487A-AE32-ABABE20282BB}|TNS.API\\TNS.API.csproj|c:\\users\\8-bit\\desktop\\tns.project\\tns.api\\tns.dto\\subscriberdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96FE4034-4D6D-487A-AE32-ABABE20282BB}|TNS.API\\TNS.API.csproj|solutionrelative:tns.api\\tns.dto\\subscriberdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +30,72 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Person.cs",
               "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.CORE\\MODELS\\Person.cs",
               "RelativeDocumentMoniker": "TNS.CORE\\MODELS\\Person.cs",
               "ToolTip": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.CORE\\MODELS\\Person.cs",
               "RelativeToolTip": "TNS.CORE\\MODELS\\Person.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAqAAAA",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAqwBQAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T12:24:31.001Z",
+              "WhenOpened": "2024-04-14T15:37:36.492Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "SubscribersController.cs",
+              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.API\\TNS.CONTROLLERS\\SubscribersController.cs",
+              "RelativeDocumentMoniker": "TNS.API\\TNS.CONTROLLERS\\SubscribersController.cs",
+              "ToolTip": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.API\\TNS.CONTROLLERS\\SubscribersController.cs",
+              "RelativeToolTip": "TNS.API\\TNS.CONTROLLERS\\SubscribersController.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAqwBgAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T13:00:35.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SubscriberDTO.cs",
+              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.API\\TNS.DTO\\SubscriberDTO.cs",
+              "RelativeDocumentMoniker": "TNS.API\\TNS.DTO\\SubscriberDTO.cs",
+              "ToolTip": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.API\\TNS.DTO\\SubscriberDTO.cs",
+              "RelativeToolTip": "TNS.API\\TNS.DTO\\SubscriberDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T13:01:06.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Subscriber.cs",
               "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.CORE\\MODELS\\Subscriber.cs",
               "RelativeDocumentMoniker": "TNS.CORE\\MODELS\\Subscriber.cs",
               "ToolTip": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.CORE\\MODELS\\Subscriber.cs",
               "RelativeToolTip": "TNS.CORE\\MODELS\\Subscriber.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADgAAAAFAAAA",
+              "ViewState": "AQIAABwAAAAAAAAAAAAqwDMAAACGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-04T16:33:01.453Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SubscriberDTO.cs",
-              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.Back-end\\TNS.DTO\\SubscriberDTO.cs",
-              "RelativeDocumentMoniker": "TNS.Back-end\\TNS.DTO\\SubscriberDTO.cs",
-              "ToolTip": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.Back-end\\TNS.DTO\\SubscriberDTO.cs",
-              "RelativeToolTip": "TNS.Back-end\\TNS.DTO\\SubscriberDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "Passport.cs",
+              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.CORE\\VO\\Passport.cs",
+              "RelativeDocumentMoniker": "TNS.CORE\\VO\\Passport.cs",
+              "ToolTip": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.CORE\\VO\\Passport.cs",
+              "RelativeToolTip": "TNS.CORE\\VO\\Passport.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAiwCMAAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T16:28:46.922Z"
+              "WhenOpened": "2024-04-14T15:21:20.062Z",
+              "EditorCaption": ""
             }
           ]
         }
