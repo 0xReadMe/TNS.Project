@@ -3,9 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TNS.Front_end"
         mc:Ignorable="d"
-        Title="Autorization" Height="960" Width="1450" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+        Title="Autorization"
+        Height="960"
+        Width="1450"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize">
+    
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
         <BooleanToVisibilityConverter x:Key="BoolToVis"/>
@@ -17,28 +22,74 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid Name="ToolBar" Margin="0,-2,0,0">
-            <TextBlock Text="Абоненты ТНС" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="30" Foreground="#024C8C" Margin="626,34,0,0"/>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,100">
-                <Image Height="30" Width="30" Source="/Sourse/На авторизацию_Свернуь.png" MouseDown="Image_MouseDown_Minimized"/>
-                <Image Height="30" Width="30" Source="/Sourse/На авторизацию_Закрыть.png" MouseDown="Image_MouseDown_Close"/>
+            <TextBlock Text="Абоненты ТНС" 
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Left"
+                       FontSize="30" 
+                       Foreground="#024C8C"
+                       Margin="626,34,0,0"/>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        Margin="0,0,0,100">
+                <Image Height="30" 
+                       Width="30" 
+                       Source="/Sourse/На авторизацию_Свернуь.png"
+                       MouseDown="Image_MouseDown_Minimized"/>
+                <Image Height="30" 
+                       Width="30" 
+                       Source="/Sourse/На авторизацию_Закрыть.png"
+                       MouseDown="Image_MouseDown_Close"/>
             </StackPanel>
 
-            <Grid Width="300" HorizontalAlignment="Left" Margin="120 50 0 0">
-                <TextBlock Margin="20 0" VerticalAlignment="Center" Foreground="#339AF0" IsHitTestVisible="False"
+            <Grid Width="300"
+                  HorizontalAlignment="Left"
+                  Margin="120 50 0 0">
+                <TextBlock Margin="20 0" 
+                           VerticalAlignment="Center" 
+                           Foreground="#339AF0" 
+                           IsHitTestVisible="False"
                            Panel.ZIndex="1" Text="Найти..."
-                           Visibility="{Binding ElementName=txtSearch, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}"/>
-                <TextBox x:Name="txtSearch" Style="{StaticResource textboxSearch}"/>
-                <Image Source="/Sourse/Найти.png" Height="20" Width="20" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 15 0"/>
+                           Visibility="{Binding ElementName=txtSearch, 
+                                                Path=Text.IsEmpty, 
+                                                Converter={StaticResource BoolToVis}}"/>
+                <TextBox x:Name="txtSearch" 
+                         Style="{StaticResource textboxSearch}" 
+                         TextChanged="TxtSearch_TextChanged"/>
+                <Image Source="/Sourse/Найти.png" 
+                       Height="20" Width="20" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Right" 
+                       Margin="0 0 15 0"/>
             </Grid>
+
+            <ComboBox x:Name="CBSort"
+                      Width="198" Height="31"
+                      FontSize="18"
+                      HorizontalAlignment="Left" 
+                      VerticalAlignment="Top" Margin="466,75,0,0">  
+                <TextBlock>По умолчанию</TextBlock>
+                <TextBlock>По возрастанию</TextBlock>
+                <TextBlock>По убыванию</TextBlock>
+            </ComboBox>
 
             <Button Style="{StaticResource addButton}">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="/Sourse/Добавить.png" Height="15" Width="15" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0 1 1 0"/>
-                    <TextBlock Text="Добавить абонента" Margin="8 0 0 0"/>
+                    <Image Source="/Sourse/Добавить.png" 
+                           Height="15" 
+                           Width="15"
+                           VerticalAlignment="Center" 
+                           HorizontalAlignment="Left" 
+                           Margin="0 1 1 0"/>
+                    <TextBlock Text="Добавить абонента"
+                               Margin="8 0 0 0"/>
                 </StackPanel>
             </Button>
         </Grid>
-        <Grid  Panel.ZIndex="1" x:Name="sidePanel" Grid.Row="1" HorizontalAlignment="Left" Width="100" >
+        <Grid  Panel.ZIndex="1"
+               x:Name="sidePanel" 
+               Grid.Row="1"
+               HorizontalAlignment="Left"
+               Width="100" >
             <ListView  BorderBrush="#9CD8FB" 
                        Background="#9CD8FB" 
                        Margin="0,-130,0,0" 
@@ -50,55 +101,124 @@
                        MouseEnter="ListView_MouseEnter" 
                        MouseLeave="ListView_MouseEnter">
                 <ListViewItem Height="90">
-                    <StackPanel Orientation="Horizontal" Margin="5 10 0 0">
+                    <StackPanel Orientation="Horizontal"
+                                Margin="5 10 0 0">
                         <Image Source="/Sourse/User.png"/>
-                        <TextBlock Text="ФИО" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                        <TextBlock Text="ФИО"
+                                   VerticalAlignment="Center"
+                                   Margin="20 0 0 0"/>
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem Height="60" Margin="0 230 0 0">
-                    <StackPanel Orientation="Horizontal" Margin="15 0 0 0" MouseDown="ListViewItem_MouseDown_Autorization">
+                <ListViewItem Height="60"
+                              Margin="0 230 0 0">
+                    <StackPanel Orientation="Horizontal"
+                                Margin="15 0 0 0">
                         <Image Source="/Sourse/Phone.png"/>
-                        <TextBlock Text="Абоненты" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                        <TextBlock Text="Абоненты"
+                                   VerticalAlignment="Center"
+                                   Margin="20 0 0 0"/>
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem Height="60" Margin="0 50 0 0">
-                    <StackPanel Orientation="Horizontal" Margin="15 0 0 0">
+                <ListViewItem Height="60"
+                              Margin="0 50 0 0">
+                    <StackPanel Orientation="Horizontal"
+                                Margin="15 0 0 0">
                         <Image Source="/Sourse/Phone.png"/>
-                        <TextBlock Text="Абоненты" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                        <TextBlock Text="Абоненты"
+                                   VerticalAlignment="Center"
+                                   Margin="20 0 0 0"/>
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem Height="60" Margin="0 50 0 0">
-                    <StackPanel Orientation="Horizontal" Margin="15 0 0 0">
+                <ListViewItem Height="60"
+                              Margin="0 50 0 0">
+                    <StackPanel Orientation="Horizontal"
+                                Margin="15 0 0 0">
                         <Image Source="/Sourse/Phone.png"/>
-                        <TextBlock Text="Абоненты" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                        <TextBlock Text="Абоненты"
+                                   VerticalAlignment="Center"
+                                   Margin="20 0 0 0"/>
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem Height="50" Margin="0 0 0 -550">
-                    <StackPanel Orientation="Horizontal" Margin="20 0 0 0">
+                <ListViewItem Height="50"
+                              Margin="0 0 0 -550">
+                    <StackPanel Orientation="Horizontal"
+                                Margin="20 0 0 0">
                         <Image Source="/Sourse/Question.png"/>
-                        <TextBlock Text="Помощь" VerticalAlignment="Center" Margin="25 0 0 0"/>
+                        <TextBlock Text="Помощь"
+                                   VerticalAlignment="Center"
+                                   Margin="25 0 0 0"/>
                     </StackPanel>
                 </ListViewItem>
             </ListView>
         </Grid>
 
-        <Separator Height="1" Background="#9CD8FB" Margin="117,35,176,794" Grid.Row="1"/>
+        <Separator Height="1"
+                   Background="#9CD8FB"
+                   Margin="117,35,176,794"
+                   Grid.Row="1"/>
 
-        <Expander Style="{DynamicResource MyCoolExpanderStyle}" Padding="50 7 0 0" Header="Событие" Margin="1275,118,15,744" Panel.ZIndex="1" Grid.RowSpan="2">
+        <Expander Style="{DynamicResource MyCoolExpanderStyle}"
+                  Padding="50 7 0 0"
+                  Header="Событие"
+                  Margin="1275,118,15,744"
+                  Panel.ZIndex="1"
+                  Grid.RowSpan="2">
             <StackPanel Panel.ZIndex="2">
-                <Label Content="шгПГШПГШ" Style="{DynamicResource ExpanderText}"/>
-                <Label Content="ЫВАШДАРР" Style="{DynamicResource ExpanderText}"/>
-                <Label Content="ЩЗОЩЩ" Style="{DynamicResource ExpanderText}"/>
+                <Label Content="шгПГШПГШ"
+                       Style="{DynamicResource ExpanderText}"/>
+                <Label Content="ЫВАШДАРР"
+                       Style="{DynamicResource ExpanderText}"/>
+                <Label Content="ЩЗОЩЩ"
+                       Style="{DynamicResource ExpanderText}"/>
             </StackPanel>
         </Expander>
-        <StackPanel Margin="161,0,0,790" Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="1">
-            <Button x:Name="ActiveBtn" Content="Активные" Style="{DynamicResource tabButton}"  Click="Activ"/>
-            <Button x:Name="InactiveBtn" Content="Неактивные" Style="{DynamicResource tabButton}" Click="Passiv"/>
+        <StackPanel Margin="420,0,0,790"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    Grid.Row="1">
+            <Button x:Name="ActiveBtn"
+                    Content="Активные"
+                    Style="{DynamicResource tabButton}"
+                    Click="Activ"/>
+            <Button x:Name="InactiveBtn"
+                    Content="Неактивные"
+                    Style="{DynamicResource tabButton}"
+                    Click="Passiv"/>
+            <Button x:Name="InternetBtn"
+                    Content="Услуги"
+                    Style="{DynamicResource tabButton}"
+                    Click="InternetBtn_Click"/>
+            <Button x:Name="NumberSubsciberBtn"
+                    Content="Номер абонента"
+                    Style="{DynamicResource tabButton}"
+                    Click="NumberSubsciberBtn_Click"/>
+            <Button x:Name="BillBtn"
+                    Content="Лицевой счет"
+                    Style="{DynamicResource tabButton}"
+                    Click="BillBtn_Click"/>
+            <Button x:Name="ContractNumberBtn"
+                    Content="Номер договора"
+                    Style="{DynamicResource tabButton}"
+                    Click="ContractNumberBtn_Click"/>
+            <Button x:Name="FullNameBtn"
+                    Content="ФИО"
+                    Style="{DynamicResource tabButton}"
+                    Click="FullNameBtn_Click"/>
+
         </StackPanel>
 
-        <DataGrid  Panel.ZIndex="0" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" Grid.Row="1" Margin="100,65,5,5" x:Name="membersDataGrid">
+        <DataGrid Panel.ZIndex="0"
+                  Style="{DynamicResource DataGridStyle1}"
+                  CellStyle="{DynamicResource DataGridCellStyle1}"
+                  ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" 
+                  RowStyle="{DynamicResource DataGridRowStyle1}"
+                  Grid.Row="1"
+                  Margin="100,65,5,5"
+                  x:Name="membersDataGrid">
             <DataGrid.Columns>
-                <DataGridCheckBoxColumn CanUserResize="False" Width="auto" ElementStyle="{StaticResource CheckBoxStyle1}">
+                <DataGridCheckBoxColumn CanUserResize="False"
+                                        Width="auto"
+                                        ElementStyle="{StaticResource CheckBoxStyle1}">
                     <DataGridCheckBoxColumn.HeaderTemplate>
                         <DataTemplate>
                             <CheckBox Style="{StaticResource CheckBoxStyle1}"/>
@@ -106,44 +226,82 @@
                     </DataGridCheckBoxColumn.HeaderTemplate>
                 </DataGridCheckBoxColumn>
 
-                <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Number}"/>
+                <DataGridTextColumn Header="#"
+                                    IsReadOnly="True"
+                                    CanUserResize="False"
+                                    Width="auto"
+                                    Binding="{Binding Number}"/>
 
-                <DataGridTemplateColumn Header="ФИО" IsReadOnly="True" Width="1.4*">
+                <DataGridTemplateColumn Header="ФИО"
+                                        IsReadOnly="True"
+                                        Width="1.4*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Border Width="25" Height="25" CornerRadius="50" Margin="0 0 10 0" Background="#9CD8FB">
-                                    <TextBlock Text="{Binding Character}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#024C8C" Margin="0 0 0 1"/>
+                                <Border Width="25"
+                                        Height="25"
+                                        CornerRadius="50"
+                                        Margin="0 0 10 0"
+                                        Background="#9CD8FB">
+                                    <TextBlock Text="{Binding Character}"
+                                               VerticalAlignment="Center" 
+                                               HorizontalAlignment="Center" 
+                                               Foreground="#024C8C"
+                                               Margin="0 0 0 1"/>
                                 </Border>
-                                <TextBlock Text="{Binding Name}"  VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding Name}" 
+                                           VerticalAlignment="Center"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
-                <DataGridTextColumn Header="Номер абонента" IsReadOnly="True" Width="*" Binding="{Binding NumberUser}"/>
-                <DataGridTextColumn Header="Лицевой счет" IsReadOnly="True" Width="*" Binding="{Binding PersonaAccount}"/>
-                <DataGridTextColumn Header="Услуги" IsReadOnly="True" Width="*" Binding="{Binding Services}"/>
-                <DataGridTextColumn Header="Номер договора с абонентом" IsReadOnly="True" Width="auto" Binding="{Binding NumberContract}"/>
-                <DataGridTemplateColumn Header="Операции" IsReadOnly="True" Width="auto">
+                <DataGridTextColumn Header="Номер абонента" 
+                                    IsReadOnly="True" 
+                                    Width="*" 
+                                    Binding="{Binding NumberUser}"/>
+                <DataGridTextColumn Header="Лицевой счет" 
+                                    IsReadOnly="True" 
+                                    Width="*" 
+                                    Binding="{Binding PersonaAccount}"/>
+                <DataGridTextColumn Header="Услуги"
+                                    IsReadOnly="True"
+                                    Width="*"
+                                    Binding="{Binding Services}"/>
+                <DataGridTextColumn Header="Номер договора с абонентом"
+                                    IsReadOnly="True" 
+                                    Width="auto"
+                                    Binding="{Binding NumberContract}"/>
+                <DataGridTemplateColumn Header="Операции"
+                                        IsReadOnly="True" 
+                                        Width="auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Border Width="30" Height="30" CornerRadius="50" Margin="5 0 0 0">
+                                <Border Width="30"
+                                        Height="30"
+                                        CornerRadius="50"
+                                        Margin="5 0 0 0">
                                     <Ellipse>
                                         <Ellipse.Fill>
                                             <ImageBrush ImageSource="/Sourse/Открыть.png"/>
                                         </Ellipse.Fill>
                                     </Ellipse>
                                 </Border>
-                                <Border Width="30" Height="30" CornerRadius="50" Margin="5 0 5 0">
+                                <Border Width="30"
+                                        Height="30"
+                                        CornerRadius="50"
+                                        Margin="5 0 5 0">
                                     <Ellipse>
                                         <Ellipse.Fill>
                                             <ImageBrush ImageSource="/Sourse/Редактировать.png"/>
                                         </Ellipse.Fill>
                                     </Ellipse>
                                 </Border>
-                                <Border Width="30" Height="30" CornerRadius="50" Margin="0 0 5 0">
+                                <Border Width="30"
+                                        Height="30"
+                                        CornerRadius="50"
+                                        Margin="0 0 5 0">
                                     <Ellipse>
                                         <Ellipse.Fill>
                                             <ImageBrush ImageSource="/Sourse/Удалить.png"/>
@@ -159,7 +317,8 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Frame x:Name="ContentFrame" Margin="95,54,10,0" Grid.Row="1"/>
-
+        <Frame x:Name="ContentFrame"
+               Margin="95,54,10,0"
+               Grid.Row="1"/>
     </Grid>
 </Window>
