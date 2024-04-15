@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "kdrw3fj7Ma40K993MdlwgSZ0dSTKCM7A5b35ENeoQay3McWxWDG2pEUX49wJq62Aw5zGXKRSgHlysi00o8xSXg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.Core\\TNS.CORE.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\8-bit\\.nuget\\packages\\csharpfunctionalextensions\\2.41.0\\csharpfunctionalextensions.2.41.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -53,7 +53,7 @@ namespace TNS.Front_end {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TNS.Front-end;V1.0.0.0;component/faq.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TNS.Front-end;component/faq.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\FAQ.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
