@@ -5,29 +5,63 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TNS.Front_end"
         mc:Ignorable="d"
-        Title="Autorization" Height="960" Width="1450" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Grid>
+        Title="Autorization" Height="960" Width="1450" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+    </Window.Resources>
 
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="130"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid Name="ToolBar" Grid.Row="0" Grid.ColumnSpan="2">
-            <TextBlock Text="Абоненты ТНС" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="#024C8C"/>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,70">
+        <Grid Name="ToolBar" Margin="0,-2,0,0">
+            <TextBlock Text="Абоненты ТНС" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="30" Foreground="#024C8C" Margin="626,34,0,0"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,100">
                 <Image Height="30" Width="30" Source="/Sourse/На авторизацию_Свернуь.png" MouseDown="Image_MouseDown_Minimized"/>
                 <Image Height="30" Width="30" Source="/Sourse/На авторизацию_Закрыть.png" MouseDown="Image_MouseDown_Close"/>
             </StackPanel>
+
+            <Grid Width="300" HorizontalAlignment="Left" Margin="120 50 0 0">
+                <TextBlock Margin="20 0" VerticalAlignment="Center" Foreground="#339AF0" IsHitTestVisible="False"
+                           Panel.ZIndex="1" Text="Найти..."
+                           Visibility="{Binding ElementName=txtSearch, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}"/>
+                <TextBox x:Name="txtSearch" Style="{StaticResource textboxSearch}"/>
+                <Image Source="/Sourse/Найти.png" Height="20" Width="20" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 15 0"/>
+            </Grid>
+
+            <Button Style="{StaticResource addButton}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Sourse/Добавить.png" Height="15" Width="15" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0 1 1 0"/>
+                    <TextBlock Text="Добавить абонента" Margin="8 0 0 0"/>
+                </StackPanel>
+            </Button>
         </Grid>
         <Grid  Panel.ZIndex="1" x:Name="sidePanel" Grid.Row="1" HorizontalAlignment="Left" Width="100" >
-            <ListView  BorderBrush="#9CD8FB" Background="#9CD8FB" Margin="0,-100,0,0" FontSize="30" Foreground="#024C8C" ScrollViewer.HorizontalScrollBarVisibility="Hidden" MouseDown="ListView_MouseDown" IsSynchronizedWithCurrentItem="False">
+            <ListView  BorderBrush="#9CD8FB" 
+                       Background="#9CD8FB" 
+                       Margin="0,-130,0,0" 
+                       FontSize="30" 
+                       Foreground="#024C8C" 
+                       ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
+                       ScrollViewer.VerticalScrollBarVisibility="Hidden"  
+                       IsSynchronizedWithCurrentItem="False" 
+                       MouseEnter="ListView_MouseEnter" 
+                       MouseLeave="ListView_MouseEnter">
                 <ListViewItem Height="90">
                     <StackPanel Orientation="Horizontal" Margin="5 10 0 0">
                         <Image Source="/Sourse/User.png"/>
                         <TextBlock Text="ФИО" VerticalAlignment="Center" Margin="20 0 0 0"/>
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem Height="60" Margin="0 230 0 0"  MouseDown="ListViewItem_MouseDown_Autorization">
+                <ListViewItem Height="60" Margin="0 230 0 0">
+                    <StackPanel Orientation="Horizontal" Margin="15 0 0 0" MouseDown="ListViewItem_MouseDown_Autorization">
+                        <Image Source="/Sourse/Phone.png"/>
+                        <TextBlock Text="Абоненты" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Height="60" Margin="0 50 0 0">
                     <StackPanel Orientation="Horizontal" Margin="15 0 0 0">
                         <Image Source="/Sourse/Phone.png"/>
                         <TextBlock Text="Абоненты" VerticalAlignment="Center" Margin="20 0 0 0"/>
@@ -36,13 +70,7 @@
                 <ListViewItem Height="60" Margin="0 50 0 0">
                     <StackPanel Orientation="Horizontal" Margin="15 0 0 0">
                         <Image Source="/Sourse/Phone.png"/>
-                        <TextBlock Text="Биллинг" VerticalAlignment="Center" Margin="20 0 0 0"/>
-                    </StackPanel>
-                </ListViewItem>
-                <ListViewItem Height="60" Margin="0 50 0 0">
-                    <StackPanel Orientation="Horizontal" Margin="15 0 0 0">
-                        <Image Source="/Sourse/Phone.png"/>
-                        <TextBlock Text="Активы" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                        <TextBlock Text="Абоненты" VerticalAlignment="Center" Margin="20 0 0 0"/>
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem Height="50" Margin="0 0 0 -550">
@@ -54,16 +82,18 @@
             </ListView>
         </Grid>
 
-        <Expander Width="100" Grid.Row="1" Header="Событие" Margin="1306,13,44,767" Panel.ZIndex="1">
+        <Separator Height="1" Background="#9CD8FB" Margin="117,35,176,794" Grid.Row="1"/>
+
+        <Expander Style="{DynamicResource MyCoolExpanderStyle}" Padding="50 7 0 0" Header="Событие" Margin="1275,118,15,744" Panel.ZIndex="1" Grid.RowSpan="2">
             <StackPanel Panel.ZIndex="2">
-                <CheckBox Content="шгПГШПГШ"/>
-                <CheckBox Content="ЫВАШДАРР"/>
-                <CheckBox Content="ЩЗОЩЩ"/>
+                <Label Content="шгПГШПГШ" Style="{DynamicResource ExpanderText}"/>
+                <Label Content="ЫВАШДАРР" Style="{DynamicResource ExpanderText}"/>
+                <Label Content="ЩЗОЩЩ" Style="{DynamicResource ExpanderText}"/>
             </StackPanel>
         </Expander>
-        <StackPanel Grid.Row="1" Margin="0,10,0,811" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Content="Активные" Style="{StaticResource tabButton}" BorderBrush="#024C8C" Click="Activ"/>
-            <Button Content="Неактивные" Style="{StaticResource tabButton}" Click="Passiv"/>
+        <StackPanel Margin="161,0,0,790" Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="1">
+            <Button x:Name="ActiveBtn" Content="Активные" Style="{DynamicResource tabButton}"  Click="Activ"/>
+            <Button x:Name="InactiveBtn" Content="Неактивные" Style="{DynamicResource tabButton}" Click="Passiv"/>
         </StackPanel>
 
         <DataGrid  Panel.ZIndex="0" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" Grid.Row="1" Margin="100,65,5,5" x:Name="membersDataGrid">
@@ -129,6 +159,7 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Frame x:Name="ContentFrame"/>
+        <Frame x:Name="ContentFrame" Margin="95,54,10,0" Grid.Row="1"/>
+
     </Grid>
 </Window>

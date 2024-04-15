@@ -14,8 +14,10 @@
     <None Remove="Sourse\Phone.png" />
     <None Remove="Sourse\Question.png" />
     <None Remove="Sourse\User.png" />
+    <None Remove="Sourse\Добавить.png" />
     <None Remove="Sourse\На авторизацию_Логотип.png" />
     <None Remove="Sourse\На авторизацию_Обновление кода.png" />
+    <None Remove="Sourse\Найти.png" />
     <None Remove="Sourse\Открыть.png" />
     <None Remove="Sourse\Редактировать.png" />
     <None Remove="Sourse\Удалить.png" />
@@ -31,12 +33,18 @@
     <Resource Include="Sourse\User.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Sourse\Добавить.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Sourse\На авторизацию_Закрыть.png" />
     <Resource Include="Sourse\На авторизацию_Логотип.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Sourse\На авторизацию_Обновление кода.png" />
     <Resource Include="Sourse\На авторизацию_Свернуь.png" />
+    <Resource Include="Sourse\Найти.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Sourse\Открыть.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

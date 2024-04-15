@@ -22,9 +22,8 @@ namespace TNS.Front_end
             code.Visibility = Visibility.Hidden;
             textCode.Visibility = Visibility.Hidden;
             refreshButton.Visibility = Visibility.Hidden;
-
             this.Hide();
-            Autorization autorization = new();
+            Autorization autorization = new Autorization();
             autorization.Show();
             this.Close();
         }
