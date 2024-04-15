@@ -66,12 +66,8 @@
                       Width="198" Height="31"
                       FontSize="18"
                       HorizontalAlignment="Left" 
-                      VerticalAlignment="Top" Margin="466,75,0,0">  
-                <TextBlock>По умолчанию</TextBlock>
-                <TextBlock>По возрастанию</TextBlock>
-                <TextBlock>По убыванию</TextBlock>
-            </ComboBox>
-
+                      VerticalAlignment="Top" Margin="466,75,0,0"
+                      SelectionChanged="CBSort_SelectionChanged"/>
             <Button Style="{StaticResource addButton}">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Sourse/Добавить.png" 
@@ -179,15 +175,15 @@
             <Button x:Name="ActiveBtn"
                     Content="Активные"
                     Style="{DynamicResource tabButton}"
-                    Click="Activ"/>
+                    Click="ActiveBtn_Click"/>
             <Button x:Name="InactiveBtn"
                     Content="Неактивные"
                     Style="{DynamicResource tabButton}"
-                    Click="Passiv"/>
-            <Button x:Name="InternetBtn"
+                    Click="InactiveBtn_Click"/>
+            <Button x:Name="ServicesBtn"
                     Content="Услуги"
                     Style="{DynamicResource tabButton}"
-                    Click="InternetBtn_Click"/>
+                    Click="ServicesBtn_Click"/>
             <Button x:Name="NumberSubsciberBtn"
                     Content="Номер абонента"
                     Style="{DynamicResource tabButton}"

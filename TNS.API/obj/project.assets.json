@@ -6895,19 +6895,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\8-bit\\.nuget\\packages\\": {}
+    "C:\\Users\\Marin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.API\\TNS.API.csproj",
+      "projectUniqueName": "C:\\Users\\Marin\\Desktop\\TNS.Project\\TNS.API\\TNS.API.csproj",
       "projectName": "TNS.API",
-      "projectPath": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.API\\TNS.API.csproj",
-      "packagesPath": "C:\\Users\\8-bit\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.API\\obj\\",
+      "projectPath": "C:\\Users\\Marin\\Desktop\\TNS.Project\\TNS.API\\TNS.API.csproj",
+      "packagesPath": "C:\\Users\\Marin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Marin\\Desktop\\TNS.Project\\TNS.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\8-bit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Marin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6921,8 +6921,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.Core\\TNS.CORE.csproj": {
-              "projectPath": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.Core\\TNS.CORE.csproj"
+            "C:\\Users\\Marin\\Desktop\\TNS.Project\\TNS.Core\\TNS.CORE.csproj": {
+              "projectPath": "C:\\Users\\Marin\\Desktop\\TNS.Project\\TNS.Core\\TNS.CORE.csproj"
             }
           }
         }
@@ -6931,11 +6931,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -6998,7 +6993,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

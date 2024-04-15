@@ -54,19 +54,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\8-bit\\.nuget\\packages\\": {}
+    "C:\\Users\\Marin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.Core\\TNS.Core.csproj",
-      "projectName": "TNS.Core",
-      "projectPath": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.Core\\TNS.Core.csproj",
-      "packagesPath": "C:\\Users\\8-bit\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.Core\\obj\\",
+      "projectUniqueName": "C:\\Users\\Marin\\Desktop\\TNS.Project\\TNS.Core\\TNS.CORE.csproj",
+      "projectName": "TNS.CORE",
+      "projectPath": "C:\\Users\\Marin\\Desktop\\TNS.Project\\TNS.Core\\TNS.CORE.csproj",
+      "packagesPath": "C:\\Users\\Marin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Marin\\Desktop\\TNS.Project\\TNS.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\8-bit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Marin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -86,11 +86,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -118,7 +113,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
