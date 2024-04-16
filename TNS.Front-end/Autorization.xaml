@@ -68,7 +68,7 @@
                       HorizontalAlignment="Left" 
                       VerticalAlignment="Top" Margin="466,75,0,0"
                       SelectionChanged="CBSort_SelectionChanged"/>
-            <Button Style="{StaticResource addButton}">
+            <Button x:Name="addButton" Style="{StaticResource addButton}">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Sourse/Добавить.png" 
                            Height="15" 
@@ -171,7 +171,9 @@
         <StackPanel Margin="420,0,0,790"
                     Orientation="Horizontal"
                     HorizontalAlignment="Left"
-                    Grid.Row="1">
+                    Grid.Row="1"
+                    x:Name="btnStack">
+            
             <Button x:Name="ActiveBtn"
                     Content="Активные"
                     Style="{DynamicResource tabButton}"
@@ -184,10 +186,6 @@
                     Content="Услуги"
                     Style="{DynamicResource tabButton}"
                     Click="ServicesBtn_Click"/>
-            <Button x:Name="NumberSubsciberBtn"
-                    Content="Номер абонента"
-                    Style="{DynamicResource tabButton}"
-                    Click="NumberSubsciberBtn_Click"/>
             <Button x:Name="BillBtn"
                     Content="Лицевой счет"
                     Style="{DynamicResource tabButton}"
@@ -200,7 +198,11 @@
                     Content="ФИО"
                     Style="{DynamicResource tabButton}"
                     Click="FullNameBtn_Click"/>
-
+            <Image Source="/Sourse/На авторизацию_Обновление кода.png" 
+                   VerticalAlignment="Center" 
+                   Width="30" 
+                   Height="30" 
+                   MouseDown="RefreshButton_Click"/>
         </StackPanel>
 
         <DataGrid Panel.ZIndex="0"

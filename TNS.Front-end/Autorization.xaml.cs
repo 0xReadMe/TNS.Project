@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Threading;
@@ -15,15 +16,8 @@ namespace TNS.Front_end
     {
         const double panelWidth = 255;
         bool hidden = true;
-        bool pressed = false;
         bool servicesPressed = false;
-
-        List<string> filters = 
-            [
-                "По умолчанию", 
-                "По возрастанию", 
-                "По убыванию"
-            ];
+        string contentBtn;
 
         List<string> services = [];
 
@@ -32,7 +26,7 @@ namespace TNS.Front_end
             Interval = new TimeSpan(0, 0, 0, 0, 10)
         };
 
-        List<Member> members = 
+        List<Member> members =
         [
             new Member { Number = "1", Character = "Д", Name = "Дроздов Алексей Петрович", NumberUser = "1230", PersonaAccount = "459235346", Services = "Интернет", NumberContract = "000", DateOfTermination = new DateOnly(2022, 2, 2) },
             new Member { Number = "2", Character = "К", Name = "Кулич Татьяна Юрьевна", NumberUser = "1231", PersonaAccount = "459235346", Services = "Мобильная связь", NumberContract = "001" },
@@ -76,152 +70,85 @@ namespace TNS.Front_end
             services = AutorizationUtils.GetUniqServices(membersCopy);
             timer.Tick += Timer_Tick;
             membersDataGrid.ItemsSource = members;
-            AutorizationUtils.FillComboBox(filters, CBSort);
+            AutorizationUtils.FillComboBox(AutorizationUtils.filters, CBSort);
+            CBSort.SelectedIndex = 0;
         }
 
         
-        private void Image_MouseDown_Minimized(object sender, MouseButtonEventArgs e)
-        {
-            WindowState = WindowState.Minimized;
-        }
+        private void Image_MouseDown_Minimized(object sender, MouseButtonEventArgs e) 
+            => WindowState = WindowState.Minimized;
 
-        private void Image_MouseDown_Close(object sender, MouseButtonEventArgs e)
-        {
-            Close();
-        }
+        private void Image_MouseDown_Close(object sender, MouseButtonEventArgs e) 
+            => Close();
 
         private void ListViewItem_MouseDown_Autorization(object sender, MouseButtonEventArgs e)
-        {
-            ContentFrame.Navigate(typeof(Autorization));
-        }
+            => ContentFrame.Navigate(typeof(Autorization));
 
         private void ActiveBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (!pressed)
-            {
-                List<Member> membersActive = [];
-                membersActive = membersCopy.Where(
-                    m => m.DateOfTermination > DateOnly.FromDateTime(DateTime.Now) ||
-                    m.DateOfTermination == null).ToList();
-                membersChanged = membersActive;
-                AutorizationUtils.UpdateList(membersDataGrid, membersActive);
-
-                ActiveBtn.BorderThickness = new Thickness(0, 0, 0, 2);
-                InactiveBtn.BorderThickness = new Thickness(0);
-                //InactiveBtn.Style = Resources["tabButton"] as Style;
-                pressed = true;
-            }
-            else 
-            {
-                pressed = false;
-                ActiveBtn.BorderThickness = new Thickness(0);
-                membersCopy = new(members);
-                membersChanged = new(members);
-                AutorizationUtils.UpdateList(membersDataGrid, membersCopy);
-            }
+            List<Member> membersActive = [];
+            membersActive = membersCopy.Where(
+                m => m.DateOfTermination > DateOnly.FromDateTime(DateTime.Now) ||
+                m.DateOfTermination == null).ToList();
+            membersChanged = membersActive;
+            AutorizationUtils.UpdateList(membersDataGrid, membersActive);
+            contentBtn = AutorizationUtils.ButtonThicknessChange(ActiveBtn, btnStack);
+            AutorizationUtils.FillComboBox("Активные", CBSort);
+            CBSort.SelectedIndex = 0;
         }
-
         private void InactiveBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (!pressed)
-            {
-                List<Member> membersInactive = [];
-                membersInactive = membersCopy.Where(
-                    m => m.DateOfTermination < DateOnly.FromDateTime(DateTime.Now))
-                    .ToList();
-                membersChanged = membersInactive;
-                AutorizationUtils.UpdateList(membersDataGrid, membersInactive);
-
-                InactiveBtn.BorderThickness = new Thickness(0, 0, 0, 2);
-                ActiveBtn.BorderThickness = new Thickness(0);
-                //ActiveBtn.Style = (Style)Resources["tabButton"];
-
-                pressed = true;
-            }
-            else 
-            {
-                pressed = false;
-                InactiveBtn.BorderThickness = new Thickness(0);
-                membersCopy = new(members);
-                membersChanged = new(members);
-                AutorizationUtils.UpdateList(membersDataGrid, membersCopy);
-            }
-            
+            List<Member> membersInactive = [];
+            membersInactive = membersCopy.Where(
+                m => m.DateOfTermination < DateOnly.FromDateTime(DateTime.Now))
+                .ToList();
+            membersChanged = membersInactive;
+            AutorizationUtils.UpdateList(membersDataGrid, membersInactive);
+            contentBtn = AutorizationUtils.ButtonThicknessChange(InactiveBtn, btnStack);
+            AutorizationUtils.FillComboBox("Неактивные", CBSort);
+            CBSort.SelectedIndex = 0;
         }
 
         private void ServicesBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (!servicesPressed)
+            if (!servicesPressed) 
             {
-                CBSort.Items.Clear();
                 AutorizationUtils.FillComboBox(services, CBSort);
+                contentBtn = AutorizationUtils.ButtonThicknessChange(ServicesBtn, btnStack);
                 CBSort.SelectedIndex = 0;
-                ServicesBtn.BorderThickness = new Thickness(0, 0, 0, 2);
                 servicesPressed = true;
             }
-            else 
-            {
-                servicesPressed = false;
-                ServicesBtn.BorderThickness = new Thickness(0);
-                membersCopy = new(members);
-                membersChanged = new(members);
-                AutorizationUtils.UpdateList(membersDataGrid, membersCopy);
-            }
-            
+            //CBSort.SelectionChanged += CBSort_SelectionChanged;
         }
-
-        private void NumberSubsciberBtn_Click(object sender, RoutedEventArgs e)
-        {
-            if (!pressed)
-            {
-
-            }
-            else 
-            {
-            
-            }
-        }
-
         private void FullNameBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (!pressed)
-            {
-
-            }
-            else
-            {
-
-            }
+            AutorizationUtils.FillComboBox("ФИО", CBSort);
+            contentBtn = AutorizationUtils.ButtonThicknessChange(FullNameBtn, btnStack);
+            CBSort.SelectedIndex = 0;
+            membersChanged = membersCopy;
+            AutorizationUtils.UpdateList(membersDataGrid, membersChanged);
         }
 
         private void BillBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (!pressed)
-            {
-
-            }
-            else
-            {
-
-            }
+            AutorizationUtils.FillComboBox("Лицевой счет", CBSort);
+            contentBtn = AutorizationUtils.ButtonThicknessChange(BillBtn, btnStack);
+            CBSort.SelectedIndex = 0;
+            membersChanged = membersCopy;
+            AutorizationUtils.UpdateList(membersDataGrid, membersChanged);
         }
 
         private void ContractNumberBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (!pressed)
-            {
-
-            }
-            else
-            {
-
-            }
+            AutorizationUtils.FillComboBox("Номер договора", CBSort);
+            contentBtn = AutorizationUtils.ButtonThicknessChange(ContractNumberBtn, btnStack);
+            CBSort.SelectedIndex = 0;
+            membersChanged = membersCopy;
+            AutorizationUtils.UpdateList(membersDataGrid, membersChanged);
         }
 
         private void ListView_MouseEnter(object sender, MouseEventArgs e)
-        {
-            timer.Start();
-        }
+            => timer.Start();
 
         private void TxtSearch_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
@@ -262,31 +189,92 @@ namespace TNS.Front_end
 
         private void CBSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (pressed)
-            {
-                
-            }
-            else 
-            {
-            
-            }
-            if (servicesPressed)
-            {
+            List<Member> localMembers = [];
+            var tb = (TextBlock)CBSort.SelectedValue;
 
-                List<Member> localMembers = [];
-                var tb = (TextBlock)CBSort.SelectedValue;
-                localMembers = membersCopy.Where(
-                    m => m.Services == tb.Text)
-                    .ToList();
-                membersChanged = localMembers;
-                AutorizationUtils.UpdateList(membersDataGrid, localMembers);
-            }
-            else 
+            if (tb != null) 
             {
-                membersCopy = new(members);
-                membersChanged = new(members);
-                AutorizationUtils.UpdateList(membersDataGrid, membersCopy);
+                foreach (var filter in AutorizationUtils.filters)
+                {
+                    if (tb.Text.Contains(filter, StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        switch (contentBtn)
+                        {
+                            case "Активные":
+                                Filter(filter, x => x.Name);
+                                break;
+
+                            case "Неактивные":
+                                Filter(filter, x => x.Name);
+                                break;
+
+                            case "Услуги":
+                                Filter(filter, x => x.Services);
+                                break;
+
+                            case "Лицевой счет":
+                                Filter(filter, x => x.NumberUser);
+                                break;
+
+                            case "Номер договора":
+                                Filter(filter, x => x.NumberContract);
+                                break;
+
+                            case "ФИО":
+                                Filter(filter, x => x.Name);
+                                break;
+
+                        }
+                    }
+                }
+
+                if (servicesPressed)
+                {
+                    localMembers = membersCopy.Where(
+                        m => m.Services == tb.Text)
+                        .ToList();
+                    membersChanged = localMembers;
+                    AutorizationUtils.UpdateList(membersDataGrid, localMembers);
+                    servicesPressed = false;
+                }
             }
+        }
+
+        void Filter(string filter, Func<Member, string> predicate) 
+        {
+            List<Member> filtersMembersChanged = [];
+
+            filtersMembersChanged = filter.ToLower() switch
+            {
+                "по возрастанию" => [.. membersChanged.OrderBy(predicate)],
+                "по убыванию" => [.. membersChanged.OrderByDescending(predicate)],
+                _ => new(membersChanged),
+            };
+            //switch (filter.ToLower())
+            //{
+            //    case "по возрастанию":
+            //        membersChanged = [.. membersChanged.OrderBy(predicate)];
+            //        break;
+
+            //    case "по убыванию":
+            //        membersChanged = [.. membersChanged.OrderByDescending(predicate)];
+            //        break;
+
+            //    default:
+            //        membersChanged = new(membersCopy);
+            //        break;
+            //}
+            AutorizationUtils.UpdateList(membersDataGrid, filtersMembersChanged);
+        }
+
+        private void RefreshButton_Click(object sender, MouseButtonEventArgs e)
+        {
+            AutorizationUtils.ButtonThicknessChange(addButton, btnStack);
+            membersCopy = new(members);
+            membersChanged = new(members);
+            AutorizationUtils.UpdateList(membersDataGrid, membersCopy);
+            AutorizationUtils.FillComboBox(AutorizationUtils.filters, CBSort);
+
         }
     }
 }
