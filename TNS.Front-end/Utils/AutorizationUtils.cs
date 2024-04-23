@@ -22,7 +22,7 @@ namespace TNS.Front_end.Utils
         public DateOnly? DateOfTermination { get; set; }
     }
 
-    static class AutorizationUtils
+    static class MainFrameUtils
     {
         public static List<string> filters { get; set; } = 
             [

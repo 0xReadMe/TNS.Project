@@ -11,10 +11,12 @@
 
   <ItemGroup>
     <None Remove="Sourse\1.png" />
+    <None Remove="Sourse\MouseEnter-закрыть.png" />
     <None Remove="Sourse\Phone.png" />
     <None Remove="Sourse\Question.png" />
     <None Remove="Sourse\User.png" />
     <None Remove="Sourse\Добавить.png" />
+    <None Remove="Sourse\На авторизацию_Закрыть — копия.png" />
     <None Remove="Sourse\На авторизацию_Логотип.png" />
     <None Remove="Sourse\На авторизацию_Обновление кода.png" />
     <None Remove="Sourse\Найти.png" />
@@ -24,6 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Sourse\MouseEnter-закрыть.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Sourse\Phone.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -36,7 +41,12 @@
     <Resource Include="Sourse\Добавить.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Sourse\На авторизацию_Закрыть.png" />
+    <Resource Include="Sourse\На авторизацию_Закрыть — копия.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Sourse\На авторизацию_Закрыть.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Sourse\На авторизацию_Логотип.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
