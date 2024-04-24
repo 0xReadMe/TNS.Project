@@ -22,6 +22,9 @@
     <Compile Update="FAQ.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="MainFrame.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Profile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -40,6 +43,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="FAQ.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainFrame.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
