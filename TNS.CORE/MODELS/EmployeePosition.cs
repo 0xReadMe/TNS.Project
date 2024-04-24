@@ -7,5 +7,5 @@ public partial class EmployeePosition
 {
     public int Id { get; set; }
 
-    public string EmployeePosition1 { get; set; } = null!;
+    public string Position { get; set; } = null!;
 }

@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TNS.INFRASTRUCTURE", "TNS.I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TNS.API", "TNS.API\TNS.API.csproj", "{96FE4034-4D6D-487A-AE32-ABABE20282BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TNS.BASE_STATION_MATH", "TNS.BaseStationMath\TNS.BASE_STATION_MATH.csproj", "{1A08E154-A330-48AE-AD47-ACAF6F8255CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{96FE4034-4D6D-487A-AE32-ABABE20282BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96FE4034-4D6D-487A-AE32-ABABE20282BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96FE4034-4D6D-487A-AE32-ABABE20282BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A08E154-A330-48AE-AD47-ACAF6F8255CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A08E154-A330-48AE-AD47-ACAF6F8255CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A08E154-A330-48AE-AD47-ACAF6F8255CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A08E154-A330-48AE-AD47-ACAF6F8255CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

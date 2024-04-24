@@ -13,5 +13,5 @@ public partial class Event
 
     public string EventDescription { get; set; } = null!;
 
-    public string? EventTime { get; set; }
+    public TimeOnly? EventTime { get; set; }
 }
