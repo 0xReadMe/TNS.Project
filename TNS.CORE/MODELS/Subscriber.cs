@@ -1,7 +1,5 @@
 ﻿using CSharpFunctionalExtensions;
 using System.Text.RegularExpressions;
-using TNS.CORE.MODELS;
-using TNS.CORE.VO;
 
 namespace TNS.Database;
 
