@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TNS.CORE")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9387f3d4604cd0cc0d8fc3f8326254f4bf527ca5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d44a56ca66562819c58dbf8159544258e1215697")]
 [assembly: System.Reflection.AssemblyProductAttribute("TNS.CORE")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TNS.CORE")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

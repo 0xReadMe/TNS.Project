@@ -1,12 +1,105 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|c:\\users\\8-bit\\desktop\\tns.project\\tns.core\\models\\equipment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|solutionrelative:tns.core\\models\\equipment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|c:\\users\\8-bit\\desktop\\tns.project\\tns.core\\models\\servicetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|solutionrelative:tns.core\\models\\servicetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|c:\\users\\8-bit\\desktop\\tns.project\\tns.core\\models\\serviceprovided.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|solutionrelative:tns.core\\models\\serviceprovided.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|c:\\users\\8-bit\\desktop\\tns.project\\tns.core\\models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|solutionrelative:tns.core\\models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|c:\\users\\8-bit\\desktop\\tns.project\\tns.core\\models\\crm-request.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|solutionrelative:tns.core\\models\\crm-request.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Equipment.cs",
+              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.CORE\\MODELS\\Equipment.cs",
+              "RelativeDocumentMoniker": "TNS.CORE\\MODELS\\Equipment.cs",
+              "ToolTip": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.CORE\\MODELS\\Equipment.cs",
+              "RelativeToolTip": "TNS.CORE\\MODELS\\Equipment.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T10:58:21.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ServiceType.cs",
+              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.CORE\\MODELS\\ServiceType.cs",
+              "RelativeDocumentMoniker": "TNS.CORE\\MODELS\\ServiceType.cs",
+              "ToolTip": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.CORE\\MODELS\\ServiceType.cs",
+              "RelativeToolTip": "TNS.CORE\\MODELS\\ServiceType.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T10:57:03.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ServiceProvided.cs",
+              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.CORE\\MODELS\\ServiceProvided.cs",
+              "RelativeDocumentMoniker": "TNS.CORE\\MODELS\\ServiceProvided.cs",
+              "ToolTip": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.CORE\\MODELS\\ServiceProvided.cs",
+              "RelativeToolTip": "TNS.CORE\\MODELS\\ServiceProvided.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T10:57:03.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Service.cs",
+              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.CORE\\MODELS\\Service.cs",
+              "RelativeDocumentMoniker": "TNS.CORE\\MODELS\\Service.cs",
+              "ToolTip": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.CORE\\MODELS\\Service.cs",
+              "RelativeToolTip": "TNS.CORE\\MODELS\\Service.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T10:57:02.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CRM-request.cs",
+              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.CORE\\MODELS\\CRM-request.cs",
+              "RelativeDocumentMoniker": "TNS.CORE\\MODELS\\CRM-request.cs",
+              "ToolTip": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.CORE\\MODELS\\CRM-request.cs",
+              "RelativeToolTip": "TNS.CORE\\MODELS\\CRM-request.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T10:55:00.851Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
