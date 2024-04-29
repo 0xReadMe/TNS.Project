@@ -9,17 +9,17 @@ public partial class Subscriber
 
     const string regexSubscriberNumber = @"(^[0-9]{2}[А-Я][0-9]{6}$)";
 
-    public Guid         Id { get; }                                     //  id абонента
-    public Guid         PersonId { get; }                               //  id человека
-    public string       SubscriberNumber { get; }                       //  номер абонента
-    public string       ContractNumber { get; }                         //  номер договора
-    public DateOnly     DateOfContractConclusion { get; }               //  дата заключения договора
-    public bool         ContractType { get; }                           //  тип договора
-    public string       ReasonForTerminationOfContract { get; } = null!;//  причина расторжения договора
-    public uint         PersonalBill { get; }                           //  лицевой счет
-    public string       Services { get; }                               //  услуги
-    public DateOnly?    DateOfTerminationOfTheContract { get; }         //  дата расторжения договора
-    public string       SerialNumberOfEquipment { get; }                //  серийный номер оборудования
+    public Guid         Id                              { get; }    //  id абонента
+    public Guid         PersonId                        { get; }    //  id человека
+    public string       SubscriberNumber                { get; }    //  номер абонента
+    public string       ContractNumber                  { get; }    //  номер договора
+    public DateOnly     DateOfContractConclusion        { get; }    //  дата заключения договора
+    public bool         ContractType                    { get; }    //  тип договора
+    public string       ReasonForTerminationOfContract  { get; }    //  причина расторжения договора
+    public uint         PersonalBill                    { get; }    //  лицевой счет
+    public string       Services                        { get; }    //  услуги
+    public DateOnly?    DateOfTerminationOfTheContract  { get; }    //  дата расторжения договора
+    public string       SerialNumberOfEquipment         { get; }    //  серийный номер оборудования
 
     private Subscriber(Guid id,
                        Guid personId,

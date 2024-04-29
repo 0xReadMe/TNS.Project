@@ -9,10 +9,10 @@ namespace TNS.CORE.MODELS
 {
     internal class BaseStationAddress
     {
-        public Guid     Id { get; }                   // id
-        public Guid     BaseStationId { get; }        // id адреса станции
-        public string   Address { get; }              // адрес площадки
-        public string   Location { get; }             // место расположения
+        public Guid     Id              { get; }    //  id
+        public Guid     BaseStationId   { get; }    //  id адреса станции
+        public string   Address         { get; }    //  адрес площадки
+        public string   Location        { get; }    //  место расположения
 
         private BaseStationAddress() 
         {

@@ -1,11 +1,24 @@
-﻿using System;
+﻿using CSharpFunctionalExtensions;
+using System;
 using System.Collections.Generic;
 
-namespace TNS.Database;
-
-public partial class EmployeePosition
+namespace TNS.CORE.MODELS 
 {
-    public int Id { get; set; }
+    public class EmployeePosition 
+    {
+        public Guid     Id              { get; }    //  id должности
+        public string   PositionName    { get; }    //  название должности
 
-    public string Position { get; set; } = null!;
+        private EmployeePosition() 
+        {
+        
+        }
+
+        public static Result<EmployeePosition> Create()
+        {
+            EmployeePosition result = new EmployeePosition();
+
+            return Result.Success(result);
+        }
+    }
 }
