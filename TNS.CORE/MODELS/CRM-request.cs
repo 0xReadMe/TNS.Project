@@ -16,14 +16,54 @@ namespace TNS.CORE.MODELS
         public string   ProblemDescription  { get; }     //  описание услуги
         public DateOnly ClosingDate         { get; }     //  дата закрытия заявки
 
-        private CRM_request() 
+        private CRM_request(Guid        id,
+                            Guid        subscriberId,
+                            DateOnly    creationDate,
+                            Guid        serviceId,
+                            Guid        serviceProvidedId,
+                            Guid        serviceTypeId,
+                            string      status,
+                            string      typeOfEquipment,
+                            string      typeOfProblem,
+                            string      problemDescription,
+                            DateOnly    closingDate) 
         {
-        
+            Id                  = id;
+            SubscriberId        = subscriberId;
+            CreationDate        = creationDate;
+            ServiceId           = serviceId;
+            ServiceProvidedId   = serviceProvidedId;
+            ServiceTypeId       = serviceTypeId;
+            Status              = status;
+            TypeOfEquipment     = typeOfEquipment;
+            TypeOfProblem       = typeOfProblem;
+            ProblemDescription  = problemDescription;
+            ClosingDate         = closingDate;
         }
 
-        public static Result<CRM_request> Create()
+        public static Result<CRM_request> Create(Guid       id,
+                                                 Guid       subscriberId,
+                                                 DateOnly   creationDate,
+                                                 Guid       serviceId,
+                                                 Guid       serviceProvidedId,
+                                                 Guid       serviceTypeId,
+                                                 string     status,
+                                                 string     typeOfEquipment,
+                                                 string     typeOfProblem,
+                                                 string     problemDescription,
+                                                 DateOnly   closingDate)
         {
-            CRM_request result = new CRM_request();
+            CRM_request result = new CRM_request(id,
+                                                 subscriberId,
+                                                 creationDate,
+                                                 serviceId,
+                                                 serviceProvidedId,
+                                                 serviceTypeId,
+                                                 status,
+                                                 typeOfEquipment,
+                                                 typeOfProblem,
+                                                 problemDescription,
+                                                 closingDate);
 
             return Result.Success(result);
         }

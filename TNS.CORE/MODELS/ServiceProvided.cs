@@ -1,25 +1,24 @@
 ﻿using CSharpFunctionalExtensions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TNS.CORE.MODELS
 {
     internal class ServiceProvided
     {
-        public Guid     ServiceProvidedId   { get; }    //  id оказываемой услуги
-        public string   ServiceProvidedName { get; }    //  оказываемая услуга
+        public Guid     Id   { get; }    //  id оказываемой услуги
+        public string   Name { get; }    //  оказываемая услуга
 
-        private ServiceProvided() 
+        private ServiceProvided(Guid id,
+                                string name) 
         {
-        
+            Id = id;
+            Name = name;
         }
 
-        public static Result<ServiceProvided> Create()
+        public static Result<ServiceProvided> Create(Guid id,
+                                                     string name)
         {
-            ServiceProvided result = new ServiceProvided();
+            ServiceProvided result = new ServiceProvided(id,
+                                                         name);
 
             return Result.Success(result);
         }

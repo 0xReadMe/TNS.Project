@@ -14,14 +14,26 @@ namespace TNS.CORE.MODELS
         public string   Address         { get; }    //  адрес площадки
         public string   Location        { get; }    //  место расположения
 
-        private BaseStationAddress() 
+        private BaseStationAddress(Guid     id,
+                                   Guid     baseStationId,
+                                   string   address,
+                                   string   location) 
         {
-        
+            Id              = id;
+            BaseStationId   = baseStationId;
+            Address         = address;
+            Location        = location;
         }
 
-        public static Result<BaseStationAddress> Create()
+        public static Result<BaseStationAddress> Create(Guid    id,
+                                                        Guid    baseStationId,
+                                                        string  address,
+                                                        string  location)
         {
-            BaseStationAddress result = new BaseStationAddress();
+            BaseStationAddress result = new BaseStationAddress(id,
+                                                               baseStationId,
+                                                               address,
+                                                               location);
 
             return Result.Success(result);
         }

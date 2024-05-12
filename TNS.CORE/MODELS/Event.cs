@@ -1,17 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using CSharpFunctionalExtensions;
 
-namespace TNS.Database;
-
-public partial class Event
+namespace TNS.CORE.MODELS
 {
-    public int Id { get; set; }
+    public class Event
+    {
+        public Guid         Id                  { get; }    //  id события
+        public Guid         PositionId          { get; }    //  id должности
+        public DateOnly     Date                { get; }    //  дата события
+        public string?      Description         { get; }    //  описание события
+        public TimeOnly?    Time                { get; }    //  время события
 
-    public int PositionId { get; set; }
+        private Event(Guid      id,
+                      Guid      positionId,
+                      DateOnly  eventDate,
+                      string?   eventDescription,
+                      TimeOnly? eventTime)
+        {
+            Id                  = id;
+            PositionId          = positionId;
+            Date                = eventDate;
+            Description         = eventDescription;
+            Time                = eventTime;
+        }
 
-    public DateOnly EventDate { get; set; }
+        public static Result<Event> Create(Guid         id,
+                                           Guid         positionId,
+                                           DateOnly     eventDate,
+                                           string?      eventDescription,
+                                           TimeOnly?    eventTime)
+        {
+            Event result = new Event(id,
+                                     positionId,
+                                     eventDate,
+                                     eventDescription,
+                                     eventTime);
 
-    public string EventDescription { get; set; } = null!;
-
-    public TimeOnly? EventTime { get; set; }
+            return Result.Success(result);
+        }
+    }
 }
