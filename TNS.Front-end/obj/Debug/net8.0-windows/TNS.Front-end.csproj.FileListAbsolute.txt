@@ -71,3 +71,5 @@ C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\TNS.Fr
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\ref\TNS.Front-end.dll
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\MainFrame.g.cs
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\MainFrame.baml
+C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\AddUser.g.cs
+C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\AddUser.baml

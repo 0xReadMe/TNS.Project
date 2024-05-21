@@ -49,14 +49,14 @@
                  HorizontalAlignment="Right" 
                  Margin="0 0 15 0"/>
             </Grid>
-            <Button x:Name="addButton" Style="{StaticResource addButton}">
+            <Button x:Name="addButton" Style="{StaticResource addButton}" Margin="0,69,28,26">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Sourse/Добавить.png" 
                      Height="15" 
                      Width="15"
                      VerticalAlignment="Center" 
                      HorizontalAlignment="Left" 
-                     Margin="0 1 1 0"/>
+                     Margin="0 1 1 1"/>
                     <TextBlock Text="Добавить абонента"
                          Margin="8 0 0 0"/>
                 </StackPanel>
@@ -64,7 +64,7 @@
         </Grid>
         <Separator Height="1"
                   Background="#9CD8FB"
-                  Margin="117,35,176,794"
+                  Margin="430,32,430,766"
                   Grid.Row="1"/>
 
         <Expander Style="{DynamicResource MyCoolExpanderStyle}"
@@ -83,7 +83,7 @@
                       Style="{DynamicResource ExpanderText}"/>
             </StackPanel>
         </Expander>
-        <StackPanel Margin="423,0,0,764"
+        <StackPanel Margin="450,0,0,764"
                    Orientation="Horizontal"
                    HorizontalAlignment="Left"
                    Grid.Row="1"
