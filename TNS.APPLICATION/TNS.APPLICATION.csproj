@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TNS.Core\TNS.CORE.csproj" />
+  </ItemGroup>
+
 </Project>

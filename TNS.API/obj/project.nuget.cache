@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4YolIOykz7JoFJ4rTQ7BSSg+4bQBdWR1h+Hz0oyhglZsTAX4vPTislVmo3nPZkbH4SZWypNHxv6D9MVokS1V1Q==",
+  "dgSpecHash": "YO1GSbyTuB3tzLZr7jk7LC7ZwGiuHbUZNVDOIqBwWrGRsJLjcMbLMiBw8qGTumasVGzKDuQq+d1Jz1mxfCG9vw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\8-bit\\Desktop\\TNS.Project\\TNS.API\\TNS.API.csproj",
+  "projectFilePath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.API\\TNS.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\8-bit\\.nuget\\packages\\csharpfunctionalextensions\\2.41.0\\csharpfunctionalextensions.2.41.0.nupkg.sha512",
     "C:\\Users\\8-bit\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
