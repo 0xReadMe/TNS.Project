@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TNS.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ec1cafd7b6454055e256953b4555fa36f0356e68")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae65af79e3b17ee28d999e68fce2fdddc9428e27")]
 [assembly: System.Reflection.AssemblyProductAttribute("TNS.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TNS.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

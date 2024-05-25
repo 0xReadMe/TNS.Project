@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EBA2F5A3-5EB9-4F37-BEA8-C9E0261843E1}|TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.persistence\\mappings\\databasemappings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBA2F5A3-5EB9-4F37-BEA8-C9E0261843E1}|TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj|solutionrelative:tns.persistence\\mappings\\databasemappings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EBA2F5A3-5EB9-4F37-BEA8-C9E0261843E1}|TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.persistence\\repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBA2F5A3-5EB9-4F37-BEA8-C9E0261843E1}|TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj|solutionrelative:tns.persistence\\repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EBA2F5A3-5EB9-4F37-BEA8-C9E0261843E1}|TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.persistence\\entities\\employeeentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,24 +15,44 @@
       "RelativeMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|solutionrelative:tns.core\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.core\\models\\employeeposition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|solutionrelative:tns.core\\models\\employeeposition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBA2F5A3-5EB9-4F37-BEA8-C9E0261843E1}|TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.persistence\\entities\\employeepositionentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBA2F5A3-5EB9-4F37-BEA8-C9E0261843E1}|TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj|solutionrelative:tns.persistence\\entities\\employeepositionentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBA2F5A3-5EB9-4F37-BEA8-C9E0261843E1}|TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.persistence\\configurations\\employeeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBA2F5A3-5EB9-4F37-BEA8-C9E0261843E1}|TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj|solutionrelative:tns.persistence\\configurations\\employeeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96FE4034-4D6D-487A-AE32-ABABE20282BB}|TNS.API\\TNS.API.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96FE4034-4D6D-487A-AE32-ABABE20282BB}|TNS.API\\TNS.API.csproj|solutionrelative:tns.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EBA2F5A3-5EB9-4F37-BEA8-C9E0261843E1}|TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.persistence\\tnsdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EBA2F5A3-5EB9-4F37-BEA8-C9E0261843E1}|TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj|solutionrelative:tns.persistence\\tnsdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBA2F5A3-5EB9-4F37-BEA8-C9E0261843E1}|TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.persistence\\mappings\\databasemappings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBA2F5A3-5EB9-4F37-BEA8-C9E0261843E1}|TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj|solutionrelative:tns.persistence\\mappings\\databasemappings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96FE4034-4D6D-487A-AE32-ABABE20282BB}|TNS.API\\TNS.API.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{96FE4034-4D6D-487A-AE32-ABABE20282BB}|TNS.API\\TNS.API.csproj|solutionrelative:tns.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5F817252-357A-4500-AEEA-CB923BCC198D}|TNS.APPLICATION\\TNS.APPLICATION.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.application\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F817252-357A-4500-AEEA-CB923BCC198D}|TNS.APPLICATION\\TNS.APPLICATION.csproj|solutionrelative:tns.application\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.core\\interfaces\\repository\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|solutionrelative:tns.core\\interfaces\\repository\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.core\\interfaces\\services\\iemployeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|solutionrelative:tns.core\\interfaces\\services\\iemployeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.core\\models\\employeeposition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|solutionrelative:tns.core\\models\\employeeposition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.core\\interfaces\\repository\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|solutionrelative:tns.core\\interfaces\\repository\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,6 +67,58 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "EmployeeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.PERSISTENCE\\REPOSITORIES\\EmployeeRepository.cs",
+              "RelativeDocumentMoniker": "TNS.PERSISTENCE\\REPOSITORIES\\EmployeeRepository.cs",
+              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.PERSISTENCE\\REPOSITORIES\\EmployeeRepository.cs",
+              "RelativeToolTip": "TNS.PERSISTENCE\\REPOSITORIES\\EmployeeRepository.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAAACUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T17:39:03.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EmployeeConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.PERSISTENCE\\CONFIGURATIONS\\EmployeeConfiguration.cs",
+              "RelativeDocumentMoniker": "TNS.PERSISTENCE\\CONFIGURATIONS\\EmployeeConfiguration.cs",
+              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.PERSISTENCE\\CONFIGURATIONS\\EmployeeConfiguration.cs",
+              "RelativeToolTip": "TNS.PERSISTENCE\\CONFIGURATIONS\\EmployeeConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T12:45:14.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.API\\Program.cs",
+              "RelativeDocumentMoniker": "TNS.API\\Program.cs",
+              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.API\\Program.cs",
+              "RelativeToolTip": "TNS.API\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T12:27:59.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.API\\appsettings.json",
+              "RelativeDocumentMoniker": "TNS.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.API\\appsettings.json",
+              "RelativeToolTip": "TNS.API\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-25T12:24:47.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "DataBaseMappings.cs",
               "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.PERSISTENCE\\MAPPINGS\\DataBaseMappings.cs",
               "RelativeDocumentMoniker": "TNS.PERSISTENCE\\MAPPINGS\\DataBaseMappings.cs",
@@ -59,43 +131,59 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EmployeePositionEntity.cs",
+              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.PERSISTENCE\\ENTITIES\\EmployeePositionEntity.cs",
+              "RelativeDocumentMoniker": "TNS.PERSISTENCE\\ENTITIES\\EmployeePositionEntity.cs",
+              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.PERSISTENCE\\ENTITIES\\EmployeePositionEntity.cs",
+              "RelativeToolTip": "TNS.PERSISTENCE\\ENTITIES\\EmployeePositionEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T12:51:28.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "EmployeeEntity.cs",
               "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.PERSISTENCE\\ENTITIES\\EmployeeEntity.cs",
               "RelativeDocumentMoniker": "TNS.PERSISTENCE\\ENTITIES\\EmployeeEntity.cs",
               "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.PERSISTENCE\\ENTITIES\\EmployeeEntity.cs",
               "RelativeToolTip": "TNS.PERSISTENCE\\ENTITIES\\EmployeeEntity.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T18:27:32.158Z"
+              "WhenOpened": "2024-05-21T18:27:32.158Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "TNSDbContext.cs",
               "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.PERSISTENCE\\TNSDbContext.cs",
               "RelativeDocumentMoniker": "TNS.PERSISTENCE\\TNSDbContext.cs",
               "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.PERSISTENCE\\TNSDbContext.cs",
               "RelativeToolTip": "TNS.PERSISTENCE\\TNSDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T18:11:48.118Z"
+              "WhenOpened": "2024-05-21T18:11:48.118Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "EmployeeService.cs",
               "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.APPLICATION\\SERVICES\\EmployeeService.cs",
               "RelativeDocumentMoniker": "TNS.APPLICATION\\SERVICES\\EmployeeService.cs",
               "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.APPLICATION\\SERVICES\\EmployeeService.cs",
               "RelativeToolTip": "TNS.APPLICATION\\SERVICES\\EmployeeService.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAACgAAAA1AAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAowCgAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T17:52:37.469Z"
+              "WhenOpened": "2024-05-21T17:52:37.469Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "IEmployeeService.cs",
               "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.CORE\\INTERFACES\\SERVICES\\IEmployeeService.cs",
               "RelativeDocumentMoniker": "TNS.CORE\\INTERFACES\\SERVICES\\IEmployeeService.cs",
@@ -103,11 +191,12 @@
               "RelativeToolTip": "TNS.CORE\\INTERFACES\\SERVICES\\IEmployeeService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T17:48:09.195Z"
+              "WhenOpened": "2024-05-21T17:48:09.195Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 12,
               "Title": "IEmployeeRepository.cs",
               "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.CORE\\INTERFACES\\REPOSITORY\\IEmployeeRepository.cs",
               "RelativeDocumentMoniker": "TNS.CORE\\INTERFACES\\REPOSITORY\\IEmployeeRepository.cs",
@@ -115,7 +204,21 @@
               "RelativeToolTip": "TNS.CORE\\INTERFACES\\REPOSITORY\\IEmployeeRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T14:05:00.541Z"
+              "WhenOpened": "2024-05-20T14:05:00.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EmployeePosition.cs",
+              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.CORE\\MODELS\\EmployeePosition.cs",
+              "RelativeDocumentMoniker": "TNS.CORE\\MODELS\\EmployeePosition.cs",
+              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.CORE\\MODELS\\EmployeePosition.cs",
+              "RelativeToolTip": "TNS.CORE\\MODELS\\EmployeePosition.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T14:02:22.438Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -125,21 +228,10 @@
               "RelativeDocumentMoniker": "TNS.CORE\\MODELS\\Employee.cs",
               "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.CORE\\MODELS\\Employee.cs",
               "RelativeToolTip": "TNS.CORE\\MODELS\\Employee.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABHAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T14:01:59.486Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "EmployeePosition.cs",
-              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.CORE\\MODELS\\EmployeePosition.cs",
-              "RelativeDocumentMoniker": "TNS.CORE\\MODELS\\EmployeePosition.cs",
-              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.CORE\\MODELS\\EmployeePosition.cs",
-              "RelativeToolTip": "TNS.CORE\\MODELS\\EmployeePosition.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T14:02:22.438Z"
+              "WhenOpened": "2024-05-25T17:43:45.783Z",
+              "EditorCaption": ""
             }
           ]
         }

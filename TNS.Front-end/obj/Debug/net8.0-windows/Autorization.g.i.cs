@@ -84,7 +84,7 @@ namespace TNS.Front_end {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TNS.Front-end;V1.0.0.0;component/autorization.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TNS.Front-end;component/autorization.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Autorization.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

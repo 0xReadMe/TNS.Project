@@ -149,7 +149,7 @@ namespace TNS.Front_end {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TNS.Front-end;V1.0.0.0;component/mainframe.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TNS.Front-end;component/mainframe.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\MainFrame.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

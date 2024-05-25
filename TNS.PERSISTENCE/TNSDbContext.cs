@@ -1,7 +1,5 @@
-﻿using TNS.PERSISTENCE.CONFIGURATIONS;
-using TNS.PERSISTENCE.ENTITIES;
+﻿using TNS.PERSISTENCE.ENTITIES;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 
 namespace TNS.PERSISTENCE
 {

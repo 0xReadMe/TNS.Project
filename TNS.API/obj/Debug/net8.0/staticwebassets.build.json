@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "xBGZM6AMN20aCasPVlFuVT/yO2YM+mXbQo33Rv3QVBw=",
-  "Source": "TestBackEnd",
-  "BasePath": "_content/TestBackEnd",
+  "Hash": "bk+ZVMzhgmaSLrDTD2t3o4UIA0RyVpfNWfoSXM9ZvJw=",
+  "Source": "TNS.API",
+  "BasePath": "_content/TNS.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
