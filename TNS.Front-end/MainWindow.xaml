@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TNS.Front_end"
         mc:Ignorable="d"
-        Title="MainWindow" Height="515" Width="365" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen">
+        Title="MainWindow" Height="515" Width="365" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen"
+        BorderBrush="#e7f3fd" BorderThickness="3">
     <Window.Resources>
         <Style x:Key="TB" TargetType="TextBox">
             <Setter Property="Height" Value="35"/>
@@ -62,8 +63,36 @@
         </Grid.RowDefinitions>
         <Grid Name="ToolBar" Grid.Row="0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Image Height="25" Width="25" Source="/Sourse/На авторизацию_Свернуь.png" MouseDown="Image_MouseDown_Minimized"/>
-                <Image Height="25" Width="25" Source="/Sourse/На авторизацию_Закрыть.png" MouseDown="Image_MouseDown_Close"/>
+                <Image Height="30" 
+       Width="30" 
+       MouseDown="Image_MouseDown_Minimized"
+       Name="MinimizedBtn">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/Sourse/На авторизацию_Свернуь.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=MinimizedBtn}" Value="True">
+                                    <Setter Property="Source" Value="/Sourse/MouseEnter-свернуь.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+                <Image Height="30" 
+       Width="30"
+       MouseDown="Image_MouseDown_Close"
+       Name="CloseBtn">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/Sourse/На авторизацию_Закрыть.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=CloseBtn}" Value="True">
+                                    <Setter Property="Source" Value="/Sourse/MouseEnter-закрыть.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
             </StackPanel>
         </Grid>
 

@@ -1,6 +1,9 @@
-﻿using System.Windows;
+﻿using System.Net.Http;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Interop;
+using System.Windows.Shapes;
 using TNS.Front_end.Utils;
 
 namespace TNS.Front_end
@@ -10,6 +13,7 @@ namespace TNS.Front_end
     /// </summary>
     public partial class MainFrame : Page
     {
+        public AddUser AboutWindow;
         bool servicesPressed = false;
         string contentBtn;
 
@@ -234,6 +238,43 @@ namespace TNS.Front_end
             MainFrameUtils.UpdateList(membersDataGrid, membersCopy);
             MainFrameUtils.FillComboBox(MainFrameUtils.filters, CBSort);
 
+        }
+
+        private async void AddButton(object sender, RoutedEventArgs e)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                var responce = await client.GetAsync("https://localhost:7110");
+                responce.EnsureSuccessStatusCode();
+                if (responce.IsSuccessStatusCode)
+                {
+                    MessageBox.Show($"{responce.Content.ReadAsStringAsync()}");
+                }
+                else
+                {
+                    MessageBox.Show($"{responce.StatusCode}");
+                }
+            }
+
+            AddUser addUser = new AddUser();
+            addUser.Show();
+        }
+
+        private  void Open_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            
+
+            OpenUser openUser = new OpenUser(this);
+            openUser.Show();
+            addButton.IsEnabled = false;
+            
+
+        }
+
+        private void Edit_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            EditUser editUser = new EditUser();
+            editUser.Show();
         }
     }
 }

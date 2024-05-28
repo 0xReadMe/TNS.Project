@@ -17,6 +17,8 @@ namespace TNS.Front_end
             Hide();
             Autorization autorization = new Autorization();
             autorization.Show();
+            //AddUser addUser = new AddUser();
+            //addUser.Show();
             Close();
         }
 

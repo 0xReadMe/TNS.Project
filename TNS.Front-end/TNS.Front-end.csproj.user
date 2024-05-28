@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="AddUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Autorization.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -14,6 +17,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="CRM.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EditUser.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Equipment.xaml.cs">
@@ -25,6 +31,9 @@
     <Compile Update="MainFrame.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="OpenUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Profile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -33,6 +42,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="AddUser.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Autorization.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -40,6 +52,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="CRM.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditUser.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Equipment.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="FAQ.xaml">
@@ -51,7 +69,7 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Equipment.xaml">
+    <Page Update="OpenUser.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Profile.xaml">

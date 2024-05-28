@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.INFRASTRUCTURE\obj\Debug\net8.0\TNS.INFRASTRUCTURE.csproj.AssemblyReference.cache
 C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.INFRASTRUCTURE\obj\Debug\net8.0\TNS.INFRASTRUCTURE.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.INFRASTRUCTURE\obj\Debug\net8.0\TNS.INFRASTRUCTURE.AssemblyInfoInputs.cache
@@ -16,3 +17,10 @@ C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.INFRASTRUCTURE\obj\Debug\net8.
 C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.INFRASTRUCTURE\obj\Debug\net8.0\refint\TNS.INFRASTRUCTURE.dll
 C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.INFRASTRUCTURE\obj\Debug\net8.0\TNS.INFRASTRUCTURE.pdb
 C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.INFRASTRUCTURE\obj\Debug\net8.0\ref\TNS.INFRASTRUCTURE.dll
+=======
+C:\Users\Marin\Desktop\TNS.Project\TNS.INFRASTRUCTURE\obj\Debug\net8.0\TNS.INFRASTRUCTURE.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marin\Desktop\TNS.Project\TNS.INFRASTRUCTURE\obj\Debug\net8.0\TNS.INFRASTRUCTURE.AssemblyInfoInputs.cache
+C:\Users\Marin\Desktop\TNS.Project\TNS.INFRASTRUCTURE\obj\Debug\net8.0\TNS.INFRASTRUCTURE.AssemblyInfo.cs
+C:\Users\Marin\Desktop\TNS.Project\TNS.INFRASTRUCTURE\obj\Debug\net8.0\TNS.INFRASTRUCTURE.csproj.CoreCompileInputs.cache
+C:\Users\Marin\Desktop\TNS.Project\TNS.INFRASTRUCTURE\obj\Debug\net8.0\TNS.INFRASTRUCTURE.sourcelink.json
+>>>>>>> frontend

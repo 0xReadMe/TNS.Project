@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.PERSISTENCE\obj\Debug\net8.0\TNS.PERSISTENCE.csproj.AssemblyReference.cache
 C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.PERSISTENCE\obj\Debug\net8.0\TNS.PERSISTENCE.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.PERSISTENCE\obj\Debug\net8.0\TNS.PERSISTENCE.AssemblyInfoInputs.cache
@@ -18,3 +19,10 @@ C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.PERSISTENCE\obj\Debug\net8.0\r
 C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.PERSISTENCE\obj\Debug\net8.0\TNS.PERSISTENCE.pdb
 C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.PERSISTENCE\obj\Debug\net8.0\TNS.PERSISTENCE.genruntimeconfig.cache
 C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.PERSISTENCE\obj\Debug\net8.0\ref\TNS.PERSISTENCE.dll
+=======
+C:\Users\Marin\Desktop\TNS.Project\TNS.PERSISTENCE\obj\Debug\net8.0\TNS.PERSISTENCE.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marin\Desktop\TNS.Project\TNS.PERSISTENCE\obj\Debug\net8.0\TNS.PERSISTENCE.AssemblyInfoInputs.cache
+C:\Users\Marin\Desktop\TNS.Project\TNS.PERSISTENCE\obj\Debug\net8.0\TNS.PERSISTENCE.AssemblyInfo.cs
+C:\Users\Marin\Desktop\TNS.Project\TNS.PERSISTENCE\obj\Debug\net8.0\TNS.PERSISTENCE.csproj.CoreCompileInputs.cache
+C:\Users\Marin\Desktop\TNS.Project\TNS.PERSISTENCE\obj\Debug\net8.0\TNS.PERSISTENCE.sourcelink.json
+>>>>>>> frontend
