@@ -1,0 +1,5 @@
+C:\Users\Marin\Desktop\TNS.Project\TNS.PERSISTENCE\obj\Debug\net8.0\TNS.PERSISTENCE.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marin\Desktop\TNS.Project\TNS.PERSISTENCE\obj\Debug\net8.0\TNS.PERSISTENCE.AssemblyInfoInputs.cache
+C:\Users\Marin\Desktop\TNS.Project\TNS.PERSISTENCE\obj\Debug\net8.0\TNS.PERSISTENCE.AssemblyInfo.cs
+C:\Users\Marin\Desktop\TNS.Project\TNS.PERSISTENCE\obj\Debug\net8.0\TNS.PERSISTENCE.csproj.CoreCompileInputs.cache
+C:\Users\Marin\Desktop\TNS.Project\TNS.PERSISTENCE\obj\Debug\net8.0\TNS.PERSISTENCE.sourcelink.json

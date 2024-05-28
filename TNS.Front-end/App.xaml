@@ -78,8 +78,16 @@
             </Setter>
         </Style>
         <!--#endregion-->
-        
 
+        <Style x:Key="toolTip" TargetType="ToolTip">
+            <Setter Property="Background" Value="#e7f3fd"/>
+            <Setter Property="Foreground" Value="#024C8C"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#9CD8FB"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+        
         <Style x:Key="textboxSearch" TargetType="TextBox">
             <Setter Property="Background" Value="#ffffff"/>
             <Setter Property="Foreground" Value="#024C8C"/>
@@ -632,138 +640,5 @@
             </Setter>
         </Style>
         
-        <!--#region Expander-->
-        <Style x:Key="ExpanderHeaderFocusVisual">
-            <Setter Property="Control.Template">
-                <Setter.Value>
-                    <ControlTemplate>
-                        <Border>
-                            <Rectangle Margin="0" 
-                                       SnapsToDevicePixels="true" 
-                                       Stroke="#000000" 
-                                       StrokeThickness="10" 
-                                       StrokeDashArray="1 2"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style x:Key="ExpanderDownHeaderStyle" TargetType="{x:Type ToggleButton}">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ToggleButton}">
-                        <Border Padding="{TemplateBinding Padding}" 
-                                Background="Transparent">
-                            <ContentPresenter HorizontalAlignment="Left" 
-                                              RecognizesAccessKey="True" 
-                                              VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-            
-        <Style x:Key="MyCoolExpanderStyle" TargetType="{x:Type Expander}">
-            <Setter Property="Foreground" Value="#ffffff"/>
-            <Setter Property="Background" Value="#339AF0"/>
-            <Setter Property="Height" Value="35"/>
-            <Setter Property="FontSize" Value="13"/>
-            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
-            <Setter Property="BorderBrush" Value="#339AF0"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Expander}">
-                        <Border CornerRadius="7"
-                                HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
-                                Width="{TemplateBinding Width}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                Background="{TemplateBinding Background}"
-                                SnapsToDevicePixels="true">
-                            <DockPanel>
-                                <ToggleButton x:Name="HeaderSite" 
-                                              ContentTemplate="{TemplateBinding HeaderTemplate}" 
-                                              ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}" 
-                                              Content="{TemplateBinding Header}" 
-                                              DockPanel.Dock="Top" 
-                                              Foreground="{TemplateBinding Foreground}" 
-                                              FontWeight="{TemplateBinding FontWeight}" 
-                                              FocusVisualStyle="{StaticResource ExpanderHeaderFocusVisual}" 
-                                              FontStyle="{TemplateBinding FontStyle}" 
-                                              FontStretch="{TemplateBinding FontStretch}" 
-                                              FontSize="{TemplateBinding FontSize}" 
-                                              FontFamily="{TemplateBinding FontFamily}" 
-                                              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                              IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" 
-                                              Margin="1" 
-                                              MinWidth="0" 
-                                              MinHeight="0" 
-                                              Padding="{TemplateBinding Padding}" 
-                                              Style="{StaticResource ExpanderDownHeaderStyle}" 
-                                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                                <Grid  Background="#339AF0" 
-                                       x:Name="ExpandSite" 
-                                       DockPanel.Dock="Bottom" 
-                                       HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                       Visibility="Collapsed" 
-                                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
-                                    <ContentPresenter/>
-                                </Grid>
-                            </DockPanel>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="BorderBrush" Value="#339AF0"/>
-                            </Trigger>
-                            <Trigger Property="IsExpanded" Value="True">
-                                <Setter Property="Height" Value="auto"/>
-                                <!--<Setter Property="Width" Value="auto"/>-->
-                            </Trigger>
-                            <Trigger Property="IsExpanded"  Value="true">
-                                <Setter Property="Visibility" 
-                                        TargetName="ExpandSite" 
-                                        Value="Visible"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <Style x:Key="ExpanderText" TargetType="{x:Type Label}">
-            <Setter Property="Background" Value="#339AF0"/>
-            <Setter Property="Foreground" Value="#ffffff"/>
-            <Setter Property="Padding" Value="0 0 0 0"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Label}">
-                        <Border x:Name="border" 
-                                Background="{TemplateBinding Background}"
-                                BorderThickness="0 1 0 1" 
-                                BorderBrush="#9CD8FB" 
-                                Padding="{TemplateBinding Padding}">
-                            <ContentPresenter HorizontalAlignment="Center" 
-                                              VerticalAlignment="Center"/>
-                        </Border>
-
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" 
-                                     Value="True">
-                                <Setter Property="Background" 
-                                        Value="Transparent"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-
-        </Style>
-        <!--#endregion-->
-    
     </Application.Resources>
 </Application>

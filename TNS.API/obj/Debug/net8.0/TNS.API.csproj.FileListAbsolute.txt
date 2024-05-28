@@ -1,0 +1,7 @@
+C:\Users\Marin\Desktop\TNS.Project\TNS.API\obj\Debug\net8.0\TNS.API.csproj.AssemblyReference.cache
+C:\Users\Marin\Desktop\TNS.Project\TNS.API\obj\Debug\net8.0\TNS.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marin\Desktop\TNS.Project\TNS.API\obj\Debug\net8.0\TNS.API.AssemblyInfoInputs.cache
+C:\Users\Marin\Desktop\TNS.Project\TNS.API\obj\Debug\net8.0\TNS.API.AssemblyInfo.cs
+C:\Users\Marin\Desktop\TNS.Project\TNS.API\obj\Debug\net8.0\TNS.API.csproj.CoreCompileInputs.cache
+C:\Users\Marin\Desktop\TNS.Project\TNS.API\obj\Debug\net8.0\TNS.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Marin\Desktop\TNS.Project\TNS.API\obj\Debug\net8.0\TNS.API.sourcelink.json

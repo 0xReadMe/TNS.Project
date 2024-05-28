@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace TNS.Front_end
@@ -17,7 +18,7 @@ namespace TNS.Front_end
     /// <summary>
     /// Логика взаимодействия для CRM.xaml
     /// </summary>
-    public partial class CRM : Window
+    public partial class CRM : Page
     {
         public CRM()
         {

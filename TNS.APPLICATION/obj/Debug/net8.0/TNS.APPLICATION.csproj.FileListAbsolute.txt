@@ -1,0 +1,5 @@
+C:\Users\Marin\Desktop\TNS.Project\TNS.APPLICATION\obj\Debug\net8.0\TNS.APPLICATION.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marin\Desktop\TNS.Project\TNS.APPLICATION\obj\Debug\net8.0\TNS.APPLICATION.AssemblyInfoInputs.cache
+C:\Users\Marin\Desktop\TNS.Project\TNS.APPLICATION\obj\Debug\net8.0\TNS.APPLICATION.AssemblyInfo.cs
+C:\Users\Marin\Desktop\TNS.Project\TNS.APPLICATION\obj\Debug\net8.0\TNS.APPLICATION.csproj.CoreCompileInputs.cache
+C:\Users\Marin\Desktop\TNS.Project\TNS.APPLICATION\obj\Debug\net8.0\TNS.APPLICATION.sourcelink.json

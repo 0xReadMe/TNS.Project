@@ -14,7 +14,7 @@ namespace TNS.Front_end
     /// </summary>
     public partial class Autorization : Window
     {
-        const double panelWidth = 255;
+        const double panelWidth = 330;
         bool hidden = true;
 
         DispatcherTimer timer = new()
@@ -23,7 +23,9 @@ namespace TNS.Front_end
         };
 
         List<Page> pages = [
-            new MainFrame()
+            new MainFrame(),
+            new Equipment(),
+            new CRM()
         ];
 
         public Autorization()
@@ -63,5 +65,20 @@ namespace TNS.Front_end
             => ContentFrame.Navigate(typeof(Autorization));
         private void ListView_MouseEnter(object sender, MouseEventArgs e)
             => timer.Start();
+
+        private void Abonentter_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ContentFrame.Content = pages[0];
+        }
+
+        private void Equipment_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ContentFrame.Content = pages[1];
+        }
+
+        private void CRM_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ContentFrame.Content = pages[2];
+        }
     }
 }

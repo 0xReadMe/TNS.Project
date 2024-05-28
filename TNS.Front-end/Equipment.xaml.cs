@@ -10,18 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace TNS.Front_end
 {
     /// <summary>
-    /// Логика взаимодействия для NetManagement.xaml
+    /// Логика взаимодействия для Equipment.xaml
     /// </summary>
-    public partial class NetManagement : Window
+    public partial class Equipment : Page
     {
-        public NetManagement()
+        public Equipment()
         {
-       
+            InitializeComponent();
         }
     }
 }

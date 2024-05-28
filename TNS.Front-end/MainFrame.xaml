@@ -49,7 +49,7 @@
                  HorizontalAlignment="Right" 
                  Margin="0 0 15 0"/>
             </Grid>
-            <Button x:Name="addButton" Style="{StaticResource addButton}" Margin="0,69,28,26">
+            <Button x:Name="addButton" Style="{StaticResource addButton}" Margin="0,69,28,26" Click="AddButton">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Sourse/Добавить.png" 
                      Height="15" 
@@ -67,22 +67,6 @@
                   Margin="430,32,430,766"
                   Grid.Row="1"/>
 
-        <Expander Style="{DynamicResource MyCoolExpanderStyle}"
-                 Padding="145 7 0 0"
-                 Header="Событие"
-                 Margin="1093,24,7,778"
-                 Panel.ZIndex="1" 
-                 Width="350" Grid.Row="1"
-                 >
-            <StackPanel Panel.ZIndex="2">
-                <Label Content="шгПГШПГШ"
-                      Style="{DynamicResource ExpanderText}"/>
-                <Label Content="ЫВАШДАРР"
-                      Style="{DynamicResource ExpanderText}"/>
-                <Label Content="ЩЗОЩЩ"
-                      Style="{DynamicResource ExpanderText}"/>
-            </StackPanel>
-        </Expander>
         <StackPanel Margin="450,0,0,764"
                    Orientation="Horizontal"
                    HorizontalAlignment="Left"
@@ -185,7 +169,7 @@
                                    IsReadOnly="True" 
                                    Width="auto"
                                    Binding="{Binding NumberContract}"/>
-                <DataGridTemplateColumn Header="Операции"
+                <DataGridTemplateColumn x:Name="dgBtnStack" Header="Операции"
                                        IsReadOnly="True" 
                                        Width="auto">
                     <DataGridTemplateColumn.CellTemplate>
@@ -195,9 +179,14 @@
                                        Height="30"
                                        CornerRadius="50"
                                        Margin="5 0 0 0">
-                                    <Ellipse>
+                                    <Ellipse x:Name="openBtn" Cursor="Hand" MouseDown="Open_MouseDown">
+                                        <Ellipse.ToolTip>
+                                            <ToolTip Style="{StaticResource toolTip}">
+                                                <TextBlock Text="Открыть"/>
+                                            </ToolTip>
+                                        </Ellipse.ToolTip>
                                         <Ellipse.Fill>
-                                            <ImageBrush ImageSource="/Sourse/Открыть.png"/>
+                                            <ImageBrush  ImageSource="/Sourse/Открыть.png"/>
                                         </Ellipse.Fill>
                                     </Ellipse>
                                 </Border>
@@ -205,7 +194,12 @@
                                        Height="30"
                                        CornerRadius="50"
                                        Margin="5 0 5 0">
-                                    <Ellipse>
+                                    <Ellipse Cursor="Hand" MouseDown="Edit_MouseDown">
+                                        <Ellipse.ToolTip>
+                                            <ToolTip Style="{StaticResource toolTip}">
+                                                <TextBlock Text="Редактировать"/>
+                                            </ToolTip>
+                                        </Ellipse.ToolTip>
                                         <Ellipse.Fill>
                                             <ImageBrush ImageSource="/Sourse/Редактировать.png"/>
                                         </Ellipse.Fill>
@@ -215,7 +209,12 @@
                                        Height="30"
                                        CornerRadius="50"
                                        Margin="0 0 5 0">
-                                    <Ellipse>
+                                    <Ellipse Cursor="Hand" >
+                                        <Ellipse.ToolTip>
+                                            <ToolTip Style="{StaticResource toolTip}">
+                                                <TextBlock Text="Удалить"/>
+                                            </ToolTip>
+                                        </Ellipse.ToolTip>
                                         <Ellipse.Fill>
                                             <ImageBrush ImageSource="/Sourse/Удалить.png"/>
                                         </Ellipse.Fill>

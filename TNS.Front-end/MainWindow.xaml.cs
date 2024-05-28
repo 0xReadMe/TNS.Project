@@ -15,10 +15,10 @@ namespace TNS.Front_end
             textCode.Visibility = Visibility.Hidden;
             refreshButton.Visibility = Visibility.Hidden;
             Hide();
-            //Autorization autorization = new Autorization();
-            //autorization.Show();
-            AddUser addUser = new AddUser();
-            addUser.Show();
+            Autorization autorization = new Autorization();
+            autorization.Show();
+            //AddUser addUser = new AddUser();
+            //addUser.Show();
             Close();
         }
 
