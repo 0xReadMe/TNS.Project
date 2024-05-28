@@ -241,3 +241,5 @@ C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.API\obj\Debug\net8.0\refint\TN
 C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.API\obj\Debug\net8.0\TNS.API.pdb
 C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.API\obj\Debug\net8.0\TNS.API.genruntimeconfig.cache
 C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.API\obj\Debug\net8.0\ref\TNS.API.dll
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.API\bin\Debug\net8.0\TNS.BASE_STATION_MATH.dll
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.API\bin\Debug\net8.0\TNS.BASE_STATION_MATH.pdb

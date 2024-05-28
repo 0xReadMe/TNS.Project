@@ -6,11 +6,13 @@ namespace TNS.CORE.MODELS
     public class Employee
     {
         public Guid         Id              { get; }    //  id сотрудника
+        public Guid PositionId { get; }    //  id должности
         public string       FullName        { get; }    //  ФИО сотрудника
-        public Guid         PositionId      { get; }    //  id должности
-        public string?      PhotoId         { get; }    //  путь к фото
+        public string PhotoId { get; } = string.Empty;   //  путь к фото
         public PhoneNumber  Login           { get; }    //  авторизация
         public string       PasswordHash    { get; }    //  авторизация
+
+        private Employee() { }
 
         private Employee(Guid           id,
                          Guid           positionId,

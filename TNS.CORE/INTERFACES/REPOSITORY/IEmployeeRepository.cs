@@ -7,5 +7,6 @@ namespace TNS.CORE.INTERFACES.REPOSITORY
     {
         Task Add(Employee employee);
         Task<Employee> GetByPhone(PhoneNumber phone);
+        Task<List<Employee>> GetAll();
     }
 }

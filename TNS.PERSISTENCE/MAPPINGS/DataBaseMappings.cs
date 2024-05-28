@@ -9,6 +9,7 @@ namespace TNS.PERSISTENCE.MAPPINGS
         public DataBaseMappings() 
         {
             CreateMap<EmployeeEntity, Employee>();
+            
         }
     }
 }

@@ -16,6 +16,7 @@
           "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.4",
           "Swashbuckle.AspNetCore": "6.5.0",
           "TNS.APPLICATION": "1.0.0",
+          "TNS.BASE_STATION_MATH": "1.0.0",
           "TNS.CORE": "1.0.0",
           "TNS.INFRASTRUCTURE": "1.0.0",
           "TNS.PERSISTENCE": "1.0.0"
@@ -1686,6 +1687,11 @@
           "TNS.APPLICATION.dll": {}
         }
       },
+      "TNS.BASE_STATION_MATH/1.0.0": {
+        "runtime": {
+          "TNS.BASE_STATION_MATH.dll": {}
+        }
+      },
       "TNS.CORE/1.0.0": {
         "dependencies": {
           "CSharpFunctionalExtensions": "2.41.0"
@@ -2703,6 +2709,11 @@
       "hashPath": "system.windows.extensions.7.0.0.nupkg.sha512"
     },
     "TNS.APPLICATION/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TNS.BASE_STATION_MATH/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

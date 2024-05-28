@@ -1,5 +1,6 @@
 ﻿using TNS.PERSISTENCE.ENTITIES;
 using Microsoft.EntityFrameworkCore;
+using TNS.CORE.VO;
 
 namespace TNS.PERSISTENCE
 {
@@ -12,6 +13,16 @@ namespace TNS.PERSISTENCE
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(TNSDbContext).Assembly);
+
+            //modelBuilder.Entity<EmployeeEntity>().Property(e => e.Login).HasColumnType("nvarchar(24)");
+
+            modelBuilder
+                .Entity<EmployeeEntity>()
+                .Property(e => e.Login)
+                .HasConversion(
+                                v => v.Number,
+                                v => PhoneNumber.Create(v).Value
+                                );
 
             //modelBuilder.ApplyConfiguration(new RolePermissionConfiguration(authOptions.Value));
         }

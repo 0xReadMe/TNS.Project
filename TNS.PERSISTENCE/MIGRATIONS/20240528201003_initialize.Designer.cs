@@ -12,7 +12,7 @@ using TNS.PERSISTENCE;
 namespace TNS.PERSISTENCE.Migrations
 {
     [DbContext(typeof(TNSDbContext))]
-    [Migration("20240525134819_initialize")]
+    [Migration("20240528201003_initialize")]
     partial class initialize
     {
         /// <inheritdoc />

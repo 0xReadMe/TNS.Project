@@ -37,6 +37,17 @@ namespace TNS.PERSISTENCE.REPOSITORIES
             await _context.SaveChangesAsync();
         }
 
+        public async Task<List<Employee>> GetAll()
+        {
+            List<Employee> employees = [];
+
+            await foreach(var emp in _context.Employee.AsAsyncEnumerable()) 
+            {
+                employees.Add(_mapper.Map<Employee>(emp));
+            }
+            return employees;
+        }
+
         public async Task<Employee> GetByPhone(PhoneNumber phone)
         {
             var employeeEntity = await _context.Employee
