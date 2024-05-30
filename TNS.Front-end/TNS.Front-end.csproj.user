@@ -10,13 +10,13 @@
     <Compile Update="AddUser.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Autorization.xaml.cs">
+    <Compile Update="MainWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Billing.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="CRM.xaml.cs">
+    <Compile Update="CRM\CRM.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="EditUser.xaml.cs">
@@ -34,24 +34,18 @@
     <Compile Update="OpenUser.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Profile.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Support.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="AddUser.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Autorization.xaml">
+    <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Billing.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="CRM.xaml">
+    <Page Update="CRM\CRM.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="EditUser.xaml">
@@ -66,16 +60,10 @@
     <Page Update="MainFrame.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MainWindow.xaml">
+    <Page Update="Autorization.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="OpenUser.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Profile.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Support.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

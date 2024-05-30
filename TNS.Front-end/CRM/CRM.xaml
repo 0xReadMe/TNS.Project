@@ -1,0 +1,211 @@
+﻿<Page x:Class="TNS.Front_end.CRM"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TNS.Front_end"
+      mc:Ignorable="d" 
+      d:DesignHeight="930" d:DesignWidth="1460"
+      Title="CRM">
+    <Page.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="130"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Name="ToolBar">
+            <TextBlock Text="CRM" 
+          VerticalAlignment="Top"
+          HorizontalAlignment="Left"
+          FontSize="30" 
+          Foreground="#024C8C"
+          Margin="666,4,0,0"/>
+            <StackPanel Orientation="Horizontal"
+           HorizontalAlignment="Right"
+           Margin="0,0,0,100">
+            </StackPanel>
+
+            <Grid Width="300"
+            HorizontalAlignment="Left"
+            Margin="120 0 0 0">
+                <TextBlock Margin="20 0" 
+                     VerticalAlignment="Center" 
+                     Foreground="#339AF0" 
+                     IsHitTestVisible="False"
+                     Panel.ZIndex="1" Text="Найти..."
+                     Visibility="{Binding ElementName=txtSearch, 
+                                          Path=Text.IsEmpty, 
+                                          Converter={StaticResource BoolToVis}}"/>
+                <TextBox x:Name="txtSearch" 
+                   Style="{StaticResource textboxSearch}" 
+                   TextChanged="TxtSearch_TextChanged"/>
+                <Image Source="/Sourse/Найти.png" 
+                 Height="20" Width="20" 
+                 VerticalAlignment="Center" 
+                 HorizontalAlignment="Right" 
+                 Margin="0 0 15 0"/>
+            </Grid>
+            <Button x:Name="addButton" Style="{StaticResource addButton}" Margin="0,69,28,26" Click="AddButton">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Sourse/Добавить.png" 
+                     Height="15" 
+                     Width="15"
+                     VerticalAlignment="Center" 
+                     HorizontalAlignment="Left" 
+                     Margin="0 1 0 1"/>
+                    <TextBlock Text="Добавить заявку"
+                         Margin="8 0 0 0"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+        <Separator Height="1"
+                  Background="#9CD8FB"
+                  Margin="540,34,604,768"
+                  Grid.Row="1"/>
+
+        <StackPanel Margin="550,0,0,764"
+                   Orientation="Horizontal"
+                   HorizontalAlignment="Left"
+                   Grid.Row="1"
+                   x:Name="btnStack" Width="290">
+
+            <Button x:Name="StatusBtn"
+                   Content="Статус"
+                   Style="{DynamicResource tabButton}"
+                   Click="StatusBtn_Click"/>
+            <Button x:Name="TypeEquipmentBtn"
+                   Content="Тип оборудования"
+                   Style="{DynamicResource tabButton}"
+                   Click="TypeEquipmentBtn_Click"/>
+            <Button x:Name="ServicesBtn"
+                   Content="Услуги"
+                   Style="{DynamicResource tabButton}"
+                   Click="ServicesBtn_Click"/>
+
+            <Image Source="/Sourse/На авторизацию_Обновление кода.png" 
+                  VerticalAlignment="Center" 
+                  Width="30" 
+                  Height="30" 
+                  MouseDown="RefreshButton_Click"/>
+        </StackPanel>
+
+        <DataGrid Panel.ZIndex="0"
+                 Style="{DynamicResource DataGridStyle1}"
+                 CellStyle="{DynamicResource DataGridCellStyle1}"
+                 ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" 
+                 RowStyle="{DynamicResource DataGridRowStyle1}"
+                 Grid.Row="1"
+                 Margin="100,65,5,5"
+                 x:Name="membersDataGrid">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn CanUserResize="False"
+                                       Width="auto"
+                                       ElementStyle="{StaticResource CheckBoxStyle1}">
+                    <DataGridCheckBoxColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <CheckBox Style="{StaticResource CheckBoxStyle1}"/>
+                        </DataTemplate>
+                    </DataGridCheckBoxColumn.HeaderTemplate>
+                </DataGridCheckBoxColumn>
+
+                <DataGridTextColumn Header="#"
+                                   IsReadOnly="True"
+                                   CanUserResize="False"
+                                   Width="auto"
+                                   Binding="{Binding Id}"/>
+
+                <DataGridTextColumn Header="Номер заявки"
+                                       IsReadOnly="True"
+                                       Width="1.4*"
+                                       Binding="{Binding NumberRequest}"/>
+
+                <DataGridTextColumn Header="Номер абонента" 
+                                   IsReadOnly="True" 
+                                   Width="*" 
+                                   Binding="{Binding AbonentNumber}"/>
+                <DataGridTextColumn Header="Статус" 
+                                   IsReadOnly="True" 
+                                   Width="*" 
+                                   Binding="{Binding Status}"/>
+                <DataGridTextColumn Header="Услуги"
+                                   IsReadOnly="True"
+                                   Width="*"
+                                   Binding="{Binding Service}"/>
+                <DataGridTextColumn Header="Тип оборудования клиента"
+                                   IsReadOnly="True" 
+                                   Width="auto"
+                                   Binding="{Binding TypeEquipment}"/>
+                <DataGridTemplateColumn x:Name="dgBtnStack" Header="Операции"
+                                       IsReadOnly="True" 
+                                       Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Border Width="30"
+                                       Height="30"
+                                       CornerRadius="50"
+                                       Margin="5 0 0 0">
+                                    <Ellipse x:Name="openBtn" Cursor="Hand" MouseDown="Open_MouseDown">
+                                        <Ellipse.ToolTip>
+                                            <ToolTip Style="{StaticResource toolTip}">
+                                                <TextBlock Text="Открыть"/>
+                                            </ToolTip>
+                                        </Ellipse.ToolTip>
+                                        <Ellipse.Fill>
+                                            <ImageBrush  ImageSource="/Sourse/Открыть.png"/>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                                </Border>
+                                <Border Width="30"
+                                       Height="30"
+                                       CornerRadius="50"
+                                       Margin="5 0 5 0">
+                                    <Ellipse Cursor="Hand" MouseDown="Edit_MouseDown">
+                                        <Ellipse.ToolTip>
+                                            <ToolTip Style="{StaticResource toolTip}">
+                                                <TextBlock Text="Редактировать"/>
+                                            </ToolTip>
+                                        </Ellipse.ToolTip>
+                                        <Ellipse.Fill>
+                                            <ImageBrush ImageSource="/Sourse/Редактировать.png"/>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                                </Border>
+                                <Border Width="30"
+                                       Height="30"
+                                       CornerRadius="50"
+                                       Margin="0 0 5 0">
+                                    <Ellipse Cursor="Hand" >
+                                        <Ellipse.ToolTip>
+                                            <ToolTip Style="{StaticResource toolTip}">
+                                                <TextBlock Text="Удалить"/>
+                                            </ToolTip>
+                                        </Ellipse.ToolTip>
+                                        <Ellipse.Fill>
+                                            <ImageBrush ImageSource="/Sourse/Удалить.png"/>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                                </Border>
+
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <ComboBox Style="{DynamicResource ComboBoxFlatStyle}"
+                  Foreground="#024C8C"
+                  FontSize="14"
+                  x:Name="CBSort"
+                  Margin="120,0,1030,764"
+                  Width="300"
+                  Height="30"
+                  SelectionChanged="CBSort_SelectionChanged" Grid.Row="1"
+                  HorizontalContentAlignment="Center"/>
+    </Grid>
+</Page>

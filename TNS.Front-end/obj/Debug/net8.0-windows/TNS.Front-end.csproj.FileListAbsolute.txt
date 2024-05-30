@@ -7,11 +7,12 @@ C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\Autori
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\AddUser.g.cs
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\Autorization.g.cs
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\Billing.g.cs
-C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\CRM.g.cs
+C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\EditUser.g.cs
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\Equipment.g.cs
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\FAQ.g.cs
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\MainFrame.g.cs
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\OpenUser.g.cs
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\Profile.g.cs
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\Support.g.cs
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\App.g.cs
@@ -20,11 +21,12 @@ C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\TNS.Fr
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\App.baml
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\AddUser.baml
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\Billing.baml
-C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\CRM.baml
+C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\EditUser.baml
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\Equipment.baml
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\FAQ.baml
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\MainFrame.baml
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\OpenUser.baml
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\Profile.baml
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\Support.baml
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\TNS.Front-end.g.resources
@@ -38,7 +40,5 @@ C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\refint
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\TNS.Front-end.pdb
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\TNS.Front-end.genruntimeconfig.cache
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\ref\TNS.Front-end.dll
-C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\OpenUser.g.cs
-C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\OpenUser.baml
-C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\EditUser.g.cs
-C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\EditUser.baml
+C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\CRM\CRM.g.cs
+C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\CRM\CRM.baml

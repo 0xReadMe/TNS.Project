@@ -242,19 +242,19 @@ namespace TNS.Front_end
 
         private async void AddButton(object sender, RoutedEventArgs e)
         {
-            using (HttpClient client = new HttpClient())
-            {
-                var responce = await client.GetAsync("https://localhost:7110");
-                responce.EnsureSuccessStatusCode();
-                if (responce.IsSuccessStatusCode)
-                {
-                    MessageBox.Show($"{responce.Content.ReadAsStringAsync()}");
-                }
-                else
-                {
-                    MessageBox.Show($"{responce.StatusCode}");
-                }
-            }
+            //using (HttpClient client = new HttpClient())
+            //{
+            //    var responce = await client.GetAsync("https://localhost:7110");
+            //    responce.EnsureSuccessStatusCode();
+            //    if (responce.IsSuccessStatusCode)
+            //    {
+            //        MessageBox.Show($"{responce.Content.ReadAsStringAsync()}");
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show($"{responce.StatusCode}");
+            //    }
+            //}
 
             AddUser addUser = new AddUser();
             addUser.Show();

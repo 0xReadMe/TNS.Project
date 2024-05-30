@@ -3,70 +3,29 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TNS.Front_end"
         mc:Ignorable="d"
-        Title="MainWindow" Height="515" Width="365" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen"
-        BorderBrush="#e7f3fd" BorderThickness="3">
-    <Window.Resources>
-        <Style x:Key="TB" TargetType="TextBox">
-            <Setter Property="Height" Value="35"/>
-            <Setter Property="Width" Value="300"/>
-            <Setter Property="FontSize" Value="17"/>
-            <Setter Property="Padding" Value="0 7 0 0"/>
-            <Setter Property="Foreground" Value="#024C8C"/>
-            <Setter Property="Background" Value="#9CD8FB"/>
-            <Setter Property="TextAlignment" Value="Center"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="TextBox">
-                        <Grid x:Name="root" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" SnapsToDevicePixels="True">
-                            <Border x:Name="BacKground" BorderThickness="1" CornerRadius="2" />
-                            <ScrollViewer x:Name="PART_ContentHost" BorderThickness="0" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" IsTabStop="False" TextElement.Foreground="{TemplateBinding Foreground}"/>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style x:Key="B" TargetType="Button">
-            <Setter Property="Height" Value="35"/>
-            <Setter Property="Width" Value="300"/>
-            <Setter Property="FontSize" Value="17"/>
-            <Setter Property="Padding" Value="0 7 0 0"/>
-            <Setter Property="Background">
-                <Setter.Value>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FF0F84E9" Offset="1"/>
-                        <GradientStop Color="White" Offset="1"/>
-                        <GradientStop Color="#FF9CD8FB" Offset="0"/>
-                        <GradientStop Color="#FF2893EC" Offset="1"/>
-                    </LinearGradientBrush>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Grid x:Name="root" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" SnapsToDevicePixels="True">
-                            <Border x:Name="BacKground" BorderThickness="1" CornerRadius="2" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}"/>
-
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
+        Title="MainWindow"
+        Height="960"
+        Width="1450"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height ="30"/>
-            <RowDefinition Height ="120"/>
-            <RowDefinition Height="300"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="130"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid Name="ToolBar" Grid.Row="0">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+        <Grid Name="ToolBar" Margin="0,-2,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="31*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0,0,0,100" Grid.RowSpan="2" HorizontalAlignment="Right" Width="60">
                 <Image Height="30" 
-       Width="30" 
-       MouseDown="Image_MouseDown_Minimized"
-       Name="MinimizedBtn">
+                       Width="30" 
+                       MouseDown="Image_MouseDown_Minimized"
+                       Name="MinimizedBtn">
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
                             <Setter Property="Source" Value="/Sourse/На авторизацию_Свернуь.png"/>
@@ -79,9 +38,9 @@
                     </Image.Style>
                 </Image>
                 <Image Height="30" 
-       Width="30"
-       MouseDown="Image_MouseDown_Close"
-       Name="CloseBtn">
+                       Width="30"
+                       MouseDown="Image_MouseDown_Close"
+                       Name="CloseBtn">
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
                             <Setter Property="Source" Value="/Sourse/На авторизацию_Закрыть.png"/>
@@ -95,69 +54,72 @@
                 </Image>
             </StackPanel>
         </Grid>
-
-        <Grid Name="LogoContainer" Grid.Row="1">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock FontSize="26" VerticalAlignment="Center" Margin="25 0 10 0" Foreground="#024C8C">Телеком Нева Связь</TextBlock>
-                <Image Width="70px" Margin="0 0 0 0" Source="/Sourse/На авторизацию_Логотип.png"/>
-            </StackPanel>
+        <Grid  Panel.ZIndex="1"
+               x:Name="sidePanel" 
+               Grid.Row="1"
+               HorizontalAlignment="Left"
+               Width="100" >
+            <ListView  BorderBrush="#9CD8FB" 
+                       Background="#9CD8FB" 
+                       Margin="0,-130,0,0" 
+                       FontSize="30" 
+                       Foreground="#024C8C" 
+                       ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
+                       ScrollViewer.VerticalScrollBarVisibility="Hidden"  
+                       IsSynchronizedWithCurrentItem="False" 
+                       MouseEnter="ListView_MouseEnter" 
+                       MouseLeave="ListView_MouseEnter">
+                <ListViewItem Height="90">
+                    <StackPanel Orientation="Horizontal"
+                                Margin="5 10 0 0">
+                        <Image Source="/Sourse/User.png"/>
+                        <TextBlock Text="ФИО"
+                                   VerticalAlignment="Center"
+                                   Margin="20 0 0 0"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem PreviewMouseDown="Abonentter_MouseDown" Height="80"
+                              Margin="0 230 0 0" >
+                    <StackPanel  Orientation="Horizontal"
+                                Margin="15 0 0 0">
+                        <Image Source="/Sourse/Phone.png" Height="60"/>
+                        <TextBlock Text="Абоненты"
+                                   VerticalAlignment="Center"
+                                   Margin="45 0 0 0"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem PreviewMouseDown="Equipment_MouseDown" Height="80"
+                              Margin="0 50 0 0" >
+                    <StackPanel  Orientation="Horizontal"
+                                Margin="15 0 0 0">
+                        <Image Source="/Sourse/Equipment.png" Height="70"/>
+                        <TextBlock Text="   Управление&#x0a;оборудованием"
+                                   VerticalAlignment="Center"
+                                   Margin="10 0 0 0"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem PreviewMouseDown="CRM_MouseDown" Height="80"
+                              Margin="3 50 0 0" >
+                    <StackPanel Orientation="Horizontal"
+                                Margin="15 0 0 0">
+                        <Image Source="/Sourse/CRM.png" Height="63"/>
+                        <TextBlock Text="CRM"
+                                   VerticalAlignment="Center"
+                                   Margin="40 0 0 0"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Height="50"
+                              Margin="0 0 0 -490">
+                    <StackPanel Orientation="Horizontal"
+                                Margin="20 0 0 0">
+                        <Image Source="/Sourse/Question.png"/>
+                        <TextBlock Text="Помощь"
+                                   VerticalAlignment="Center"
+                                   Margin="25 0 0 0"/>
+                    </StackPanel>
+                </ListViewItem>
+            </ListView>
         </Grid>
-
-        <TextBox x:Name="number" Grid.Row="2" Style="{StaticResource TB}" Margin="20,20,20,186"/>
-        <TextBlock IsHitTestVisible="False" FontSize="20" Text="Номер" Foreground="#024C8C" Grid.Row="2" Margin="50,54,50,0" VerticalAlignment="Top" TextAlignment="Center">
-            <TextBlock.Style>
-                <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Visibility" Value="Collapsed"/>
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding Text, ElementName=number}" Value="">
-                            <Setter Property="Visibility" Value="Visible"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBlock.Style>
-        </TextBlock>
-
-        <TextBox x:Name="password" Grid.Row="2" Style="{StaticResource TB}" Margin="20,90,20,155"/>
-        <TextBlock IsHitTestVisible="False" FontSize="20" Text="Пароль" Foreground="#024C8C" Grid.Row="2" Margin="50,104,50,0" VerticalAlignment="Top" TextAlignment="Center">
-            <TextBlock.Style>
-                <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Visibility" Value="Collapsed"/>
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding Text, ElementName=password}" Value="">
-                            <Setter Property="Visibility" Value="Visible"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBlock.Style>
-        </TextBlock>
-
-        <Button x:Name="authorization" Grid.Row="2" Style="{StaticResource B}" HorizontalAlignment="Center" Margin="0,130,0,14" Padding="11 6 0 0" Click="Authorization_Click"/>
-        <TextBlock IsHitTestVisible="False" FontSize="20" Text="Авторизация" Foreground="White" Grid.Row="2" Margin="0,130,0,14" VerticalAlignment="Center" TextAlignment="Center">
-            <TextBlock.Style>
-                <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Visibility" Value="Collapsed"/>
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding Text, ElementName=code}" Value="">
-                            <Setter Property="Visibility" Value="Visible"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBlock.Style>
-        </TextBlock>
-
-        <TextBox x:Name="code" Grid.Row="3" Style="{StaticResource TB}" Width="270" HorizontalAlignment="Left" Margin="32 0 0 0" Padding="11 6 0 0"/>
-        <TextBlock x:Name="textCode" IsHitTestVisible="False" FontSize="20" Text="Код" Foreground="#024C8C" Grid.Row="3" Margin="50,0,80,0" VerticalAlignment="Center" TextAlignment="Center">
-            <TextBlock.Style>
-                <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Visibility" Value="Collapsed"/>
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding Text, ElementName=code}" Value="">
-                            <Setter Property="Visibility" Value="Visible"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBlock.Style>
-        </TextBlock>
-        <Image x:Name="refreshButton" Source="/Sourse/На авторизацию_Обновление кода.png" Margin="302,5,10,5" Grid.Row="3" MouseDown="Image_MouseDown_Del"/>
+        <Frame x:Name="ContentFrame" Grid.RowSpan="2" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
