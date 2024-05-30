@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\App.xaml
-12-419890559
+101519374549
 
-18-217072198
+16475673476
 198-688555687
-AddUser.xaml;Autorization.xaml;Billing.xaml;CRM\CRM.xaml;EditUser.xaml;Equipment.xaml;FAQ.xaml;MainFrame.xaml;MainWindow.xaml;OpenUser.xaml;Profile.xaml;Support.xaml;
+Autorization.xaml;CRM\AddCRM.xaml;CRM\CRM.xaml;EQUIPMENT\Equipment.xaml;FAQ.xaml;MainWindow.xaml;SUBSCRIBERS\AddUser.xaml;SUBSCRIBERS\EditUser.xaml;SUBSCRIBERS\OpenUser.xaml;SUBSCRIBERS\Subscribers.xaml;
 
-False
+True
 

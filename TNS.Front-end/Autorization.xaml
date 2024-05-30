@@ -79,9 +79,9 @@
                     </Image.Style>
                 </Image>
                 <Image Height="30" 
-       Width="30"
-       MouseDown="Image_MouseDown_Close"
-       Name="CloseBtn">
+                       Width="30"
+                       MouseDown="Image_MouseDown_Close"
+                       Name="CloseBtn">
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
                             <Setter Property="Source" Value="/Sourse/На авторизацию_Закрыть.png"/>

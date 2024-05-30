@@ -7,63 +7,75 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="AddUser.xaml.cs">
+    <Compile Update="CRM\AddCRM.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CRM\EditCRM.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CRM\OpenCRM.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SUBSCRIBERS\AddUser.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="MainWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Billing.xaml.cs">
+    <Compile Update="CRM\CRM_Page.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="CRM\CRM.xaml.cs">
+    <Compile Update="SUBSCRIBERS\EditUser.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="EditUser.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Equipment.xaml.cs">
+    <Compile Update="EQUIPMENT\Equipment.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="FAQ.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MainFrame.xaml.cs">
+    <Compile Update="SUBSCRIBERS\Subscribers.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="OpenUser.xaml.cs">
+    <Compile Update="SUBSCRIBERS\OpenUser.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="AddUser.xaml">
+    <Page Update="CRM\AddCRM.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CRM\EditCRM.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CRM\OpenCRM.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SUBSCRIBERS\AddUser.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Billing.xaml">
+    <Page Update="CRM\CRM_Page.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="CRM\CRM.xaml">
+    <Page Update="SUBSCRIBERS\EditUser.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="EditUser.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Equipment.xaml">
+    <Page Update="EQUIPMENT\Equipment.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="FAQ.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MainFrame.xaml">
+    <Page Update="SUBSCRIBERS\Subscribers.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Autorization.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="OpenUser.xaml">
+    <Page Update="SUBSCRIBERS\OpenUser.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
