@@ -27,13 +27,13 @@ namespace TNS.CORE.VO
 
         public static Result<Passport, Error> Create(string divisionCode, string issuedBy, int series, int number, string residenceAddress, string residentialAddress, DateOnly dateOfIssueOfPassport) 
         {
-            if (IsValidDateOfIssueOfPassport(dateOfIssueOfPassport)) throw new ArgumentException("");
-            if (IsValidDivisionCode(divisionCode)) throw new ArgumentException("");
-            if (IsValidIssuedBy(issuedBy)) throw new ArgumentException("");
-            if (IsValidNumber(number)) throw new ArgumentException("");
-            if (IsValidSeries(series)) throw new ArgumentException("");
-            if (IsValidResidenceAddress(residenceAddress)) throw new ArgumentException("");
-            if (IsValidResidentialAddress(residentialAddress)) throw new ArgumentException("");
+            if (IsValidDateOfIssueOfPassport(dateOfIssueOfPassport))    throw new ArgumentException("");
+            if (IsValidDivisionCode(divisionCode))                      throw new ArgumentException("");
+            if (IsValidIssuedBy(issuedBy))                              throw new ArgumentException("");
+            if (IsValidNumber(number))                                  throw new ArgumentException("");
+            if (IsValidSeries(series))                                  throw new ArgumentException("");
+            if (IsValidResidenceAddress(residenceAddress))              throw new ArgumentException("");
+            if (IsValidResidentialAddress(residentialAddress))          throw new ArgumentException("");
 
             return new Passport(divisionCode, issuedBy, series, number, residenceAddress, residentialAddress, dateOfIssueOfPassport);
         }

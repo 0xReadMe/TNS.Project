@@ -1,15 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using CSharpFunctionalExtensions;
+using TNS.CORE.VO;
 
-namespace TNS.Database;
-
-public partial class Employee
+namespace TNS.CORE.MODELS
 {
-    public int Id { get; set; }
+    public class Employee
+    {
+        public Guid         Id              { get; }    //  id сотрудника
+        public Guid PositionId { get; }    //  id должности
+        public string       FullName        { get; }    //  ФИО сотрудника
+        public string PhotoId { get; } = string.Empty;   //  путь к фото
+        public PhoneNumber  Login           { get; }    //  авторизация
+        public string       PasswordHash    { get; }    //  авторизация
 
-    public string FullName { get; set; } = null!;
+        private Employee() { }
 
-    public int PositionId { get; set; }
+        private Employee(Guid           id,
+                         Guid           positionId,
+                         string         fullName,
+                         string?        photoId,
+                         PhoneNumber    login,
+                         string         passwordHash)
+        {
+            Id              = id;
+            FullName        = fullName; 
+            PositionId      = positionId; 
+            PhotoId         = photoId;
+            Login           = login;
+            PasswordHash    = passwordHash;
+        }
 
-    public string? PhotoId { get; set; }
+        public static Result<Employee> Create(Guid          id,
+                                              Guid          positionId,
+                                              string        fullName,
+                                              string?       photoId,
+                                              PhoneNumber   login,
+                                              string        passwordHash)
+        {
+            Employee result = new Employee(id,
+                                           positionId,
+                                           fullName,
+                                           photoId,
+                                           login,
+                                           passwordHash);
+
+            return Result.Success(result);
+        }
+    }
 }
