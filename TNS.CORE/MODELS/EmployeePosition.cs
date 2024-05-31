@@ -12,7 +12,7 @@ namespace TNS.CORE.MODELS
         public IReadOnlyList<Employee>? Employees => _employees;
 
 
-        private EmployeePosition(Guid id,
+        private EmployeePosition(Guid   id,
                                  string positionName) 
         {
             Id              = id;

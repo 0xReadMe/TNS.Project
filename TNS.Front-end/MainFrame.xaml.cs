@@ -244,11 +244,12 @@ namespace TNS.Front_end
         {
             using (HttpClient client = new HttpClient())
             {
-                var responce = await client.GetAsync("https://localhost:7110");
+                
+                var responce = await client.GetAsync("https://localhost:7110/employees");
                 responce.EnsureSuccessStatusCode();
                 if (responce.IsSuccessStatusCode)
                 {
-                    MessageBox.Show($"{responce.Content.ReadAsStringAsync()}");
+                    MessageBox.Show($"{responce.Content.ReadAsStringAsync().Result}");
                 }
                 else
                 {

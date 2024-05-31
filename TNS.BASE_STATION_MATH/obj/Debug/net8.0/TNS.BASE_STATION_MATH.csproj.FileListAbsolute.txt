@@ -1,0 +1,12 @@
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.BASE_STATION_MATH\bin\Debug\net8.0\TNS.BASE_STATION_MATH.deps.json
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.BASE_STATION_MATH\bin\Debug\net8.0\TNS.BASE_STATION_MATH.dll
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.BASE_STATION_MATH\bin\Debug\net8.0\TNS.BASE_STATION_MATH.pdb
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.BASE_STATION_MATH\obj\Debug\net8.0\TNS.BASE_STATION_MATH.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.BASE_STATION_MATH\obj\Debug\net8.0\TNS.BASE_STATION_MATH.AssemblyInfoInputs.cache
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.BASE_STATION_MATH\obj\Debug\net8.0\TNS.BASE_STATION_MATH.AssemblyInfo.cs
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.BASE_STATION_MATH\obj\Debug\net8.0\TNS.BASE_STATION_MATH.csproj.CoreCompileInputs.cache
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.BASE_STATION_MATH\obj\Debug\net8.0\TNS.BASE_STATION_MATH.sourcelink.json
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.BASE_STATION_MATH\obj\Debug\net8.0\TNS.BASE_STATION_MATH.dll
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.BASE_STATION_MATH\obj\Debug\net8.0\refint\TNS.BASE_STATION_MATH.dll
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.BASE_STATION_MATH\obj\Debug\net8.0\TNS.BASE_STATION_MATH.pdb
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.BASE_STATION_MATH\obj\Debug\net8.0\ref\TNS.BASE_STATION_MATH.dll
