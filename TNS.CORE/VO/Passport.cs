@@ -25,7 +25,7 @@ namespace TNS.CORE.VO
             DateOfIssueOfPassport = dateOfIssueOfPassport;
         }
 
-        public static Result<Passport, Error> Create(string divisionCode, string issuedBy, int series, int number, string residenceAddress, string residentialAddress, DateOnly dateOfIssueOfPassport) 
+        public static Result<Passport> Create(string divisionCode, string issuedBy, int series, int number, string residenceAddress, string residentialAddress, DateOnly dateOfIssueOfPassport) 
         {
             if (IsValidDateOfIssueOfPassport(dateOfIssueOfPassport))    throw new ArgumentException("");
             if (IsValidDivisionCode(divisionCode))                      throw new ArgumentException("");

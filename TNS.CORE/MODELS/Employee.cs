@@ -9,43 +9,107 @@ namespace TNS.CORE.MODELS
         public Guid         PositionId      { get; }                    //  id должности
         public string       FullName        { get; }                    //  ФИО сотрудника
         public string       PhotoId         { get; }                    //  путь к фото
-        public PhoneNumber  Login           { get; }                    //  авторизация
-        public string       PasswordHash    { get; }                    //  авторизация
+        public DateOnly     DateOfBirth     { get; }                    //  дата рождения
+        public string?      Telegram        { get; }                    //  telegram
+        public Email        Email           { get; }                    //  e-mail
+        public PhoneNumber  Login           { get; }                    //  авторизация (номер телефона)
+        public string       PasswordHash    { get; }                    //  авторизация (пароль)
 
         private Employee(Guid           id,
                          Guid           positionId,
                          string         fullName,
                          string         photoId,
+                         string?        telegram,
+                         DateOnly       DOB,
+                         Email          email,
                          PhoneNumber    login,
                          string         passwordHash)
         {
             Id              = id;
             FullName        = fullName; 
-            PositionId      = positionId; 
+            PositionId      = positionId;
             PhotoId         = photoId;
+            Telegram        = telegram;
+            Email           = email;
+            DateOfBirth     = DOB;
             Login           = login;
             PasswordHash    = passwordHash;
         }
 
-        public static Result<Employee> Create(Guid          id,
-                                              Guid          positionId,
+        public static Result<Employee> Create(Guid          positionId,
                                               string        fullName,
                                               string?       photoId,
+                                              string?       telegram,
+                                              DateOnly      DOB,
+                                              Email         email,
                                               PhoneNumber   login,
                                               string        passwordHash)
         {
-            if (IsValidFullName(fullName))                  return Result.Failure<Employee>("Full Name invalid.");      //  валидация ФИО
+            if (!IsValidFullName(fullName))                 return Result.Failure<Employee>("Full Name invalid.");      //  валидация ФИО
             if (PhoneNumber.Create(login.Number).IsFailure) return Result.Failure<Employee>("Login invalid.");          //  повторная валидация логина (номер телефона)
-                                                            photoId ??= "our empty photo";                              //  если фото = null, ставим заглушку
-            if (IsValidPhotoId(photoId))                    return Result.Failure<Employee>("Photo path invalid.");     //  валидация пути к фото
-            if (IsValidPasswordHash(passwordHash))          return Result.Failure<Employee>("Password hash invalid.");  //  валидация пути к фото
 
+            photoId ??= "our empty photo";                                                                              //  если фото = null, ставим заглушку
+            if (!IsValidPhotoId(photoId))                   return Result.Failure<Employee>("Photo path invalid.");     //  валидация пути к фото
+
+            if (!IsValidPasswordHash(passwordHash))         return Result.Failure<Employee>("Password hash invalid.");  //  валидация хеша
+            if (Email.Create(email.email).IsFailure)        return Result.Failure<Employee>("E-mail invalid");          //  валидация e-mail
+            if (!IsValidDOB(DOB))                           return Result.Failure<Employee>("");
+
+            telegram ??= "@TNS_COMPANY";
+            if (!IsValidTelegram(telegram)) return Result.Failure<Employee>("Telegram invalid.");                   //  валидация телеграмм
+
+            Guid id = Guid.NewGuid();
             return Result.Success(new Employee(id,
                                                positionId,
                                                fullName,
                                                photoId,
+                                               telegram,
+                                               DOB,
+                                               email,
                                                login,
                                                passwordHash));
+        }
+
+        /// <summary>
+        /// Валидация телеграмм-юзернейма
+        /// </summary>
+        /// <param name="telegram">Telegram-юзернейм</param>
+        /// <returns>True - юзернейм корректен</returns>
+        private static bool IsValidTelegram(string? telegram)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(telegram))                                                        return false;   //  юзернейм не пустой
+                if (telegram[0] != '@')                                                                         return false;   //  юзернейм начинается с символа "@"
+                if (telegram.Length - 1 > 32)                                                                   return false;   //  длина юзернейма без "@" не превышает 32 символа
+                if (!System.Text.RegularExpressions.Regex.IsMatch(telegram.Substring(1), "^[a-zA-Z0-9_]+$"))    return false;   //  юзернейм без "@" содержит только латинские буквы, цифры и символы подчёркивания
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false; // Возвращаем false, если возникла любая ошибка при проверке юзернейма
+            }
+        }
+
+        /// <summary>
+        /// Валидация даты рождения
+        /// </summary>
+        /// <param name="dOB">Дата рождения</param>
+        /// <returns>True - дата рождения валидна</returns>
+        private static bool IsValidDOB(DateOnly dOB)
+        {
+            try
+            {
+                int age = (DateOnly.FromDateTime(DateTime.Now)).Year - dOB.Year;
+                if (age < 18)                                                       return false;        //  Проверяем, что человеку не меньше 18 лет
+                if (dOB > DateOnly.FromDateTime(DateTime.Now))                      return false;        //  Проверяем, что дата рождения не в будущем
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;                                                       //  Возвращаем false, если возникла любая ошибка при проверке даты рождения
+            }
         }
 
         /// <summary>
@@ -55,6 +119,7 @@ namespace TNS.CORE.MODELS
         /// <returns>True - путь корректен.</returns>
         private static bool IsValidPhotoId(string avatarPath)
         {
+            // valid: C:\\Users\\User\\Documents\\avatar.jpg
             try
             {
                 if (string.IsNullOrWhiteSpace(avatarPath))  return false;                            // Проверяем, что путь не пуст
@@ -97,7 +162,7 @@ namespace TNS.CORE.MODELS
         /// </summary>
         /// <param name="passwordHash">Хеш</param>
         /// <returns>True - хеш корректен.</returns>
-        public static bool IsValidPasswordHash(string passwordHash)
+        private static bool IsValidPasswordHash(string passwordHash)
         {
             try
             {
