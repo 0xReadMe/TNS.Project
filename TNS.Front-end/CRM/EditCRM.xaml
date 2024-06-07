@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TNS.Front_end.CRM"
         mc:Ignorable="d"
         Title="EditCRM" Height="715" Width="600" WindowStyle="None"
-        BorderBrush="#e7f3fd" BorderThickness="3" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Topmost="True">
+        BorderBrush="#9CD8FB" BorderThickness="3" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Topmost="True">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -83,21 +83,18 @@
         <TextBlock Grid.Row="12" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Описание проблемы"></TextBlock>
         <TextBlock Grid.Row="13" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Дата закрытия"></TextBlock>
 
-        <TextBox Grid.Row="2" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
-        <TextBox Grid.Row="3" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
-        <TextBox Grid.Row="4" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
-        <TextBox Grid.Row="5" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
-        <TextBox Grid.Row="6" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
-        <TextBox Grid.Row="7" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
-        <TextBox Grid.Row="8" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
-        <DatePicker Grid.Row="9" Grid.Column="1" Template="{DynamicResource datePicker}"   Height="35" Margin="0,3,0,4" Width="265"    HorizontalAlignment="Center"/>
-        <ComboBox Grid.Row="10" Grid.Column="1"  Style="{StaticResource ComboBoxFlatStyle}" Height="35" Width="265"></ComboBox>
-        <DatePicker Grid.Row="11" Grid.Column="1" Template="{DynamicResource datePicker}"   Height="35" Margin="0,3,0,4" Width="265"    HorizontalAlignment="Center"/>
-        <TextBox Grid.Row="12" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
-        <TextBox Grid.Row="13" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
-        <TextBox Grid.Row="14" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
-        <ComboBox Grid.Row="15" Grid.Column="1" Style="{StaticResource ComboBoxFlatStyle}" Height="35" Width="265"></ComboBox>
-        <TextBox Grid.Row="16" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
+        <TextBox    Grid.Row="2"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left"></TextBox>
+        <TextBox    Grid.Row="3"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left"></TextBox>
+        <TextBox    Grid.Row="4"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left"></TextBox>
+        <DatePicker Grid.Row="5"  Grid.Column="1"                              Template="{DynamicResource datePicker}"    Height="35" Margin="0,3,0,4"  Width="265" HorizontalAlignment="Center"/>
+        <ComboBox   Grid.Row="6"  Grid.Column="1"                              Style="{StaticResource ComboBoxFlatStyle}" Height="35"                   Width="265"></ComboBox>
+        <ComboBox   Grid.Row="7"  Grid.Column="1"                              Style="{StaticResource ComboBoxFlatStyle}" Height="35"                   Width="265"></ComboBox>
+        <ComboBox   Grid.Row="8"  Grid.Column="1"                              Style="{StaticResource ComboBoxFlatStyle}" Height="35"                   Width="265"></ComboBox>
+        <ComboBox   Grid.Row="9"  Grid.Column="1"                              Style="{StaticResource ComboBoxFlatStyle}" Height="35"                   Width="265"></ComboBox>
+        <TextBox    Grid.Row="10" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left"></TextBox>
+        <ComboBox   Grid.Row="11" Grid.Column="1"                              Style="{StaticResource ComboBoxFlatStyle}" Height="35"                   Width="265"></ComboBox>
+        <TextBox    Grid.Row="12" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left"></TextBox>
+        <DatePicker Grid.Row="13" Grid.Column="1"                              Template="{DynamicResource datePicker}"    Height="35" Margin="0,3,0,4"  Width="265" HorizontalAlignment="Center"/>
 
         <Button  Grid.Row="17"                  Style="{StaticResource addButton}"     Width="270" Margin="0,4,5,11" Content="Очистить" HorizontalAlignment="Center"/>
         <Button  Grid.Row="17" Grid.Column="1"  Style="{StaticResource addButton}"     Width="270" Margin="0,4,5,11" Content="Сохранить" HorizontalAlignment="Center"/>

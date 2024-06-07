@@ -23,5 +23,8 @@ namespace TNS.Front_end.CRM
         {
             InitializeComponent();
         }
+
+        private void Image_MouseDown_Minimized(object sender, MouseButtonEventArgs e) => WindowState = WindowState.Minimized;                   //  свернуть окно
+        private void Image_MouseDown_Close(object sender, MouseButtonEventArgs e) => Close();                                                   //  закрыть окно
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TNS.Front_end"
         mc:Ignorable="d" Height="715" Width="600" WindowStartupLocation="CenterScreen" WindowStyle="None"
-        BorderBrush="#e7f3fd" BorderThickness="3" ResizeMode="NoResize" Topmost="True">
+        BorderBrush="#9CD8FB" BorderThickness="3" ResizeMode="NoResize" Topmost="True">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>

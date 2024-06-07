@@ -1,0 +1,35 @@
+﻿<Page x:Class="TNS.Front_end.Profile.EventsProfile"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TNS.Front_end.Profile"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="600"
+      Title="EventsProfile">
+
+    <Grid>
+        <StackPanel  Margin="10 60 10 10">
+            <GroupBox BorderBrush="#9CD8FB" Height="405" Width="500">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical" Width="400">
+                        <TextBlock   Style="{StaticResource TBlAddUser}"  Text="Собрание менеджеров"      FontSize="20" Width="380" Height="45" Margin="15,65,0,20" HorizontalAlignment="Left"  FontWeight="Bold" FontStyle="Italic"/>
+                        <TextBlock   Style="{StaticResource TBlAddUser}"  Text="Собрание акционеров"      FontSize="20" Width="380" Height="45" Margin="15,0,0,20"  HorizontalAlignment="Left"  FontWeight="Bold" FontStyle="Italic"/>
+                        <TextBlock   Style="{StaticResource TBlAddUser}"  Text="Отчет по инвентаризации"  FontSize="20" Width="380" Height="45" Margin="15,0,0,20"  HorizontalAlignment="Left"  FontWeight="Bold" FontStyle="Italic"/>
+                        <TextBlock   Style="{StaticResource TBlAddUser}"  Text="Отчет по главному району" FontSize="20" Width="380" Height="45" Margin="15,0,0,20"  HorizontalAlignment="Left"  FontWeight="Bold" FontStyle="Italic"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Width="100">
+                        <TextBlock Style="{StaticResource TBlAddUser}"      Text="8:00"                   FontSize="20"             Height="45" Margin="0,65,0,20"                              FontWeight="Bold" FontStyle="Italic"/>
+                        <TextBlock Style="{StaticResource TBlAddUser}"      Text="12:30"                  FontSize="20"             Height="45" Margin="0,0,0,20"                               FontWeight="Bold" FontStyle="Italic"/>
+                        <TextBlock Style="{StaticResource TBlAddUser}"                                    FontSize="20"             Height="45" Margin="0,0,0,20"                               FontWeight="Bold" FontStyle="Italic"/>
+                        <TextBlock Style="{StaticResource TBlAddUser}"                                    FontSize="20"             Height="45" Margin="0,0,0,20"                               FontWeight="Bold" FontStyle="Italic"/>
+                    </StackPanel>
+                    
+                    
+                   
+                    
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Page>

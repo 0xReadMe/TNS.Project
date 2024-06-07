@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TNS.Front_end"
         mc:Ignorable="d"
         Title="EditUser" Height="715" Width="600" WindowStyle="None"
-        BorderBrush="#e7f3fd" BorderThickness="3" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Topmost="True">
+        BorderBrush="#9CD8FB" BorderThickness="3" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Topmost="True">
 
     <Grid>
         <Grid.ColumnDefinitions>

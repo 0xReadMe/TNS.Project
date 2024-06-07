@@ -1,0 +1,82 @@
+﻿<Window x:Class="TNS.Front_end.Profile.ProfileUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TNS.Front_end.Profile"
+        mc:Ignorable="d"
+        Title="ProfileUser" Height="715" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None"
+                                                     BorderBrush="#9CD8FB" BorderThickness="3" Topmost="True">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Name="ToolBar" Grid.Row="0" Grid.Column="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Image Height="30" 
+                       Width="30" 
+                       MouseDown="Image_MouseDown_Minimized"
+                       Name="MinimizedBtn">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/Sourse/На авторизацию_Свернуь.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=MinimizedBtn}" Value="True">
+                                    <Setter Property="Source" Value="/Sourse/MouseEnter-свернуь.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+                <Image Height="30" 
+                       Width="30"
+                       MouseDown="Image_MouseDown_Close"
+                       Name="CloseBtn">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/Sourse/На авторизацию_Закрыть.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=CloseBtn}" Value="True">
+                                    <Setter Property="Source" Value="/Sourse/MouseEnter-закрыть.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1" Margin="10 20 10 0">
+            <Border Background="#9CD8FB" CornerRadius="50">
+                <DockPanel>
+                    <Border Width="175" Height="176" Padding="3" Background="White" CornerRadius="100">
+                        <Ellipse>
+                            <Ellipse.Fill>
+                                <ImageBrush  RenderOptions.EdgeMode="Aliased"  ImageSource="/SorsePhoto/ProfilePhoto3.jpg"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Border>
+                </DockPanel>
+            </Border>
+        </Grid>
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" Height="50" Margin="100 0 100 420">
+            <Button 
+                    Content="Личные данные"
+                    Style="{DynamicResource tabButton}" PreviewMouseDown="PersonalDataMouseDown"/>
+            <Button
+                    Content="События"
+                    Style="{DynamicResource tabButton}" PreviewMouseDown="EventsProfile_MouseDown"/>
+            <Button 
+                    Content="Контактные данные"
+                    Style="{DynamicResource tabButton}" PreviewMouseDown="ContactInformationProfile_MouseDown"/>
+        </StackPanel>
+        <Separator Height="1"
+                  Background="#9CD8FB"
+                  Margin="100 0 100 385"
+                  Grid.Row="2"/>
+        
+        <Frame x:Name="ContentFrameProfile" NavigationUIVisibility="Hidden" Margin="0,199,0,0" Grid.Row="1" Grid.RowSpan="2"/>
+    </Grid>
+</Window>

@@ -2,6 +2,8 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Threading;
+using TNS.Front_end.CRM;
+using TNS.Front_end.Profile;
 
 namespace TNS.Front_end;
 
@@ -18,14 +20,14 @@ public partial class MainWindow : Window
         Interval = new TimeSpan(0, 0, 0, 0, 10)                             // =======
     };                                                                      // ======= выезжающее меню слева
 
-    List<Page> pages = [ new Subscribers(), new Equipment(), new CRM() ];   // список страниц фрейма
+    List<Page> pages = [ new Subscribers(), new Equipment(), new CRM_Page() ];   // список страниц фрейма
 
     /// <summary>
     /// Страница после авторизации - абоненты.
     /// </summary>
     public MainWindow()
     {
-        InitializeComponent();
+        InitializeComponent();;
         ContentFrame.Content = pages[0];
         timer.Tick += Timer_Tick;
     }
@@ -59,8 +61,13 @@ public partial class MainWindow : Window
     private void Image_MouseDown_Minimized(object sender, MouseButtonEventArgs e) => WindowState = WindowState.Minimized;                   //  свернуть окно
     private void Image_MouseDown_Close(object sender, MouseButtonEventArgs e) => Close();                                                   //  закрыть окно
 
-    private void ListViewItem_MouseDown_MainWindow(object sender, MouseButtonEventArgs e) => ContentFrame.Navigate(typeof(MainWindow));     //  навигация
     private void Abonentter_MouseDown(object sender, MouseButtonEventArgs e) => ContentFrame.Content = pages[0];                            //  переход на страницу абонентов
     private void Equipment_MouseDown(object sender, MouseButtonEventArgs e) => ContentFrame.Content = pages[1];                             //  переход на страницу оборудования
     private void CRM_MouseDown(object sender, MouseButtonEventArgs e) => ContentFrame.Content = pages[2];                                   //  переход на страницу CRM
+
+    private void Profile_MouseDown(object sender, MouseButtonEventArgs e)
+    {
+        ProfileUser profile = new ProfileUser();
+        profile.Show();
+    }
 }

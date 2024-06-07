@@ -69,7 +69,7 @@
                        IsSynchronizedWithCurrentItem="False" 
                        MouseEnter="ListView_MouseEnter" 
                        MouseLeave="ListView_MouseEnter">
-                <ListViewItem Height="90">
+                <ListViewItem Height="90" PreviewMouseDown="Profile_MouseDown">
                     <StackPanel Orientation="Horizontal"
                                 Margin="5 10 0 0">
                         <Image Source="/Sourse/User.png"/>

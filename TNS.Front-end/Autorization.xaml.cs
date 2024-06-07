@@ -12,14 +12,14 @@ public partial class Autorization : Window
     {
         InitializeComponent();
 
-        code.Visibility = Visibility.Hidden;
-        textCode.Visibility = Visibility.Hidden;
-        refreshButton.Visibility = Visibility.Hidden;
+        //code.Visibility = Visibility.Hidden;
+        //textCode.Visibility = Visibility.Hidden;
+        //refreshButton.Visibility = Visibility.Hidden;
 
-        Hide();                                                                                                             // TODO: реализовать авторизацию и убрать
-        MainWindow main = new MainWindow();                                                                                 // TODO: реализовать авторизацию и убрать
-        main.Show();                                                                                                        // TODO: реализовать авторизацию и убрать
-        Close();                                                                                                            // TODO: реализовать авторизацию и убрать
+        //Hide();                                                                                                             // TODO: реализовать авторизацию и убрать
+        //MainWindow main = new MainWindow();                                                                                 // TODO: реализовать авторизацию и убрать
+        //main.Show();                                                                                                        // TODO: реализовать авторизацию и убрать
+        //Close();                                                                                                            // TODO: реализовать авторизацию и убрать
     }
 
     private void Image_MouseDown_Close(object sender, MouseButtonEventArgs e)       => Close();                             //  закрыть окно

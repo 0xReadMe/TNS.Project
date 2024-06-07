@@ -1,0 +1,25 @@
+﻿<Page x:Class="TNS.Front_end.Profile.ContactInformationProfile"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TNS.Front_end.Profile"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="600"
+      Title="ContactInformationProfile">
+
+    <Grid>
+        <StackPanel  Margin="10 60 10 10">
+            <GroupBox BorderBrush="#9CD8FB" Height="405" Width="500">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TBlAddUser}"      Text="E-mail" FontSize="15" Foreground="#9CD8FB" Margin="0 65 0 0"/>
+                    <TextBox   Style="{StaticResource textboxProfile}"  Text="marina.istomina.04@mail.ru" IsReadOnly="True"  Margin="15,0,0,20" HorizontalAlignment="Left"/>
+                    <TextBlock Style="{StaticResource TBlAddUser}"      Text="Телефон" FontSize="15" Foreground="#9CD8FB"/>
+                    <TextBox   Style="{StaticResource textboxProfile}"  Text="89055263751" IsReadOnly="True" Margin="15,0,0,20" HorizontalAlignment="Left"/>
+                    <TextBlock Style="{StaticResource TBlAddUser}"      Text="Telegram" FontSize="15" Foreground="#9CD8FB"/>
+                    <TextBox   Style="{StaticResource textboxProfile}"  Text="Marisa" IsReadOnly="True"  Margin="15,0,0,20" HorizontalAlignment="Left"/>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Page>

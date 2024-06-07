@@ -16,6 +16,21 @@
     <Compile Update="CRM\OpenCRM.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="CRM\TestEquipment.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Profile\ContactInformationProfile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Profile\EventsProfile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Profile\PersonalDataProfile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Profile\ProfileUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="SUBSCRIBERS\AddUser.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -49,6 +64,21 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="CRM\OpenCRM.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CRM\TestEquipment.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Profile\ContactInformationProfile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Profile\EventsProfile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Profile\PersonalDataProfile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Profile\ProfileUser.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="SUBSCRIBERS\AddUser.xaml">

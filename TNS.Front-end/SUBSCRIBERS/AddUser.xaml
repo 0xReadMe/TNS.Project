@@ -37,9 +37,9 @@
         <Grid Name="ToolBar" Grid.Row="0" Grid.Column="1">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Image Height="30" 
-       Width="30" 
-       MouseDown="Image_MouseDown_Minimized"
-       Name="MinimizedBtn">
+                       Width="30" 
+                       MouseDown="Image_MouseDown_Minimized"
+                       Name="MinimizedBtn"> 
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
                             <Setter Property="Source" Value="/Sourse/На авторизацию_Свернуь.png"/>

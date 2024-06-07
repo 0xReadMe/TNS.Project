@@ -10,12 +10,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="SorsePhoto\ProfilePhoto2.jpg" />
+    <None Remove="SorsePhoto\ProfilePhoto3.jpg" />
+    <None Remove="SorsePhoto\ProfilPhoto1.jpg" />
     <None Remove="Sourse\1.png" />
     <None Remove="Sourse\CRM.png" />
     <None Remove="Sourse\Equipment.png" />
     <None Remove="Sourse\MouseEnter-закрыть.png" />
     <None Remove="Sourse\MouseEnter-свернуь.png" />
     <None Remove="Sourse\Phone.png" />
+    <None Remove="Sourse\ProfilePhoto2.jpg" />
+    <None Remove="Sourse\ProfilPhoto1.jpg" />
+    <None Remove="Sourse\ProfilPhoto1.webp" />
     <None Remove="Sourse\Question.png" />
     <None Remove="Sourse\User.png" />
     <None Remove="Sourse\Добавить.png" />
@@ -25,10 +31,21 @@
     <None Remove="Sourse\Найти.png" />
     <None Remove="Sourse\Открыть.png" />
     <None Remove="Sourse\Редактировать.png" />
+    <None Remove="Sourse\Тестирование.gif" />
+    <None Remove="Sourse\Тестирование.png" />
     <None Remove="Sourse\Удалить.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="SorsePhoto\ProfilePhoto2.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="SorsePhoto\ProfilePhoto3.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="SorsePhoto\ProfilPhoto1.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Sourse\CRM.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -71,6 +88,12 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Sourse\Редактировать.png" />
+    <Resource Include="Sourse\Тестирование.gif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Sourse\Тестирование.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Sourse\Удалить.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

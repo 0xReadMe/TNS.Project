@@ -52,17 +52,20 @@ public partial class CRM_Page : Page
 
     private void AddButton(object sender, RoutedEventArgs e)
     {
-
+        AddCRM addCRM = new AddCRM();
+        addCRM.Show();
     }
 
     private void Edit_MouseDown(object sender, MouseButtonEventArgs e)
     {
-
+        EditCRM editCRM = new EditCRM();
+        editCRM.Show();
     }
 
     private void Open_MouseDown(object sender, MouseButtonEventArgs e)
     {
-
+        OpenCRM openCRM = new OpenCRM();
+        openCRM.Show();
     }
 
     private void RefreshButton_Click(object sender, MouseButtonEventArgs e)
@@ -73,5 +76,11 @@ public partial class CRM_Page : Page
     private void ServicesBtn_Click(object sender, RoutedEventArgs e)
     {
 
+    }
+
+    private void testEquipmentButton_Click(object sender, RoutedEventArgs e)
+    {
+        TestEquipment testEquipment = new TestEquipment();
+        testEquipment.Show();
     }
 }
