@@ -6,7 +6,7 @@ namespace TNS.CORE.MODELS
     public class Person
     {
         public Guid         Id              { get; }    //  id человека
-        public Guid         SubscriberId    { get; }    //  id абонента
+        public Guid         SubscriberId    { get; set;}//  id абонента
         public string       FirstName       { get; }    //  имя
         public string       MiddleName      { get; }    //  отчество
         public string       LastName        { get; }    //  фамилия
@@ -17,7 +17,6 @@ namespace TNS.CORE.MODELS
         public Passport     Passport        { get; }    //  паспорт
 
         private Person(Guid         id,
-                       Guid         subscriberId,
                        string       firstName,
                        string       middleName,
                        string       lastName,
@@ -28,7 +27,6 @@ namespace TNS.CORE.MODELS
                        Passport     passport) 
         {
             Id              = id;
-            SubscriberId    = subscriberId;
             FirstName       = firstName;
             MiddleName      = middleName;
             LastName        = lastName;
@@ -39,8 +37,7 @@ namespace TNS.CORE.MODELS
             Passport        = passport;
         }
 
-        public static Result<Person> Create(Guid        subscriberId,
-                                            string      firstName,
+        public static Result<Person> Create(string      firstName,
                                             string      middleName,
                                             string      lastName,
                                             char        gender,
@@ -64,16 +61,19 @@ namespace TNS.CORE.MODELS
                                 passport.DateOfIssueOfPassport).IsFailure)  return Result.Failure<Person>("Passport is invalid.");
 
             Guid id = Guid.NewGuid();
-            return Result.Success<Person>(new (id,
-                                               subscriberId,
-                                               firstName,
-                                               middleName,
-                                               lastName,
-                                               gender,
-                                               DOB,
-                                               phoneNumber,
-                                               email,
-                                               passport));
+            return Result.Success<Person>(new (id, firstName, middleName, lastName, gender, DOB, phoneNumber, email, passport));
+        }
+
+        /// <summary>
+        /// Добавление айди абонента к существующему человеку
+        /// </summary>
+        /// <param name="person">Сущность человека</param>
+        /// <param name="subId">Айди существующего абонента</param>
+        /// <returns>Сущность человека с добавленным айди существующего абонента</returns>
+        public static Result<Person> AddSubscriberId(Person person, Guid subId) 
+        {
+            person.SubscriberId = subId;
+            return Result.Success(person);
         }
 
         /// <summary>
@@ -144,7 +144,6 @@ namespace TNS.CORE.MODELS
         /// </summary>
         /// <param name="input">Строка, которую нужно проверить</param>
         /// <returns>True - содержит только буквы</returns>
-        private static bool ContainsOnlyLetters(string input)
-            => string.IsNullOrWhiteSpace(input) || System.Text.RegularExpressions.Regex.IsMatch(input, "^[a-zA-Zа-яА-Я]+$");                                // строка состоит только из букв (без цифр, пробелов и специальных символов)
+        private static bool ContainsOnlyLetters(string input) => System.Text.RegularExpressions.Regex.IsMatch(input, "^[a-zA-Zа-яА-Я]+$");                  // строка состоит только из букв (без цифр, пробелов и специальных символов)
     }
 }

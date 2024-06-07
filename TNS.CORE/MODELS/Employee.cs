@@ -59,15 +59,7 @@ namespace TNS.CORE.MODELS
             if (!IsValidTelegram(telegram)) return Result.Failure<Employee>("Telegram invalid.");                   //  валидация телеграмм
 
             Guid id = Guid.NewGuid();
-            return Result.Success(new Employee(id,
-                                               positionId,
-                                               fullName,
-                                               photoId,
-                                               telegram,
-                                               DOB,
-                                               email,
-                                               login,
-                                               passwordHash));
+            return Result.Success(new Employee(id, positionId, fullName, photoId, telegram, DOB, email, login, passwordHash));
         }
 
         /// <summary>
@@ -152,7 +144,7 @@ namespace TNS.CORE.MODELS
             if (nameParts.Length != 3) return false;                                                //  Проверяем, что ФИО состоит из трёх частей
             foreach (string part in nameParts)                                                      //  Проверяем, что каждая часть содержит только буквы
             {
-                if (!string.IsNullOrWhiteSpace(part) && !ContainsOnlyLetters(part)) return false;
+                if (!string.IsNullOrWhiteSpace(part) || !System.Text.RegularExpressions.Regex.IsMatch(part, "^[a-zA-Zа-яА-Я]+$")) return false;
             }
             return true;
         }
@@ -176,13 +168,5 @@ namespace TNS.CORE.MODELS
                 return false;                                                                                   // Возвращаем false, если возникла любая ошибка при проверке хеша
             }
         }
-
-        /// <summary>
-        /// Проверяем, что input содержит только буквы
-        /// </summary>
-        /// <param name="input">Строка, которую нужно проверить</param>
-        /// <returns>True - содержит только буквы</returns>
-        private static bool ContainsOnlyLetters(string input) 
-            => string.IsNullOrWhiteSpace(input) || System.Text.RegularExpressions.Regex.IsMatch(input, "^[a-zA-Zа-яА-Я]+$");
     }
 }

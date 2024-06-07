@@ -34,13 +34,8 @@ namespace TNS.CORE.MODELS
             if (!IsValidEventDescription(eventDescription)) return Result.Failure<Event>("Event Description invalid");  //  валидация описания события
             if (!IsValidEventTime(eventTime))               return Result.Failure<Event>("EventTime invalid");          //  валидация времени события
 
-
             Guid id = Guid.NewGuid();
-            return Result.Success<Event>(new(id,
-                                             positionId,
-                                             eventDate,
-                                             eventDescription,
-                                             eventTime));
+            return Result.Success<Event>(new(id, positionId, eventDate, eventDescription, eventTime));
         }
 
         /// <summary>
@@ -71,9 +66,9 @@ namespace TNS.CORE.MODELS
         {
             try
             {
-                if (string.IsNullOrEmpty(eventDescription))                                                     return false;   // Проверяем, что описание события не равно null
-                if (eventDescription.Length > 500)                                                              return false;   // Проверяем, что длина описания события не превышает 500 символов
-                if (!System.Text.RegularExpressions.Regex.IsMatch(eventDescription, @"^[\p{L}\p{N}\s,.!?']+$")) return false;   // Проверяем, что описание события содержит только допустимые символы (буквы, цифры, пробелы, знаки препинания)
+                if (string.IsNullOrEmpty(eventDescription))                                                     return false;   // описание события не равно null
+                if (eventDescription.Length > 25)                                                               return false;   // длина описания события не превышает 500 символов
+                if (!System.Text.RegularExpressions.Regex.IsMatch(eventDescription, @"^[\p{L}\p{N}\s,.!?']+$")) return false;   // описание события содержит только допустимые символы (буквы, цифры, пробелы, знаки препинания)
                 return true;
             }
             catch (Exception)

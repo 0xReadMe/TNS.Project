@@ -5,20 +5,19 @@ namespace TNS.CORE.MODELS
 {
     public partial class Subscriber
     {
-        public Guid         Id                              { get; }        //  id абонента
-        public Guid         PersonId                        { get; }        //  id человека
-        public string       SubscriberNumber                { get; }        //  номер абонента
-        public string       ContractNumber                  { get; }        //  номер договора
-        public bool         ContractType                    { get; }        //  тип договора (true - с пролонгацией, false - без пролонгации)
-        public string       ReasonForTerminationOfContract  { get; }        //  причина расторжения договора
-        public uint         PersonalBill                    { get; }        //  лицевой счет
-        public string       Services                        { get; }        //  услуги
-        public DateOnly     DateOfContractConclusion        { get; }        //  дата заключения договора
-        public DateOnly     DateOfTerminationOfTheContract  { get; }        //  дата расторжения договора
-        public string       SerialNumberOfEquipment         { get; }        //  серийный номер оборудования
+        public Guid     Id                              { get; }        //  id абонента
+        public Guid     PersonId                        { get; set; }   //  id человека
+        public string   SubscriberNumber                { get; }        //  номер абонента
+        public string   ContractNumber                  { get; }        //  номер договора
+        public bool     ContractType                    { get; }        //  тип договора (true - с пролонгацией, false - без пролонгации)
+        public string   ReasonForTerminationOfContract  { get; }        //  причина расторжения договора
+        public uint     PersonalBill                    { get; }        //  лицевой счет
+        public string   Services                        { get; }        //  услуги
+        public DateOnly DateOfContractConclusion        { get; }        //  дата заключения договора
+        public DateOnly DateOfTerminationOfTheContract  { get; }        //  дата расторжения договора
+        public string   SerialNumberOfEquipment         { get; }        //  серийный номер оборудования
 
         private Subscriber(Guid      id,
-                           Guid      personId,
                            DateOnly  dateOfContractConclusion,
                            DateOnly  dateOfTerminationOfTheContract,
                            string    subscriberNumber,
@@ -30,7 +29,6 @@ namespace TNS.CORE.MODELS
                            uint      personalBill)
         {
             Id                              = id;
-            PersonId                        = personId;
             SubscriberNumber                = subscriberNumber;
             ContractNumber                  = contractNumber;
             DateOfContractConclusion        = dateOfContractConclusion;
@@ -43,8 +41,7 @@ namespace TNS.CORE.MODELS
         }
 
 
-        public static Result<Subscriber> Create(Guid      personId,
-                                                DateOnly  dateOfContractConclusion,
+        public static Result<Subscriber> Create(DateOnly  dateOfContractConclusion,
                                                 DateOnly  dateOfTerminationOfTheContract,
                                                 string?   reasonForTerminationOfContract,
                                                 string    serialNumberOfEquipment,
@@ -65,17 +62,20 @@ namespace TNS.CORE.MODELS
             string subscriberNumber = GenerateSubscriberNumber();
             string contractNumber   = GenerateContractNumber(subscriberNumber, dateOfContractConclusion.Month, dateOfContractConclusion.Year);
 
-            return Result.Success<Subscriber>(new  (id,
-                                                    personId,
-                                                    dateOfContractConclusion,
-                                                    dateOfTerminationOfTheContract,
-                                                    subscriberNumber,
-                                                    contractNumber,
-                                                    reasonForTerminationOfContract,
-                                                    serialNumberOfEquipment,
-                                                    services,
-                                                    contractType,
-                                                    personalBill));
+            return Result.Success<Subscriber>(new(id, dateOfContractConclusion, dateOfTerminationOfTheContract, subscriberNumber, contractNumber,
+                                                  reasonForTerminationOfContract, serialNumberOfEquipment, services, contractType, personalBill));
+        }
+
+        /// <summary>
+        /// Добавление айди человека к существующему абоненту
+        /// </summary>
+        /// <param name="sub">Сущность абонента</param>
+        /// <param name="personId">Айди существующего человека</param>
+        /// <returns>Сущность абонента с добавленным айди существующего человека</returns>
+        public static Result<Subscriber> AddPersonId(Subscriber sub, Guid personId) 
+        {
+            sub.PersonId = personId;
+            return Result.Success(sub);
         }
 
         private static bool IsValidPersonalBill(uint personalBill) => Regex.IsMatch(personalBill.ToString(), @"^\d{9}$"); // Проверка совпадения лицевого счёта с шаблоном  
@@ -110,6 +110,7 @@ namespace TNS.CORE.MODELS
         /// <param name="serialNumberOfEquipment">Серийный номер оборудования</param>
         /// <returns>True - серийный номер оборудования корректен</returns>
         private static bool IsValidSerialNumberOfEquipment(string serialNumberOfEquipment)
+        //АО567-ТНС-11
         {
             if (string.IsNullOrEmpty(serialNumberOfEquipment)) return false;                    // Проверка на null или пустую строку
             return Regex.IsMatch(serialNumberOfEquipment, @"^[A-Z]{2}\d{3}-[A-Z]{3}-\d{2}$");   // Проверка совпадения серийного номера с шаблоном
