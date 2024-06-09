@@ -1,0 +1,16 @@
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.APPLICATION\bin\Debug\net8.0\TNS.APPLICATION.deps.json
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.APPLICATION\bin\Debug\net8.0\TNS.APPLICATION.dll
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.APPLICATION\bin\Debug\net8.0\TNS.APPLICATION.pdb
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.APPLICATION\bin\Debug\net8.0\TNS.CORE.dll
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.APPLICATION\bin\Debug\net8.0\TNS.CORE.pdb
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.APPLICATION\obj\Debug\net8.0\TNS.APPLICATION.csproj.AssemblyReference.cache
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.APPLICATION\obj\Debug\net8.0\TNS.APPLICATION.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.APPLICATION\obj\Debug\net8.0\TNS.APPLICATION.AssemblyInfoInputs.cache
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.APPLICATION\obj\Debug\net8.0\TNS.APPLICATION.AssemblyInfo.cs
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.APPLICATION\obj\Debug\net8.0\TNS.APPLICATION.csproj.CoreCompileInputs.cache
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.APPLICATION\obj\Debug\net8.0\TNS.APPLICATION.sourcelink.json
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.APPLICATION\obj\Debug\net8.0\TNS.APPL.591EDDB4.Up2Date
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.APPLICATION\obj\Debug\net8.0\TNS.APPLICATION.dll
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.APPLICATION\obj\Debug\net8.0\refint\TNS.APPLICATION.dll
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.APPLICATION\obj\Debug\net8.0\TNS.APPLICATION.pdb
+C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.APPLICATION\obj\Debug\net8.0\ref\TNS.APPLICATION.dll

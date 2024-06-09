@@ -1,10 +1,5 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TNS.CORE.INTERFACES.REPOSITORY;
 using TNS.CORE.MODELS;
 using TNS.CORE.VO;
@@ -25,23 +20,23 @@ namespace TNS.PERSISTENCE.REPOSITORIES
 
         public async Task Add(Employee employee)
         {
-            EmployeeEntity employeeEntity = new EmployeeEntity() 
-            {
-                Id = employee.Id,
-                FullName = employee.FullName,
-                PositionId = employee.PositionId,
-                //TODO: остальные поля
-            };
+            //EmployeeEntity employeeEntity = new EmployeeEntity() 
+            //{
+            //    Id = employee.Id,
+            //    FullName = employee.FullName,
+            //    PositionId = employee.PositionId,
+            //    //TODO: остальные поля
+            //};
 
-            await _context.Employee.AddAsync(employeeEntity);
-            await _context.SaveChangesAsync();
+            //await _context.Employee.AddAsync(employeeEntity);
+            //await _context.SaveChangesAsync();
         }
 
         public async Task<List<Employee>> GetAll()
         {
             List<Employee> employees = [];
 
-            await foreach(var emp in _context.Employee.AsAsyncEnumerable()) 
+            await foreach(var emp in _context.Employees.AsAsyncEnumerable()) 
             {
                 employees.Add(_mapper.Map<Employee>(emp));
             }
@@ -50,7 +45,7 @@ namespace TNS.PERSISTENCE.REPOSITORIES
 
         public async Task<Employee> GetByPhone(PhoneNumber phone)
         {
-            var employeeEntity = await _context.Employee
+            var employeeEntity = await _context.Employees
                 .AsNoTracking()
                 .FirstOrDefaultAsync(emp => emp.Login == phone) ?? throw new Exception();
 

@@ -1,0 +1,54 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "TNS.APPLICATION/1.0.0": {
+        "dependencies": {
+          "TNS.CORE": "1.0.0"
+        },
+        "runtime": {
+          "TNS.APPLICATION.dll": {}
+        }
+      },
+      "CSharpFunctionalExtensions/2.41.0": {
+        "runtime": {
+          "lib/net6.0/CSharpFunctionalExtensions.dll": {
+            "assemblyVersion": "2.41.0.0",
+            "fileVersion": "2.41.0.0"
+          }
+        }
+      },
+      "TNS.CORE/1.0.0": {
+        "dependencies": {
+          "CSharpFunctionalExtensions": "2.41.0"
+        },
+        "runtime": {
+          "TNS.CORE.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TNS.APPLICATION/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CSharpFunctionalExtensions/2.41.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-g9uR6a/tfnstew4FHjZost/NxgJ6gnZKCI2EuNC5MOGx0L6ntrReTegO4LHfpXCy9kREbXfrgHW8DI6QV+YbDQ==",
+      "path": "csharpfunctionalextensions/2.41.0",
+      "hashPath": "csharpfunctionalextensions.2.41.0.nupkg.sha512"
+    },
+    "TNS.CORE/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

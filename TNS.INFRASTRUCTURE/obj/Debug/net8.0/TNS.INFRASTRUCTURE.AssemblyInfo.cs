@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TNS.INFRASTRUCTURE")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d7ed58cf0a5a2c12264c7ca5fb8b175746e50b8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+04e50f9fd404dc670a222589d624b9df7471efee")]
 [assembly: System.Reflection.AssemblyProductAttribute("TNS.INFRASTRUCTURE")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TNS.INFRASTRUCTURE")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
