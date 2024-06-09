@@ -15,48 +15,51 @@ namespace TNS.CORE.VO
         {
             if (!IsValidEmail(email)) return Result.Failure<Email>("Некорректный E-mail.");
 
-            return Result.Success(new Email(email));
+            return Result.Success<Email>(new(email));
         }
 
         /// <summary>
         /// Проверка валидности входного e-mail.
+        /// <para>
+        /// Valid: david.jones@proseware.com
+        ///  Valid: d.j@server1.proseware.com
+        ///  Valid: jones@ms1.proseware.com
+        ///  Valid: j@proseware.com9
+        ///  Valid: js#internal@proseware.com
+        ///  Valid: j_9@[129.126.118.1]
+        ///  Valid: js@proseware.com9
+        ///  Valid: j.s@server1.proseware.com
+        ///  Valid: "j\"s\""@proseware.com
+        ///  Valid: js@contoso.中国
+        ///  Invalid: j.@server1.proseware.com
+        ///  Invalid: j..s@proseware.com
+        ///  Invalid: js*@proseware.com
+        ///  Invalid: js@proseware..com 
+        /// </para>
         /// </summary>
         /// <param name="email">Входной e-mail</param>
         /// <returns>True - e-mail корректен</returns>
         static bool IsValidEmail(string email)
-        //       Valid: david.jones@proseware.com
-        //       Valid: d.j@server1.proseware.com
-        //       Valid: jones@ms1.proseware.com
-        //       Valid: j@proseware.com9
-        //       Valid: js#internal@proseware.com
-        //       Valid: j_9@[129.126.118.1]
-        //       Valid: js@proseware.com9
-        //       Valid: j.s@server1.proseware.com
-        //       Valid: "j\"s\""@proseware.com
-        //       Valid: js@contoso.中国
-        //       Invalid: j.@server1.proseware.com
-        //       Invalid: j..s@proseware.com
-        //       Invalid: js*@proseware.com
-        //       Invalid: js@proseware..com
         {
             if (string.IsNullOrWhiteSpace(email)) return false;
             try
             {
-                email = Regex.Replace(email, @"(@)(.+)$", DomainMapper, RegexOptions.None, TimeSpan.FromMilliseconds(200)); //  нормализация домена
+                email = Regex.Replace(email, @"(@)(.+)$", 
+                    DomainMapper, RegexOptions.None, 
+                    TimeSpan.FromMilliseconds(200));                            //  нормализация домена
 
-                //  рассматриваем доменную часть письма и нормализует ее
-                string DomainMapper(Match match)                                                                            
+                static string DomainMapper(Match match)                         //  рассматриваем доменную часть письма и нормализуем ее
                 {
                     var idn = new IdnMapping();                                 //  конвертирования доменных имен Unicode
                     string domainName = idn.GetAscii(match.Groups[2].Value);    //  извлекаем и обрабатываем доменное имя (выбрасывает ArgumentException, если оно недействительно)
                     return match.Groups[1].Value + domainName;
                 }
             }
-            catch (RegexMatchTimeoutException e)
+            catch (RegexMatchTimeoutException)
             {
                 return false;
             }
-            catch (ArgumentException e)
+            catch (ArgumentException)
             {
                 return false;
             }

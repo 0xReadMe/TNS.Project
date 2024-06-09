@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.core\\vo\\passport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|solutionrelative:tns.core\\vo\\passport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Passport.cs",
+              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.CORE\\VO\\Passport.cs",
+              "RelativeDocumentMoniker": "TNS.CORE\\VO\\Passport.cs",
+              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.CORE\\VO\\Passport.cs",
+              "RelativeToolTip": "TNS.CORE\\VO\\Passport.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAADAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T17:45:25.388Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

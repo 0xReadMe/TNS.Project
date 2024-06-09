@@ -12,16 +12,28 @@ namespace TNS.CORE.VO
 
         public static Result<PhoneNumber> Create(string input)
         {
-            if (!IsPhoneNumber(input)) return Result.Failure<PhoneNumber>("Phone number invalid.");
+            if (!IsPhoneNumber(input)) return Result.Failure<PhoneNumber>("Phone number invalid."); //  валидация номер телефона
 
-            return Result.Success(new PhoneNumber(input));
+            return Result.Success<PhoneNumber>(new (input));
         }
 
+        /// <summary>
+        /// Валидация номера телефона
+        /// </summary>
+        /// <param name="number">Номер телефона</param>
+        /// <returns>True - номер телефона корректен</returns>
         public static bool IsPhoneNumber(string number)
         {
-            if (string.IsNullOrEmpty(number))           return false;
-            if (!MyRegex().Match(number).Success)       return false;
-            return true;
+            try
+            {
+                if (string.IsNullOrEmpty(number))       return false;   //  не null и не пустая строка
+                if (!MyRegex().Match(number).Success)   return false;   //  совпадает с регуляркой
+                return true;
+            }
+            catch 
+            {
+                return false;
+            }
         }
 
         protected override IEnumerable<IComparable> GetEqualityComponents()
