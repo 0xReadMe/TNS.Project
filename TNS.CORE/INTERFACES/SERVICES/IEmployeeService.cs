@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TNS.CORE.MODELS;
+﻿using TNS.CORE.MODELS;
 
-namespace TNS.CORE.INTERFACES.SERVICES
+namespace TNS.CORE.INTERFACES.SERVICES;
+
+public interface IEmployeeService
 {
-    public interface IEmployeeService
-    {
-        Task<string> Login(string phoneNumber, string password);
-        Task<List<Employee>> GetAll();
-    }
+    Task<string> Login(string phoneNumber, string password);
+    Task<List<Employee>> GetAll();
 }

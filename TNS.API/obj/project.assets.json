@@ -2411,16 +2411,6 @@
           "bin/placeholder/TNS.APPLICATION.dll": {}
         }
       },
-      "TNS.BASE_STATION_MATH/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
-          "bin/placeholder/TNS.BASE_STATION_MATH.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/TNS.BASE_STATION_MATH.dll": {}
-        }
-      },
       "TNS.CORE/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -6964,11 +6954,6 @@
       "path": "../TNS.APPLICATION/TNS.APPLICATION.csproj",
       "msbuildProject": "../TNS.APPLICATION/TNS.APPLICATION.csproj"
     },
-    "TNS.BASE_STATION_MATH/1.0.0": {
-      "type": "project",
-      "path": "../TNS.BASE_STATION_MATH/TNS.BASE_STATION_MATH.csproj",
-      "msbuildProject": "../TNS.BASE_STATION_MATH/TNS.BASE_STATION_MATH.csproj"
-    },
     "TNS.CORE/1.0.0": {
       "type": "project",
       "path": "../TNS.Core/TNS.CORE.csproj",
@@ -6995,7 +6980,6 @@
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 8.0.4",
       "Swashbuckle.AspNetCore >= 6.5.0",
       "TNS.APPLICATION >= 1.0.0",
-      "TNS.BASE_STATION_MATH >= 1.0.0",
       "TNS.CORE >= 1.0.0",
       "TNS.INFRASTRUCTURE >= 1.0.0",
       "TNS.PERSISTENCE >= 1.0.0"
@@ -7030,9 +7014,6 @@
           "projectReferences": {
             "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.APPLICATION\\TNS.APPLICATION.csproj": {
               "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.APPLICATION\\TNS.APPLICATION.csproj"
-            },
-            "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.BASE_STATION_MATH\\TNS.BASE_STATION_MATH.csproj": {
-              "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.BASE_STATION_MATH\\TNS.BASE_STATION_MATH.csproj"
             },
             "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.Core\\TNS.CORE.csproj": {
               "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.Core\\TNS.CORE.csproj"

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TNS.BASE_STATION_MATH")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ac17f9128ff40c2e2049bdade10eb776abf41ddc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d7ed58cf0a5a2c12264c7ca5fb8b175746e50b8")]
 [assembly: System.Reflection.AssemblyProductAttribute("TNS.BASE_STATION_MATH")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TNS.BASE_STATION_MATH")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
