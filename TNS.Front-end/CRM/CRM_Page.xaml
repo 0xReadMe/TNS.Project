@@ -31,7 +31,7 @@
 
             <Grid Width="300"
             HorizontalAlignment="Left"
-            Margin="120 0 0 0">
+            Margin="120 52 0 8">
                 <TextBlock Margin="20 0" 
                      VerticalAlignment="Center" 
                      Foreground="#339AF0" 

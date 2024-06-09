@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TNS.Front_end.CRM;
+using TNS.Front_end.EQUIPMENT;
 
 namespace TNS.Front_end
 {
@@ -20,9 +22,18 @@ namespace TNS.Front_end
     /// </summary>
     public partial class Equipment : Page
     {
+        
+        List<Page> pages = [new EquipmentMagisralNetworks(), new EquipmentAccessNetwork()];   // список страниц фрейма
+
         public Equipment()
         {
             InitializeComponent();
+            ContentFrameEquipment.Content = pages[0];
+
         }
+
+        private void EMN_MouseDown(object sender, MouseButtonEventArgs e) => ContentFrameEquipment.Content = pages[0];                            //  переход на страницу оборудования магистральных сетей
+        private void EAN_MouseDown(object sender, MouseButtonEventArgs e) => ContentFrameEquipment.Content = pages[1];                             //  переход на страницу оборудования сетей доступа
+
     }
 }

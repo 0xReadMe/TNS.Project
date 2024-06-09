@@ -15,6 +15,7 @@
     <None Remove="SorsePhoto\ProfilPhoto1.jpg" />
     <None Remove="Sourse\1.png" />
     <None Remove="Sourse\CRM.png" />
+    <None Remove="Sourse\Employee.png" />
     <None Remove="Sourse\Equipment.png" />
     <None Remove="Sourse\MouseEnter-закрыть.png" />
     <None Remove="Sourse\MouseEnter-свернуь.png" />
@@ -23,6 +24,7 @@
     <None Remove="Sourse\ProfilPhoto1.jpg" />
     <None Remove="Sourse\ProfilPhoto1.webp" />
     <None Remove="Sourse\Question.png" />
+    <None Remove="Sourse\Send.png" />
     <None Remove="Sourse\User.png" />
     <None Remove="Sourse\Добавить.png" />
     <None Remove="Sourse\На авторизацию_Закрыть — копия.png" />
@@ -49,6 +51,9 @@
     <Resource Include="Sourse\CRM.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Sourse\Employee.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Sourse\Equipment.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -62,6 +67,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Sourse\Question.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Sourse\Send.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Sourse\User.png">

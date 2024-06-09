@@ -565,7 +565,7 @@
         </Style>
         <!--#endregion-->
         <!-- Flat ComboBox -->
-        <SolidColorBrush x:Key="ComboBoxNormalBorderBrush" Color="#9CD8FB" />
+        <SolidColorBrush x:Key="ComboBoxNormalBorderBrush" Color="#339AF0" />
         <SolidColorBrush x:Key="ComboBoxNormalBackgroundBrush" Color="#e7f3fd" />
         <SolidColorBrush x:Key="ComboBoxDisabledForegroundBrush" Color="#024C8C" />
         <SolidColorBrush x:Key="ComboBoxDisabledBackgroundBrush" Color="#e7f3fd" />
@@ -598,13 +598,7 @@
                     <Setter Property="Panel.Background" TargetName="ButtonBorder" Value="#9CD8FB"/>
                     <Setter Property="Shape.Fill" TargetName="Arrow" Value="#024C8C"/>
                 </Trigger>
-                <Trigger Property="UIElement.IsEnabled" Value="False">
-                    <Setter Property="Panel.Background" TargetName="Border" Value="{StaticResource ComboBoxDisabledBackgroundBrush}"/>
-                    <Setter Property="Panel.Background" TargetName="ButtonBorder" Value="{StaticResource ComboBoxDisabledBackgroundBrush}"/>
-                    <Setter Property="Border.BorderBrush" TargetName="ButtonBorder" Value="{StaticResource ComboBoxDisabledBorderBrush}"/>
-                    <Setter Property="TextElement.Foreground" Value="{StaticResource ComboBoxDisabledForegroundBrush}"/>
-                    <Setter Property="Shape.Fill" TargetName="Arrow" Value="#024C8C"/>
-                </Trigger>
+                
             </ControlTemplate.Triggers>
         </ControlTemplate>
 
@@ -634,7 +628,7 @@
                      IsReadOnly="{TemplateBinding IsReadOnly}"
                      Visibility="Hidden" Background="Transparent"
                      HorizontalAlignment="Left" VerticalAlignment="Center"
-                     Focusable="True" >
+                     Focusable="False" >
                                 <TextBox.Template>
                                     <ControlTemplate TargetType="TextBox" >
                                         <Border Name="PART_ContentHost" Focusable="False"/>
@@ -661,7 +655,7 @@
                                     <ScrollViewer Margin="5"
                                                   SnapsToDevicePixels="True"
                                                   >
-                                        <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained"/>
+                                        <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained" />
                                     </ScrollViewer>
                                 </Grid>
                             </Popup>
@@ -681,11 +675,30 @@
                                 <Setter Property="UIElement.Visibility" TargetName="PART_EditableTextBox" Value="Visible"/>
                                 <Setter Property="UIElement.Visibility" TargetName="ContentSite" Value="Hidden"/>
                             </Trigger>
+                            
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
-        
+
+        <!--<Style x:Key="ComboBox" TargetType="{x:Type ComboBoxItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ComboBoxItem}">
+                        <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="True">
+                            <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="Bd" Value="red"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>-->
+
     </Application.Resources>
 </Application>

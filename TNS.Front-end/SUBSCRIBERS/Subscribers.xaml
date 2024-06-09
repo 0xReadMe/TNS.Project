@@ -31,7 +31,7 @@
 
             <Grid Width="300"
             HorizontalAlignment="Left"
-            Margin="120 0 0 0">
+            Margin="120 52 0 8">
                 <TextBlock Margin="20 0" 
                      VerticalAlignment="Center" 
                      Foreground="#339AF0" 
@@ -64,7 +64,7 @@
         </Grid>
         <Separator Height="1"
                   Background="#9CD8FB"
-                  Margin="430,32,430,766"
+                  Margin="450,32,430,766"
                   Grid.Row="1"/>
 
         <StackPanel Margin="450,0,0,764"
@@ -236,6 +236,8 @@
                   Width="300"
                   Height="30"
                   SelectionChanged="CBSort_SelectionChanged" Grid.Row="1"
-                  HorizontalContentAlignment="Center"/>
+                  HorizontalContentAlignment="Center"
+                  />
+        <!--ItemContainerStyle="{DynamicResource ComboBox}"-->
     </Grid>
 </Page>

@@ -85,7 +85,7 @@
                         <Image Source="/Sourse/Phone.png" Height="60"/>
                         <TextBlock Text="Абоненты"
                                    VerticalAlignment="Center"
-                                   Margin="45 0 0 0"/>
+                                   Margin="25 0 0 0"/>
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem PreviewMouseDown="Equipment_MouseDown" Height="80"
@@ -93,9 +93,9 @@
                     <StackPanel  Orientation="Horizontal"
                                 Margin="15 0 0 0">
                         <Image Source="/Sourse/Equipment.png" Height="70"/>
-                        <TextBlock Text="   Управление&#x0a;оборудованием"
+                        <TextBlock Text="Оборудование"
                                    VerticalAlignment="Center"
-                                   Margin="10 0 0 0"/>
+                                   Margin="15 0 0 0"/>
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem PreviewMouseDown="CRM_MouseDown" Height="80"
@@ -105,11 +105,21 @@
                         <Image Source="/Sourse/CRM.png" Height="63"/>
                         <TextBlock Text="CRM"
                                    VerticalAlignment="Center"
-                                   Margin="40 0 0 0"/>
+                                   Margin="20 0 0 0"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem PreviewMouseDown="Employee_MouseDown" Height="80"
+                              Margin="3 50 0 0" >
+                    <StackPanel Orientation="Horizontal"
+                                Margin="15 0 0 0">
+                        <Image Source="/Sourse/Employee.png" Height="63"/>
+                        <TextBlock Text="Сотрудники"
+                                   VerticalAlignment="Center"
+                                   Margin="20 0 0 0"/>
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem Height="50"
-                              Margin="0 0 0 -490">
+                              Margin="0 0 0 -250" PreviewMouseDown="Help_MouseDown">
                     <StackPanel Orientation="Horizontal"
                                 Margin="20 0 0 0">
                         <Image Source="/Sourse/Question.png"/>

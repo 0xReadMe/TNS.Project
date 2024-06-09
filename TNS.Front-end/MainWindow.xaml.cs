@@ -4,6 +4,8 @@ using System.Windows.Input;
 using System.Windows.Threading;
 using TNS.Front_end.CRM;
 using TNS.Front_end.Profile;
+using TNS.Front_end.Help;
+using TNS.Front_end.Employee;
 
 namespace TNS.Front_end;
 
@@ -20,7 +22,7 @@ public partial class MainWindow : Window
         Interval = new TimeSpan(0, 0, 0, 0, 10)                             // =======
     };                                                                      // ======= выезжающее меню слева
 
-    List<Page> pages = [ new Subscribers(), new Equipment(), new CRM_Page() ];   // список страниц фрейма
+    List<Page> pages = [ new Subscribers(), new Equipment(), new CRM_Page(), new Employee_Page()];   // список страниц фрейма
 
     /// <summary>
     /// Страница после авторизации - абоненты.
@@ -64,10 +66,18 @@ public partial class MainWindow : Window
     private void Abonentter_MouseDown(object sender, MouseButtonEventArgs e) => ContentFrame.Content = pages[0];                            //  переход на страницу абонентов
     private void Equipment_MouseDown(object sender, MouseButtonEventArgs e) => ContentFrame.Content = pages[1];                             //  переход на страницу оборудования
     private void CRM_MouseDown(object sender, MouseButtonEventArgs e) => ContentFrame.Content = pages[2];                                   //  переход на страницу CRM
+    private void Employee_MouseDown(object sender, MouseButtonEventArgs e) => ContentFrame.Content = pages[3];                                   //  переход на страницу CRM
 
     private void Profile_MouseDown(object sender, MouseButtonEventArgs e)
     {
         ProfileUser profile = new ProfileUser();
         profile.Show();
     }
+
+    private void Help_MouseDown(object sender, MouseButtonEventArgs e)
+    {
+        HelpUsers helpUsers = new HelpUsers();
+        helpUsers.Show();
+    }
+
 }

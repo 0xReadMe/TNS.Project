@@ -19,6 +19,45 @@
     <Compile Update="CRM\TestEquipment.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Employee\AddEmployee.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Employee\EditEmployee.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Employee\Employee_Page.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Employee\OpenEmployee.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EQUIPMENT\AddEquipmentAccessNetwork.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EQUIPMENT\AddEquipmentMagisralNetworks.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EQUIPMENT\EditEquipmentAccessNetwork.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EQUIPMENT\EditEquipmentMagisralNetworks.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EQUIPMENT\EquipmentAccessNetwork.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EQUIPMENT\EquipmentMagisralNetworks.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EQUIPMENT\OpenEquipmentAccessNetwork.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EQUIPMENT\OpenEquipmentMagisralNetworks.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Help\HelpUsers.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Profile\ContactInformationProfile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -67,6 +106,45 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="CRM\TestEquipment.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Employee\AddEmployee.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Employee\EditEmployee.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Employee\Employee_Page.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Employee\OpenEmployee.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EQUIPMENT\AddEquipmentAccessNetwork.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EQUIPMENT\AddEquipmentMagisralNetworks.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EQUIPMENT\EditEquipmentAccessNetwork.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EQUIPMENT\EditEquipmentMagisralNetworks.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EQUIPMENT\EquipmentAccessNetwork.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EQUIPMENT\EquipmentMagisralNetworks.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EQUIPMENT\OpenEquipmentAccessNetwork.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EQUIPMENT\OpenEquipmentMagisralNetworks.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Help\HelpUsers.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Profile\ContactInformationProfile.xaml">
