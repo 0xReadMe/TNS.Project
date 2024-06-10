@@ -4,6 +4,7 @@ using System.Windows.Input;
 using TNS.Front_end.SUBSCRIBERS;
 using TNS.Front_end.Utils;
 
+
 namespace TNS.Front_end;
 
 /// <summary>
@@ -273,5 +274,20 @@ public partial class Subscribers : Page
     {
         EditUser editUser = new EditUser();
         editUser.Show();
+    }
+
+    private void DeleteMouseDown(object sender, MouseButtonEventArgs e)
+    {
+        string messageBox = "Вы точно хотите удалить...";
+        ShowMessage(messageBox);
+
+    }
+
+    public static MessageBoxResult ShowMessage(string message)
+    {
+        var dialog = new MessageWindow();
+        dialog.MessageContainer.Text = message;
+        dialog.ShowDialog();
+        return MessageBoxResult.None;
     }
 }

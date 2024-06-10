@@ -1,0 +1,63 @@
+﻿<Window x:Class="TNS.Front_end.MessageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TNS.Front_end"
+        mc:Ignorable="d"
+        Title="MessageWindow" Height="200" Width="300" ResizeMode="NoResize" 
+        WindowStyle="None" BorderBrush="#9CD8FB" BorderThickness="3" Topmost="True" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Grid Name="ToolBar" Grid.Row="0" Grid.Column="1">
+            <TextBlock Text="Обратная связь" 
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left"
+                FontSize="25" 
+                Foreground="#024C8C"
+                Margin="250,4,250,0"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 0 20">
+                <Image Height="30" 
+                Width="30" 
+                MouseDown="Image_MouseDown_Minimized"
+                Name="MinimizedBtn">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/Sourse/На авторизацию_Свернуь.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=MinimizedBtn}" Value="True">
+                                    <Setter Property="Source" Value="/Sourse/MouseEnter-свернуь.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+                <Image Height="30" 
+                Width="30"
+                MouseDown="Image_MouseDown_Close"
+                Name="CloseBtn">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/Sourse/На авторизацию_Закрыть.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=CloseBtn}" Value="True">
+                                    <Setter Property="Source" Value="/Sourse/MouseEnter-закрыть.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </StackPanel>
+        </Grid>
+        <TextBlock Name="MessageContainer" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="25 15" Foreground="#024C8C" FontSize="15"/>
+        <StackPanel Name="ButtonContainer" Grid.Row="2" Orientation="Horizontal"
+                    HorizontalAlignment="Right" Width="300">
+            <Button Content="Да" Style="{StaticResource addButton}" Width="75" Height="30" Margin="140 0 0 0" FontSize="15" Background="#9CD8FB"/>
+            <Button Content="Нет" Style="{StaticResource addButton}"  Width="75" Height="30" Margin="5 0 0 0" FontSize="15" Background="#9CD8FB"/>
+        </StackPanel>
+    </Grid>
+</Window>

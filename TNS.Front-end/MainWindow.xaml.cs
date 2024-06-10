@@ -32,6 +32,10 @@ public partial class MainWindow : Window
         InitializeComponent();;
         ContentFrame.Content = pages[0];
         timer.Tick += Timer_Tick;
+        //Hide();                                                                                                             // TODO: реализовать авторизацию и убрать
+        //Autorization main = new Autorization();                                                                                 // TODO: реализовать авторизацию и убрать
+        //main.Show();                                                                                                        // TODO: реализовать авторизацию и убрать
+        //Close();                                                                                                            // TODO: реализовать авторизацию и убрать
     }
 
     /// <summary>

@@ -58,6 +58,9 @@
     <Compile Update="Help\HelpUsers.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="MessageWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Profile\ContactInformationProfile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -145,6 +148,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Help\HelpUsers.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MessageWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Profile\ContactInformationProfile.xaml">

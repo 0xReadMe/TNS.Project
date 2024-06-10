@@ -78,3 +78,5 @@ C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\Employ
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\Employee\AddEmployee.baml
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\Employee\EditEmployee.baml
 C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\Employee\OpenEmployee.baml
+C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\MessageWindow.g.cs
+C:\Users\Marin\Desktop\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\MessageWindow.baml

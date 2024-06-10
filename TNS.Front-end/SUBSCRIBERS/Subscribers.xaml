@@ -209,7 +209,7 @@
                                        Height="30"
                                        CornerRadius="50"
                                        Margin="0 0 5 0">
-                                    <Ellipse Cursor="Hand" >
+                                    <Ellipse Cursor="Hand" MouseDown="DeleteMouseDown" >
                                         <Ellipse.ToolTip>
                                             <ToolTip Style="{StaticResource toolTip}">
                                                 <TextBlock Text="Удалить"/>
