@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Name": "TNS.Front-end\\TNS.Front-end.csproj",
+        "Action": "StartWithoutDebugging"
+      },
+      {
+        "Name": "TNS.API\\TNS.API.csproj",
+        "Action": "StartWithoutDebugging"
+      }
+    ]
+  }
+]
