@@ -1,6 +1,4 @@
-﻿using TNS.CORE.VO;
-
-namespace TNS.API.CONTRACTS.SUBSCRIBERS;
+﻿namespace TNS.API.CONTRACTS.SUBSCRIBERS;
 
 public record AddSubscriber_POST
 (
@@ -20,7 +18,13 @@ public record AddSubscriber_POST
     string LastName,
     char Gender,
     DateOnly DOB,
-    PhoneNumber PhoneNumber,
-    Email Email,
-    Passport Passport
+    string PhoneNumber,
+    string Email,
+    string DivisionCode,
+    string IssuedBy,
+    int Series,
+    int Number,
+    string ResidenceAddress,
+    string ResidentialAddress,
+    DateOnly DateOfIssueOfPassport
 );

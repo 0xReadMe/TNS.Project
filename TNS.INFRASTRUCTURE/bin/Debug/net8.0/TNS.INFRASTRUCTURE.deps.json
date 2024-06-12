@@ -33,6 +33,7 @@
       },
       "TNS.APPLICATION/1.0.0": {
         "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0",
           "TNS.CORE": "1.0.0"
         },
         "runtime": {

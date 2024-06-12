@@ -1,4 +1,4 @@
-﻿using TNS.CORE.MODELS;
+﻿using TNS.CORE.MODELS.EMPLOYEE;
 
 namespace TNS.APPLICATION.Auth
 {
