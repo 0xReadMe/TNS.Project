@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.CookiePolicy;
-using Microsoft.EntityFrameworkCore;
 using TNS.API.EXTENSIONS;
-using TNS.APPLICATION.SERVICES;
-using TNS.CORE.INTERFACES.REPOSITORY;
+using TNS.APPLICATION;
 using TNS.PERSISTENCE;
 using TNS.PERSISTENCE.MAPPINGS;
-using TNS.PERSISTENCE.REPOSITORIES;
+using TNS.INFRASTRUCTURE;
+using Microsoft.AspNetCore.Authorization;
+
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
@@ -17,12 +17,15 @@ services.AddControllers();
 services.AddEndpointsApiExplorer();
 services.AddSwaggerGen();
 
-services.AddDbContext<TNSDbContext>(options =>
-{
-    options.UseNpgsql(configuration.GetConnectionString("TNSDbContext"));
-});
-services.AddScoped<IEmployeeRepository, EmployeeRepository>();
-services.AddScoped<EmployeeService>();
+
+//services.Configure<JwtOptions>(configuration.GetSection(nameof(JwtOptions)));
+//services.Configure<AuthorizationOptions>(configuration.GetSection(nameof(AuthorizationOptions)));
+
+services
+    .AddPersistence(configuration)
+    .AddApplication()
+    .AddInfrastructure();
+
 services.AddProblemDetails();
 services.AddAutoMapper(typeof(DataBaseMappings));
 

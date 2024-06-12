@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TNS.Front-end", "TNS.Front-end\TNS.Front-end.csproj", "{348D710B-215C-4D2D-85DB-304229D68116}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TNS.CORE", "TNS.Core\TNS.CORE.csproj", "{543ED3D3-9531-421F-896A-CA4AD02B7F55}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TNS.PERSISTENCE", "TNS.PERSISTENCE\TNS.PERSISTENCE.csproj", "{EBA2F5A3-5EB9-4F37-BEA8-C9E0261843E1}"
@@ -15,18 +13,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TNS.INFRASTRUCTURE", "TNS.I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TNS.API", "TNS.API\TNS.API.csproj", "{96FE4034-4D6D-487A-AE32-ABABE20282BB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TNS.BASE_STATION_MATH", "TNS.BASE_STATION_MATH\TNS.BASE_STATION_MATH.csproj", "{5916373B-AEA2-48C0-A414-D11E0144045C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{348D710B-215C-4D2D-85DB-304229D68116}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{348D710B-215C-4D2D-85DB-304229D68116}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{348D710B-215C-4D2D-85DB-304229D68116}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{348D710B-215C-4D2D-85DB-304229D68116}.Release|Any CPU.Build.0 = Release|Any CPU
 		{543ED3D3-9531-421F-896A-CA4AD02B7F55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{543ED3D3-9531-421F-896A-CA4AD02B7F55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{543ED3D3-9531-421F-896A-CA4AD02B7F55}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,10 +39,6 @@ Global
 		{96FE4034-4D6D-487A-AE32-ABABE20282BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96FE4034-4D6D-487A-AE32-ABABE20282BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96FE4034-4D6D-487A-AE32-ABABE20282BB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5916373B-AEA2-48C0-A414-D11E0144045C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5916373B-AEA2-48C0-A414-D11E0144045C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5916373B-AEA2-48C0-A414-D11E0144045C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5916373B-AEA2-48C0-A414-D11E0144045C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

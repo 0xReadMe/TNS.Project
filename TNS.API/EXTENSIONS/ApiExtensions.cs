@@ -7,6 +7,9 @@ namespace TNS.API.EXTENSIONS
         public static void AddMappedEndpoints(this IEndpointRouteBuilder app)
         {
             app.MapEmployeeEndpoints();
+            app.MapSubscriberEndpoints();
+            app.MapEquipmentEndpoints();
+            app.MapCRMEndpoints();
         }
     }
 }
