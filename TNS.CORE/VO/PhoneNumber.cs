@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace TNS.CORE.VO
 =======
 namespace TNS.CORE.VO;
@@ -46,6 +47,23 @@ public partial class PhoneNumber : ValueObject
         [GeneratedRegex(phoneRegex)]
         private static partial Regex MyRegex();
 =======
+        return Result.Success<PhoneNumber>(new (input));
+>>>>>>> backend
+=======
+namespace TNS.CORE.VO;
+
+public partial class PhoneNumber : ValueObject
+{
+    private const string phoneRegex = @"^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$";
+
+    public string Number { get; }
+
+    private PhoneNumber(string number) => Number = number;
+
+    public static Result<PhoneNumber> Create(string input)
+    {
+        if (!IsPhoneNumber(input)) return Result.Failure<PhoneNumber>("Phone number invalid."); //  валидация номер телефона
+
         return Result.Success<PhoneNumber>(new (input));
 >>>>>>> backend
 =======

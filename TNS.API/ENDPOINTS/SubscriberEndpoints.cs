@@ -113,14 +113,22 @@ namespace TNS.API.ENDPOINTS
             return Results.Ok();
         }
 
+<<<<<<< HEAD
         private static async Task<Microsoft.AspNetCore.Http.IResult> GetSubscriberById(HttpContext httpContextm,
+=======
+        private static async Task<Microsoft.AspNetCore.Http.IResult> GetSubscriberById(
+>>>>>>> backend
             SubscriberService subscriberService, [FromRoute] Guid id)
         {
             var result = await subscriberService.GetByGuidSubscriber(id);
             return Results.Ok(result.Value);
         }
 
+<<<<<<< HEAD
         private static async Task<Microsoft.AspNetCore.Http.IResult> GetAllSubscribers(HttpContext httpContextm, SubscriberService subscriberService)
+=======
+        private static async Task<Microsoft.AspNetCore.Http.IResult> GetAllSubscribers(SubscriberService subscriberService)
+>>>>>>> backend
         {
             var result = await subscriberService.GetAllSubscribers();
             return Results.Ok(result.Value);
