@@ -1,22 +1,20 @@
 ﻿using CSharpFunctionalExtensions;
 using TNS.CORE.VO;
-
+using System.Text.RegularExpressions;
 namespace TNS.CORE.MODELS.EMPLOYEE;
 
 public class Employee
 {
-    public Guid Id { get; }                    //  id сотрудника
-    public Guid PositionId { get; }                    //  id должности
-    public string FullName { get; }                    //  ФИО сотрудника
-    public string PhotoId { get; }                    //  путь к фото
-    public DateOnly DateOfBirth { get; }                    //  дата рождения
-    public string? Telegram { get; }                    //  telegram
-    public Email Email { get; }                    //  e-mail
-    public PhoneNumber Login { get; }                    //  авторизация (номер телефона)
-    public string PasswordHash { get; }                    //  авторизация (пароль)
+    public Guid         Id { get; }                    //  id сотрудника
+    public string       FullName { get; }                    //  ФИО сотрудника
+    public string       PhotoId { get; }                    //  путь к фото
+    public DateOnly     DateOfBirth { get; }                    //  дата рождения
+    public string?      Telegram { get; }                    //  telegram
+    public Email        Email { get; }                    //  e-mail
+    public PhoneNumber  Login { get; }                    //  авторизация (номер телефона)
+    public string       PasswordHash { get; }                    //  авторизация (пароль)
 
     private Employee(Guid id,
-                     Guid positionId,
                      string fullName,
                      string photoId,
                      string? telegram,
@@ -27,7 +25,6 @@ public class Employee
     {
         Id = id;
         FullName = fullName;
-        PositionId = positionId;
         PhotoId = photoId;
         Telegram = telegram;
         Email = email;
@@ -36,8 +33,7 @@ public class Employee
         PasswordHash = passwordHash;
     }
 
-    public static Result<Employee> Create(Guid positionId,
-                                          string fullName,
+    public static Result<Employee> Create(string fullName,
                                           string? photoId,
                                           string? telegram,
                                           DateOnly DOB,
@@ -45,21 +41,21 @@ public class Employee
                                           PhoneNumber login,
                                           string passwordHash)
     {
-        if (!IsValidFullName(fullName)) return Result.Failure<Employee>("Full Name invalid.");      //  валидация ФИО
+        if (!IsValidFullName(fullName))                 return Result.Failure<Employee>("Full Name invalid.");      //  валидация ФИО
         if (PhoneNumber.Create(login.Number).IsFailure) return Result.Failure<Employee>("Login invalid.");          //  повторная валидация логина (номер телефона)
 
         photoId ??= "our empty photo";                                                                              //  если фото = null, ставим заглушку
-        if (!IsValidPhotoId(photoId)) return Result.Failure<Employee>("Photo path invalid.");     //  валидация пути к фото
+        if (!IsValidPhotoId(photoId))                   return Result.Failure<Employee>("Photo path invalid.");     //  валидация пути к фото
 
-        if (!IsValidPasswordHash(passwordHash)) return Result.Failure<Employee>("Password hash invalid.");  //  валидация хеша
-        if (Email.Create(email.email).IsFailure) return Result.Failure<Employee>("E-mail invalid");          //  валидация e-mail
-        if (!IsValidDOB(DOB)) return Result.Failure<Employee>("");
+        if (!IsValidPasswordHash(passwordHash))         return Result.Failure<Employee>("Password hash invalid.");  //  валидация хеша
+        if (Email.Create(email.email).IsFailure)        return Result.Failure<Employee>("E-mail invalid");          //  валидация e-mail
+        if (!IsValidDOB(DOB))                           return Result.Failure<Employee>("DOB invalid");
 
         telegram ??= "@TNS_COMPANY";
-        if (!IsValidTelegram(telegram)) return Result.Failure<Employee>("Telegram invalid.");                   //  валидация телеграмм
+        if (!IsValidTelegram(telegram))                 return Result.Failure<Employee>("Telegram invalid.");       //  валидация телеграмм
 
         Guid id = Guid.NewGuid();
-        return Result.Success(new Employee(id, positionId, fullName, photoId, telegram, DOB, email, login, passwordHash));
+        return Result.Success(new Employee(id, fullName, photoId, telegram, DOB, email, login, passwordHash));
     }
 
     /// <summary>
@@ -74,7 +70,7 @@ public class Employee
             if (string.IsNullOrWhiteSpace(telegram)) return false;   //  юзернейм не пустой
             if (telegram[0] != '@') return false;   //  юзернейм начинается с символа "@"
             if (telegram.Length - 1 > 32) return false;   //  длина юзернейма без "@" не превышает 32 символа
-            if (!System.Text.RegularExpressions.Regex.IsMatch(telegram.Substring(1), "^[a-zA-Z0-9_]+$")) return false;   //  юзернейм без "@" содержит только латинские буквы, цифры и символы подчёркивания
+            if (!Regex.IsMatch(telegram.Substring(1), "^[a-zA-Z0-9_]+$")) return false;   //  юзернейм без "@" содержит только латинские буквы, цифры и символы подчёркивания
 
             return true;
         }
@@ -115,15 +111,10 @@ public class Employee
         try
         {
             if (string.IsNullOrWhiteSpace(avatarPath)) return false;                            // Проверяем, что путь не пуст
-            if (!File.Exists(avatarPath)) return false;                            // Проверяем, что файл существует
 
             // Проверяем, что файл имеет допустимое расширение (например, .jpg, .png, .gif)
             string extension = Path.GetExtension(avatarPath).ToLower();
-            if (extension != ".jpg" && extension != ".png" && extension != ".gif") return false;
-
-            // Проверяем, что размер файла не превышает максимально допустимый (например, 2 МБ)
-            FileInfo fileInfo = new FileInfo(avatarPath);
-            if (fileInfo.Length > 4 * 1024 * 1024) return false;                                // 4 МБ
+            if (extension != ".jpg" && extension != ".png") return false;
 
             return true;
         }
@@ -144,7 +135,7 @@ public class Employee
         if (nameParts.Length != 3) return false;                                                //  Проверяем, что ФИО состоит из трёх частей
         foreach (string part in nameParts)                                                      //  Проверяем, что каждая часть содержит только буквы
         {
-            if (!string.IsNullOrWhiteSpace(part) || !System.Text.RegularExpressions.Regex.IsMatch(part, "^[a-zA-Zа-яА-Я]+$")) return false;
+            if (string.IsNullOrWhiteSpace(part) || !Regex.IsMatch(part, "^[a-zA-Zа-яА-Я]+$")) return false;
         }
         return true;
     }

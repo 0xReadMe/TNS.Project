@@ -18,7 +18,6 @@ namespace TNS.PERSISTENCE.MAPPINGS
             CreateMap<BaseStationAddressEntity, BaseStationAddress>();
             CreateMap<BaseStationEntity, BaseStation>();
             CreateMap<CRM_requestEntity, CRM_request>();
-            CreateMap<EmployeePositionEntity, EmployeePosition>();
             CreateMap<EquipmentEntity, Equipment>();
             CreateMap<EventEntity, Event>();
             CreateMap<PersonEntity, Person>();

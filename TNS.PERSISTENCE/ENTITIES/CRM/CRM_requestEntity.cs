@@ -15,8 +15,8 @@ public class CRM_requestEntity
     public required string TypeOfProblem { get; set; }       //  тип проблемы
     public required string ProblemDescription { get; set; }       //  описание услуги
 
-    public required SubscriberEntity Subscriber { get; set; }       //  for configuration
-    public required ServiceEntity Service { get; set; }       //  for configuration
-    public required ServiceProvidedEntity ServiceProvided { get; set; }       //  for configuration
-    public required ServiceTypeEntity ServiceType { get; set; }       //  for configuration
+    public SubscriberEntity Subscriber { get; set; }       //  for configuration
+    public ServiceEntity Service { get; set; }       //  for configuration
+    public ServiceProvidedEntity ServiceProvided { get; set; }       //  for configuration
+    public ServiceTypeEntity ServiceType { get; set; }       //  for configuration
 }

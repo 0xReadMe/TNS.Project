@@ -26,7 +26,6 @@ public static class PersistenceExtensions
         services.AddScoped<IBaseStationAddressRepository, BaseStationAddressRepository>();
         services.AddScoped<IBaseStationRepository, BaseStationRepository>();
         services.AddScoped<ICRMRepository, CRMRepository>();
-        services.AddScoped<IEmployeePositionRepository, EmployeePositionRepository>();
         services.AddScoped<IEmployeeRepository, EmployeeRepository>();
         services.AddScoped<IEquipmentRepository, EquipmentRepository>();
         services.AddScoped<IEventRepository, EventRepository>();

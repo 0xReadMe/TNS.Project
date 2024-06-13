@@ -9,4 +9,6 @@ public class EquipmentEntity
     public required string AttenuationCoefficient { get; set; }    //  коэффициент затухания
     public required string DTT { get; set; }    //  Data Transfer Technology (технология передачи данных)
     public required string Address { get; set; }    //  расположение
+    public required bool IsWorking { get; set; }
+
 }

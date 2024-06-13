@@ -12,6 +12,7 @@ public class Equipment
     public string AttenuationCoefficient { get; }    //  коэффициент затухания
     public string DTT { get; }    //  Data Transfer Technology (технология передачи данных)
     public string Address { get; }    //  расположение
+    public bool IsWorking { get; set; }
 
     public Equipment(Guid id,
                      string serialNumber,
@@ -19,7 +20,8 @@ public class Equipment
                      double frequency,
                      string attenuationCoefficient,
                      string DTT,
-                     string address)
+                     string address,
+                     bool isWorking)
     {
         Id = id;
         SerialNumber = serialNumber;
@@ -28,6 +30,7 @@ public class Equipment
         AttenuationCoefficient = attenuationCoefficient;
         this.DTT = DTT;
         Address = address;
+        IsWorking = isWorking;
     }
 
     public static Result<Equipment> Create(string serialNumber,
@@ -35,7 +38,8 @@ public class Equipment
                                            double frequency,
                                            string attenuationCoefficient,
                                            string DTT,
-                                           string address)
+                                           string address,
+                                           bool isWorking)
     {
         if (!IsValidSerialNumber(serialNumber)) return Result.Failure<Equipment>("Equipment SerialNumber invalid");             //  валидация серийного номера
         if (!IsValidName(name)) return Result.Failure<Equipment>("Equipment Name invalid");                     //  валидация названия оборудования
@@ -45,7 +49,7 @@ public class Equipment
         if (!IsValidAddress(address)) return Result.Failure<Equipment>("Equipment Address invalid");                  //  валидация адреса
 
         Guid id = Guid.NewGuid();
-        return Result.Success<Equipment>(new(id, serialNumber, name, frequency, attenuationCoefficient, DTT, address));
+        return Result.Success<Equipment>(new(id, serialNumber, name, frequency, attenuationCoefficient, DTT, address, isWorking));
     }
 
     /// <summary>
@@ -192,6 +196,6 @@ public class Equipment
     {
         //АО567-ТНС-11
         if (string.IsNullOrEmpty(serialNumber)) return false;                    // Проверка на null или пустую строку
-        return Regex.IsMatch(serialNumber, @"^[A-Z]{2}\d{3}-[A-Z]{3}-\d{2}$");   // Проверка совпадения серийного номера с шаблоном
+        return Regex.IsMatch(serialNumber, @"^[А-Я]{2}\d{3}-[А-Я]{3}-\d{2}$");   // Проверка совпадения серийного номера с шаблоном
     }
 }

@@ -6,5 +6,6 @@ public class RoleEntity
     public string   Name    { get; set; } = string.Empty;
 
     public ICollection<PermissionEntity> Permissions { get; set; } = [];
-    public ICollection<EmployeePositionEntity> EmployeePositions { get; set; } = [];
+    public ICollection<EmployeeEntity> Employees { get; set; } = [];
+    public ICollection<EventEntity> Events { get; set; } = [];
 }

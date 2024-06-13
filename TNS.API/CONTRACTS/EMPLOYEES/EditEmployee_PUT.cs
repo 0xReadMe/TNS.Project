@@ -1,6 +1,14 @@
-﻿namespace TNS.API.CONTRACTS.EMPLOYEES
-{
-    public class EditEmployee_PUT
-    {
-    }
-}
+﻿using TNS.CORE.VO;
+
+namespace TNS.API.CONTRACTS.EMPLOYEES;
+
+public record EditEmployee_PUT
+(
+    Guid PositionId,
+    string      FullName,                       // ФИО сотрудника
+    string      PhotoId,                        // путь к фото
+    DateOnly    DateOfBirth,                    // дата рождения
+    string?     Telegram,                       // telegram
+    string      Email,                          // e-mail
+    string Login                           // авторизация (номер телефона)
+);

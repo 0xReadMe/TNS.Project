@@ -151,7 +151,7 @@ public class CRM_request
     {
         try
         {
-            if (closingDate > DateOnly.FromDateTime(DateTime.Now)) return false;    // не в будущем
+            
             if (closingDate < creationDate) return false;                           // не раньше даты создания заявки
             return true;
         }
@@ -170,9 +170,8 @@ public class CRM_request
     {
         try
         {
-            if (creationDate > DateOnly.FromDateTime(DateTime.Now)) return false;   // не в будущем
             if (creationDate.Year < 1900) return false;   // не раньше 1900 года
-            if (creationDate.Day > DateOnly.FromDateTime(DateTime.Now).AddDays(1).Day) return false;   // не позже текущих суток
+            if (creationDate > DateOnly.FromDateTime(DateTime.Now).AddDays(1)) return false;   // не позже текущих суток
             return true;
         }
         catch (Exception)

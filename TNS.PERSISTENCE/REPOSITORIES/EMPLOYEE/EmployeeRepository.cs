@@ -3,28 +3,22 @@ using CSharpFunctionalExtensions;
 using Microsoft.EntityFrameworkCore;
 using TNS.CORE.INTERFACES.REPOSITORY.EMPLOYEE;
 using TNS.CORE.MODELS.EMPLOYEE;
+using TNS.CORE.MODELS.SUBSCRIBER;
 using TNS.CORE.VO;
 using TNS.PERSISTENCE.ENTITIES.EMPLOYEE;
 
 namespace TNS.PERSISTENCE.REPOSITORIES.EMPLOYEE
 {
-    public class EmployeeRepository : IEmployeeRepository
+    public class EmployeeRepository(TNSDbContext context, IMapper mapper) : IEmployeeRepository
     {
-        private readonly TNSDbContext _context;
-        private readonly IMapper _mapper;
-
-        public EmployeeRepository(TNSDbContext context, IMapper mapper)
-        {
-            _context = context;
-            _mapper = mapper;
-        }
+        private readonly TNSDbContext _context = context;
+        private readonly IMapper _mapper = mapper;
 
         public async Task Add(Employee employee)
         {
             EmployeeEntity employeeEntity = new()
             {
                 Id = employee.Id,
-                PositionId = employee.PositionId,
                 PhotoId = employee.PhotoId,
                 DateOfBirth = employee.DateOfBirth,
                 Telegram = employee.Telegram,
@@ -38,51 +32,38 @@ namespace TNS.PERSISTENCE.REPOSITORIES.EMPLOYEE
             await _context.SaveChangesAsync();
         }
 
-        public async Task<Result> Delete(Guid guid)
+        public async Task Delete(Guid id) => await _context.Employees.Where(l => l.Id == id).ExecuteDeleteAsync();
+
+        public async Task<List<Employee>> GetAllEmployees()
         {
-            var employee = await _context.Employees.FindAsync(guid);
-            if (employee == null)
+            List<Employee> employees = [];
+
+            await foreach (var employeeEntity in _context.Employees)
             {
-                return Result.Failure("Попытка удаления не удалась. Сотрудник не был найден.");
+                employees.Add(_mapper.Map<Employee>(employeeEntity));
             }
-            _context.Employees.Remove(employee);
-            await _context.SaveChangesAsync();
-            return Result.Success();
+            return employees;
         }
 
-
-        public Task<List<Employee>> GetAllEmployees()
+        public async Task<Employee> GetByGuid(Guid id)
         {
-            throw new NotImplementedException();
+            var empEntity = await _context.Employees.AsNoTracking().FirstOrDefaultAsync(l => l.Id == id);
+            return _mapper.Map<Employee>(empEntity);
         }
 
-        public Task<Employee> GetByGuid(Guid id)
+        public async Task Update(Employee employee, Guid id)
         {
-            throw new NotImplementedException();
+            await _context.Employees
+            .Where(l => l.Id == id)
+            .ExecuteUpdateAsync(s => s
+            .SetProperty(s => s.Email, employee.Email)
+            .SetProperty(s => s.DateOfBirth, employee.DateOfBirth)
+            .SetProperty(s => s.FullName, employee.FullName)
+            .SetProperty(s => s.Login, employee.Login)
+            .SetProperty(s => s.Telegram, employee.Telegram)
+            .SetProperty(s => s.PhotoId, employee.PhotoId)
+            );
         }
 
-        public async Task<Employee> GetByPhone(PhoneNumber phone)
-        {
-            var employeeEntity = await _context.Employees
-                .AsNoTracking()
-                .FirstOrDefaultAsync(emp => emp.Login == phone) ?? throw new Exception();
-
-            return _mapper.Map<Employee>(employeeEntity);
-        }
-
-        public Task Update(Employee employee)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task Update(Employee employee, Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task IEmployeeRepository.Delete(Guid id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

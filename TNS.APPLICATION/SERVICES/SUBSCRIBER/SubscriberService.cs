@@ -5,15 +5,15 @@ using TNS.CORE.MODELS.SUBSCRIBER;
 
 namespace TNS.APPLICATION.SERVICES.SUBSCRIBER;
 
-public class SubscriberService(ISubscriberRepository lessonsRepository) : ISubscriberService
+public class SubscriberService(ISubscriberRepository subscriberRepository) : ISubscriberService
 {
-    public readonly ISubscriberRepository _lessonsRepository = lessonsRepository;
+    public readonly ISubscriberRepository _subscriberRepository = subscriberRepository;
 
     public async Task<Result> AddSubscriber(Subscriber s)
     {
         try 
         {
-            await _lessonsRepository.Add(s);
+            await _subscriberRepository.Add(s);
             return Result.Success();
         }
         catch (Exception ex)
@@ -26,7 +26,7 @@ public class SubscriberService(ISubscriberRepository lessonsRepository) : ISubsc
     {
         try 
         {
-            await _lessonsRepository.Delete(id);
+            await _subscriberRepository.Delete(id);
             return Result.Success();
         }
         catch (Exception ex) 
@@ -39,7 +39,7 @@ public class SubscriberService(ISubscriberRepository lessonsRepository) : ISubsc
     {
         try
         {
-            await _lessonsRepository.Update(subscriber, id);
+            await _subscriberRepository.Update(subscriber, id);
             return Result.Success();
         }
         catch (Exception ex)
@@ -52,7 +52,7 @@ public class SubscriberService(ISubscriberRepository lessonsRepository) : ISubsc
     {
         try
         {
-            List<Subscriber> sub = await _lessonsRepository.GetAllSubscribers();
+            List<Subscriber> sub = await _subscriberRepository.GetAllSubscribers();
             return Result.Success(sub);
         }
         catch (Exception ex)
@@ -65,7 +65,7 @@ public class SubscriberService(ISubscriberRepository lessonsRepository) : ISubsc
     {
         try
         {
-            Subscriber sub = await _lessonsRepository.GetByGuid(id);
+            Subscriber sub = await _subscriberRepository.GetByGuid(id);
             return Result.Success(sub);
         }
         catch (Exception ex)

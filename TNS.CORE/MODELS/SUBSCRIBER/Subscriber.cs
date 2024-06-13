@@ -1,5 +1,4 @@
 ﻿using CSharpFunctionalExtensions;
-using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace TNS.CORE.MODELS.SUBSCRIBER;
@@ -51,12 +50,12 @@ public partial class Subscriber
                                             uint personalBill)
     {
         reasonForTerminationOfContract ??= "Не указана";
-        if (!IsValidReasonForTerminationOfContract(reasonForTerminationOfContract)) return Result.Failure<Subscriber>("Reason for termination contract invalid.");
-        if (!IsValidDateOfContractConclusion(dateOfContractConclusion)) return Result.Failure<Subscriber>("Date Of Contract Conclusion invalid.");
-        if (!IsValidDateOfTerminationOfTheContract(dateOfTerminationOfTheContract, dateOfContractConclusion)) return Result.Failure<Subscriber>("Date Of Termination Of TheContract invalid.");
-        if (!IsValidTypeOfEquipment(typeOfEquipment)) return Result.Failure<Subscriber>("TypeOfEquipment invalid.");
-        if (!IsValidServices(services)) return Result.Failure<Subscriber>("Services invalid.");
-        if (!IsValidPersonalBill(personalBill)) return Result.Failure<Subscriber>("Personal Bill invalid.");
+        if (!IsValidReasonForTerminationOfContract(reasonForTerminationOfContract))                             return Result.Failure<Subscriber>("CORE ERROR: Reason for termination contract invalid.");
+        if (!IsValidDateOfContractConclusion(dateOfContractConclusion))                                         return Result.Failure<Subscriber>("CORE ERROR: Date Of Contract Conclusion invalid.");
+        if (!IsValidDateOfTerminationOfTheContract(dateOfTerminationOfTheContract, dateOfContractConclusion))   return Result.Failure<Subscriber>("CORE ERROR: Date Of Termination Of TheContract invalid.");
+        if (!IsValidTypeOfEquipment(typeOfEquipment))                                                           return Result.Failure<Subscriber>("CORE ERROR: TypeOfEquipment invalid.");
+        if (!IsValidServices(services))                                                                         return Result.Failure<Subscriber>("CORE ERROR: Services invalid.");
+        if (!IsValidPersonalBill(personalBill))                                                                 return Result.Failure<Subscriber>("CORE ERROR: Personal Bill invalid.");
         Guid id = Guid.NewGuid();
         string subscriberNumber = GenerateSubscriberNumber(personalBill);
         string contractNumber = GenerateContractNumber(subscriberNumber, dateOfContractConclusion.Month, dateOfContractConclusion.Year);
@@ -93,8 +92,8 @@ public partial class Subscriber
             "Видеонаблюдение"];
         try
         {
-            if (string.IsNullOrEmpty(service)) return false;   //  услуга не пустая
-            if (!servicesExist.Contains(service)) return false;   //  услуга есть в списке
+            if (string.IsNullOrEmpty(service))      return false;   //  услуга не пустая
+            if (!servicesExist.Contains(service))   return false;   //  услуга есть в списке
             return true;
         }
         catch (Exception)
@@ -128,9 +127,9 @@ public partial class Subscriber
         try
         {
 
-            if (string.IsNullOrWhiteSpace(typeOfEquipment)) return false;   //  не пустой
-            if (typeOfEquipment.Length > 50) return false;   //  не превышает 50 символов
-            if (!Regex.IsMatch(typeOfEquipment, pattern)) return false;   //  содержит только допустимые символы (буквы кириллицы, цифры, пробелы, дефисы, подчеркивания)
+            if (string.IsNullOrWhiteSpace(typeOfEquipment))     return false;   //  не пустой
+            if (typeOfEquipment.Length > 50)                    return false;   //  не превышает 50 символов
+            if (!Regex.IsMatch(typeOfEquipment, pattern))       return false;   //  содержит только допустимые символы (буквы кириллицы, цифры, пробелы, дефисы, подчеркивания)
             if (!existEquipmentTypes.Contains(typeOfEquipment)) return false;   //  является одним из существующих типов
             return true;
         }
@@ -168,9 +167,9 @@ public partial class Subscriber
     {
         try
         {
-            if (dateOfContractConclusion > DateOnly.FromDateTime(DateTime.Now)) return false;   // не в будущем
-            if (dateOfContractConclusion.Year < 1900) return false;   // не раньше 1900 года
-            if (dateOfContractConclusion.Year > DateOnly.FromDateTime(DateTime.Now).AddYears(5).Year) return false;   // не позже текущего года + 5 лет
+            if (dateOfContractConclusion > DateOnly.FromDateTime(DateTime.Now))                         return false;   // не в будущем
+            if (dateOfContractConclusion.Year < 1900)                                                   return false;   // не раньше 1900 года
+            if (dateOfContractConclusion.Year > DateOnly.FromDateTime(DateTime.Now).AddYears(5).Year)   return false;   // не позже текущего года + 5 лет
             return true;
         }
         catch (Exception)
@@ -195,10 +194,10 @@ public partial class Subscriber
 
         try
         {
-            if (string.IsNullOrWhiteSpace(reasonForTerminationOfContract)) return false;               // причина расторжения договора не пустая
-            if (reasonForTerminationOfContract.Length > 200) return false;               // длина причины не превышает 200 символов
+            if (string.IsNullOrWhiteSpace(reasonForTerminationOfContract))                      return false;               // причина расторжения договора не пустая
+            if (reasonForTerminationOfContract.Length > 200)                                    return false;               // длина причины не превышает 200 символов
             if (!Regex.IsMatch(reasonForTerminationOfContract, "^[a-zA-Zа-яА-Я0-9.,!?'\\s]+$")) return false;               // причина состоит только из букв, цифр и пунктуации
-            if (!validReasons.Contains(reasonForTerminationOfContract)) return false;               // причина соответствует списку допустимых причин расторжения (например)
+            if (!validReasons.Contains(reasonForTerminationOfContract))                         return false;               // причина соответствует списку допустимых причин расторжения (например)
             return true;
         }
         catch (Exception)

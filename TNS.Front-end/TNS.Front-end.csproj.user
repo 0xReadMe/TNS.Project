@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="CRM\AddCRM.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CRM\EditCRM.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CRM\OpenCRM.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CRM\TestEquipment.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Employee\AddEmployee.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Employee\EditEmployee.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Employee\Employee_Page.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Employee\OpenEmployee.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EQUIPMENT\AddEquipmentAccessNetwork.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EQUIPMENT\AddEquipmentMagisralNetworks.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EQUIPMENT\EditEquipmentAccessNetwork.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EQUIPMENT\EditEquipmentMagisralNetworks.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EQUIPMENT\EquipmentAccessNetwork.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EQUIPMENT\EquipmentMagisralNetworks.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EQUIPMENT\OpenEquipmentAccessNetwork.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EQUIPMENT\OpenEquipmentMagisralNetworks.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Help\HelpUsers.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MessageWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Profile\ContactInformationProfile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Profile\EventsProfile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Profile\PersonalDataProfile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Profile\ProfileUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SUBSCRIBERS\AddUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MainWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CRM\CRM_Page.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SUBSCRIBERS\EditUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EQUIPMENT\Equipment.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="FAQ.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SUBSCRIBERS\Subscribers.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SUBSCRIBERS\OpenUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="CRM\AddCRM.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CRM\EditCRM.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CRM\OpenCRM.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CRM\TestEquipment.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Employee\AddEmployee.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Employee\EditEmployee.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Employee\Employee_Page.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Employee\OpenEmployee.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EQUIPMENT\AddEquipmentAccessNetwork.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EQUIPMENT\AddEquipmentMagisralNetworks.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EQUIPMENT\EditEquipmentAccessNetwork.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EQUIPMENT\EditEquipmentMagisralNetworks.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EQUIPMENT\EquipmentAccessNetwork.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EQUIPMENT\EquipmentMagisralNetworks.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EQUIPMENT\OpenEquipmentAccessNetwork.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EQUIPMENT\OpenEquipmentMagisralNetworks.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Help\HelpUsers.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MessageWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Profile\ContactInformationProfile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Profile\EventsProfile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Profile\PersonalDataProfile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Profile\ProfileUser.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SUBSCRIBERS\AddUser.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CRM\CRM_Page.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SUBSCRIBERS\EditUser.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EQUIPMENT\Equipment.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="FAQ.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SUBSCRIBERS\Subscribers.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Autorization.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SUBSCRIBERS\OpenUser.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

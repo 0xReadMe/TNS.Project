@@ -1,0 +1,110 @@
+﻿<Window x:Class="TNS.Front_end.OpenUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TNS.Front_end"
+        mc:Ignorable="d" Height="715" Width="600" WindowStartupLocation="CenterScreen" WindowStyle="None"
+        BorderBrush="#9CD8FB" BorderThickness="3" ResizeMode="NoResize" Topmost="True">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <Grid Name="ToolBar" Grid.Row="0" Grid.Column="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Image Height="30" 
+                       Width="30" 
+                       MouseDown="Image_MouseDown_Minimized"
+                       Name="MinimizedBtn">    
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/Sourse/На авторизацию_Свернуь.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=MinimizedBtn}" Value="True">
+                                    <Setter Property="Source" Value="/Sourse/MouseEnter-свернуь.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+                <Image Height="30" 
+                       Width="30"
+                       MouseDown="Image_MouseDown_Close"
+                       Name="CloseBtn">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/Sourse/На авторизацию_Закрыть.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=CloseBtn}" Value="True">
+                                    <Setter Property="Source" Value="/Sourse/MouseEnter-закрыть.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </StackPanel>
+        </Grid>
+        <TextBlock Grid.Column="0"
+                Grid.Row="0"
+                Text="Просмотр абонента" 
+                Margin="25 5"
+                FontSize="14"
+                Foreground="#339AF0"/>
+        <TextBlock Grid.Row="2" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Номер абонента"></TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="ФИО"></TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Серия паспорта"></TextBlock>
+        <TextBlock Grid.Row="5" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Номер паспорта"></TextBlock>
+        <TextBlock Grid.Row="6" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Дата выдачи паспорта"></TextBlock>
+        <TextBlock Grid.Row="7" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Кем выдан паспорт"></TextBlock>
+        <TextBlock Grid.Row="8" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Номер договора с абонентом"></TextBlock>
+        <TextBlock Grid.Row="9" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Дата заключения договора"></TextBlock>
+        <TextBlock Grid.Row="10" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Тип договора"></TextBlock>
+        <TextBlock Grid.Row="11" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Дата расторжения договора"></TextBlock>
+        <TextBlock Grid.Row="12" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Причина расторжения"></TextBlock>
+        <TextBlock Grid.Row="13" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Лицевой счет"></TextBlock>
+        <TextBlock Grid.Row="14" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Адрес"></TextBlock>
+        <TextBlock Grid.Row="15" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Услуги"></TextBlock>
+        <TextBlock Grid.Row="16" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Данные об оборудовании"></TextBlock>
+
+        <TextBox x:Name="tbNumberUser"        Grid.Row="2"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="tbFullName"          Grid.Row="3"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="tbPassportSeries"    Grid.Row="4"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="tbPassportNumber"    Grid.Row="5"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="tbPassportIssueDate" Grid.Row="6"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="tbPassportWhoIssued" Grid.Row="7"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="tbNumberContract"    Grid.Row="8"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="tbStartDate"         Grid.Row="9"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="tbTypeContract"      Grid.Row="10" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="tbEndDate"           Grid.Row="11" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="tbReasonTermination" Grid.Row="12" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="tbPersonalAccount"   Grid.Row="13" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="tbAddress"           Grid.Row="14" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="tbServices"          Grid.Row="15" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="tbDataEquipment"     Grid.Row="16" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
+
+       
+    </Grid>
+
+</Window>

@@ -6,26 +6,22 @@ namespace TNS.CORE.MODELS.EMPLOYEE;
 public class Event
 {
     public Guid Id { get; }    //  id события
-    public Guid PositionId { get; }    //  id должности
     public DateOnly Date { get; }    //  дата события
     public string Description { get; }    //  описание события
     public TimeOnly Time { get; }    //  время события
 
     private Event(Guid id,
-                  Guid positionId,
                   DateOnly eventDate,
                   string eventDescription,
                   TimeOnly eventTime)
     {
         Id = id;
-        PositionId = positionId;
         Date = eventDate;
         Description = eventDescription;
         Time = eventTime;
     }
 
-    public static Result<Event> Create(Guid positionId,
-                                       DateOnly eventDate,
+    public static Result<Event> Create(DateOnly eventDate,
                                        string? eventDescription,
                                        TimeOnly? eventTime)
     {
@@ -36,7 +32,7 @@ public class Event
         if (!IsValidEventTime(eventTime)) return Result.Failure<Event>("EventTime invalid");          //  валидация времени события
 
         Guid id = Guid.NewGuid();
-        return Result.Success<Event>(new(id, positionId, eventDate, eventDescription, eventTimeNotNull));
+        return Result.Success<Event>(new(id, eventDate, eventDescription, eventTimeNotNull));
     }
 
     /// <summary>

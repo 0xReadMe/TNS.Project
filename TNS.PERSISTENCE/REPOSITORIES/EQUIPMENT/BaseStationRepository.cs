@@ -1,13 +1,32 @@
-﻿using TNS.CORE.INTERFACES.REPOSITORY.EQUIPMENT;
+﻿using AutoMapper;
+using TNS.CORE.INTERFACES.REPOSITORY.EQUIPMENT;
 using TNS.CORE.MODELS.EQUIPMENT;
+using TNS.PERSISTENCE.ENTITIES.EQUIPMENT;
 
 namespace TNS.PERSISTENCE.REPOSITORIES.EQUIPMENT;
 
-public class BaseStationRepository : IBaseStationRepository
+public class BaseStationRepository(TNSDbContext context, IMapper mapper) : IBaseStationRepository
 {
-    public Task Add(BaseStation baseStation)
+    private readonly TNSDbContext _context = context;
+    private readonly IMapper _mapper = mapper;
+
+    public async Task Add(BaseStation baseStation)
     {
-        throw new NotImplementedException();
+        var equipmentEntity = new BaseStationEntity()
+        {
+            Id = baseStation.Id,
+            AddressId = baseStation.AddressId,
+            BaseStationName = baseStation.BaseStationName,
+            S = baseStation.S,
+            Frequency = baseStation.Frequency,
+            TypeAntenna = baseStation.TypeAntenna,
+            Handover = baseStation.Handover,
+            CommunicationProtocol = baseStation.CommunicationProtocol,
+            IsWorking = baseStation.IsWorking
+        };
+
+        await _context.BaseStations.AddAsync(equipmentEntity);
+        await _context.SaveChangesAsync();
     }
 
     public Task Delete(Guid id)

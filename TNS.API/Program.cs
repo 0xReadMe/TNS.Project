@@ -19,7 +19,7 @@ services.AddSwaggerGen();
 
 
 //services.Configure<JwtOptions>(configuration.GetSection(nameof(JwtOptions)));
-//services.Configure<AuthorizationOptions>(configuration.GetSection(nameof(AuthorizationOptions)));
+services.Configure<TNS.PERSISTENCE.AuthorizationOptions>(configuration.GetSection(nameof(TNS.PERSISTENCE.AuthorizationOptions)));
 
 services
     .AddPersistence(configuration)

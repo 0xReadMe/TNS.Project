@@ -13,6 +13,7 @@ public class BaseStation
     public string TypeAntenna { get; }    //  тип антенны
     public int Handover { get; }    //  показатель хендовера
     public string CommunicationProtocol { get; }    //  стандарт связи
+    public bool IsWorking { get; set; }
 
 
     private BaseStation(Guid id,
@@ -22,7 +23,8 @@ public class BaseStation
                         int frequency,
                         string typeAntenna,
                         int handover,
-                        string communicationProtocol)
+                        string communicationProtocol,
+                        bool isWorking)
     {
         Id = id;
         AddressId = adressId;
@@ -32,6 +34,7 @@ public class BaseStation
         TypeAntenna = typeAntenna;
         Handover = handover;
         CommunicationProtocol = communicationProtocol;
+        IsWorking = isWorking;
     }
 
     public static Result<BaseStation> Create(Guid adressId,
@@ -40,7 +43,8 @@ public class BaseStation
                                              int frequency,
                                              string typeAntenna,
                                              int handover,
-                                             string communicationProtocol)
+                                             string communicationProtocol,
+                                             bool isWorking)
     {
         if (!IsValidBaseStationName(baseStationName)) return Result.Failure<BaseStation>("BaseStationName invalid");          //  валидация названия БС
         if (!IsValidS(S)) return Result.Failure<BaseStation>("S invalid");                        //  валидация площади зоны покрытия
@@ -50,7 +54,7 @@ public class BaseStation
         if (!IsValidCommunictationProtocol(communicationProtocol)) return Result.Failure<BaseStation>("CommunictationProtocol invalid");   //  валидация стандарта связи
 
         Guid id = Guid.NewGuid();
-        return Result.Success<BaseStation>(new(id, adressId, baseStationName, S, frequency, typeAntenna, handover, communicationProtocol));
+        return Result.Success<BaseStation>(new(id, adressId, baseStationName, S, frequency, typeAntenna, handover, communicationProtocol, isWorking));
     }
 
     /// <summary>
@@ -60,7 +64,6 @@ public class BaseStation
     /// <returns>True - стандарт связи корректен</returns>
     private static bool IsValidCommunictationProtocol(string communicationProtocol)
     {
-        string pattern = @"^[\p{L}\p{N}\s\-_]+$";
         string[] validProtocols =
         [
             "TCP/IP",
@@ -83,7 +86,6 @@ public class BaseStation
 
             if (string.IsNullOrWhiteSpace(communicationProtocol)) return false;   // не пустой
             if (communicationProtocol.Length > 50) return false;   // длина не превышает 50 символов
-            if (!Regex.IsMatch(communicationProtocol, pattern)) return false;   // содержит только допустимые символы (буквы, цифры, пробелы, дефисы, подчеркивания)
             if (!validProtocols.Contains(communicationProtocol)) return false;   // соответствует одному из известных стандартов для телекоммуникационной компании
             return true;
         }

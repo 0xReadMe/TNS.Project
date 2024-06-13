@@ -23,36 +23,6 @@ namespace TNS.PERSISTENCE.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("EmployeePositionEntityEventEntity", b =>
-                {
-                    b.Property<Guid>("EventsId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("employeePositionsId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("EventsId", "employeePositionsId");
-
-                    b.HasIndex("employeePositionsId");
-
-                    b.ToTable("EmployeePositionEntityEventEntity");
-                });
-
-            modelBuilder.Entity("EmployeePositionEntityRoleEntity", b =>
-                {
-                    b.Property<Guid>("EmployeePositionsId")
-                        .HasColumnType("uuid");
-
-                    b.Property<int>("RolesId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("EmployeePositionsId", "RolesId");
-
-                    b.HasIndex("RolesId");
-
-                    b.ToTable("EmployeePositionEntityRoleEntity");
-                });
-
             modelBuilder.Entity("TNS.PERSISTENCE.ENTITIES.CRM.CRM_requestEntity", b =>
                 {
                     b.Property<Guid>("Id")
@@ -115,6 +85,28 @@ namespace TNS.PERSISTENCE.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Services");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("baae4bab-000d-4508-96c5-d5a355279eb0"),
+                            Name = "Интернет"
+                        },
+                        new
+                        {
+                            Id = new Guid("ffe400f7-068f-4fa9-98d1-4b24b613baf5"),
+                            Name = "Мобильная связь"
+                        },
+                        new
+                        {
+                            Id = new Guid("a3a96f13-0167-44b2-9ed1-0e4d2cdbe54d"),
+                            Name = "Телевидение"
+                        },
+                        new
+                        {
+                            Id = new Guid("46a6b6f2-c71e-4057-9ed3-09d5cd7bd964"),
+                            Name = "Видеонаблюдение"
+                        });
                 });
 
             modelBuilder.Entity("TNS.PERSISTENCE.ENTITIES.CRM.ServiceProvidedEntity", b =>
@@ -130,6 +122,33 @@ namespace TNS.PERSISTENCE.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ServiceProvided");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("ce46f275-60a2-4369-873f-6ecf3ed42f26"),
+                            Name = "Подключение"
+                        },
+                        new
+                        {
+                            Id = new Guid("28d8b7d0-d667-4ddf-b8c6-98f620df1a95"),
+                            Name = "Управление договором/контактными данными"
+                        },
+                        new
+                        {
+                            Id = new Guid("394e0598-a74f-4cf0-80f4-4b8018b6caf9"),
+                            Name = "Диагностика и настройка оборудования/подключения"
+                        },
+                        new
+                        {
+                            Id = new Guid("3de0f547-a34d-4d08-99b4-23dca8391d23"),
+                            Name = "Оплата услуг"
+                        },
+                        new
+                        {
+                            Id = new Guid("f6a636a3-2d9a-483e-bb24-d957f8c51c11"),
+                            Name = "Управление тарифом/услугой"
+                        });
                 });
 
             modelBuilder.Entity("TNS.PERSISTENCE.ENTITIES.CRM.ServiceTypeEntity", b =>
@@ -145,6 +164,83 @@ namespace TNS.PERSISTENCE.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ServiceTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("c2813eab-c234-4a86-9572-4fa5853b0022"),
+                            Name = "Подключение услуг с новой инфраструктурой"
+                        },
+                        new
+                        {
+                            Id = new Guid("9cf0a224-1b1f-413a-8e09-4ab469eb0dfb"),
+                            Name = "Подключение услуг на существующей инфраструктуре"
+                        },
+                        new
+                        {
+                            Id = new Guid("3b812b26-3a88-4971-8a7f-1b88c2bfeec7"),
+                            Name = "Изменение условий договора"
+                        },
+                        new
+                        {
+                            Id = new Guid("742dd3c2-31e0-4948-8b18-7b028364d2c3"),
+                            Name = "Включение в договор дополнительной услуги"
+                        },
+                        new
+                        {
+                            Id = new Guid("048e7593-97f0-488d-9819-3b0b3e0e9a20"),
+                            Name = "Изменение контактных данных"
+                        },
+                        new
+                        {
+                            Id = new Guid("d9935308-9a88-41f5-887f-d3c8848707a6"),
+                            Name = "Изменение тарифа"
+                        },
+                        new
+                        {
+                            Id = new Guid("91301712-fea9-459a-834b-8decfb81fb7e"),
+                            Name = "Изменение адреса предоставления услуг"
+                        },
+                        new
+                        {
+                            Id = new Guid("98935bd1-da2c-4eaf-9029-01f640910277"),
+                            Name = "Отключение услуги"
+                        },
+                        new
+                        {
+                            Id = new Guid("f8cac35b-1ca5-4ceb-ade9-1f89f8f90010"),
+                            Name = "Приостановка предоставления услуги"
+                        },
+                        new
+                        {
+                            Id = new Guid("173ceffb-0b6b-4d17-9443-271523578a76"),
+                            Name = "Нет доступа к услуге"
+                        },
+                        new
+                        {
+                            Id = new Guid("8c1ebe26-5b4b-42d6-9744-c4d5f5422167"),
+                            Name = "Разрыв соединения"
+                        },
+                        new
+                        {
+                            Id = new Guid("84766db7-fafe-4856-8bb9-4356c752c7a1"),
+                            Name = "Низкая скорость соединения"
+                        },
+                        new
+                        {
+                            Id = new Guid("4c03f2d2-7661-4b56-97ff-7e1c53b4568e"),
+                            Name = "Выписка по платежам"
+                        },
+                        new
+                        {
+                            Id = new Guid("b8df5708-17df-4381-b330-7070e8504294"),
+                            Name = "Информация о платежах"
+                        },
+                        new
+                        {
+                            Id = new Guid("1729071b-88d9-456d-bc80-4d29fd0fa7dd"),
+                            Name = "Получение квитанции на оплату услуги"
+                        });
                 });
 
             modelBuilder.Entity("TNS.PERSISTENCE.ENTITIES.EMPLOYEE.EmployeeEntity", b =>
@@ -176,33 +272,59 @@ namespace TNS.PERSISTENCE.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<Guid>("PositionId")
-                        .HasColumnType("uuid");
-
                     b.Property<string>("Telegram")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PositionId");
-
                     b.ToTable("Employees");
-                });
 
-            modelBuilder.Entity("TNS.PERSISTENCE.ENTITIES.EMPLOYEE.EmployeePositionEntity", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("PositionName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("EmployeePositions");
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("e6b96d54-45ad-4a20-898f-74cd2f6ea11d"),
+                            DateOfBirth = new DateOnly(2003, 12, 12),
+                            Email = "yayaya@ya.ru",
+                            FullName = "Вячеслав Александрович Мордник",
+                            Login = "+79152145252",
+                            PasswordHash = "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
+                            PhotoId = "SorsePhoto\\ProfilePhoto3.jpg",
+                            Telegram = ""
+                        },
+                        new
+                        {
+                            Id = new Guid("e01cd101-4535-4b2d-9766-74ee7fea637b"),
+                            DateOfBirth = new DateOnly(2003, 12, 12),
+                            Email = "yayaya@ya.ru",
+                            FullName = "Вячеслава Админовична Главных",
+                            Login = "+79152145253",
+                            PasswordHash = "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
+                            PhotoId = "SorsePhoto\\ProfilePhoto1.jpg",
+                            Telegram = ""
+                        },
+                        new
+                        {
+                            Id = new Guid("9d4166a8-5efa-4e40-bda7-e2d0000091c0"),
+                            DateOfBirth = new DateOnly(2003, 12, 12),
+                            Email = "yayaya@ya.ru",
+                            FullName = "Ангелина Инженеровна Техническая",
+                            Login = "+79152145254",
+                            PasswordHash = "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
+                            PhotoId = "SorsePhoto\\ProfilePhoto2.jpg",
+                            Telegram = ""
+                        },
+                        new
+                        {
+                            Id = new Guid("173eb815-fd0d-43eb-a3cf-7c3ce671ce16"),
+                            DateOfBirth = new DateOnly(2003, 12, 12),
+                            Email = "yayaya@ya.ru",
+                            FullName = "Анастасия Игоревна Саппортина",
+                            Login = "+79152145255",
+                            PasswordHash = "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
+                            PhotoId = "SorsePhoto\\ProfilePhoto3.jpg",
+                            Telegram = ""
+                        });
                 });
 
             modelBuilder.Entity("TNS.PERSISTENCE.ENTITIES.EMPLOYEE.EmployeeRoleEntity", b =>
@@ -214,6 +336,8 @@ namespace TNS.PERSISTENCE.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("EmployeeId", "RoleId");
+
+                    b.HasIndex("RoleId");
 
                     b.ToTable("EmployeeRoleEntity");
                 });
@@ -231,15 +355,50 @@ namespace TNS.PERSISTENCE.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<Guid>("PositionId")
-                        .HasColumnType("uuid");
-
                     b.Property<TimeOnly>("Time")
                         .HasColumnType("time without time zone");
 
                     b.HasKey("Id");
 
                     b.ToTable("Events");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("7e2b526a-caf3-48c7-8ab1-f1e3855b77b6"),
+                            Date = new DateOnly(2024, 6, 13),
+                            Description = "Планерка",
+                            Time = new TimeOnly(9, 15, 0)
+                        },
+                        new
+                        {
+                            Id = new Guid("f805297f-f3a8-4cf8-b9fd-95cf02503584"),
+                            Date = new DateOnly(2024, 6, 13),
+                            Description = "Обед",
+                            Time = new TimeOnly(12, 15, 0)
+                        },
+                        new
+                        {
+                            Id = new Guid("4d9139fc-e491-4477-bf6e-8dc600f2b97e"),
+                            Date = new DateOnly(2024, 6, 13),
+                            Description = "Митинг",
+                            Time = new TimeOnly(16, 15, 0)
+                        });
+                });
+
+            modelBuilder.Entity("TNS.PERSISTENCE.ENTITIES.EMPLOYEE.EventRoleEntity", b =>
+                {
+                    b.Property<Guid>("EventId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("EventId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("EventRoleEntity");
                 });
 
             modelBuilder.Entity("TNS.PERSISTENCE.ENTITIES.EMPLOYEE.PermissionEntity", b =>
@@ -322,15 +481,15 @@ namespace TNS.PERSISTENCE.Migrations
 
             modelBuilder.Entity("TNS.PERSISTENCE.ENTITIES.EMPLOYEE.RolePermissionEntity", b =>
                 {
-                    b.Property<int>("PermissionId")
-                        .HasColumnType("integer");
-
                     b.Property<int>("RoleId")
                         .HasColumnType("integer");
 
-                    b.HasKey("PermissionId", "RoleId");
+                    b.Property<int>("PermissionId")
+                        .HasColumnType("integer");
 
-                    b.HasIndex("RoleId");
+                    b.HasKey("RoleId", "PermissionId");
+
+                    b.HasIndex("PermissionId");
 
                     b.ToTable("RolePermissionEntity");
                 });
@@ -352,6 +511,26 @@ namespace TNS.PERSISTENCE.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("BaseStationAddresses");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("660bea47-cda6-4ee7-a044-1df5305bf360"),
+                            Address = "Коломна, Кронверкский пр., д. 5",
+                            Location = "Учебный корпус Колледж Коломна, здание рядом с мечетью"
+                        },
+                        new
+                        {
+                            Id = new Guid("c2c3ffce-e82c-47c6-8c8a-f76fa3b12aa6"),
+                            Address = "Коломна, ул. Блохина, д. 9",
+                            Location = "Гостинница Советская, в центре города"
+                        },
+                        new
+                        {
+                            Id = new Guid("122581f5-b3ed-4d5c-b7bc-9e7a9507d386"),
+                            Address = "Коломна, Александровский парк, д. 7",
+                            Location = "Военно-исторический музей артиллерии, инженерных войск и войск связи"
+                        });
                 });
 
             modelBuilder.Entity("TNS.PERSISTENCE.ENTITIES.EQUIPMENT.BaseStationEntity", b =>
@@ -423,6 +602,48 @@ namespace TNS.PERSISTENCE.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Equipments");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("03109b32-9650-4551-bfa5-e94248aba625"),
+                            Address = "Коломна, Депутатская ул., д. 8",
+                            AttenuationCoefficient = "10.5",
+                            DTT = "ADSL",
+                            Frequency = 45.5,
+                            Name = "Транспондер",
+                            SerialNumber = "АО567-ТНС-24"
+                        },
+                        new
+                        {
+                            Id = new Guid("dadf153a-09d6-49e9-ac35-50d5c4d279dc"),
+                            Address = "Коломна, Депутатская ул., д. 8",
+                            AttenuationCoefficient = "12.5",
+                            DTT = "SHDSL",
+                            Frequency = 50.200000000000003,
+                            Name = "Агрегирующий транспондер",
+                            SerialNumber = "АО500-ТНС-24"
+                        },
+                        new
+                        {
+                            Id = new Guid("0e82f982-aeb3-4899-ba87-8f2f26a1ef86"),
+                            Address = "Коломна, Депутатская ул., д. 8",
+                            AttenuationCoefficient = "25.5",
+                            DTT = "Optical Fiber",
+                            Frequency = 10.5,
+                            Name = "Оптические волоконные усилители",
+                            SerialNumber = "АО599-ТНС-24"
+                        },
+                        new
+                        {
+                            Id = new Guid("d635f4e4-2dd7-430b-88bb-33bd777ac423"),
+                            Address = "Коломна, Депутатская ул., д. 8",
+                            AttenuationCoefficient = "0.5",
+                            DTT = "5G",
+                            Frequency = 235.5,
+                            Name = "ИРТЫШ",
+                            SerialNumber = "АО999-ТНС-24"
+                        });
                 });
 
             modelBuilder.Entity("TNS.PERSISTENCE.ENTITIES.SUBSCRIBER.PersonEntity", b =>
@@ -553,7 +774,7 @@ namespace TNS.PERSISTENCE.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("a580a05a-4cfa-4457-8b8a-e2cffc368cf0"),
+                            Id = new Guid("f51ccd49-e507-45a9-95ef-0a2119832276"),
                             ContractNumber = "50-785493417-KOLOMNA-11-2018",
                             ContractType = false,
                             DateOfContractConclusion = new DateOnly(2018, 11, 12),
@@ -567,7 +788,7 @@ namespace TNS.PERSISTENCE.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ac091089-8c71-4e96-b79e-c60517561527"),
+                            Id = new Guid("272882da-b0a5-469a-adae-53a397c4ea51"),
                             ContractNumber = "50-785493418-KOLOMNA-12-2019",
                             ContractType = false,
                             DateOfContractConclusion = new DateOnly(2019, 12, 10),
@@ -581,7 +802,7 @@ namespace TNS.PERSISTENCE.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8c9a031b-6262-4e07-90c0-0d765f06767d"),
+                            Id = new Guid("fafb5279-9cad-4d7e-aaa8-11cba9524f53"),
                             ContractNumber = "50-785493419-KOLOMNA-11-2014",
                             ContractType = false,
                             DateOfContractConclusion = new DateOnly(2014, 11, 5),
@@ -595,7 +816,7 @@ namespace TNS.PERSISTENCE.Migrations
                         },
                         new
                         {
-                            Id = new Guid("2372b9cf-6ed4-4690-a955-0d05c71f44d7"),
+                            Id = new Guid("0320d090-d3a3-477c-b283-dc7b3484eeb1"),
                             ContractNumber = "50-785493420-KOLOMNA-11-2014",
                             ContractType = false,
                             DateOfContractConclusion = new DateOnly(2014, 11, 5),
@@ -609,7 +830,7 @@ namespace TNS.PERSISTENCE.Migrations
                         },
                         new
                         {
-                            Id = new Guid("589e669e-0b4c-4405-8213-9a259dae84fd"),
+                            Id = new Guid("fcee4a72-067a-46b2-aa72-41a21f88d2af"),
                             ContractNumber = "50-785493421-KOLOMNA-06-2015",
                             ContractType = false,
                             DateOfContractConclusion = new DateOnly(2015, 6, 5),
@@ -623,7 +844,7 @@ namespace TNS.PERSISTENCE.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c8644cc5-55ac-4d5a-a0db-107ab0174ae5"),
+                            Id = new Guid("d069c6d3-6014-4d3a-9675-e3b8570c91d2"),
                             ContractNumber = "50-785493422-KOLOMNA-07-2013",
                             ContractType = false,
                             DateOfContractConclusion = new DateOnly(2013, 7, 5),
@@ -637,7 +858,7 @@ namespace TNS.PERSISTENCE.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c22ba44a-ef06-4ff2-b5dd-8a1d3207c964"),
+                            Id = new Guid("565f79c2-451a-49d0-8925-b0b8cf294c27"),
                             ContractNumber = "50-785493423-KOLOMNA-03-2010",
                             ContractType = false,
                             DateOfContractConclusion = new DateOnly(2010, 3, 27),
@@ -651,7 +872,7 @@ namespace TNS.PERSISTENCE.Migrations
                         },
                         new
                         {
-                            Id = new Guid("dce8f11b-fdb8-4c9e-ad8c-f4b69d975c4d"),
+                            Id = new Guid("3861813a-45aa-471d-b4b3-6485f3b03610"),
                             ContractNumber = "50-785493424-KOLOMNA-01-2020",
                             ContractType = false,
                             DateOfContractConclusion = new DateOnly(2020, 1, 12),
@@ -665,7 +886,7 @@ namespace TNS.PERSISTENCE.Migrations
                         },
                         new
                         {
-                            Id = new Guid("401eb0cc-22f1-49a4-9a00-053b75a7f7fa"),
+                            Id = new Guid("ab635843-dc9d-43d2-83db-c8c87fdc23df"),
                             ContractNumber = "50-785493424-KOLOMNA-01-2020",
                             ContractType = false,
                             DateOfContractConclusion = new DateOnly(2020, 1, 12),
@@ -679,7 +900,7 @@ namespace TNS.PERSISTENCE.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7c5fa9d4-00d9-4dc1-a5d0-c64c03155203"),
+                            Id = new Guid("bd4c1411-f376-4ffd-8966-0a1e4238241f"),
                             ContractNumber = "50-785493424-KOLOMNA-05-2020",
                             ContractType = false,
                             DateOfContractConclusion = new DateOnly(2020, 5, 11),
@@ -691,36 +912,6 @@ namespace TNS.PERSISTENCE.Migrations
                             SubscriberNumber = "50-785493424-KOLOMNA",
                             TypeOfEquipment = "Ноутбук"
                         });
-                });
-
-            modelBuilder.Entity("EmployeePositionEntityEventEntity", b =>
-                {
-                    b.HasOne("TNS.PERSISTENCE.ENTITIES.EMPLOYEE.EventEntity", null)
-                        .WithMany()
-                        .HasForeignKey("EventsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("TNS.PERSISTENCE.ENTITIES.EMPLOYEE.EmployeePositionEntity", null)
-                        .WithMany()
-                        .HasForeignKey("employeePositionsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("EmployeePositionEntityRoleEntity", b =>
-                {
-                    b.HasOne("TNS.PERSISTENCE.ENTITIES.EMPLOYEE.EmployeePositionEntity", null)
-                        .WithMany()
-                        .HasForeignKey("EmployeePositionsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("TNS.PERSISTENCE.ENTITIES.EMPLOYEE.RoleEntity", null)
-                        .WithMany()
-                        .HasForeignKey("RolesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("TNS.PERSISTENCE.ENTITIES.CRM.CRM_requestEntity", b =>
@@ -758,15 +949,34 @@ namespace TNS.PERSISTENCE.Migrations
                     b.Navigation("Subscriber");
                 });
 
-            modelBuilder.Entity("TNS.PERSISTENCE.ENTITIES.EMPLOYEE.EmployeeEntity", b =>
+            modelBuilder.Entity("TNS.PERSISTENCE.ENTITIES.EMPLOYEE.EmployeeRoleEntity", b =>
                 {
-                    b.HasOne("TNS.PERSISTENCE.ENTITIES.EMPLOYEE.EmployeePositionEntity", "Position")
-                        .WithMany("Employees")
-                        .HasForeignKey("PositionId")
+                    b.HasOne("TNS.PERSISTENCE.ENTITIES.EMPLOYEE.EmployeeEntity", null)
+                        .WithMany()
+                        .HasForeignKey("EmployeeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Position");
+                    b.HasOne("TNS.PERSISTENCE.ENTITIES.EMPLOYEE.RoleEntity", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("TNS.PERSISTENCE.ENTITIES.EMPLOYEE.EventRoleEntity", b =>
+                {
+                    b.HasOne("TNS.PERSISTENCE.ENTITIES.EMPLOYEE.EventEntity", null)
+                        .WithMany()
+                        .HasForeignKey("EventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TNS.PERSISTENCE.ENTITIES.EMPLOYEE.RoleEntity", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("TNS.PERSISTENCE.ENTITIES.EMPLOYEE.RolePermissionEntity", b =>
@@ -819,11 +1029,6 @@ namespace TNS.PERSISTENCE.Migrations
             modelBuilder.Entity("TNS.PERSISTENCE.ENTITIES.CRM.ServiceTypeEntity", b =>
                 {
                     b.Navigation("CRM_RequestEntities");
-                });
-
-            modelBuilder.Entity("TNS.PERSISTENCE.ENTITIES.EMPLOYEE.EmployeePositionEntity", b =>
-                {
-                    b.Navigation("Employees");
                 });
 
             modelBuilder.Entity("TNS.PERSISTENCE.ENTITIES.EQUIPMENT.BaseStationAddressEntity", b =>

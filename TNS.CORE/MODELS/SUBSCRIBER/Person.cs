@@ -48,18 +48,18 @@ public class Person
                                         Passport passport)
     {
 
-        if (!IsValidFullName(firstName, middleName, lastName)) return Result.Failure<Person>("FullName is invalid.");
-        if (!IsValidGender(gender)) return Result.Failure<Person>("Gender is invalid.");
-        if (!IsValidDOB(DOB)) return Result.Failure<Person>("DOB is invalid.");
-        if (PhoneNumber.Create(phoneNumber.Number).IsFailure) return Result.Failure<Person>("Phone number is invalid.");
-        if (Email.Create(email.email).IsFailure) return Result.Failure<Person>("E-mail is invalid.");
+        if (!IsValidFullName(firstName, middleName, lastName))          return Result.Failure<Person>("CORE ERROR: FullName is invalid.");
+        if (!IsValidGender(gender))                                     return Result.Failure<Person>("CORE ERROR: Gender is invalid.");
+        if (!IsValidDOB(DOB))                                           return Result.Failure<Person>("CORE ERROR: DOB is invalid.");
+        if (PhoneNumber.Create(phoneNumber.Number).IsFailure)           return Result.Failure<Person>("CORE ERROR: Phone number is invalid.");
+        if (Email.Create(email.email).IsFailure)                        return Result.Failure<Person>("CORE ERROR: E-mail is invalid.");
         if (Passport.Create(passport.DivisionCode,
                             passport.IssuedBy,
                             passport.Series,
                             passport.Number,
                             passport.ResidenceAddress,
                             passport.ResidentialAddress,
-                            passport.DateOfIssueOfPassport).IsFailure) return Result.Failure<Person>("Passport is invalid.");
+                            passport.DateOfIssueOfPassport).IsFailure)  return Result.Failure<Person>("CORE ERROR: Passport is invalid.");
 
         Guid id = Guid.NewGuid();
         return Result.Success<Person>(new(id, firstName, middleName, lastName, gender, DOB, phoneNumber, email, passport));
@@ -87,13 +87,13 @@ public class Person
         try
         {
             int age = DateOnly.FromDateTime(DateTime.Now).Year - dOB.Year;
-            if (age < 18) return false;        //  Проверяем, что человеку не меньше 18 лет
-            if (dOB > DateOnly.FromDateTime(DateTime.Now)) return false;        //  Проверяем, что дата рождения не в будущем
+            if (age < 18)                                                   return false;           //  Проверяем, что человеку не меньше 18 лет
+            if (dOB > DateOnly.FromDateTime(DateTime.Now))                  return false;           //  Проверяем, что дата рождения не в будущем
             return true;
         }
         catch (Exception)
         {
-            return false;                                                        //  Возвращаем false, если возникла любая ошибка при проверке даты рождения
+            return false;                                                                           //  Возвращаем false, если возникла любая ошибка при проверке даты рождения
         }
     }
 
@@ -128,9 +128,9 @@ public class Person
     {
         try
         {
-            if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(middleName) || string.IsNullOrWhiteSpace(lastName)) return false;   //  имя, фамилия и отчество не пустые
-            if (!ContainsOnlyLetters(firstName) || !ContainsOnlyLetters(middleName) || !ContainsOnlyLetters(lastName)) return false;   //  имя, фамилия и отчество состоят только из букв
-            if (firstName.Length > 50 || middleName.Length > 50 || lastName.Length > 50) return false;   //  длина каждого из полей не превышает 50 символов
+            if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(middleName) || string.IsNullOrWhiteSpace(lastName))   return false;   //  имя, фамилия и отчество не пустые
+            if (!ContainsOnlyLetters(firstName) || !ContainsOnlyLetters(middleName) || !ContainsOnlyLetters(lastName))                  return false;   //  имя, фамилия и отчество состоят только из букв
+            if (firstName.Length > 50 || middleName.Length > 50 || lastName.Length > 50)                                                return false;   //  длина каждого из полей не превышает 50 символов
 
             return true;
         }

@@ -1,0 +1,19 @@
+﻿<Window x:Class="TNS.Front_end.CRM.TestEquipment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TNS.Front_end.CRM"
+        mc:Ignorable="d"
+        Title="TestEquipment" Height="160" Width="340" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#9CD8FB"
+                                                       WindowStyle="None" BorderBrush="#9CD8FB" BorderThickness="3">
+    <Grid>
+        <ProgressBar x:Name="progressBar1" Style="{StaticResource progressBar}" Margin="17,90,17,0"/>
+        <Label Content="Оборудование теструется" Foreground="#024C8C" Height="45" FontSize="17" Margin="20,1,66,-20"/>
+        <Label x:Name="lableTimer" Content="0" Foreground="#024C8C" Height="45" FontSize ="17"  Width="60" Margin="260,1,14,-20"/>
+        <Label Content="Исправное оборудование" Foreground="#024C8C" Height="45" FontSize="17" Margin="20,1,70,80"/>
+        <Label Content="0" Foreground="#024C8C" Height="45" FontSize ="17"  Width="60" Margin="260,1,14,80"/>
+        <Label Content="Неисправное оборудование" Foreground="#024C8C" Height="45" FontSize="17" Margin="20,1,70,30"/>
+        <Label Content="0" Foreground="#024C8C" Height="45" FontSize ="17"  Width="60" Margin="260,1,14,30"/>
+    </Grid>
+</Window>

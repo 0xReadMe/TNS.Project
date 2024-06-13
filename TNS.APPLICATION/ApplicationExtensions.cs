@@ -1,6 +1,8 @@
-﻿using TNS.APPLICATION.SERVICES;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using TNS.APPLICATION.SERVICES.SUBSCRIBER;
+using TNS.APPLICATION.SERVICES.EQUIPMENT;
+using TNS.APPLICATION.SERVICES.CRM;
+using TNS.APPLICATION.SERVICES.EMPLOYEE;
 
 namespace TNS.APPLICATION;
 
@@ -11,7 +13,6 @@ public static class ApplicationExtensions
         services.AddScoped<BaseStationAddressService>();
         services.AddScoped<BaseStationService>();
         services.AddScoped<CRMService>();
-        services.AddScoped<EmployeePositionService>();
         services.AddScoped<EmployeeService>();
         services.AddScoped<EquipmentService>();
         services.AddScoped<EventService>();

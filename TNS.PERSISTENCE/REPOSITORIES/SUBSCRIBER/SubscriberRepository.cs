@@ -31,12 +31,7 @@ namespace TNS.PERSISTENCE.REPOSITORIES.SUBSCRIBER
             await _context.SaveChangesAsync();
         }
 
-        public async Task Delete(Guid id)
-        {
-            await _context.Subscribers
-                .Where(l => l.Id == id)
-                .ExecuteDeleteAsync();
-        }
+        public async Task Delete(Guid id) => await _context.Subscribers.Where(l => l.Id == id).ExecuteDeleteAsync();
 
         public async Task<List<Subscriber>> GetAllSubscribers()
         {
@@ -51,11 +46,8 @@ namespace TNS.PERSISTENCE.REPOSITORIES.SUBSCRIBER
 
         public async Task<Subscriber> GetByGuid(Guid id)
         {
-            var lessonEntity = await _context.Subscribers
-            .AsNoTracking()
-            .FirstOrDefaultAsync(l => l.Id == id);
-
-            return _mapper.Map<Subscriber>(lessonEntity);
+            var subEntity = await _context.Subscribers.AsNoTracking().FirstOrDefaultAsync(l => l.Id == id);
+            return _mapper.Map<Subscriber>(subEntity);
         }
 
         public async Task Update(Subscriber subscriber, Guid id)
@@ -70,7 +62,6 @@ namespace TNS.PERSISTENCE.REPOSITORIES.SUBSCRIBER
             .SetProperty(s => s.ContractType, subscriber.ContractType)
             .SetProperty(s => s.ReasonForTerminationOfContract, subscriber.ReasonForTerminationOfContract)
             .SetProperty(s => s.PersonalBill, subscriber.PersonalBill)
-            .SetProperty(s => s.Services, subscriber.Services)
             .SetProperty(s => s.TypeOfEquipment, subscriber.TypeOfEquipment));
         }
     }

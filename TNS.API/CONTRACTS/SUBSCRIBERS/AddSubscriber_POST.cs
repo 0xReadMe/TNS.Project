@@ -2,9 +2,6 @@
 
 public record AddSubscriber_POST
 (
-    Guid SubscriberId,
-    string SubscriberNumber,
-    string ContractNumber,
     bool ContractType,
     string ReasonForTerminationOfContract,
     uint PersonalBill,
@@ -12,7 +9,6 @@ public record AddSubscriber_POST
     DateOnly DateOfContractConclusion,
     DateOnly DateOfTerminationOfTheContract,
     string TypeOfEquipment,
-    Guid PersonId,
     string FirstName,
     string MiddleName,
     string LastName,

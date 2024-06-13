@@ -1,8 +1,79 @@
 [
   {
     "ContainingType": "TNS.API.ENDPOINTS.EmployeeEndpoints",
+    "Method": "AddEmployee",
+    "RelativePath": "employee/add",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "r",
+        "Type": "TNS.API.CONTRACTS.EMPLOYEES.AddEmployee_POST",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TNS.API.ENDPOINTS.EmployeeEndpoints",
+    "Method": "DeleteEmployee",
+    "RelativePath": "employee/delete/{id:guid}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TNS.API.ENDPOINTS.EmployeeEndpoints",
+    "Method": "EditEmployee",
+    "RelativePath": "employee/edit/{id:guid}",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "r",
+        "Type": "TNS.API.CONTRACTS.EMPLOYEES.EditEmployee_PUT",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TNS.API.ENDPOINTS.EmployeeEndpoints",
     "Method": "GetEmployeeById",
-    "RelativePath": "employee/get/{id}",
+    "RelativePath": "employee/get/{id:guid}",
     "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,

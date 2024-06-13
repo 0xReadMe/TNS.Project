@@ -5,8 +5,6 @@ namespace TNS.PERSISTENCE.ENTITIES.EMPLOYEE;
 public class EmployeeEntity
 {
     public required Guid                    Id          { get; set; }                   //  id сотрудника
-    public required Guid                    PositionId  { get; set; }                   //  id должности
-    public          EmployeePositionEntity  Position    { get; }                        //  for configuration
     public required string                  FullName    { get; set; }                   //  ФИО сотрудника
     public required string                  PhotoId     { get; set; }                   //  путь к фото
     public required DateOnly                DateOfBirth { get; set; }                   //  дата рождения
@@ -14,4 +12,6 @@ public class EmployeeEntity
     public required Email                   Email       { get; set; }                   //  e-mail
     public required PhoneNumber             Login       { get; set; }                   //  авторизация
     public required string                  PasswordHash{ get; set; }                   //  авторизация
+
+    public ICollection<RoleEntity> Roles { get; set; } = [];
 }

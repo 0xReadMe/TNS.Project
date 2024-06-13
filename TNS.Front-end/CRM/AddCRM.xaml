@@ -1,0 +1,103 @@
+﻿<Window x:Class="TNS.Front_end.CRM.AddCRM"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TNS.Front_end.CRM"
+        mc:Ignorable="d"
+        Title="AddCRM" Height="715" Width="600" 
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" 
+        WindowStyle="None" BorderBrush="#9CD8FB" BorderThickness="3">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Name="ToolBar" Grid.Row="0" Grid.Column="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Image Height="30" 
+                       Width="30" 
+                       MouseDown="Image_MouseDown_Minimized"
+                       Name="MinimizedBtn">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/Sourse/На авторизацию_Свернуь.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=MinimizedBtn}" Value="True">
+                                    <Setter Property="Source" Value="/Sourse/MouseEnter-свернуь.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+                <Image Height="30" 
+                       Width="30"
+                       MouseDown="Image_MouseDown_Close"
+                       Name="CloseBtn">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/Sourse/На авторизацию_Закрыть.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=CloseBtn}" Value="True">
+                                    <Setter Property="Source" Value="/Sourse/MouseEnter-закрыть.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </StackPanel>
+        </Grid>
+        <TextBlock Grid.Column="0"
+                   Grid.Row="0"
+                   Text="Добавление заявки" 
+                   Margin="25 5"
+                   FontSize="14"
+                   Foreground="#339AF0"/>
+        <TextBlock Grid.Row="2" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Номер заявки"></TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Номер абонента"></TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Лицевой счет абонента"></TextBlock>
+        <TextBlock Grid.Row="5" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Дата создания"></TextBlock>
+        <TextBlock Grid.Row="6" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Услуга"></TextBlock>
+        <TextBlock Grid.Row="7" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Вид услуги"></TextBlock>
+        <TextBlock Grid.Row="8" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Тип услуги"></TextBlock>
+        <TextBlock Grid.Row="9" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Статус"></TextBlock>
+        <TextBlock Grid.Row="10" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Тип оборудования клиента"></TextBlock>
+        <TextBlock Grid.Row="11" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Тип проблемы"></TextBlock>
+        <TextBlock Grid.Row="12" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Описание проблемы"></TextBlock>
+        <TextBlock Grid.Row="13" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Дата закрытия"></TextBlock>
+ 
+        <TextBox    Grid.Row="2"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left">  </TextBox>
+        <TextBox    Grid.Row="3"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left">  </TextBox>
+        <TextBox    Grid.Row="4"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left">  </TextBox>
+        <DatePicker Grid.Row="5"  Grid.Column="1"                              Template="{DynamicResource datePicker}"    Height="35" Margin="0,3,0,4"  Width="265" HorizontalAlignment="Center"/>
+        <ComboBox   Grid.Row="6"  Grid.Column="1"                              Style="{StaticResource ComboBoxFlatStyle}" Height="35"                   Width="265"></ComboBox>
+        <ComboBox   Grid.Row="7"  Grid.Column="1"                              Style="{StaticResource ComboBoxFlatStyle}" Height="35"                   Width="265"></ComboBox>
+        <ComboBox   Grid.Row="8"  Grid.Column="1"                              Style="{StaticResource ComboBoxFlatStyle}" Height="35"                   Width="265">                             </ComboBox>
+        <ComboBox   Grid.Row="9"  Grid.Column="1"                              Style="{StaticResource ComboBoxFlatStyle}" Height="35"                   Width="265">                             </ComboBox>
+        <TextBox    Grid.Row="10" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left">  </TextBox>
+        <ComboBox   Grid.Row="11" Grid.Column="1"                              Style="{StaticResource ComboBoxFlatStyle}" Height="35"                   Width="265">                             </ComboBox>
+        <TextBox    Grid.Row="12" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left">  </TextBox>
+        <DatePicker Grid.Row="13" Grid.Column="1"                              Template="{DynamicResource datePicker}"    Height="35" Margin="0,3,0,4"  Width="265" HorizontalAlignment="Center"/>
+       
+        <Button  Grid.Row="17"                  Style="{StaticResource addButton}"     Width="270" Margin="0,4,5,11" Content="Очистить"  HorizontalAlignment="Center"/>
+        <Button  Grid.Row="17" Grid.Column="1"  Style="{StaticResource addButton}"     Width="270" Margin="0,4,5,11" Content="Сохранить" HorizontalAlignment="Center"/>
+    </Grid>
+</Window>

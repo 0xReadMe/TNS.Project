@@ -5,20 +5,16 @@ using TNS.PERSISTENCE.ENTITIES.EMPLOYEE;
 
 namespace TNS.PERSISTENCE.CONFIGURATIONS.EMPLOYEE;
 
-public partial class RolePermissionConfiguration : IEntityTypeConfiguration<RolePermissionEntity>
+public partial class RolePermissionConfiguration(AuthorizationOptions authorization) : IEntityTypeConfiguration<RolePermissionEntity>
 {
-    private readonly AuthorizationOptions _authorization;
-
-    public RolePermissionConfiguration(AuthorizationOptions authorization)
-    {
-        _authorization = authorization;
-    }
+    private readonly AuthorizationOptions _authorization = authorization;
 
     public void Configure(EntityTypeBuilder<RolePermissionEntity> builder)
     {
         builder.HasKey(r => new { r.RoleId, r.PermissionId });
 
-        builder.HasData(ParseRolePermissions());
+        var rolePermissions = ParseRolePermissions();
+        builder.HasData(rolePermissions);
     }
 
     private RolePermissionEntity[] ParseRolePermissions()
