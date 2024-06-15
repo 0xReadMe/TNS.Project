@@ -5,16 +5,16 @@ namespace TNS.CORE.MODELS.CRM;
 
 public class CRM_request
 {
-    public Guid Id { get; }     //  id заявки
-    public Guid SubscriberId { get; }     //  лицевой счет + номер абонента + тип оборудования
-    public DateOnly CreationDate { get; }     //  дата создания
-    public DateOnly ClosingDate { get; }     //  дата закрытия заявки
-    public Guid ServiceId { get; }     //  услуга
-    public Guid ServiceProvidedId { get; }     //  оказываемая услуга
-    public Guid ServiceTypeId { get; }     //  тип услуги
-    public string Status { get; }     //  статус услуги
-    public string TypeOfProblem { get; }     //  тип проблемы
-    public string ProblemDescription { get; }     //  описание услуги
+    public Guid     Id                  { get; }     //  id заявки
+    public Guid     SubscriberId        { get; }     //  лицевой счет + номер абонента + тип оборудования
+    public DateOnly CreationDate        { get; }     //  дата создания
+    public DateOnly ClosingDate         { get; }     //  дата закрытия заявки
+    public Guid     ServiceId           { get; }     //  услуга
+    public Guid     ServiceProvidedId   { get; }     //  оказываемая услуга
+    public Guid     ServiceTypeId       { get; }     //  тип услуги
+    public string   Status              { get; }     //  статус услуги
+    public string   TypeOfProblem       { get; }     //  тип проблемы
+    public string   ProblemDescription  { get; }     //  описание услуги
 
     private CRM_request(Guid id,
                         Guid subscriberId,
@@ -49,10 +49,10 @@ public class CRM_request
                                              string problemDescription,
                                              DateOnly closingDate)
     {
-        if (!IsValidCreationDate(creationDate)) return Result.Failure<CRM_request>("CreationDate invalid.");        //  валидация даты создания
+        if (!IsValidCreationDate(creationDate))             return Result.Failure<CRM_request>("CreationDate invalid.");        //  валидация даты создания
         if (!IsValidClosingDate(closingDate, creationDate)) return Result.Failure<CRM_request>("ClosingDate invalid.");         //  валидация даты закрытия
-        if (!IsValidStatus(status)) return Result.Failure<CRM_request>("Status invalid.");              //  валидация даты закрытия
-        if (!IsValidTypeOfProblem(typeOfProblem)) return Result.Failure<CRM_request>("TypeOfProblem invalid.");       //  валидация типа проблемы
+        if (!IsValidStatus(status))                         return Result.Failure<CRM_request>("Status invalid.");              //  валидация даты закрытия
+        if (!IsValidTypeOfProblem(typeOfProblem))           return Result.Failure<CRM_request>("TypeOfProblem invalid.");       //  валидация типа проблемы
         if (!IsValidProblemDescription(problemDescription)) return Result.Failure<CRM_request>("ProblemDescription invalid.");  //  валидация описания проблемы
 
         Guid id = Guid.NewGuid();
@@ -151,7 +151,6 @@ public class CRM_request
     {
         try
         {
-            
             if (closingDate < creationDate) return false;                           // не раньше даты создания заявки
             return true;
         }

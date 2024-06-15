@@ -14,7 +14,7 @@ namespace TNS.PERSISTENCE.REPOSITORIES.EMPLOYEE
         private readonly TNSDbContext _context = context;
         private readonly IMapper _mapper = mapper;
 
-        public async Task Add(Employee employee)
+        public async Task Add(Employee employee, int roleId)
         {
             EmployeeEntity employeeEntity = new()
             {
@@ -27,20 +27,31 @@ namespace TNS.PERSISTENCE.REPOSITORIES.EMPLOYEE
                 PasswordHash = employee.PasswordHash,
                 FullName = employee.FullName
             };
-
+            EmployeeRoleEntity roleEntity = new() { EmployeeId = employeeEntity.Id, RoleId = roleId };
+            await _context.AddAsync(roleEntity);
             await _context.Employees.AddAsync(employeeEntity);
             await _context.SaveChangesAsync();
         }
 
         public async Task Delete(Guid id) => await _context.Employees.Where(l => l.Id == id).ExecuteDeleteAsync();
-
+        
         public async Task<List<Employee>> GetAllEmployees()
         {
             List<Employee> employees = [];
 
             await foreach (var employeeEntity in _context.Employees)
             {
-                employees.Add(_mapper.Map<Employee>(employeeEntity));
+                Employee emp = Employee.Create(
+                    employeeEntity.FullName,
+                    employeeEntity.PhotoId,
+                    employeeEntity.Telegram,
+                    employeeEntity.DateOfBirth,
+                    employeeEntity.Email,
+                    employeeEntity.Login,
+                    employeeEntity.PasswordHash).Value;
+                
+                emp.SetId(employeeEntity.Id);
+                employees.Add(emp);
             }
             return employees;
         }
@@ -53,6 +64,15 @@ namespace TNS.PERSISTENCE.REPOSITORIES.EMPLOYEE
 
         public async Task Update(Employee employee, Guid id)
         {
+            Employee emp = Employee.Create(
+                    employee.FullName,
+                    employee.PhotoId,
+                    employee.Telegram,
+                    employee.DateOfBirth,
+                    employee.Email,
+                    employee.Login,
+                    employee.PasswordHash).Value;
+
             await _context.Employees
             .Where(l => l.Id == id)
             .ExecuteUpdateAsync(s => s

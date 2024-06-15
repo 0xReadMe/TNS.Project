@@ -110,7 +110,7 @@ public class EquipmentService(IEquipmentRepository equipmentRepository) : IEquip
 
     private static bool CheckRemoteEquipment()
     {
-        if (!TryConnectToDevice(Random.Shared.Next(0, 101)) || !PerformHealthCheck(Random.Shared.Next(0, 101)))
+        if (!TryConnectToDevice(Random.Shared.Next(0, 255)) || !PerformHealthCheck(Random.Shared.Next(0, 255)))
         {
             return false;
         }

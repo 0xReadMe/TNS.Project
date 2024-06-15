@@ -63,7 +63,8 @@ public partial class EmployeeConfiguration : IEntityTypeConfiguration<EmployeeEn
             DateOfBirth = s.DateOfBirth,
             Email = s.Email,
             Login = s.Login,
-            PasswordHash = s.PasswordHash
+            PasswordHash = s.PasswordHash,
+            Telegram = s.Telegram
         };
     }
 }

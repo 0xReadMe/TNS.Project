@@ -55,7 +55,8 @@ namespace TNS.PERSISTENCE.Migrations
                     Frequency = table.Column<double>(type: "double precision", nullable: false),
                     AttenuationCoefficient = table.Column<string>(type: "text", nullable: false),
                     DTT = table.Column<string>(type: "text", nullable: false),
-                    Address = table.Column<string>(type: "text", nullable: false)
+                    Address = table.Column<string>(type: "text", nullable: false),
+                    IsWorking = table.Column<bool>(type: "boolean", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -170,7 +171,8 @@ namespace TNS.PERSISTENCE.Migrations
                     Frequency = table.Column<int>(type: "integer", nullable: false),
                     TypeAntenna = table.Column<string>(type: "text", nullable: false),
                     Handover = table.Column<int>(type: "integer", nullable: false),
-                    CommunicationProtocol = table.Column<string>(type: "text", nullable: false)
+                    CommunicationProtocol = table.Column<string>(type: "text", nullable: false),
+                    IsWorking = table.Column<bool>(type: "boolean", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -336,9 +338,9 @@ namespace TNS.PERSISTENCE.Migrations
                 columns: new[] { "Id", "Address", "Location" },
                 values: new object[,]
                 {
-                    { new Guid("122581f5-b3ed-4d5c-b7bc-9e7a9507d386"), "Коломна, Александровский парк, д. 7", "Военно-исторический музей артиллерии, инженерных войск и войск связи" },
-                    { new Guid("660bea47-cda6-4ee7-a044-1df5305bf360"), "Коломна, Кронверкский пр., д. 5", "Учебный корпус Колледж Коломна, здание рядом с мечетью" },
-                    { new Guid("c2c3ffce-e82c-47c6-8c8a-f76fa3b12aa6"), "Коломна, ул. Блохина, д. 9", "Гостинница Советская, в центре города" }
+                    { new Guid("7700afab-9bbb-4e26-beca-669041206973"), "Коломна, ул. Блохина, д. 9", "Гостинница Советская, в центре города" },
+                    { new Guid("f69caf17-3674-4714-804e-c6aa5816f3d4"), "Коломна, Александровский парк, д. 7", "Военно-исторический музей артиллерии, инженерных войск и войск связи" },
+                    { new Guid("fd6beaf0-979a-412a-ab16-987428691ea1"), "Коломна, Кронверкский пр., д. 5", "Учебный корпус Колледж Коломна, здание рядом с мечетью" }
                 });
 
             migrationBuilder.InsertData(
@@ -346,21 +348,21 @@ namespace TNS.PERSISTENCE.Migrations
                 columns: new[] { "Id", "DateOfBirth", "Email", "FullName", "Login", "PasswordHash", "PhotoId", "Telegram" },
                 values: new object[,]
                 {
-                    { new Guid("173eb815-fd0d-43eb-a3cf-7c3ce671ce16"), new DateOnly(2003, 12, 12), "yayaya@ya.ru", "Анастасия Игоревна Саппортина", "+79152145255", "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8", "SorsePhoto\\ProfilePhoto3.jpg", "" },
-                    { new Guid("9d4166a8-5efa-4e40-bda7-e2d0000091c0"), new DateOnly(2003, 12, 12), "yayaya@ya.ru", "Ангелина Инженеровна Техническая", "+79152145254", "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8", "SorsePhoto\\ProfilePhoto2.jpg", "" },
-                    { new Guid("e01cd101-4535-4b2d-9766-74ee7fea637b"), new DateOnly(2003, 12, 12), "yayaya@ya.ru", "Вячеслава Админовична Главных", "+79152145253", "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8", "SorsePhoto\\ProfilePhoto1.jpg", "" },
-                    { new Guid("e6b96d54-45ad-4a20-898f-74cd2f6ea11d"), new DateOnly(2003, 12, 12), "yayaya@ya.ru", "Вячеслав Александрович Мордник", "+79152145252", "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8", "SorsePhoto\\ProfilePhoto3.jpg", "" }
+                    { new Guid("47d97bc9-d872-4c0b-862f-f74c50949d95"), new DateOnly(2003, 12, 12), "yayaya@ya.ru", "Анастасия Игоревна Саппортина", "+79152145255", "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8", "SorsePhoto\\ProfilePhoto3.jpg", "" },
+                    { new Guid("a470a7af-efe1-4a94-b4a9-7929fbf2c800"), new DateOnly(2003, 12, 12), "yayaya@ya.ru", "Вячеслава Админовична Главных", "+79152145253", "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8", "SorsePhoto\\ProfilePhoto1.jpg", "" },
+                    { new Guid("bfcc7c0e-a779-4e8f-806c-d439436a636e"), new DateOnly(2003, 12, 12), "yayaya@ya.ru", "Вячеслав Александрович Мордник", "+79152145252", "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8", "SorsePhoto\\ProfilePhoto3.jpg", "" },
+                    { new Guid("d2d86ee5-698c-412e-b083-5369dcb04195"), new DateOnly(2003, 12, 12), "yayaya@ya.ru", "Ангелина Инженеровна Техническая", "+79152145254", "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8", "SorsePhoto\\ProfilePhoto2.jpg", "" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Equipments",
-                columns: new[] { "Id", "Address", "AttenuationCoefficient", "DTT", "Frequency", "Name", "SerialNumber" },
+                columns: new[] { "Id", "Address", "AttenuationCoefficient", "DTT", "Frequency", "IsWorking", "Name", "SerialNumber" },
                 values: new object[,]
                 {
-                    { new Guid("03109b32-9650-4551-bfa5-e94248aba625"), "Коломна, Депутатская ул., д. 8", "10.5", "ADSL", 45.5, "Транспондер", "АО567-ТНС-24" },
-                    { new Guid("0e82f982-aeb3-4899-ba87-8f2f26a1ef86"), "Коломна, Депутатская ул., д. 8", "25.5", "Optical Fiber", 10.5, "Оптические волоконные усилители", "АО599-ТНС-24" },
-                    { new Guid("d635f4e4-2dd7-430b-88bb-33bd777ac423"), "Коломна, Депутатская ул., д. 8", "0.5", "5G", 235.5, "ИРТЫШ", "АО999-ТНС-24" },
-                    { new Guid("dadf153a-09d6-49e9-ac35-50d5c4d279dc"), "Коломна, Депутатская ул., д. 8", "12.5", "SHDSL", 50.200000000000003, "Агрегирующий транспондер", "АО500-ТНС-24" }
+                    { new Guid("25fa5e47-cccf-4021-a8b0-9fedfb745180"), "Коломна, Депутатская ул., д. 8", "25.5", "Optical Fiber", 10.5, true, "Оптические волоконные усилители", "АО599-ТНС-24" },
+                    { new Guid("3521fc29-a257-44d7-9e1e-60fa48810029"), "Коломна, Депутатская ул., д. 8", "12.5", "SHDSL", 50.200000000000003, true, "Агрегирующий транспондер", "АО500-ТНС-24" },
+                    { new Guid("5523e143-30d3-4d02-89b1-f617a78ba53c"), "Коломна, Депутатская ул., д. 8", "10.5", "ADSL", 45.5, true, "Транспондер", "АО567-ТНС-24" },
+                    { new Guid("7dc62c77-9fc3-4c10-83fe-9632659377f6"), "Коломна, Депутатская ул., д. 8", "0.5", "5G", 235.5, true, "ИРТЫШ", "АО999-ТНС-24" }
                 });
 
             migrationBuilder.InsertData(
@@ -368,9 +370,9 @@ namespace TNS.PERSISTENCE.Migrations
                 columns: new[] { "Id", "Date", "Description", "Time" },
                 values: new object[,]
                 {
-                    { new Guid("4d9139fc-e491-4477-bf6e-8dc600f2b97e"), new DateOnly(2024, 6, 13), "Митинг", new TimeOnly(16, 15, 0) },
-                    { new Guid("7e2b526a-caf3-48c7-8ab1-f1e3855b77b6"), new DateOnly(2024, 6, 13), "Планерка", new TimeOnly(9, 15, 0) },
-                    { new Guid("f805297f-f3a8-4cf8-b9fd-95cf02503584"), new DateOnly(2024, 6, 13), "Обед", new TimeOnly(12, 15, 0) }
+                    { new Guid("2bb4a17c-03a7-4e5d-a463-04c321cee8b0"), new DateOnly(2024, 6, 14), "Обед", new TimeOnly(12, 15, 0) },
+                    { new Guid("8d3e588c-45a7-4215-952e-20d6fc17bb9d"), new DateOnly(2024, 6, 14), "Митинг", new TimeOnly(16, 15, 0) },
+                    { new Guid("a3ca49fe-476e-4415-88f7-d85dd75a269c"), new DateOnly(2024, 6, 14), "Планерка", new TimeOnly(9, 15, 0) }
                 });
 
             migrationBuilder.InsertData(
@@ -400,11 +402,11 @@ namespace TNS.PERSISTENCE.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("28d8b7d0-d667-4ddf-b8c6-98f620df1a95"), "Управление договором/контактными данными" },
-                    { new Guid("394e0598-a74f-4cf0-80f4-4b8018b6caf9"), "Диагностика и настройка оборудования/подключения" },
-                    { new Guid("3de0f547-a34d-4d08-99b4-23dca8391d23"), "Оплата услуг" },
-                    { new Guid("ce46f275-60a2-4369-873f-6ecf3ed42f26"), "Подключение" },
-                    { new Guid("f6a636a3-2d9a-483e-bb24-d957f8c51c11"), "Управление тарифом/услугой" }
+                    { new Guid("55f827c5-6f23-44d2-8bcb-c9b0144dd232"), "Диагностика и настройка оборудования/подключения" },
+                    { new Guid("5afc7580-de8b-46cc-8313-ab693d57b1ed"), "Оплата услуг" },
+                    { new Guid("770716ae-faab-4ba6-b253-005b797e30df"), "Подключение" },
+                    { new Guid("7c75e8b2-6f35-4915-b742-57abea58b0d5"), "Управление договором/контактными данными" },
+                    { new Guid("fb57e7b8-86ea-4f0a-94cb-97078b69b2f6"), "Управление тарифом/услугой" }
                 });
 
             migrationBuilder.InsertData(
@@ -412,21 +414,21 @@ namespace TNS.PERSISTENCE.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("048e7593-97f0-488d-9819-3b0b3e0e9a20"), "Изменение контактных данных" },
-                    { new Guid("1729071b-88d9-456d-bc80-4d29fd0fa7dd"), "Получение квитанции на оплату услуги" },
-                    { new Guid("173ceffb-0b6b-4d17-9443-271523578a76"), "Нет доступа к услуге" },
-                    { new Guid("3b812b26-3a88-4971-8a7f-1b88c2bfeec7"), "Изменение условий договора" },
-                    { new Guid("4c03f2d2-7661-4b56-97ff-7e1c53b4568e"), "Выписка по платежам" },
-                    { new Guid("742dd3c2-31e0-4948-8b18-7b028364d2c3"), "Включение в договор дополнительной услуги" },
-                    { new Guid("84766db7-fafe-4856-8bb9-4356c752c7a1"), "Низкая скорость соединения" },
-                    { new Guid("8c1ebe26-5b4b-42d6-9744-c4d5f5422167"), "Разрыв соединения" },
-                    { new Guid("91301712-fea9-459a-834b-8decfb81fb7e"), "Изменение адреса предоставления услуг" },
-                    { new Guid("98935bd1-da2c-4eaf-9029-01f640910277"), "Отключение услуги" },
-                    { new Guid("9cf0a224-1b1f-413a-8e09-4ab469eb0dfb"), "Подключение услуг на существующей инфраструктуре" },
-                    { new Guid("b8df5708-17df-4381-b330-7070e8504294"), "Информация о платежах" },
-                    { new Guid("c2813eab-c234-4a86-9572-4fa5853b0022"), "Подключение услуг с новой инфраструктурой" },
-                    { new Guid("d9935308-9a88-41f5-887f-d3c8848707a6"), "Изменение тарифа" },
-                    { new Guid("f8cac35b-1ca5-4ceb-ade9-1f89f8f90010"), "Приостановка предоставления услуги" }
+                    { new Guid("24a6d24c-2503-4562-956c-fa8dcda6d81e"), "Низкая скорость соединения" },
+                    { new Guid("349c682d-29ee-486c-998a-9a3da0c67688"), "Включение в договор дополнительной услуги" },
+                    { new Guid("5104e9d3-1290-44bd-ba5f-47b7860096f8"), "Разрыв соединения" },
+                    { new Guid("88b99cc1-9c86-4bc6-93de-3012b2871f7a"), "Изменение тарифа" },
+                    { new Guid("8f8702d9-3944-48ee-be10-41bb5a45e8ec"), "Отключение услуги" },
+                    { new Guid("b59878dc-85bf-4a9f-a9ba-62d17f54ebfb"), "Получение квитанции на оплату услуги" },
+                    { new Guid("bcb77237-d356-46fb-8f47-82e30146abed"), "Изменение контактных данных" },
+                    { new Guid("be67f6d1-57de-4004-8135-d0ef610f4ea5"), "Подключение услуг на существующей инфраструктуре" },
+                    { new Guid("c8c2a0f5-483c-4fda-bee8-9aa98d47be75"), "Изменение адреса предоставления услуг" },
+                    { new Guid("e413fbcf-50e3-41c1-b4d7-b124daf2c7e2"), "Изменение условий договора" },
+                    { new Guid("f10a5c7e-f51f-4d17-8165-d24f879e4b9e"), "Выписка по платежам" },
+                    { new Guid("f2ff5f07-ab6d-4395-af43-feb0ec121783"), "Нет доступа к услуге" },
+                    { new Guid("f718d578-5358-4167-ad41-29b88261aa17"), "Информация о платежах" },
+                    { new Guid("fb04ebb4-4a7f-418b-977b-0962e66886ad"), "Приостановка предоставления услуги" },
+                    { new Guid("fbcc7b3b-eb7a-43c3-9232-4d9d89dae9ce"), "Подключение услуг с новой инфраструктурой" }
                 });
 
             migrationBuilder.InsertData(
@@ -434,10 +436,10 @@ namespace TNS.PERSISTENCE.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("46a6b6f2-c71e-4057-9ed3-09d5cd7bd964"), "Видеонаблюдение" },
-                    { new Guid("a3a96f13-0167-44b2-9ed1-0e4d2cdbe54d"), "Телевидение" },
-                    { new Guid("baae4bab-000d-4508-96c5-d5a355279eb0"), "Интернет" },
-                    { new Guid("ffe400f7-068f-4fa9-98d1-4b24b613baf5"), "Мобильная связь" }
+                    { new Guid("707bcafd-2dae-4548-9eb1-e9e9f0ae6d29"), "Интернет" },
+                    { new Guid("b01114f6-dfd8-43a9-8585-a8e88ba85b89"), "Мобильная связь" },
+                    { new Guid("c32e6896-0932-450e-a5a9-d94e6eb68eb5"), "Видеонаблюдение" },
+                    { new Guid("fab1b894-fcac-434d-b0f8-daba7955264d"), "Телевидение" }
                 });
 
             migrationBuilder.InsertData(
@@ -445,16 +447,16 @@ namespace TNS.PERSISTENCE.Migrations
                 columns: new[] { "Id", "ContractNumber", "ContractType", "DateOfContractConclusion", "DateOfTerminationOfTheContract", "PersonId", "PersonalBill", "ReasonForTerminationOfContract", "Services", "SubscriberNumber", "TypeOfEquipment" },
                 values: new object[,]
                 {
-                    { new Guid("0320d090-d3a3-477c-b283-dc7b3484eeb1"), "50-785493420-KOLOMNA-11-2014", false, new DateOnly(2014, 11, 5), new DateOnly(2022, 11, 12), new Guid("00000000-0000-0000-0000-000000000000"), 785493420L, "Не указана", "Интернет", "50-785493420-KOLOMNA", "Сервер" },
-                    { new Guid("272882da-b0a5-469a-adae-53a397c4ea51"), "50-785493418-KOLOMNA-12-2019", false, new DateOnly(2019, 12, 10), new DateOnly(2044, 6, 12), new Guid("00000000-0000-0000-0000-000000000000"), 785493418L, "Истечение срока договора", "Интернет", "50-785493418-KOLOMNA", "Маршрутизатор" },
-                    { new Guid("3861813a-45aa-471d-b4b3-6485f3b03610"), "50-785493424-KOLOMNA-01-2020", false, new DateOnly(2020, 1, 12), new DateOnly(2024, 1, 12), new Guid("00000000-0000-0000-0000-000000000000"), 785493424L, "Нарушение условий договора", "Мобильная связь", "50-785493424-KOLOMNA", "Ноутбук" },
-                    { new Guid("565f79c2-451a-49d0-8925-b0b8cf294c27"), "50-785493423-KOLOMNA-03-2010", false, new DateOnly(2010, 3, 27), new DateOnly(2022, 11, 12), new Guid("00000000-0000-0000-0000-000000000000"), 785493423L, "Финансовые трудности", "Мобильная связь", "50-785493423-KOLOMNA", "Телефон" },
-                    { new Guid("ab635843-dc9d-43d2-83db-c8c87fdc23df"), "50-785493424-KOLOMNA-01-2020", false, new DateOnly(2020, 1, 12), new DateOnly(2044, 6, 12), new Guid("00000000-0000-0000-0000-000000000000"), 785493424L, "Истечение срока договора", "Мобильная связь", "50-785493424-KOLOMNA", "Планшет" },
-                    { new Guid("bd4c1411-f376-4ffd-8966-0a1e4238241f"), "50-785493424-KOLOMNA-05-2020", false, new DateOnly(2020, 5, 11), new DateOnly(2044, 6, 12), new Guid("00000000-0000-0000-0000-000000000000"), 785493424L, "Истечение срока договора", "Телевидение", "50-785493424-KOLOMNA", "Ноутбук" },
-                    { new Guid("d069c6d3-6014-4d3a-9675-e3b8570c91d2"), "50-785493422-KOLOMNA-07-2013", false, new DateOnly(2013, 7, 5), new DateOnly(2022, 11, 12), new Guid("00000000-0000-0000-0000-000000000000"), 785493422L, "Не указана", "Интернет", "50-785493422-KOLOMNA", "Модем" },
-                    { new Guid("f51ccd49-e507-45a9-95ef-0a2119832276"), "50-785493417-KOLOMNA-11-2018", false, new DateOnly(2018, 11, 12), new DateOnly(2044, 6, 12), new Guid("00000000-0000-0000-0000-000000000000"), 785493417L, "Истечение срока договора", "Интернет", "50-785493417-KOLOMNA", "Маршрутизатор" },
-                    { new Guid("fafb5279-9cad-4d7e-aaa8-11cba9524f53"), "50-785493419-KOLOMNA-11-2014", false, new DateOnly(2014, 11, 5), new DateOnly(2022, 11, 12), new Guid("00000000-0000-0000-0000-000000000000"), 785493419L, "Не указана", "Интернет", "50-785493419-KOLOMNA", "Коммутатор" },
-                    { new Guid("fcee4a72-067a-46b2-aa72-41a21f88d2af"), "50-785493421-KOLOMNA-06-2015", false, new DateOnly(2015, 6, 5), new DateOnly(2023, 5, 12), new Guid("00000000-0000-0000-0000-000000000000"), 785493421L, "Не указана", "Интернет", "50-785493421-KOLOMNA", "Шлюз" }
+                    { new Guid("1337d42d-db5f-4d00-99f7-8736c2766093"), "50-785493418-KOLOMNA-12-2019", false, new DateOnly(2019, 12, 10), new DateOnly(2044, 6, 12), new Guid("00000000-0000-0000-0000-000000000000"), 785493418L, "Истечение срока договора", "Интернет", "50-785493418-KOLOMNA", "Маршрутизатор" },
+                    { new Guid("29c2e5b6-f987-4e5b-b843-514ba1b35e47"), "50-785493423-KOLOMNA-03-2010", false, new DateOnly(2010, 3, 27), new DateOnly(2022, 11, 12), new Guid("00000000-0000-0000-0000-000000000000"), 785493423L, "Финансовые трудности", "Мобильная связь", "50-785493423-KOLOMNA", "Телефон" },
+                    { new Guid("3435fb5d-978a-4262-a6d0-159bb1b1809c"), "50-785493424-KOLOMNA-01-2020", false, new DateOnly(2020, 1, 12), new DateOnly(2044, 6, 12), new Guid("00000000-0000-0000-0000-000000000000"), 785493424L, "Истечение срока договора", "Мобильная связь", "50-785493424-KOLOMNA", "Планшет" },
+                    { new Guid("5271e7df-fb9e-45af-a027-319d85f0f4bc"), "50-785493417-KOLOMNA-11-2018", false, new DateOnly(2018, 11, 12), new DateOnly(2044, 6, 12), new Guid("00000000-0000-0000-0000-000000000000"), 785493417L, "Истечение срока договора", "Интернет", "50-785493417-KOLOMNA", "Маршрутизатор" },
+                    { new Guid("539d3153-599e-46d7-b188-2d7e7c96edf3"), "50-785493419-KOLOMNA-11-2014", false, new DateOnly(2014, 11, 5), new DateOnly(2022, 11, 12), new Guid("00000000-0000-0000-0000-000000000000"), 785493419L, "Не указана", "Интернет", "50-785493419-KOLOMNA", "Коммутатор" },
+                    { new Guid("9bf4a621-2232-49fd-8658-ff9d4c090027"), "50-785493422-KOLOMNA-07-2013", false, new DateOnly(2013, 7, 5), new DateOnly(2022, 11, 12), new Guid("00000000-0000-0000-0000-000000000000"), 785493422L, "Не указана", "Интернет", "50-785493422-KOLOMNA", "Модем" },
+                    { new Guid("a3c6130c-6dda-47e6-94b2-3814c606f4e3"), "50-785493420-KOLOMNA-11-2014", false, new DateOnly(2014, 11, 5), new DateOnly(2022, 11, 12), new Guid("00000000-0000-0000-0000-000000000000"), 785493420L, "Не указана", "Интернет", "50-785493420-KOLOMNA", "Сервер" },
+                    { new Guid("e821500f-2a79-41f6-bd70-f216e66255de"), "50-785493424-KOLOMNA-05-2020", false, new DateOnly(2020, 5, 11), new DateOnly(2044, 6, 12), new Guid("00000000-0000-0000-0000-000000000000"), 785493424L, "Истечение срока договора", "Телевидение", "50-785493424-KOLOMNA", "Ноутбук" },
+                    { new Guid("f088681a-7da2-4e29-8ef4-bf702ee5adc8"), "50-785493421-KOLOMNA-06-2015", false, new DateOnly(2015, 6, 5), new DateOnly(2023, 5, 12), new Guid("00000000-0000-0000-0000-000000000000"), 785493421L, "Не указана", "Интернет", "50-785493421-KOLOMNA", "Шлюз" },
+                    { new Guid("ffec7fb3-5e70-4f8a-98c2-1991125a5acd"), "50-785493424-KOLOMNA-01-2020", false, new DateOnly(2020, 1, 12), new DateOnly(2024, 1, 12), new Guid("00000000-0000-0000-0000-000000000000"), 785493424L, "Нарушение условий договора", "Мобильная связь", "50-785493424-KOLOMNA", "Ноутбук" }
                 });
 
             migrationBuilder.CreateIndex(

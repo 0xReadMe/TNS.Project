@@ -68,7 +68,7 @@ namespace TNS.API.ENDPOINTS
             Result<Employee> emp = Employee.Create(r.FullName, r.PhotoId, r.Telegram, r.DateOfBirth, email.Value, phone.Value, r.PasswordHash);
             if (emp.IsFailure) return Results.BadRequest($"{emp.Error}");
 
-            var result = await employeeService.AddEmployee(emp.Value);
+            var result = await employeeService.AddEmployee(emp.Value, r.RoleId);
 
             if (result.IsFailure) return Results.BadRequest($"BadRequestEmployee: {result.Error}");
 

@@ -1,7 +1,5 @@
 ﻿using TNS.CORE.MODELS.CRM;
-
 namespace TNS.CORE.INTERFACES.REPOSITORY.CRM;
-
 public interface IServiceRepository
 {
     Task Add(Service service);

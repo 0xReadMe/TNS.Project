@@ -5,8 +5,8 @@ namespace TNS.CORE.MODELS.CRM;
 
 public class ServiceType
 {
-    public Guid Id { get; }    // id типа услуги
-    public string Name { get; }    // название типа услуги
+    public Guid     Id      { get; }    // id типа услуги
+    public string   Name    { get; }    // название типа услуги
 
     private ServiceType(Guid id, string name)
     {

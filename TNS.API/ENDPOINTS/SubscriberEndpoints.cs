@@ -25,8 +25,8 @@ namespace TNS.API.ENDPOINTS
 
         private static async Task<Microsoft.AspNetCore.Http.IResult> DeleteSubscriber(SubscriberService subscriberService, PersonService personService,[FromRoute] Guid id)
         {
-            var result = await subscriberService.DeleteSubscriber(id);
             var result2 = await personService.DeletePerson(subscriberService.GetByGuidSubscriber(id).Result.Value.PersonId);
+            var result = await subscriberService.DeleteSubscriber(id);
             if (result.IsFailure) return Results.BadRequest($"{result.Error}");
             if (result2.IsFailure) return Results.BadRequest($"{result2.Error}");
             return Results.Ok();
@@ -66,7 +66,7 @@ namespace TNS.API.ENDPOINTS
             if (person.IsFailure)       return Results.BadRequest($"{person.Error}");
 
             var result                  = await subscriberService.UpdateSubscriber(sub.Value, id);
-            var resultPerson            = await personService.UpdatePerson(person.Value, sub.Value.PersonId);
+            var resultPerson            = await personService.UpdatePerson(person.Value, subscriberService.GetByGuidSubscriber(id).Result.Value.PersonId);
 
             if (result.IsFailure)       return Results.BadRequest($"BadRequestSubscriber: {result.Error}");
             if (resultPerson.IsFailure) return Results.BadRequest($"BadRequestPerson: {resultPerson.Error}");

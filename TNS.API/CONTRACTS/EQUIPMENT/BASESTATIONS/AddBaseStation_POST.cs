@@ -1,6 +1,13 @@
-﻿namespace TNS.API.CONTRACTS.EQUIPMENT.BASESTATIONS
-{
-    public class AddBaseStation_POST
-    {
-    }
-}
+﻿namespace TNS.API.CONTRACTS.EQUIPMENT.BASESTATIONS;
+
+public record AddBaseStation_POST(
+        Guid AddressId,
+        string BaseStationName,         // название БС
+        double S,                       // площадь зоны покрытия
+        int Frequency,                  // частота, Гц
+        string TypeAntenna,             // тип антенны
+        int Handover,                   // показатель хендовера
+        string CommunicationProtocol,   // стандарт связи
+        bool IsWorking                  // рабочее состояние
+    );
+

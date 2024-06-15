@@ -1,49 +1,116 @@
 ﻿using CSharpFunctionalExtensions;
+using TNS.CORE.INTERFACES.REPOSITORY.EQUIPMENT;
 using TNS.CORE.INTERFACES.SERVICES.EQUIPMENT;
 using TNS.CORE.MODELS.EQUIPMENT;
 
 namespace TNS.APPLICATION.SERVICES.EQUIPMENT;
 
-public class BaseStationService : IBaseStationService
+public class BaseStationService(IBaseStationRepository equipmentRepository) : IBaseStationService
 {
-    public Task<Result> AddBaseStation(BaseStation baseStation)
+    public readonly IBaseStationRepository _equipmentRepository = equipmentRepository;
+
+    public async Task<Result> AddBaseStation(BaseStation baseStation)
     {
-        throw new NotImplementedException();
+        try
+        {
+            await _equipmentRepository.Add(baseStation);
+            return Result.Success();
+        }
+        catch (Exception ex)
+        {
+            return Result.Failure($"Ошибка при добавлении: {ex}");
+        }
     }
 
-    public Task<Result> DeleteBaseStation(Guid id)
+    public async Task<Result> DeleteBaseStation(Guid id)
     {
-        throw new NotImplementedException();
+        try
+        {
+            await _equipmentRepository.Delete(id);
+            return Result.Success();
+        }
+        catch (Exception ex)
+        {
+            return Result.Failure($"Ошибка при удалении: {ex}");
+        }
     }
 
-    public Task<Result<List<BaseStation>>> GetAllBaseStations()
+    public async Task<Result<List<BaseStation>>> GetAllBaseStations()
     {
-        throw new NotImplementedException();
+        try
+        {
+            List<BaseStation> sub = await _equipmentRepository.GetAllBaseStations();
+            return Result.Success(sub);
+        }
+        catch (Exception ex)
+        {
+            return Result.Failure<List<BaseStation>>($"Ошибка при получении данных: {ex}");
+        }
     }
 
-    public Task<Result<BaseStation>> GetByGuidBaseStation(Guid id)
+    public async Task<Result<BaseStation>> GetByGuidBaseStation(Guid id)
     {
-        throw new NotImplementedException();
+        try
+        {
+            BaseStation sub = await _equipmentRepository.GetByGuid(id);
+            return Result.Success(sub);
+        }
+        catch (Exception ex)
+        {
+            return Result.Failure<BaseStation>($"Ошибка при получении данных: {ex}");
+        }
     }
 
-    public Task<Result> TestAllBaseStation()
+    public async Task<Result<List<BaseStation>>> TestAllBaseStation()
     {
-        throw new NotImplementedException();
+        try
+        {
+            var result = await _equipmentRepository.GetAllBaseStations();
+
+            foreach (var item in result)
+            {
+                item.IsWorking = CheckRemoteEquipment();
+            }
+
+            return Result.Success(result);
+        }
+        catch (Exception ex)
+        {
+            return Result.Failure<List<BaseStation>>($"Ошибка при тестировании данных: {ex}");
+        }
     }
 
-    public Task<Result> TestBaseStation(Guid id)
+    public async Task<Result<BaseStation>> TestBaseStation(Guid id)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var result = await _equipmentRepository.GetByGuid(id);
+            result.IsWorking = CheckRemoteEquipment();
+
+            return Result.Success(result);
+        }
+        catch (Exception ex)
+        {
+            return Result.Failure<BaseStation>($"Ошибка при тестировании данных: {ex}");
+        }
     }
 
-    public Task<Result> UpdateBaseStation(BaseStation baseStation, Guid id)
+    public async Task<Result> UpdateBaseStation(BaseStation baseStation, Guid id)
     {
-        throw new NotImplementedException();
+        try
+        {
+            await _equipmentRepository.Update(baseStation, id);
+            return Result.Success();
+        }
+        catch (Exception ex)
+        {
+            return Result.Failure($"Ошибка при обновлении данных: {ex}");
+        }
     }
 
     private static bool CheckRemoteEquipment()
     {
-        if (!TryConnectToDevice(Random.Shared.Next(0, 101)) || !PerformHealthCheck(Random.Shared.Next(0, 101)))
+        if (!TryConnectToDevice(Random.Shared.Next(0, 255)) || !PerformHealthCheck(Random.Shared.Next(0, 255)))
         {
             return false;
         }

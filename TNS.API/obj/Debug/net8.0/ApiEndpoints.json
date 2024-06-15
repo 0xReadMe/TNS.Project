@@ -1,5 +1,130 @@
 [
   {
+    "ContainingType": "TNS.API.ENDPOINTS.CRMEndpoints",
+    "Method": "AddCRM",
+    "RelativePath": "CRM/add",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "editCRM",
+        "Type": "TNS.API.CONTRACTS.CRM.AddCRM_POST",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TNS.API.ENDPOINTS.CRMEndpoints",
+    "Method": "DeleteCRM",
+    "RelativePath": "CRM/delete/{id:guid}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TNS.API.ENDPOINTS.CRMEndpoints",
+    "Method": "EditCRM",
+    "RelativePath": "CRM/edit/{id:guid}",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "editCRM",
+        "Type": "TNS.API.CONTRACTS.CRM.EditCRM_PUT",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TNS.API.ENDPOINTS.CRMEndpoints",
+    "Method": "GetCRMById",
+    "RelativePath": "CRM/get/{id:guid}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TNS.API.ENDPOINTS.CRMEndpoints",
+    "Method": "GetAllCRM",
+    "RelativePath": "CRM/getAll",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TNS.API.ENDPOINTS.CRMEndpoints",
+    "Method": "TestEquipment",
+    "RelativePath": "CRM/testEquipment",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "TNS.API.ENDPOINTS.EmployeeEndpoints",
     "Method": "AddEmployee",
     "RelativePath": "employee/add",
@@ -100,6 +225,300 @@
     "IsController": false,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TNS.API.ENDPOINTS.EquipmentEndpoints",
+    "Method": "AddBaseStation",
+    "RelativePath": "equipment/addBaseStation",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "r",
+        "Type": "TNS.API.CONTRACTS.EQUIPMENT.BASESTATIONS.AddBaseStation_POST",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TNS.API.ENDPOINTS.EquipmentEndpoints",
+    "Method": "AddEquipment",
+    "RelativePath": "equipment/addEquipment",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "r",
+        "Type": "TNS.API.CONTRACTS.EQUIPMENT.EQUIPMENT.AddEquipment_POST",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TNS.API.ENDPOINTS.EquipmentEndpoints",
+    "Method": "DeleteBaseStation",
+    "RelativePath": "equipment/deleteBaseStation/{id:guid}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TNS.API.ENDPOINTS.EquipmentEndpoints",
+    "Method": "DeleteEquipment",
+    "RelativePath": "equipment/deleteEquipment/{id:guid}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TNS.API.ENDPOINTS.EquipmentEndpoints",
+    "Method": "EditBaseStation",
+    "RelativePath": "equipment/editBaseStation/{id:guid}",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "r",
+        "Type": "TNS.API.CONTRACTS.EQUIPMENT.BASESTATIONS.EditBaseStation_PUT",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TNS.API.ENDPOINTS.EquipmentEndpoints",
+    "Method": "EditEquipment",
+    "RelativePath": "equipment/editEquipment/{id:guid}",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "r",
+        "Type": "TNS.API.CONTRACTS.EQUIPMENT.EQUIPMENT.EditEquipment_PUT",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TNS.API.ENDPOINTS.EquipmentEndpoints",
+    "Method": "GetAllBaseStations",
+    "RelativePath": "equipment/getAllBaseStations",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TNS.API.ENDPOINTS.EquipmentEndpoints",
+    "Method": "GetAllEquipment",
+    "RelativePath": "equipment/getAllEquipment",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TNS.API.ENDPOINTS.EquipmentEndpoints",
+    "Method": "GetBaseStationById",
+    "RelativePath": "equipment/getBaseStation/{id:guid}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TNS.API.ENDPOINTS.EquipmentEndpoints",
+    "Method": "GetEquipmentById",
+    "RelativePath": "equipment/getEquipment/{id:guid}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TNS.API.ENDPOINTS.EquipmentEndpoints",
+    "Method": "TestAllBaseStations",
+    "RelativePath": "equipment/testAllBaseStations",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TNS.API.ENDPOINTS.EquipmentEndpoints",
+    "Method": "TestAllEquipment",
+    "RelativePath": "equipment/testAllEquipment",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TNS.API.ENDPOINTS.EquipmentEndpoints",
+    "Method": "TestBaseStation",
+    "RelativePath": "equipment/testBaseStations{id:guid}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TNS.API.ENDPOINTS.EquipmentEndpoints",
+    "Method": "TestEquipment",
+    "RelativePath": "equipment/testEquipment/{id:guid}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": [
       {
         "Type": "System.Void",

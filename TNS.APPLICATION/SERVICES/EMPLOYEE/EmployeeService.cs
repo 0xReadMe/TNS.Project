@@ -17,11 +17,11 @@ namespace TNS.APPLICATION.SERVICES.EMPLOYEE
     {
         private readonly IEmployeeRepository _employeeRepository = employeeRepository;
 
-        public async Task<Result> AddEmployee(Employee employee)
+        public async Task<Result> AddEmployee(Employee employee, int roleId)
         {
             try
             {
-                await _employeeRepository.Add(employee);
+                await _employeeRepository.Add(employee, roleId);
                 return Result.Success();
             }
             catch (Exception ex)
@@ -61,7 +61,15 @@ namespace TNS.APPLICATION.SERVICES.EMPLOYEE
             try
             {
                 Employee sub = await _employeeRepository.GetByGuid(id);
-                return Result.Success(sub);
+                if (sub != null)
+                {
+                    return Result.Success(sub);
+                }
+                else 
+                {
+                    return Result.Failure<Employee>($"Поиск вернул пустого сотрудника");
+
+                }
             }
             catch (Exception ex)
             {

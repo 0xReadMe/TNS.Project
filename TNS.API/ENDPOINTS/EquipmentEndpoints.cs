@@ -1,4 +1,12 @@
-﻿using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
+﻿using CSharpFunctionalExtensions;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
+using TNS.API.CONTRACTS.EQUIPMENT.BASESTATIONS;
+using TNS.API.CONTRACTS.EQUIPMENT.EQUIPMENT;
+using TNS.APPLICATION.SERVICES.EQUIPMENT;
+using TNS.APPLICATION.SERVICES.SUBSCRIBER;
+using TNS.CORE.INTERFACES.SERVICES.EQUIPMENT;
+using TNS.CORE.MODELS.EQUIPMENT;
 
 namespace TNS.API.ENDPOINTS;
 
@@ -7,82 +15,206 @@ public static class EquipmentEndpoints
     public static IEndpointRouteBuilder MapEquipmentEndpoints(this IEndpointRouteBuilder app)
     {
         app.MapGet("equipment/getAllEquipment", GetAllEquipment);
-        app.MapGet("equipment/getEquipment/{id}", GetEquipmentById);
-        app.MapGet("equipment/testEquipment", TestEquipment);
+        app.MapGet("equipment/testAllEquipment", TestAllEquipment);
+        app.MapGet("equipment/getEquipment/{id:guid}", GetEquipmentById);
+        app.MapGet("equipment/testEquipment/{id:guid}", TestEquipment);
 
         app.MapGet("equipment/getAllBaseStations", GetAllBaseStations);
-        app.MapGet("equipment/getBaseStation/{id}", GetBaseStationById);
-        app.MapGet("equipment/testBaseStations", TestBaseStation);
+        app.MapGet("equipment/testAllBaseStations", TestAllBaseStations);
+        app.MapGet("equipment/getBaseStation/{id:guid}", GetBaseStationById);
+        app.MapGet("equipment/testBaseStations{id:guid}", TestBaseStation);
 
         app.MapPost("equipment/addEquipment", AddEquipment);
         app.MapPost("equipment/addBaseStation", AddBaseStation);
 
-        app.MapPut("equipment/editEquipment", EditEquipment);
-        app.MapPut("equipment/editBaseStation", EditBaseStation);
+        app.MapPut("equipment/editEquipment/{id:guid}", EditEquipment);
+        app.MapPut("equipment/editBaseStation/{id:guid}", EditBaseStation);
 
-        app.MapDelete("equipment/deleteEquipment", DeleteEquipment);
-        app.MapDelete("equipment/deleteBaseStation", DeleteBaseStation);
+        app.MapDelete("equipment/deleteEquipment/{id:guid}", DeleteEquipment);
+        app.MapDelete("equipment/deleteBaseStation/{id:guid}", DeleteBaseStation);
 
         return app;
     }
 
-    private static async Task<IResult> DeleteBaseStation(HttpContext context)
+    private static async Task<Microsoft.AspNetCore.Http.IResult> TestAllBaseStations(BaseStationService baseStationService)
     {
+        var res = await baseStationService.TestAllBaseStation();
+        if(res.IsFailure) return Results.BadRequest($"{res.Error}");
+
+        return Results.Ok(res.Value);
+    }
+
+    private static async Task<Microsoft.AspNetCore.Http.IResult> TestAllEquipment(EquipmentService baseStationService)
+    {
+        var res = await baseStationService.TestAllEquipment();
+        if (res.IsFailure) return Results.BadRequest($"{res.Error}");
+
+        return Results.Ok(res.Value);
+    }
+
+    private static async Task<Microsoft.AspNetCore.Http.IResult> DeleteBaseStation(BaseStationService baseStationService, [FromRoute] Guid id)
+    {
+        var res = await baseStationService.DeleteBaseStation(id);
+        if (res.IsFailure) return Results.BadRequest($"{res.Error}");
+
         return Results.Ok();
     }
 
-    private static async Task<IResult> DeleteEquipment(HttpContext context)
+    private static async Task<Microsoft.AspNetCore.Http.IResult> DeleteEquipment(EquipmentService baseStationService, [FromRoute] Guid id)
     {
+        var res = await baseStationService.DeleteEquipment(id);
+        if (res.IsFailure) return Results.BadRequest($"{res.Error}");
+
         return Results.Ok();
     }
 
-    private static async Task<IResult> EditBaseStation(HttpContext context)
+    private static async Task<Microsoft.AspNetCore.Http.IResult> EditBaseStation([FromBody] EditBaseStation_PUT r, [FromRoute] Guid id, BaseStationService baseStationService)
     {
+        Result<BaseStation> sub = BaseStation.Create(
+            r.AddressId,
+            r.BaseStationName,
+            r.S,
+            r.Frequency,
+            r.TypeAntenna,
+            r.Handover,
+            r.CommunicationProtocol,
+            r.IsWorking
+            );
+
+        if (sub.IsFailure) return Results.BadRequest($"{sub.Error}");
+
+        var result = await baseStationService.UpdateBaseStation(sub.Value, id);
+        if (result.IsFailure) return Results.BadRequest($"BadRequestBaseStation: {result.Error}");
+
         return Results.Ok();
     }
 
-    private static async Task<IResult> EditEquipment(HttpContext context)
+    private static async Task<Microsoft.AspNetCore.Http.IResult> EditEquipment([FromBody] EditEquipment_PUT r, [FromRoute] Guid id, EquipmentService baseStationService)
     {
+        Result<Equipment> sub = Equipment.Create(
+            r.SerialNumber,
+            r.Name,
+            r.Frequency,
+            r.AttenuationCoefficient,
+            r.DTT,
+            r.Address,
+            r.IsWorking);
+
+        if (sub.IsFailure) return Results.BadRequest($"{sub.Error}");
+
+        var result = await baseStationService.UpdateEquipment(sub.Value, id);
+        if (result.IsFailure) return Results.BadRequest($"BadRequestBaseStation: {result.Error}");
+
         return Results.Ok();
     }
 
-    private static async Task<IResult> AddBaseStation(HttpContext context)
+    private static async Task<Microsoft.AspNetCore.Http.IResult> AddBaseStation([FromBody] AddBaseStation_POST r,BaseStationService baseStationService)
     {
+        Result<BaseStation> sub = BaseStation.Create(
+            r.AddressId,
+            r.BaseStationName,
+            r.S,
+            r.Frequency,
+            r.TypeAntenna,
+            r.Handover,
+            r.CommunicationProtocol,
+            r.IsWorking);
+
+        if (sub.IsFailure) return Results.BadRequest($"{sub.Error}");
+
+        var result = await baseStationService.AddBaseStation(sub.Value);
+        if (result.IsFailure) return Results.BadRequest($"BadRequestBaseStation: {result.Error}");
+
         return Results.Ok();
     }
 
-    private static async Task<IResult> AddEquipment(HttpContext context)
+    private static async Task<Microsoft.AspNetCore.Http.IResult> AddEquipment([FromBody] AddEquipment_POST r, EquipmentService baseStationService)
     {
+        Result<Equipment> sub = Equipment.Create(
+            r.SerialNumber,
+            r.Name,
+            r.Frequency,
+            r.AttenuationCoefficient,
+            r.DTT,
+            r.Address,
+            r.IsWorking);
+
+        if (sub.IsFailure) return Results.BadRequest($"{sub.Error}");
+
+        var result = await baseStationService.AddEquipment(sub.Value);
+        if (result.IsFailure) return Results.BadRequest($"BadRequestBaseStation: {result.Error}");
+
         return Results.Ok();
     }
 
-    private static async Task<IResult> TestBaseStation(HttpContext context)
+    private static async Task<Microsoft.AspNetCore.Http.IResult> TestBaseStation([FromRoute] Guid id, BaseStationService baseStationService)
     {
-        return Results.Ok();
+        var result = await baseStationService.TestBaseStation(id);
+        if (result.IsFailure) return Results.BadRequest($"BadRequestBaseStation: {result.Error}");
+
+        return Results.Ok(result.Value);
     }
 
-    private static async Task<IResult> GetBaseStationById(HttpContext context)
+    private static async Task<Microsoft.AspNetCore.Http.IResult> GetBaseStationById([FromRoute] Guid id, BaseStationService baseStationService)
     {
-        return Results.Ok();
+        var r = await baseStationService.GetByGuidBaseStation(id);
+        if (r.IsFailure) return Results.BadRequest($"BadRequestBaseStation: {r.Error}");
+
+        GetAllBaseStations_GET baseStation = new(
+            r.Value.Id,
+            r.Value.AddressId,
+            r.Value.BaseStationName,
+            r.Value.S,
+            r.Value.Frequency,
+            r.Value.TypeAntenna,
+            r.Value.Handover,
+            r.Value.CommunicationProtocol,
+            r.Value.IsWorking
+            );
+
+        return Results.Ok(baseStation);
     }
 
-    private static async Task<IResult> GetAllBaseStations(HttpContext context)
+    private static async Task<Microsoft.AspNetCore.Http.IResult> GetAllBaseStations(BaseStationService baseStationService)
     {
-        return Results.Ok();
+        var result = await baseStationService.GetAllBaseStations();
+        if (result.IsFailure) return Results.BadRequest($"BadRequestBaseStation: {result.Error}");
+
+        return Results.Ok(result.Value);
     }
 
-    private static async Task<IResult> TestEquipment(HttpContext context)
+    private static async Task<Microsoft.AspNetCore.Http.IResult> TestEquipment([FromRoute] Guid id, EquipmentService baseStationService)
     {
-        return Results.Ok();
+        var result = await baseStationService.TestEquipment(id);
+        if (result.IsFailure) return Results.BadRequest($"BadRequestBaseStation: {result.Error}");
+
+        return Results.Ok(result.Value);
     }
 
-    private static async Task<IResult> GetEquipmentById(HttpContext context)
+    private static async Task<Microsoft.AspNetCore.Http.IResult> GetEquipmentById([FromRoute] Guid id, EquipmentService baseStationService)
     {
-        return Results.Ok();
+        var r = await baseStationService.GetByGuidEquipment(id);
+        if (r.IsFailure) return Results.BadRequest($"BadRequestBaseStation: {r.Error}");
+
+        GetAllEquipments_GET baseStation = new(
+            r.Value.Id,
+            r.Value.SerialNumber,
+            r.Value.Name,
+            r.Value.Frequency,
+            r.Value.AttenuationCoefficient,
+            r.Value.DTT,
+            r.Value.Address,
+            r.Value.IsWorking
+            );
+
+        return Results.Ok(baseStation);
     }
 
-    private static async Task<IResult> GetAllEquipment(HttpContext context)
+    private static async Task<Microsoft.AspNetCore.Http.IResult> GetAllEquipment(EquipmentService baseStationService)
     {
-        return Results.Ok();
+        var result = await baseStationService.GetAllEquipments();
+        if (result.IsFailure) return Results.BadRequest($"BadRequestBaseStation: {result.Error}");
+
+        return Results.Ok(result.Value);
     }
 }

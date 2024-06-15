@@ -10,6 +10,6 @@ public interface IBaseStationService
     Task<Result> UpdateBaseStation(BaseStation baseStation, Guid id);
     Task<Result<BaseStation>> GetByGuidBaseStation(Guid id);
     Task<Result<List<BaseStation>>> GetAllBaseStations();
-    Task<Result> TestBaseStation(Guid id);
-    Task<Result> TestAllBaseStation();
+    Task<Result<BaseStation>> TestBaseStation(Guid id);
+    Task<Result<List<BaseStation>>> TestAllBaseStation();
 }

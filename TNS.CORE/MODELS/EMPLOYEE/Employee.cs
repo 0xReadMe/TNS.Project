@@ -5,7 +5,7 @@ namespace TNS.CORE.MODELS.EMPLOYEE;
 
 public class Employee
 {
-    public Guid         Id { get; }                    //  id сотрудника
+    public Guid         Id { get; private set; }                    //  id сотрудника
     public string       FullName { get; }                    //  ФИО сотрудника
     public string       PhotoId { get; }                    //  путь к фото
     public DateOnly     DateOfBirth { get; }                    //  дата рождения
@@ -18,7 +18,7 @@ public class Employee
                      string fullName,
                      string photoId,
                      string? telegram,
-                     DateOnly DOB,
+                     DateOnly dateOfBirth,
                      Email email,
                      PhoneNumber login,
                      string passwordHash)
@@ -28,7 +28,7 @@ public class Employee
         PhotoId = photoId;
         Telegram = telegram;
         Email = email;
-        DateOfBirth = DOB;
+        DateOfBirth = dateOfBirth;
         Login = login;
         PasswordHash = passwordHash;
     }
@@ -51,11 +51,19 @@ public class Employee
         if (Email.Create(email.email).IsFailure)        return Result.Failure<Employee>("E-mail invalid");          //  валидация e-mail
         if (!IsValidDOB(DOB))                           return Result.Failure<Employee>("DOB invalid");
 
-        telegram ??= "@TNS_COMPANY";
+        if (telegram == null) 
+        {
+            telegram = "@TNSCOMPANY";
+        }
         if (!IsValidTelegram(telegram))                 return Result.Failure<Employee>("Telegram invalid.");       //  валидация телеграмм
 
         Guid id = Guid.NewGuid();
         return Result.Success(new Employee(id, fullName, photoId, telegram, DOB, email, login, passwordHash));
+    }
+
+    public void SetId(Guid id) 
+    {
+        Id = id;
     }
 
     /// <summary>
@@ -70,7 +78,6 @@ public class Employee
             if (string.IsNullOrWhiteSpace(telegram)) return false;   //  юзернейм не пустой
             if (telegram[0] != '@') return false;   //  юзернейм начинается с символа "@"
             if (telegram.Length - 1 > 32) return false;   //  длина юзернейма без "@" не превышает 32 символа
-            if (!Regex.IsMatch(telegram.Substring(1), "^[a-zA-Z0-9_]+$")) return false;   //  юзернейм без "@" содержит только латинские буквы, цифры и символы подчёркивания
 
             return true;
         }

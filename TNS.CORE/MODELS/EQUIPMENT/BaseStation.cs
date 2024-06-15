@@ -5,15 +5,15 @@ namespace TNS.CORE.MODELS.EQUIPMENT;
 
 public class BaseStation
 {
-    public Guid Id { get; }    //  id
-    public Guid AddressId { get; }    //  id адреса станции
-    public string BaseStationName { get; }    //  название БС
-    public double S { get; }    //  площадь зоны покрытия
-    public int Frequency { get; }    //  частота, Гц
-    public string TypeAntenna { get; }    //  тип антенны
-    public int Handover { get; }    //  показатель хендовера
-    public string CommunicationProtocol { get; }    //  стандарт связи
-    public bool IsWorking { get; set; }
+    public Guid     Id                      { get; set; }    //  id
+    public Guid     AddressId               { get; }    //  id адреса станции
+    public string   BaseStationName         { get; }    //  название БС
+    public double   S                       { get; }    //  площадь зоны покрытия
+    public int      Frequency               { get; }    //  частота, Гц
+    public string   TypeAntenna             { get; }    //  тип антенны
+    public int      Handover                { get; }    //  показатель хендовера
+    public string   CommunicationProtocol   { get; }    //  стандарт связи
+    public bool     IsWorking               { get; set;}//  исправно ли оборудование
 
 
     private BaseStation(Guid id,
@@ -46,15 +46,20 @@ public class BaseStation
                                              string communicationProtocol,
                                              bool isWorking)
     {
-        if (!IsValidBaseStationName(baseStationName)) return Result.Failure<BaseStation>("BaseStationName invalid");          //  валидация названия БС
-        if (!IsValidS(S)) return Result.Failure<BaseStation>("S invalid");                        //  валидация площади зоны покрытия
-        if (!IsValidFrequency(frequency)) return Result.Failure<BaseStation>("Frequency invalid");                //  валидация частоты, Гц
-        if (!IsValidTypeAntenna(typeAntenna)) return Result.Failure<BaseStation>("TypeAntenna invalid");              //  валидация типа антенны
-        if (!IsValidHandover(handover)) return Result.Failure<BaseStation>("Handover invalid");                 //  валидация показателя хендовера
-        if (!IsValidCommunictationProtocol(communicationProtocol)) return Result.Failure<BaseStation>("CommunictationProtocol invalid");   //  валидация стандарта связи
+        if (!IsValidBaseStationName(baseStationName))               return Result.Failure<BaseStation>("BaseStationName invalid");          //  валидация названия БС
+        if (!IsValidS(S))                                           return Result.Failure<BaseStation>("S invalid");                        //  валидация площади зоны покрытия
+        if (!IsValidFrequency(frequency))                           return Result.Failure<BaseStation>("Frequency invalid");                //  валидация частоты, Гц
+        if (!IsValidTypeAntenna(typeAntenna))                       return Result.Failure<BaseStation>("TypeAntenna invalid");              //  валидация типа антенны
+        if (!IsValidHandover(handover))                             return Result.Failure<BaseStation>("Handover invalid");                 //  валидация показателя хендовера
+        if (!IsValidCommunictationProtocol(communicationProtocol))  return Result.Failure<BaseStation>("CommunictationProtocol invalid");   //  валидация стандарта связи
 
         Guid id = Guid.NewGuid();
         return Result.Success<BaseStation>(new(id, adressId, baseStationName, S, frequency, typeAntenna, handover, communicationProtocol, isWorking));
+    }
+
+    public static void AddGuid(BaseStation bs, Guid id) 
+    {
+        bs.Id = id;
     }
 
     /// <summary>
@@ -84,9 +89,9 @@ public class BaseStation
         try
         {
 
-            if (string.IsNullOrWhiteSpace(communicationProtocol)) return false;   // не пустой
-            if (communicationProtocol.Length > 50) return false;   // длина не превышает 50 символов
-            if (!validProtocols.Contains(communicationProtocol)) return false;   // соответствует одному из известных стандартов для телекоммуникационной компании
+            if (string.IsNullOrWhiteSpace(communicationProtocol))   return false;   // не пустой
+            if (communicationProtocol.Length > 50)                  return false;   // длина не превышает 50 символов
+            if (!validProtocols.Contains(communicationProtocol))    return false;   // соответствует одному из известных стандартов для телекоммуникационной компании
             return true;
         }
         catch (Exception)
@@ -136,9 +141,9 @@ public class BaseStation
         try
         {
             if (string.IsNullOrWhiteSpace(typeAntenna)) return false;   // не пустой
-            if (typeAntenna.Length > 30) return false;   // длина не превышает 30 символов
-            if (!Regex.IsMatch(typeAntenna, pattern)) return false;   // содержит только допустимые символы (буквы, цифры, пробелы, дефисы, подчеркивания)
-            if (!validTypes.Contains(typeAntenna)) return false;   // соответствует одному из известных типов
+            if (typeAntenna.Length > 30)                return false;   // длина не превышает 30 символов
+            if (!Regex.IsMatch(typeAntenna, pattern))   return false;   // содержит только допустимые символы (буквы, цифры, пробелы, дефисы, подчеркивания)
+            if (!validTypes.Contains(typeAntenna))      return false;   // соответствует одному из известных типов
             return true;
         }
         catch (Exception)
@@ -156,11 +161,11 @@ public class BaseStation
     {
         try
         {
-            if (frequency < 100 || frequency > 6000) return false;   // находится в допустимом диапазоне
-            if (frequency % 100 != 0) return false;   // является кратной 100 Гц
-            if (frequency >= 100 && frequency <= 1000 && frequency % 100 != 0) return false;   // если частота находится в диапазоне 100-1000 Гц, то она должна быть кратной 100 Гц
+            if (frequency < 100 || frequency > 6000)                            return false;   // находится в допустимом диапазоне
+            if (frequency % 100 != 0)                                           return false;   // является кратной 100 Гц
+            if (frequency >= 100 && frequency <= 1000 && frequency % 100 != 0)  return false;   // если частота находится в диапазоне 100-1000 Гц, то она должна быть кратной 100 Гц
             if (frequency >= 1001 && frequency <= 3000 && frequency % 500 != 0) return false;   // если частота находится в диапазоне 1001-3000 Гц, то она должна быть кратной 500 Гц
-            if (frequency >= 3001 && frequency <= 6000 && frequency % 1000 != 0) return false;   // если частота находится в диапазоне 3001-6000 Гц, то она должна быть кратной 1000 Гц
+            if (frequency >= 3001 && frequency <= 6000 && frequency % 1000 != 0)return false;   // если частота находится в диапазоне 3001-6000 Гц, то она должна быть кратной 1000 Гц
             return true;
         }
         catch (Exception)
@@ -178,7 +183,7 @@ public class BaseStation
     {
         try
         {
-            if (s < 1.0 || s > 3000.0) return false;   // площадь находится в допустимом диапазоне
+            if (s < 1.0 || s > 3000.0)      return false;   // площадь находится в допустимом диапазоне
             if (Math.Round(s * 2) % 2 != 0) return false;   // площадь является кратной 0.5 кв.м
             return true;
         }
@@ -199,8 +204,8 @@ public class BaseStation
         try
         {
             if (string.IsNullOrWhiteSpace(baseStationName)) return false;   // название станции не пустое
-            if (baseStationName.Length > 100) return false;   // длина названия станции не превышает 100 символов
-            if (!Regex.IsMatch(baseStationName, pattern)) return false;   // название станции содержит только допустимые символы (буквы кириллицы, цифры, пробелы, дефисы, подчеркивания)
+            if (baseStationName.Length > 100)               return false;   // длина названия станции не превышает 100 символов
+            if (!Regex.IsMatch(baseStationName, pattern))   return false;   // название станции содержит только допустимые символы (буквы кириллицы, цифры, пробелы, дефисы, подчеркивания)
             return true;
         }
         catch (Exception)

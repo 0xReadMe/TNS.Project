@@ -3,32 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EBA2F5A3-5EB9-4F37-BEA8-C9E0261843E1}|TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.persistence\\repositories\\equipment\\basestationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBA2F5A3-5EB9-4F37-BEA8-C9E0261843E1}|TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj|solutionrelative:tns.persistence\\repositories\\equipment\\basestationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBA2F5A3-5EB9-4F37-BEA8-C9E0261843E1}|TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.persistence\\repositories\\equipment\\basestationaddressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBA2F5A3-5EB9-4F37-BEA8-C9E0261843E1}|TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj|solutionrelative:tns.persistence\\repositories\\equipment\\basestationaddressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F817252-357A-4500-AEEA-CB923BCC198D}|TNS.APPLICATION\\TNS.APPLICATION.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.application\\services\\equipment\\basestationaddressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F817252-357A-4500-AEEA-CB923BCC198D}|TNS.APPLICATION\\TNS.APPLICATION.csproj|solutionrelative:tns.application\\services\\equipment\\basestationaddressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F817252-357A-4500-AEEA-CB923BCC198D}|TNS.APPLICATION\\TNS.APPLICATION.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.application\\services\\equipment\\equipmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F817252-357A-4500-AEEA-CB923BCC198D}|TNS.APPLICATION\\TNS.APPLICATION.csproj|solutionrelative:tns.application\\services\\equipment\\equipmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{96FE4034-4D6D-487A-AE32-ABABE20282BB}|TNS.API\\TNS.API.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.api\\endpoints\\crmendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96FE4034-4D6D-487A-AE32-ABABE20282BB}|TNS.API\\TNS.API.csproj|solutionrelative:tns.api\\endpoints\\crmendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{96FE4034-4D6D-487A-AE32-ABABE20282BB}|TNS.API\\TNS.API.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.api\\endpoints\\equipmentendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{96FE4034-4D6D-487A-AE32-ABABE20282BB}|TNS.API\\TNS.API.csproj|solutionrelative:tns.api\\endpoints\\equipmentendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F817252-357A-4500-AEEA-CB923BCC198D}|TNS.APPLICATION\\TNS.APPLICATION.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.application\\services\\equipment\\basestationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F817252-357A-4500-AEEA-CB923BCC198D}|TNS.APPLICATION\\TNS.APPLICATION.csproj|solutionrelative:tns.application\\services\\equipment\\basestationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5F817252-357A-4500-AEEA-CB923BCC198D}|TNS.APPLICATION\\TNS.APPLICATION.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.application\\services\\crm\\crmservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F817252-357A-4500-AEEA-CB923BCC198D}|TNS.APPLICATION\\TNS.APPLICATION.csproj|solutionrelative:tns.application\\services\\crm\\crmservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.core\\interfaces\\services\\equipment\\ibasestationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{543ED3D3-9531-421F-896A-CA4AD02B7F55}|TNS.Core\\TNS.CORE.csproj|solutionrelative:tns.core\\interfaces\\services\\equipment\\ibasestationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EBA2F5A3-5EB9-4F37-BEA8-C9E0261843E1}|TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\tns.project\\tns.persistence\\repositories\\crm\\crmrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBA2F5A3-5EB9-4F37-BEA8-C9E0261843E1}|TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj|solutionrelative:tns.persistence\\repositories\\crm\\crmrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,97 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "EquipmentEndpoints.cs",
               "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.API\\ENDPOINTS\\EquipmentEndpoints.cs",
               "RelativeDocumentMoniker": "TNS.API\\ENDPOINTS\\EquipmentEndpoints.cs",
               "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.API\\ENDPOINTS\\EquipmentEndpoints.cs",
               "RelativeToolTip": "TNS.API\\ENDPOINTS\\EquipmentEndpoints.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAFAAAA",
+              "ViewState": "AQIAAKUAAAAAAAAAAAAAALYAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T19:47:41.342Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IBaseStationService.cs",
-              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.CORE\\INTERFACES\\SERVICES\\EQUIPMENT\\IBaseStationService.cs",
-              "RelativeDocumentMoniker": "TNS.CORE\\INTERFACES\\SERVICES\\EQUIPMENT\\IBaseStationService.cs",
-              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.CORE\\INTERFACES\\SERVICES\\EQUIPMENT\\IBaseStationService.cs",
-              "RelativeToolTip": "TNS.CORE\\INTERFACES\\SERVICES\\EQUIPMENT\\IBaseStationService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T19:10:00.019Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BaseStationService.cs",
-              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.APPLICATION\\SERVICES\\EQUIPMENT\\BaseStationService.cs",
-              "RelativeDocumentMoniker": "TNS.APPLICATION\\SERVICES\\EQUIPMENT\\BaseStationService.cs",
-              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.APPLICATION\\SERVICES\\EQUIPMENT\\BaseStationService.cs",
-              "RelativeToolTip": "TNS.APPLICATION\\SERVICES\\EQUIPMENT\\BaseStationService.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAqwDwAAABRAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T19:04:22.994Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BaseStationAddressService.cs",
-              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.APPLICATION\\SERVICES\\EQUIPMENT\\BaseStationAddressService.cs",
-              "RelativeDocumentMoniker": "TNS.APPLICATION\\SERVICES\\EQUIPMENT\\BaseStationAddressService.cs",
-              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.APPLICATION\\SERVICES\\EQUIPMENT\\BaseStationAddressService.cs",
-              "RelativeToolTip": "TNS.APPLICATION\\SERVICES\\EQUIPMENT\\BaseStationAddressService.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAAAAEMAAABAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T19:04:18.335Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EquipmentService.cs",
-              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.APPLICATION\\SERVICES\\EQUIPMENT\\EquipmentService.cs",
-              "RelativeDocumentMoniker": "TNS.APPLICATION\\SERVICES\\EQUIPMENT\\EquipmentService.cs",
-              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.APPLICATION\\SERVICES\\EQUIPMENT\\EquipmentService.cs",
-              "RelativeToolTip": "TNS.APPLICATION\\SERVICES\\EQUIPMENT\\EquipmentService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGsAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T19:04:28.731Z",
+              "WhenOpened": "2024-06-15T10:51:19.056Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "BaseStationRepository.cs",
-              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.PERSISTENCE\\REPOSITORIES\\EQUIPMENT\\BaseStationRepository.cs",
-              "RelativeDocumentMoniker": "TNS.PERSISTENCE\\REPOSITORIES\\EQUIPMENT\\BaseStationRepository.cs",
-              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.PERSISTENCE\\REPOSITORIES\\EQUIPMENT\\BaseStationRepository.cs",
-              "RelativeToolTip": "TNS.PERSISTENCE\\REPOSITORIES\\EQUIPMENT\\BaseStationRepository.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAAABsAAAAjAAAA",
+              "Title": "CRMEndpoints.cs",
+              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.API\\ENDPOINTS\\CRMEndpoints.cs",
+              "RelativeDocumentMoniker": "TNS.API\\ENDPOINTS\\CRMEndpoints.cs",
+              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.API\\ENDPOINTS\\CRMEndpoints.cs",
+              "RelativeToolTip": "TNS.API\\ENDPOINTS\\CRMEndpoints.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T20:24:44.864Z",
+              "WhenOpened": "2024-06-15T10:50:32.961Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BaseStationAddressRepository.cs",
-              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.PERSISTENCE\\REPOSITORIES\\EQUIPMENT\\BaseStationAddressRepository.cs",
-              "RelativeDocumentMoniker": "TNS.PERSISTENCE\\REPOSITORIES\\EQUIPMENT\\BaseStationAddressRepository.cs",
-              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.PERSISTENCE\\REPOSITORIES\\EQUIPMENT\\BaseStationAddressRepository.cs",
-              "RelativeToolTip": "TNS.PERSISTENCE\\REPOSITORIES\\EQUIPMENT\\BaseStationAddressRepository.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABgAAAAqAAAA",
+              "DocumentIndex": 2,
+              "Title": "CRMService.cs",
+              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.APPLICATION\\SERVICES\\CRM\\CRMService.cs",
+              "RelativeDocumentMoniker": "TNS.APPLICATION\\SERVICES\\CRM\\CRMService.cs",
+              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.APPLICATION\\SERVICES\\CRM\\CRMService.cs",
+              "RelativeToolTip": "TNS.APPLICATION\\SERVICES\\CRM\\CRMService.cs",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAEsAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T20:20:10.928Z",
+              "WhenOpened": "2024-06-15T10:03:16.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CRMRepository.cs",
+              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.PERSISTENCE\\REPOSITORIES\\CRM\\CRMRepository.cs",
+              "RelativeDocumentMoniker": "TNS.PERSISTENCE\\REPOSITORIES\\CRM\\CRMRepository.cs",
+              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\TNS.Project\\TNS.PERSISTENCE\\REPOSITORIES\\CRM\\CRMRepository.cs",
+              "RelativeToolTip": "TNS.PERSISTENCE\\REPOSITORIES\\CRM\\CRMRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T10:03:11.123Z",
               "EditorCaption": ""
             }
           ]

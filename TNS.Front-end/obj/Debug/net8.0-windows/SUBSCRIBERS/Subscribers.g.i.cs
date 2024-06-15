@@ -157,7 +157,7 @@ namespace TNS.Front_end {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TNS.Front-end;component/subscribers/subscribers.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TNS.Front-end;V1.0.0.0;component/subscribers/subscribers.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\SUBSCRIBERS\Subscribers.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

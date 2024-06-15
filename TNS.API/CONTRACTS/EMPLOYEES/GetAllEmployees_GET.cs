@@ -4,12 +4,12 @@ namespace TNS.API.CONTRACTS.EMPLOYEES;
 
 public record GetAllEmployees_GET
 (
-    Guid id,
-    string fullName,                   // ФИО сотрудника
-    string photoId,                    // путь к фото
-    DateOnly dateOfBirth,                // дата рождения
-    string? telegram,                   // telegram
-    string email,                      // e-mail
-    string login,                      // авторизация (номер телефона)
-    string passwordHash                // авторизация (пароль)
+    Guid Id,
+    string FullName,                   // ФИО сотрудника
+    string PhotoId,                    // путь к фото
+    DateOnly DateOfBirth,                // дата рождения
+    string? Telegram,                   // telegram
+    string Email,                      // e-mail
+    string Login,                      // авторизация (номер телефона)
+    string PasswordHash                // авторизация (пароль)
 );
