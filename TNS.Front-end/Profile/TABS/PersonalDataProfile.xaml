@@ -1,0 +1,27 @@
+﻿<Page x:Class="TNS.Front_end.Profile.PersonalDataProfile"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TNS.Front_end.Profile"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="600"
+      Title="PersonalDataProfile">
+
+    <Grid>
+        <StackPanel  Margin="10 60 10 10">
+            <GroupBox BorderBrush="#9CD8FB" Height="405" Width="500">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TBlAddUser}"      Text="Фамилия" FontSize="15" Foreground="#9CD8FB" Margin="0 20 0 0"/>
+                    <TextBox   Style="{StaticResource textboxProfile}"  Text="Петров" IsReadOnly="True"  Margin="15,0,0,20" HorizontalAlignment="Left" Height="40"/>
+                    <TextBlock Style="{StaticResource TBlAddUser}"      Text="Имя" FontSize="15" Foreground="#9CD8FB"/>
+                    <TextBox   Style="{StaticResource textboxProfile}"  Text="Сергей"  IsReadOnly="True" Margin="15,0,0,20" HorizontalAlignment="Left" Height="40"/>
+                    <TextBlock Style="{StaticResource TBlAddUser}"      Text="Отчество" FontSize="15" Foreground="#9CD8FB"/>
+                    <TextBox   Style="{StaticResource textboxProfile}"  Text="Сергеевич" IsReadOnly="True"  Margin="15,0,0,20" HorizontalAlignment="Left" Height="40"/>
+                    <TextBlock Style="{StaticResource TBlAddUser}"      Text="Дата рождения" FontSize="15" Foreground="#9CD8FB"/>
+                    <TextBox   Style="{StaticResource textboxProfile}"  Text="01.03.2004" IsReadOnly="True"  Margin="15,0,0,20" HorizontalAlignment="Left"/>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Page>

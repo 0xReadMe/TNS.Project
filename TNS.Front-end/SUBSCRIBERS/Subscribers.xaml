@@ -97,7 +97,7 @@
                    Content="ФИО"
                    Style="{DynamicResource tabButton}"
                    Click="FullNameBtn_Click"/>
-            <Image Source="/Sourse/На авторизацию_Обновление кода.png" 
+            <Image x:Name="refreshBtn" Source="/Sourse/На авторизацию_Обновление кода.png" 
                   VerticalAlignment="Center" 
                   Width="30" 
                   Height="30" 
@@ -122,12 +122,6 @@
                         </DataTemplate>
                     </DataGridCheckBoxColumn.HeaderTemplate>
                 </DataGridCheckBoxColumn>
-
-                <DataGridTextColumn Header="#"
-                                   IsReadOnly="True"
-                                   CanUserResize="False"
-                                   Width="auto"
-                                   Binding="{Binding SubscriberNumber}"/>
 
                 <DataGridTemplateColumn Header="ФИО"
                                        IsReadOnly="True"

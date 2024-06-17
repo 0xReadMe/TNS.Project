@@ -7,40 +7,40 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="CRM\AddCRM.xaml.cs">
+    <Compile Update="CRM\ACTIONS\AddCRM.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="CRM\EditCRM.xaml.cs">
+    <Compile Update="CRM\ACTIONS\EditCRM.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="CRM\OpenCRM.xaml.cs">
+    <Compile Update="CRM\ACTIONS\OpenCRM.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="CRM\TestEquipment.xaml.cs">
+    <Compile Update="CRM\ACTIONS\TestEquipment.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Employee\AddEmployee.xaml.cs">
+    <Compile Update="EMPLOYEE\ACTIONS\AddEmployee.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Employee\EditEmployee.xaml.cs">
+    <Compile Update="EMPLOYEE\ACTIONS\EditEmployee.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Employee\Employee_Page.xaml.cs">
+    <Compile Update="EMPLOYEE\Employee_Page.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Employee\OpenEmployee.xaml.cs">
+    <Compile Update="EMPLOYEE\ACTIONS\OpenEmployee.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="EQUIPMENT\AddEquipmentAccessNetwork.xaml.cs">
+    <Compile Update="EQUIPMENT\ACTIONS_ACCESS\AddEquipmentAccessNetwork.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="EQUIPMENT\AddEquipmentMagisralNetworks.xaml.cs">
+    <Compile Update="EQUIPMENT\ACTIONS_MAGISTRAL\AddEquipmentMagisralNetworks.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="EQUIPMENT\EditEquipmentAccessNetwork.xaml.cs">
+    <Compile Update="EQUIPMENT\ACTIONS_ACCESS\EditEquipmentAccessNetwork.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="EQUIPMENT\EditEquipmentMagisralNetworks.xaml.cs">
+    <Compile Update="EQUIPMENT\ACTIONS_MAGISTRAL\EditEquipmentMagisralNetworks.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="EQUIPMENT\EquipmentAccessNetwork.xaml.cs">
@@ -49,31 +49,31 @@
     <Compile Update="EQUIPMENT\EquipmentMagisralNetworks.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="EQUIPMENT\OpenEquipmentAccessNetwork.xaml.cs">
+    <Compile Update="EQUIPMENT\ACTIONS_ACCESS\OpenEquipmentAccessNetwork.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="EQUIPMENT\OpenEquipmentMagisralNetworks.xaml.cs">
+    <Compile Update="EQUIPMENT\ACTIONS_MAGISTRAL\OpenEquipmentMagisralNetworks.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Help\HelpUsers.xaml.cs">
+    <Compile Update="HELP\HelpUsers.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="MessageWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Profile\ContactInformationProfile.xaml.cs">
+    <Compile Update="PROFILE\TABS\ContactInformationProfile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Profile\EventsProfile.xaml.cs">
+    <Compile Update="PROFILE\TABS\EventsProfile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Profile\PersonalDataProfile.xaml.cs">
+    <Compile Update="PROFILE\TABS\PersonalDataProfile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Profile\ProfileUser.xaml.cs">
+    <Compile Update="PROFILE\ProfileUser.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="SUBSCRIBERS\AddUser.xaml.cs">
+    <Compile Update="SUBSCRIBERS\ACTIONS\AddUser.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="MainWindow.xaml.cs">
@@ -82,57 +82,54 @@
     <Compile Update="CRM\CRM_Page.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="SUBSCRIBERS\EditUser.xaml.cs">
+    <Compile Update="SUBSCRIBERS\ACTIONS\EditUser.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="EQUIPMENT\Equipment.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="FAQ.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="SUBSCRIBERS\Subscribers.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="SUBSCRIBERS\OpenUser.xaml.cs">
+    <Compile Update="SUBSCRIBERS\ACTIONS\OpenUser.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="CRM\AddCRM.xaml">
+    <Page Update="CRM\ACTIONS\AddCRM.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="CRM\EditCRM.xaml">
+    <Page Update="CRM\ACTIONS\EditCRM.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="CRM\OpenCRM.xaml">
+    <Page Update="CRM\ACTIONS\OpenCRM.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="CRM\TestEquipment.xaml">
+    <Page Update="CRM\ACTIONS\TestEquipment.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Employee\AddEmployee.xaml">
+    <Page Update="EMPLOYEE\ACTIONS\AddEmployee.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Employee\EditEmployee.xaml">
+    <Page Update="EMPLOYEE\ACTIONS\EditEmployee.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Employee\Employee_Page.xaml">
+    <Page Update="EMPLOYEE\Employee_Page.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Employee\OpenEmployee.xaml">
+    <Page Update="EMPLOYEE\ACTIONS\OpenEmployee.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="EQUIPMENT\AddEquipmentAccessNetwork.xaml">
+    <Page Update="EQUIPMENT\ACTIONS_ACCESS\AddEquipmentAccessNetwork.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="EQUIPMENT\AddEquipmentMagisralNetworks.xaml">
+    <Page Update="EQUIPMENT\ACTIONS_MAGISTRAL\AddEquipmentMagisralNetworks.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="EQUIPMENT\EditEquipmentAccessNetwork.xaml">
+    <Page Update="EQUIPMENT\ACTIONS_ACCESS\EditEquipmentAccessNetwork.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="EQUIPMENT\EditEquipmentMagisralNetworks.xaml">
+    <Page Update="EQUIPMENT\ACTIONS_MAGISTRAL\EditEquipmentMagisralNetworks.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="EQUIPMENT\EquipmentAccessNetwork.xaml">
@@ -141,31 +138,31 @@
     <Page Update="EQUIPMENT\EquipmentMagisralNetworks.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="EQUIPMENT\OpenEquipmentAccessNetwork.xaml">
+    <Page Update="EQUIPMENT\ACTIONS_ACCESS\OpenEquipmentAccessNetwork.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="EQUIPMENT\OpenEquipmentMagisralNetworks.xaml">
+    <Page Update="EQUIPMENT\ACTIONS_MAGISTRAL\OpenEquipmentMagisralNetworks.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Help\HelpUsers.xaml">
+    <Page Update="HELP\HelpUsers.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MessageWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Profile\ContactInformationProfile.xaml">
+    <Page Update="PROFILE\TABS\ContactInformationProfile.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Profile\EventsProfile.xaml">
+    <Page Update="PROFILE\TABS\EventsProfile.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Profile\PersonalDataProfile.xaml">
+    <Page Update="PROFILE\TABS\PersonalDataProfile.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Profile\ProfileUser.xaml">
+    <Page Update="PROFILE\ProfileUser.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="SUBSCRIBERS\AddUser.xaml">
+    <Page Update="SUBSCRIBERS\ACTIONS\AddUser.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
@@ -174,13 +171,10 @@
     <Page Update="CRM\CRM_Page.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="SUBSCRIBERS\EditUser.xaml">
+    <Page Update="SUBSCRIBERS\ACTIONS\EditUser.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="EQUIPMENT\Equipment.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="FAQ.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="SUBSCRIBERS\Subscribers.xaml">
@@ -189,7 +183,7 @@
     <Page Update="Autorization.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="SUBSCRIBERS\OpenUser.xaml">
+    <Page Update="SUBSCRIBERS\ACTIONS\OpenUser.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -11,6 +11,9 @@ public static class CRMEndpoints
     {
         app.MapGet("CRM/getAll", GetAllCRM);
         app.MapGet("CRM/get/{id:guid}", GetCRMById);
+        app.MapGet("CRM/get/service/{id:guid}", GetServiceById);
+        app.MapGet("CRM/get/serviceProvided/{id:guid}", GetServiceProvidedById);
+        app.MapGet("CRM/get/serviceType/{id:guid}", GetServiceTypeById);
         app.MapGet("CRM/testEquipment", TestEquipment);
 
         app.MapPost("CRM/add", AddCRM);
@@ -20,6 +23,21 @@ public static class CRMEndpoints
         app.MapDelete("CRM/delete/{id:guid}", DeleteCRM);
 
         return app;
+    }
+
+    private static async Task GetServiceTypeById(HttpContext context)
+    {
+        throw new NotImplementedException();
+    }
+
+    private static async Task GetServiceProvidedById(HttpContext context)
+    {
+        throw new NotImplementedException();
+    }
+
+    private static async Task GetServiceById(HttpContext context)
+    {
+        throw new NotImplementedException();
     }
 
     private static async Task<Microsoft.AspNetCore.Http.IResult> TestEquipment(CRMService _CRMService) => Results.Ok(_CRMService.TestCRMEquipment().Result);

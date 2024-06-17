@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net.Http;
+using System.Text.Json;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TNS.Front_end.Employee.MODELS;
 
 namespace TNS.Front_end.Employee
 {
@@ -20,9 +13,41 @@ namespace TNS.Front_end.Employee
     /// </summary>
     public partial class Employee_Page : Page
     {
+        List<GetAllEmployees_GET> _employee;
+
         public Employee_Page()
         {
             InitializeComponent();
+
+            _employee = GetEmployee();
+            membersDataGrid.ItemsSource = _employee;
+        }
+
+        private static List<GetAllEmployees_GET> GetEmployee()
+        {
+            using var httpClient = new HttpClient();
+            try
+            {
+                var response = httpClient.GetAsync("https://localhost:7110/employee/getAll").Result;
+                response.EnsureSuccessStatusCode();
+
+                var jsonResponse = response.Content.ReadAsStringAsync().Result;
+                var subscribers = JsonSerializer.Deserialize<List<GetAllEmployees_GET>>(jsonResponse);
+
+                return subscribers;
+            }
+            catch (HttpRequestException ex)
+            {
+                // Обработка ошибок при запросе к API
+                MessageBox.Show($"Ошибка при получении подписчиков: {ex.Message}");
+                throw;
+            }
+            catch (JsonException ex)
+            {
+                // Обработка ошибок при десериализации JSON-ответа
+                MessageBox.Show($"Ошибка при десериализации JSON-ответа: {ex.Message}");
+                throw;
+            }
         }
 
         private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
@@ -37,13 +62,17 @@ namespace TNS.Front_end.Employee
 
         private void Open_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            OpenEmployee openEmployee = new OpenEmployee();
+            var ellipse = sender as Ellipse;
+            var subscriber = ellipse.DataContext as GetAllEmployees_GET;
+            OpenEmployee openEmployee = new OpenEmployee(this, subscriber);
             openEmployee.Show();
         }
 
         private void Edit_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            EditEmployee editEmployee = new EditEmployee();
+            var ellipse = sender as Ellipse;
+            var subscriber = ellipse.DataContext as GetAllEmployees_GET;
+            EditEmployee editEmployee = new EditEmployee(this, subscriber);
             editEmployee.Show();
         }
 
@@ -79,6 +108,11 @@ namespace TNS.Front_end.Employee
         }
 
         private void FullNameBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Delete_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
         }

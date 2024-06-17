@@ -40,6 +40,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="SorsePhoto\ProfilePhoto2.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

@@ -1,0 +1,93 @@
+﻿<Window x:Class="TNS.Front_end.EQUIPMENT.EditEquipmentAccessNetwork"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TNS.Front_end.EQUIPMENT"
+        mc:Ignorable="d"
+        Title="EditEquipmentAccessNetwork" Height="715" Width="600" 
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" 
+        WindowStyle="None" BorderBrush="#9CD8FB" BorderThickness="3" Topmost="True">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Name="ToolBar" Grid.Row="0" Grid.Column="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 0 15">
+                <Image Height="30" 
+                   Width="30" 
+                   MouseDown="Image_MouseDown_Minimized"
+                   Name="MinimizedBtn">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/Sourse/На авторизацию_Свернуь.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=MinimizedBtn}" Value="True">
+                                    <Setter Property="Source" Value="/Sourse/MouseEnter-свернуь.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+                <Image Height="30" 
+                   Width="30"
+                   MouseDown="Image_MouseDown_Close"
+                   Name="CloseBtn">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/Sourse/На авторизацию_Закрыть.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=CloseBtn}" Value="True">
+                                    <Setter Property="Source" Value="/Sourse/MouseEnter-закрыть.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </StackPanel>
+        </Grid>
+        <TextBlock Grid.Column="0"
+               Grid.Row="0"
+               Text="Редактирование оборудования сетей&#x0a;доступа"
+               Height="50"
+               Margin="10 5"
+               FontSize="14"
+               Foreground="#339AF0"/>
+        <TextBlock Grid.Row="2" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Адрес площадки"></TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Название площадки"></TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Название оборудования"></TextBlock>
+        <TextBlock Grid.Row="5" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Площадь зоны покрытия"></TextBlock>
+        <TextBlock Grid.Row="6" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Частота, Гц"></TextBlock>
+        <TextBlock Grid.Row="7" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Тип антенны"></TextBlock>
+        <TextBlock Grid.Row="8" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Передача соединения"></TextBlock>
+        <TextBlock Grid.Row="9" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Стандарт связи"></TextBlock>
+
+        <TextBox x:Name="tbAddress"   Grid.Row="2"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left"></TextBox>
+        <TextBox  x:Name="tbLocation"  Grid.Row="3"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left"></TextBox>
+        <TextBox x:Name="tbName"   Grid.Row="4"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left"></TextBox>
+        <TextBox x:Name="tbS"   Grid.Row="5"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left"></TextBox>
+        <TextBox x:Name="tbFrequency"   Grid.Row="6"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left"></TextBox>
+        <ComboBox x:Name="cbTypeAntenna"  Grid.Row="7"  Grid.Column="1"                              Style="{StaticResource ComboBoxFlatStyle}" Height="35"                   Width="265"></ComboBox>
+        <TextBox x:Name="tbHandover"   Grid.Row="8"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left"></TextBox>
+        <ComboBox x:Name="cbCommunicationProtocol"  Grid.Row="9"  Grid.Column="1"                              Style="{StaticResource ComboBoxFlatStyle}" Height="35"                   Width="265"></ComboBox>
+
+        <Button  Grid.Row="10"                  Style="{StaticResource addButton}"     Width="270" Margin="0,4,5,11" Content="Очистить"  HorizontalAlignment="Center"/>
+        <Button  Grid.Row="10" Grid.Column="1"  Style="{StaticResource addButton}"     Width="270" Margin="0,4,5,11" Content="Сохранить" HorizontalAlignment="Center"/>
+    </Grid>
+</Window>

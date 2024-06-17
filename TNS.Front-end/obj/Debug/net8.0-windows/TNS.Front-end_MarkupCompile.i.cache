@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\8-bit\Desktop\делаю\TNS.Project\TNS.Front-end\App.xaml
-31-844421574
+30-472725833
 
-40880572846
+59772283245
 1981451641563
-Autorization.xaml;CRM\AddCRM.xaml;CRM\CRM_Page.xaml;CRM\EditCRM.xaml;CRM\OpenCRM.xaml;CRM\TestEquipment.xaml;Employee\AddEmployee.xaml;Employee\EditEmployee.xaml;Employee\Employee_Page.xaml;Employee\OpenEmployee.xaml;EQUIPMENT\AddEquipmentAccessNetwork.xaml;EQUIPMENT\AddEquipmentMagisralNetworks.xaml;EQUIPMENT\EditEquipmentAccessNetwork.xaml;EQUIPMENT\EditEquipmentMagisralNetworks.xaml;EQUIPMENT\Equipment.xaml;EQUIPMENT\EquipmentAccessNetwork.xaml;EQUIPMENT\EquipmentMagisralNetworks.xaml;EQUIPMENT\OpenEquipmentAccessNetwork.xaml;EQUIPMENT\OpenEquipmentMagisralNetworks.xaml;FAQ.xaml;Help\HelpUsers.xaml;MainWindow.xaml;MessageWindow.xaml;Profile\ContactInformationProfile.xaml;Profile\EventsProfile.xaml;Profile\PersonalDataProfile.xaml;Profile\ProfileUser.xaml;SUBSCRIBERS\AddUser.xaml;SUBSCRIBERS\EditUser.xaml;SUBSCRIBERS\OpenUser.xaml;SUBSCRIBERS\Subscribers.xaml;
+Autorization.xaml;CRM\ACTIONS\AddCRM.xaml;CRM\ACTIONS\EditCRM.xaml;CRM\ACTIONS\OpenCRM.xaml;CRM\ACTIONS\TestEquipment.xaml;CRM\CRM_Page.xaml;EMPLOYEE\ACTIONS\AddEmployee.xaml;EMPLOYEE\ACTIONS\EditEmployee.xaml;EMPLOYEE\ACTIONS\OpenEmployee.xaml;EMPLOYEE\Employee_Page.xaml;EQUIPMENT\ACTIONS_ACCESS\AddEquipmentAccessNetwork.xaml;EQUIPMENT\ACTIONS_ACCESS\EditEquipmentAccessNetwork.xaml;EQUIPMENT\ACTIONS_ACCESS\OpenEquipmentAccessNetwork.xaml;EQUIPMENT\ACTIONS_MAGISTRAL\AddEquipmentMagisralNetworks.xaml;EQUIPMENT\ACTIONS_MAGISTRAL\EditEquipmentMagisralNetworks.xaml;EQUIPMENT\ACTIONS_MAGISTRAL\OpenEquipmentMagisralNetworks.xaml;EQUIPMENT\Equipment.xaml;EQUIPMENT\EquipmentAccessNetwork.xaml;EQUIPMENT\EquipmentMagisralNetworks.xaml;HELP\HelpUsers.xaml;MainWindow.xaml;MessageWindow.xaml;PROFILE\ProfileUser.xaml;PROFILE\TABS\ContactInformationProfile.xaml;PROFILE\TABS\EventsProfile.xaml;PROFILE\TABS\PersonalDataProfile.xaml;SUBSCRIBERS\ACTIONS\AddUser.xaml;SUBSCRIBERS\ACTIONS\EditUser.xaml;SUBSCRIBERS\ACTIONS\OpenUser.xaml;SUBSCRIBERS\Subscribers.xaml;
 
-True
+False
 

@@ -22,7 +22,13 @@ public partial class MainWindow : Window
         Interval = new TimeSpan(0, 0, 0, 0, 10)                             // =======
     };                                                                      // ======= выезжающее меню слева
 
-    List<Page> pages = [ new Subscribers(), new Equipment(), new CRM_Page(), new Employee_Page()];   // список страниц фрейма
+    List<Page> pages = // список фреймов
+        [ 
+        new Subscribers(), 
+        new Equipment(), 
+        new CRM_Page(), 
+        new Employee_Page()
+        ];   
 
     /// <summary>
     /// Страница после авторизации - абоненты.
@@ -32,10 +38,6 @@ public partial class MainWindow : Window
         InitializeComponent();;
         ContentFrame.Content = pages[0];
         timer.Tick += Timer_Tick;
-        //Hide();                                                                                                             // TODO: реализовать авторизацию и убрать
-        //Autorization main = new Autorization();                                                                                 // TODO: реализовать авторизацию и убрать
-        //main.Show();                                                                                                        // TODO: реализовать авторизацию и убрать
-        //Close();                                                                                                            // TODO: реализовать авторизацию и убрать
     }
 
     /// <summary>
@@ -62,6 +64,7 @@ public partial class MainWindow : Window
             }
         }
     }
+
     private void ListView_MouseEnter(object sender, MouseEventArgs e) => timer.Start();                                                     //  начало анимации меню
 
     private void Image_MouseDown_Minimized(object sender, MouseButtonEventArgs e) => WindowState = WindowState.Minimized;                   //  свернуть окно
@@ -74,13 +77,13 @@ public partial class MainWindow : Window
 
     private void Profile_MouseDown(object sender, MouseButtonEventArgs e)
     {
-        ProfileUser profile = new ProfileUser();
+        ProfileUser profile = new();
         profile.Show();
     }
 
     private void Help_MouseDown(object sender, MouseButtonEventArgs e)
     {
-        HelpUsers helpUsers = new HelpUsers();
+        HelpUsers helpUsers = new();
         helpUsers.Show();
     }
 

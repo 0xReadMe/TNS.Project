@@ -128,15 +128,9 @@
                     </DataGridCheckBoxColumn.HeaderTemplate>
                 </DataGridCheckBoxColumn>
 
-                <DataGridTextColumn Header="#"
-                           IsReadOnly="True"
-                           CanUserResize="False"
-                           Width="auto"
-                           Binding="{Binding Id}"/>
-
                 <DataGridTextColumn Header="Название"
                                IsReadOnly="True"
-                               Width="*"
+                               Width="1.15*"
                                Binding="{Binding Name}"/>
 
                 <DataGridTextColumn Header="Частота, Гц" 
@@ -153,7 +147,7 @@
                            Binding="{Binding DTT}"/>
                 <DataGridTextColumn Header="Расположение"
                            IsReadOnly="True" 
-                           Width="auto"
+                           Width="1.15*"
                            Binding="{Binding Address}"/>
                 <DataGridTemplateColumn x:Name="dgBtnStack" Header="Операции"
                                                             IsReadOnly="True" 
@@ -195,7 +189,7 @@
                                         Height="30"
                                         CornerRadius="50"
                                         Margin="0 0 5 0">
-                                    <Ellipse Cursor="Hand" >
+                                    <Ellipse Cursor="Hand" MouseDown="Delete_MouseDown">
                                         <Ellipse.ToolTip>
                                             <ToolTip Style="{StaticResource toolTip}">
                                                 <TextBlock Text="Удалить"/>

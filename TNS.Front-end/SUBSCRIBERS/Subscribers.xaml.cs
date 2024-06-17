@@ -1,11 +1,7 @@
-﻿using System.Net;
-using System.Net.Http;
-using System.Text.Json;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Shapes;
-using TNS.Front_end.SUBSCRIBERS;
 using TNS.Front_end.SUBSCRIBERS.MODELS;
 
 namespace TNS.Front_end;
@@ -16,274 +12,173 @@ namespace TNS.Front_end;
 public partial class Subscribers : Page
 {
     public AddUser AboutWindow;
-    bool servicesPressed = false;
-    string contentBtn;
-
-    readonly List<string> services = 
-        [
-            "Интернет",
-            "Мобильная связь",
-            "Телевидение",
-            "Видеонаблюдение"
-        ];
-
+    string chooseFilter;
     List<GetSubscriber_GET> subscribers;
-
-
+    
     public Subscribers()
     {
         InitializeComponent();
-        subscribers = GetSubscribers();
 
-        //foreach (var subscriber in subscribers) 
-        //{
-        //    subscriber.FirstName = "bind";
-        //}
-
-        membersDataGrid.ItemsSource = subscribers;
-        //SubscribersUtils.FillComboBox(SubscribersUtils.filters, CBSort);
-        //CBSort.SelectedIndex = 0;
-    }
-
-    private static List<GetSubscriber_GET> GetSubscribers() 
-    {
-        using (var httpClient = new HttpClient())
+        MouseButtonEventArgs args = new(Mouse.PrimaryDevice, 0, MouseButton.Left)
         {
-            try
-            {
-                var response =  httpClient.GetAsync("https://localhost:7110/subscriber/getAll").Result;
-                response.EnsureSuccessStatusCode();
-
-                var jsonResponse = response.Content.ReadAsStringAsync().Result;
-                var subscribers = JsonSerializer.Deserialize<List<GetSubscriber_GET>>(jsonResponse);
-
-                return subscribers;
-            }
-            catch (HttpRequestException ex)
-            {
-                // Обработка ошибок при запросе к API
-                Console.WriteLine($"Ошибка при получении подписчиков: {ex.Message}");
-                throw;
-            }
-            catch (JsonException ex)
-            {
-                // Обработка ошибок при десериализации JSON-ответа
-                Console.WriteLine($"Ошибка при десериализации JSON-ответа: {ex.Message}");
-                throw;
-            }
-        }
-            
+            RoutedEvent = Image.MouseDownEvent
+        };
+        refreshBtn.RaiseEvent(args);
     }
 
     private void ActiveBtn_Click(object sender, RoutedEventArgs e)
     {
-    //    List<GetSubscriber_GET> membersActive = [];
-    //    membersActive = membersCopy.Where(
-    //        m => m.DateOfTermination > DateOnly.FromDateTime(DateTime.Now) ||
-    //        m.DateOfTermination == null).ToList();
-    //    membersChanged = membersActive;
-    //    SubscribersUtils.UpdateList(membersDataGrid, membersActive);
-    //    contentBtn = SubscribersUtils.ButtonThicknessChange(ActiveBtn, btnStack);
-    //    SubscribersUtils.FillComboBox("Активные", CBSort);
-    //    CBSort.SelectedIndex = 0;
+        List<GetSubscriber_GET> active = subscribers
+            .Where(m => m.DateOfTerminationOfTheContract > DateOnly.FromDateTime(DateTime.Now) 
+            || m.DateOfTerminationOfTheContract == null).ToList();
+
+        chooseFilter = FilterBlock.ButtonThicknessChange(ActiveBtn, btnStack);
+        ComboBoxSort.FillComboBox(chooseFilter, CBSort);
+        CBSort.SelectedIndex = 0;
+
+        Update(active);
     }
     private void InactiveBtn_Click(object sender, RoutedEventArgs e)
     {
-    //    List<GetSubscriber_GET> membersInactive = [];
-    //    membersInactive = membersCopy.Where(
-    //        m => m.DateOfTermination < DateOnly.FromDateTime(DateTime.Now))
-    //        .ToList();
-    //    membersChanged = membersInactive;
-    //    SubscribersUtils.UpdateList(membersDataGrid, membersInactive);
-    //    contentBtn = SubscribersUtils.ButtonThicknessChange(InactiveBtn, btnStack);
-    //    SubscribersUtils.FillComboBox("Неактивные", CBSort);
-    //    CBSort.SelectedIndex = 0;
+        List<GetSubscriber_GET> inactive = subscribers.Where(
+            m => m.DateOfTerminationOfTheContract < DateOnly.FromDateTime(DateTime.Now)).ToList();
+
+        chooseFilter = FilterBlock.ButtonThicknessChange(InactiveBtn, btnStack);
+        ComboBoxSort.FillComboBox(chooseFilter, CBSort);
+        CBSort.SelectedIndex = 0;
+
+        Update(inactive);
     }
 
     private void ServicesBtn_Click(object sender, RoutedEventArgs e)
     {
-    //    if (!servicesPressed)
-    //    {
-    //        SubscribersUtils.FillComboBox(services, CBSort);
-    //        contentBtn = SubscribersUtils.ButtonThicknessChange(ServicesBtn, btnStack);
-    //        CBSort.SelectedIndex = 0;
-    //        servicesPressed = true;
-    //    }
-    //    //CBSort.SelectionChanged += CBSort_SelectionChanged;
+        ComboBoxSort.FillComboBox(ComboBoxSort.Services, CBSort);
+        chooseFilter = FilterBlock.ButtonThicknessChange(ServicesBtn, btnStack);
+        CBSort.SelectedIndex = 0;
+
+        Update(subscribers);
     }
     private void FullNameBtn_Click(object sender, RoutedEventArgs e)
     {
-    //    SubscribersUtils.FillComboBox("ФИО", CBSort);
-    //    contentBtn = SubscribersUtils.ButtonThicknessChange(FullNameBtn, btnStack);
-    //    CBSort.SelectedIndex = 0;
-    //    membersChanged = membersCopy;
-    //    SubscribersUtils.UpdateList(membersDataGrid, membersChanged);
+        chooseFilter = FilterBlock.ButtonThicknessChange(FullNameBtn, btnStack);
+        ComboBoxSort.FillComboBox(chooseFilter, CBSort);
+        CBSort.SelectedIndex = 0;
+
+        Update(subscribers);
     }
 
     private void BillBtn_Click(object sender, RoutedEventArgs e)
     {
-    //    SubscribersUtils.FillComboBox("Лицевой счет", CBSort);
-    //    contentBtn = SubscribersUtils.ButtonThicknessChange(BillBtn, btnStack);
-    //    CBSort.SelectedIndex = 0;
-    //    membersChanged = membersCopy;
-    //    SubscribersUtils.UpdateList(membersDataGrid, membersChanged);
+        chooseFilter = FilterBlock.ButtonThicknessChange(BillBtn, btnStack);
+        ComboBoxSort.FillComboBox(chooseFilter, CBSort);
+        CBSort.SelectedIndex = 0;
+
+        Update(subscribers);
     }
 
     private void ContractNumberBtn_Click(object sender, RoutedEventArgs e)
     {
-    //    SubscribersUtils.FillComboBox("Номер договора", CBSort);
-    //    contentBtn = SubscribersUtils.ButtonThicknessChange(ContractNumberBtn, btnStack);
-    //    CBSort.SelectedIndex = 0;
-    //    membersChanged = membersCopy;
-    //    SubscribersUtils.UpdateList(membersDataGrid, membersChanged);
+        chooseFilter = FilterBlock.ButtonThicknessChange(ContractNumberBtn, btnStack);
+        ComboBoxSort.FillComboBox(chooseFilter, CBSort);
+        CBSort.SelectedIndex = 0; 
+
+        Update(subscribers);
     }
 
-
-
-    private void TxtSearch_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+    private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
     {
-    //    List<GetSubscriber_GET> membersLocal = [];
+        if (txtSearch.Text == "") 
+        {
+            switch (chooseFilter)
+            {
+                case "Активные":
+                    ActiveBtn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                    break;
 
-    //    membersLocal = membersChanged.Where(sub =>
-    //    sub.Name.Contains(txtSearch.Text, StringComparison.CurrentCultureIgnoreCase) ||
-    //    sub.PersonaAccount.Contains(txtSearch.Text, StringComparison.CurrentCultureIgnoreCase) ||
-    //    sub.Services.Contains(txtSearch.Text, StringComparison.CurrentCultureIgnoreCase))
-    //        .ToList();
+                case "Неактивные":
+                    InactiveBtn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                    break;
 
-    //    if (txtSearch.Text == "")
-    //        membersDataGrid.ItemsSource = membersChanged;
-    //    membersDataGrid.ItemsSource = membersLocal;
+                case "Услуги":
+                    ServicesBtn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                    break;
+
+                case "Лицевой счет":
+                    BillBtn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                    break;
+
+                case "Номер договора":
+                    ContractNumberBtn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                    break;
+
+                case "ФИО":
+                    FullNameBtn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                    break;
+
+                default:
+                    FilterBlock.ButtonThicknessChange(addButton, btnStack);
+                    Update(subscribers);
+                    break;
+            }
+        }
+
+        List<GetSubscriber_GET> findList = FindInfo.Find<GetSubscriber_GET>(membersDataGrid, txtSearch);
+        Update(findList);
     }
-
-    
 
     private void CBSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-    //    List<GetSubscriber_GET> localMembers = [];
-    //    var tb = (TextBlock)CBSort.SelectedValue;
-
-    //    if (tb != null)
-    //    {
-    //        foreach (var filter in SubscribersUtils.filters)
-    //        {
-    //            if (tb.Text.Contains(filter, StringComparison.CurrentCultureIgnoreCase))
-    //            {
-    //                switch (contentBtn)
-    //                {
-    //                    case "Активные":
-    //                        Filter(filter, x => x.Name);
-    //                        break;
-
-    //                    case "Неактивные":
-    //                        Filter(filter, x => x.Name);
-    //                        break;
-
-    //                    case "Услуги":
-    //                        Filter(filter, x => x.Services);
-    //                        break;
-
-    //                    case "Лицевой счет":
-    //                        Filter(filter, x => x.NumberUser);
-    //                        break;
-
-    //                    case "Номер договора":
-    //                        Filter(filter, x => x.NumberContract);
-    //                        break;
-
-    //                    case "ФИО":
-    //                        Filter(filter, x => x.Name);
-    //                        break;
-
-    //                }
-    //            }
-    //        }
-
-    //        if (servicesPressed)
-    //        {
-    //            localMembers = membersCopy.Where(
-    //                m => m.Services == tb.Text)
-    //                .ToList();
-    //            membersChanged = localMembers;
-    //            SubscribersUtils.UpdateList(membersDataGrid, localMembers);
-    //            servicesPressed = false;
-    //        }
-    //    }
-    }
-
-    void Filter(string filter, Func<GetSubscriber_GET, string> predicate)
-    {
-    //    List<GetSubscriber_GET> filtersMembersChanged = [];
-
-    //    filtersMembersChanged = filter.ToLower() switch
-    //    {
-    //        "по возрастанию" => [.. membersChanged.OrderBy(predicate)],
-    //        "по убыванию" => [.. membersChanged.OrderByDescending(predicate)],
-    //        _ => new(membersChanged),
-    //    };
-    //    //switch (filter.ToLower())
-    //    //{
-    //    //    case "по возрастанию":
-    //    //        membersChanged = [.. membersChanged.OrderBy(predicate)];
-    //    //        break;
-
-    //    //    case "по убыванию":
-    //    //        membersChanged = [.. membersChanged.OrderByDescending(predicate)];
-    //    //        break;
-
-    //    //    default:
-    //    //        membersChanged = new(membersCopy);
-    //    //        break;
-    //    //}
-    //    SubscribersUtils.UpdateList(membersDataGrid, filtersMembersChanged);
+        var result = ComboBoxSort.ChangeCB<GetSubscriber_GET>(CBSort, chooseFilter, membersDataGrid);
+        Update(result);
     }
 
     private void RefreshButton_Click(object sender, MouseButtonEventArgs e)
     {
-    //    SubscribersUtils.ButtonThicknessChange(addButton, btnStack);
-    //    membersCopy = new(members);
-    //    membersChanged = new(members);
-    //    SubscribersUtils.UpdateList(membersDataGrid, membersCopy);
-    //    SubscribersUtils.FillComboBox(SubscribersUtils.filters, CBSort);
-
+        subscribers = ApiContext.Get<GetSubscriber_GET>($"https://localhost:{Configurator.GetPort().Normalize().TrimStart().TrimEnd()}/subscriber/getAll");
+        Update(subscribers);
+        FilterBlock.ButtonThicknessChange(addButton, btnStack);
+        ComboBoxSort.FillComboBox(ComboBoxSort.Filters, CBSort);
+        CBSort.SelectedIndex = 0;
     }
 
     private async void AddButton(object sender, RoutedEventArgs e)
     {
-        AddUser addUser = new AddUser();
+        AddUser addUser = new();
         addUser.Show();
     }
 
     private  void Open_MouseDown(object sender, MouseButtonEventArgs e)
     {
-
         var ellipse = sender as Ellipse;
         var subscriber = ellipse.DataContext as GetSubscriber_GET;
-        //get person by personId
-        OpenUser openUser = new OpenUser(this, subscriber);
+
+        OpenUser openUser = new(this, subscriber);
         openUser.Show();
+
         addButton.IsEnabled = false;
-
-
     }
 
     private void Edit_MouseDown(object sender, MouseButtonEventArgs e)
     {
-        EditUser editUser = new EditUser();
+        var ellipse = sender as Ellipse;
+        var subscriber = ellipse.DataContext as GetSubscriber_GET;
+
+        EditUser editUser = new(subscriber, this);
         editUser.Show();
+
+        addButton.IsEnabled = false;
     }
 
     private void DeleteMouseDown(object sender, MouseButtonEventArgs e)
     {
-        string messageBox = "Вы точно хотите удалить...";
-        ShowMessage(messageBox);
+        var ellipse = sender as Ellipse;
+        var subscriber = ellipse.DataContext as GetSubscriber_GET;
 
+        string message = $"Вы точно хотите удалить абонента \"{subscriber.FirstName} {subscriber.MiddleName} {subscriber.LastName}\"?";
+        var dialog = new MessageWindow(message, subscriber);
+        
+        addButton.IsEnabled = false;
     }
 
-    public static MessageBoxResult ShowMessage(string message)
-    {
-        var dialog = new MessageWindow();
-        dialog.MessageContainer.Text = message;
-        dialog.ShowDialog();
-        return MessageBoxResult.None;
-    }
+    private void Update(List<GetSubscriber_GET> sub) => membersDataGrid.ItemsSource = sub;
 }

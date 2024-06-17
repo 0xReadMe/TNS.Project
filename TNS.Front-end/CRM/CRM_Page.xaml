@@ -124,33 +124,29 @@
                     </DataGridCheckBoxColumn.HeaderTemplate>
                 </DataGridCheckBoxColumn>
 
-                <DataGridTextColumn Header="#"
-                                   IsReadOnly="True"
-                                   CanUserResize="False"
-                                   Width="auto"
-                                   Binding="{Binding Id}"/>
-
                 <DataGridTextColumn Header="Номер заявки"
                                        IsReadOnly="True"
                                        Width="1.4*"
-                                       Binding="{Binding NumberRequest}"/>
+                                       Binding="{Binding Id}"/>
 
                 <DataGridTextColumn Header="Номер абонента" 
                                    IsReadOnly="True" 
                                    Width="*" 
-                                   Binding="{Binding AbonentNumber}"/>
-                <DataGridTextColumn Header="Статус" 
-                                   IsReadOnly="True" 
-                                   Width="*" 
-                                   Binding="{Binding Status}"/>
-                <DataGridTextColumn Header="Услуги"
+                                   Binding="{Binding SubscriberNumber}"/>
+                
+                <DataGridTextColumn Header="Описание проблемы"
                                    IsReadOnly="True"
                                    Width="*"
-                                   Binding="{Binding Service}"/>
+                                   Binding="{Binding TypeOfProblem}"/>
                 <DataGridTextColumn Header="Тип оборудования клиента"
                                    IsReadOnly="True" 
                                    Width="auto"
-                                   Binding="{Binding TypeEquipment}"/>
+                                   Binding="{Binding TypeOfEquipment}"/>
+                <DataGridTextColumn Header="Статус" 
+                   IsReadOnly="True" 
+                   Width="*" 
+                   Binding="{Binding Status}"/>
+                
                 <DataGridTemplateColumn x:Name="dgBtnStack" Header="Операции"
                                        IsReadOnly="True" 
                                        Width="auto">
@@ -191,7 +187,7 @@
                                        Height="30"
                                        CornerRadius="50"
                                        Margin="0 0 5 0">
-                                    <Ellipse Cursor="Hand" >
+                                    <Ellipse Cursor="Hand" MouseDown="Delete_MouseDown">
                                         <Ellipse.ToolTip>
                                             <ToolTip Style="{StaticResource toolTip}">
                                                 <TextBlock Text="Удалить"/>
