@@ -25,14 +25,16 @@ d:DesignHeight="930" d:DesignWidth="1460"
                           Grid.Row="0"
                           Width="1200">
 
-                <Button  PreviewMouseDown = "EMN_MouseDown"
+                <Button  x:Name="emnBtn"
+                         PreviewMouseDown = "EMN_MouseDown"
                          Content="Оборудование магистральных сетей"
                          FontSize="25"
                          FontWeight="Normal"
                          Height="35"
                          Style="{DynamicResource tabButton}"
                 />
-                <Button  PreviewMouseDown = "EAN_MouseDown"
+                <Button  x:Name="eanBtn"
+                         PreviewMouseDown = "EAN_MouseDown"
                          Content="Оборудование сетей доступа"
                          FontSize="25"
                          FontWeight="Normal"

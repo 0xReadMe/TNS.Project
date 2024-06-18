@@ -53,11 +53,11 @@
                 </Image>
             </StackPanel>
         </Grid>
-        <TextBlock Name="MessageContainer" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="25 15" Foreground="#024C8C" FontSize="15"/>
+        <TextBox Name="MessageContainer" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="True" Grid.Row="1" TextWrapping="WrapWithOverflow" Margin="25 15" Foreground="#024C8C" FontSize="15"/>
         <StackPanel Name="ButtonContainer" Grid.Row="2" Orientation="Horizontal"
                     HorizontalAlignment="Right" Width="300">
-            <Button Content="Да" Style="{StaticResource addButton}" Width="75" Height="30" Margin="140 0 0 0" FontSize="15" Background="#9CD8FB"/>
-            <Button Content="Нет" Style="{StaticResource addButton}"  Width="75" Height="30" Margin="5 0 0 0" FontSize="15" Background="#9CD8FB"/>
+            <Button Content="Да" Click="Yes_Click" Style="{StaticResource addButton}" Width="75" Height="30" Margin="140 0 0 0" FontSize="15" Background="#9CD8FB"/>
+            <Button Content="Нет" Click="No_Click" Style="{StaticResource addButton}"  Width="75" Height="30" Margin="5 0 0 0" FontSize="15" Background="#9CD8FB"/>
         </StackPanel>
     </Grid>
 </Window>

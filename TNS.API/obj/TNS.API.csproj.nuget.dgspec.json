@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.API\\TNS.API.csproj": {}
+    "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.API\\TNS.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.API\\TNS.API.csproj": {
+    "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.API\\TNS.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.API\\TNS.API.csproj",
+        "projectUniqueName": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.API\\TNS.API.csproj",
         "projectName": "TNS.API",
-        "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.API\\TNS.API.csproj",
+        "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.API\\TNS.API.csproj",
         "packagesPath": "C:\\Users\\8-bit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.API\\obj\\",
+        "outputPath": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\8-bit\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,17 +28,17 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.APPLICATION\\TNS.APPLICATION.csproj": {
-                "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.APPLICATION\\TNS.APPLICATION.csproj"
+              "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.APPLICATION\\TNS.APPLICATION.csproj": {
+                "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.APPLICATION\\TNS.APPLICATION.csproj"
               },
-              "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.Core\\TNS.CORE.csproj": {
-                "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.Core\\TNS.CORE.csproj"
+              "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.Core\\TNS.CORE.csproj": {
+                "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.Core\\TNS.CORE.csproj"
               },
-              "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.INFRASTRUCTURE\\TNS.INFRASTRUCTURE.csproj": {
-                "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.INFRASTRUCTURE\\TNS.INFRASTRUCTURE.csproj"
+              "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.INFRASTRUCTURE\\TNS.INFRASTRUCTURE.csproj": {
+                "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.INFRASTRUCTURE\\TNS.INFRASTRUCTURE.csproj"
               },
-              "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj": {
-                "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj"
+              "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj": {
+                "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj"
               }
             }
           }
@@ -114,14 +114,14 @@
         }
       }
     },
-    "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.APPLICATION\\TNS.APPLICATION.csproj": {
+    "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.APPLICATION\\TNS.APPLICATION.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.APPLICATION\\TNS.APPLICATION.csproj",
+        "projectUniqueName": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.APPLICATION\\TNS.APPLICATION.csproj",
         "projectName": "TNS.APPLICATION",
-        "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.APPLICATION\\TNS.APPLICATION.csproj",
+        "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.APPLICATION\\TNS.APPLICATION.csproj",
         "packagesPath": "C:\\Users\\8-bit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.APPLICATION\\obj\\",
+        "outputPath": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.APPLICATION\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\8-bit\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -138,8 +138,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.Core\\TNS.CORE.csproj": {
-                "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.Core\\TNS.CORE.csproj"
+              "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.Core\\TNS.CORE.csproj": {
+                "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.Core\\TNS.CORE.csproj"
               }
             }
           }
@@ -184,14 +184,14 @@
         }
       }
     },
-    "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.Core\\TNS.CORE.csproj": {
+    "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.Core\\TNS.CORE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.Core\\TNS.CORE.csproj",
+        "projectUniqueName": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.Core\\TNS.CORE.csproj",
         "projectName": "TNS.CORE",
-        "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.Core\\TNS.CORE.csproj",
+        "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.Core\\TNS.CORE.csproj",
         "packagesPath": "C:\\Users\\8-bit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.Core\\obj\\",
+        "outputPath": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\8-bit\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -250,14 +250,14 @@
         }
       }
     },
-    "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.INFRASTRUCTURE\\TNS.INFRASTRUCTURE.csproj": {
+    "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.INFRASTRUCTURE\\TNS.INFRASTRUCTURE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.INFRASTRUCTURE\\TNS.INFRASTRUCTURE.csproj",
+        "projectUniqueName": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.INFRASTRUCTURE\\TNS.INFRASTRUCTURE.csproj",
         "projectName": "TNS.INFRASTRUCTURE",
-        "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.INFRASTRUCTURE\\TNS.INFRASTRUCTURE.csproj",
+        "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.INFRASTRUCTURE\\TNS.INFRASTRUCTURE.csproj",
         "packagesPath": "C:\\Users\\8-bit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.INFRASTRUCTURE\\obj\\",
+        "outputPath": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.INFRASTRUCTURE\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\8-bit\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -274,8 +274,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.APPLICATION\\TNS.APPLICATION.csproj": {
-                "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.APPLICATION\\TNS.APPLICATION.csproj"
+              "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.APPLICATION\\TNS.APPLICATION.csproj": {
+                "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.APPLICATION\\TNS.APPLICATION.csproj"
               }
             }
           }
@@ -320,14 +320,14 @@
         }
       }
     },
-    "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj": {
+    "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj",
+        "projectUniqueName": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj",
         "projectName": "TNS.PERSISTENCE",
-        "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj",
+        "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj",
         "packagesPath": "C:\\Users\\8-bit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.PERSISTENCE\\obj\\",
+        "outputPath": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.PERSISTENCE\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\8-bit\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -344,8 +344,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.APPLICATION\\TNS.APPLICATION.csproj": {
-                "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.APPLICATION\\TNS.APPLICATION.csproj"
+              "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.APPLICATION\\TNS.APPLICATION.csproj": {
+                "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.APPLICATION\\TNS.APPLICATION.csproj"
               }
             }
           }

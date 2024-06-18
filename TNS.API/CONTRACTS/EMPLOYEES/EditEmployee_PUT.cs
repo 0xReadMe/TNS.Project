@@ -4,6 +4,7 @@ namespace TNS.API.CONTRACTS.EMPLOYEES;
 
 public record EditEmployee_PUT
 (
+    int RoleId,
     string      FullName,                       // ФИО сотрудника
     string      PhotoId,                        // путь к фото
     DateOnly    DateOfBirth,                    // дата рождения

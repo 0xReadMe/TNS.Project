@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yJ8R2e8xqfst/ur861pWF94KZhgElMNvZQgv7nALuHyrDinaN5cK45SXWPdTqL1Dyc/iunDdHwdTue00pSU1ug==",
+  "dgSpecHash": "cx2Aqf6hfQ2RbYkX34GJ97R8bgnPCzE5ZpICVgrcIQLD0c8AtEUB8pt2IksG5cEYrZEpIi6C9ClP7D+4s2Zlxw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.INFRASTRUCTURE\\TNS.INFRASTRUCTURE.csproj",
+  "projectFilePath": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.INFRASTRUCTURE\\TNS.INFRASTRUCTURE.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\8-bit\\.nuget\\packages\\csharpfunctionalextensions\\2.41.0\\csharpfunctionalextensions.2.41.0.nupkg.sha512",
     "C:\\Users\\8-bit\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"

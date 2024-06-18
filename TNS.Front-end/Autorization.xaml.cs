@@ -1,7 +1,12 @@
 ﻿using System.Globalization;
+using System.Net.Http;
+using System.Net.Http.Json;
+using System.Security.Policy;
+using System.Text.Json;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
+using TNS.Front_end.Employee.MODELS;
 
 namespace TNS.Front_end;
 
@@ -28,11 +33,37 @@ public partial class Autorization : Window
     /// </summary>
     private void Authorization_Click(object sender, RoutedEventArgs e)
     {
-        //if (Autorization) 
-        //{
-        //    MainWindow main = new MainWindow();
-        //    main.Show();
-        //    Close();
-        //}
+        GetAllEmployees_GET employee;
+        if (!string.IsNullOrWhiteSpace(number.Text) || !string.IsNullOrWhiteSpace(password.Text))
+        {
+            Login_POST login = new(number.Text, password.Text);
+
+            using var httpClient = new HttpClient();
+            try
+            {
+                var response = httpClient.PostAsJsonAsync($"https://localhost:{Configurator.GetPort().Normalize().TrimStart().TrimEnd()}/employee/login", login);
+
+                var jsonResponse = response.Result.Content.ReadAsStringAsync().Result;
+                employee = JsonSerializer.Deserialize<GetAllEmployees_GET>(jsonResponse);
+            }
+            catch (HttpRequestException ex)
+            {
+                var dialog = new MessageWindow($"Ошибка при добавлении данных: {ex.Message}");
+                throw;
+            }
+            catch (JsonException ex)
+            {
+                var dialog = new MessageWindow($"JSON-deserailization error: {ex.Message}");
+                throw;
+            }
+
+            MainWindow mainWindow = new(employee);
+            mainWindow.Show();
+            Close();
+        }
+        else 
+        {
+            var dialog = new MessageWindow("Пожалуйста, введите логин и пароль.");
+        }
     }
 }

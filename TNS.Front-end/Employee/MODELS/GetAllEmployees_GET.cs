@@ -7,6 +7,9 @@ public class GetAllEmployees_GET
     [JsonPropertyName("id")]
     public Guid Id { get; set; }
 
+    [JsonPropertyName("roleId")]
+    public int RoleId { get; set; }
+
     [JsonPropertyName("fullName")]
     public string FullName { get; set; }
 

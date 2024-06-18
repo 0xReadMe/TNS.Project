@@ -26,41 +26,22 @@ namespace TNS.Front_end.EQUIPMENT
     public partial class EquipmentAccessNetwork : Page
     {
         List<GetAllBaseStations_GET> _equipment;
+        string chooseFilter;
+
 
         public EquipmentAccessNetwork()
         {
             InitializeComponent();
-            _equipment = GetEquipment();
 
             membersDataGrid.ItemsSource = _equipment;
+
+            MouseButtonEventArgs args = new(Mouse.PrimaryDevice, 0, MouseButton.Left)
+            {
+                RoutedEvent = Image.MouseDownEvent
+            };
+            refreshBtn.RaiseEvent(args);
         }
-
-        private static List<GetAllBaseStations_GET> GetEquipment()
-        {
-            using var httpClient = new HttpClient();
-            try
-            {
-                var response = httpClient.GetAsync("https://localhost:7110/equipment/getAllBaseStations").Result;
-                response.EnsureSuccessStatusCode();
-
-                var jsonResponse = response.Content.ReadAsStringAsync().Result;
-                var subscribers = JsonSerializer.Deserialize<List<GetAllBaseStations_GET>>(jsonResponse);
-
-                return subscribers;
-            }
-            catch (HttpRequestException ex)
-            {
-                // Обработка ошибок при запросе к API
-                MessageBox.Show($"Ошибка при получении оборудования: {ex.Message}");
-                throw;
-            }
-            catch (JsonException ex)
-            {
-                // Обработка ошибок при десериализации JSON-ответа
-                MessageBox.Show($"Ошибка при десериализации JSON-ответа: {ex.Message}");
-                throw;
-            }
-        }
+        
 
         private void AddButton(object sender, RoutedEventArgs e)
         {
@@ -92,37 +73,89 @@ namespace TNS.Front_end.EQUIPMENT
 
         private void RefreshButton_Click(object sender, MouseButtonEventArgs e)
         {
-
+            chooseFilter = "";
+            _equipment = ApiContext.Get<GetAllBaseStations_GET>($"https://localhost:{Configurator.GetPort().Normalize().TrimStart().TrimEnd()}/equipment/getAllBaseStations");
+            Update(_equipment);
+            FilterBlock.ButtonThicknessChange(addButton, btnStack);
+            ComboBoxSort.FillComboBox(ComboBoxSort.Filters, CBSort);
+            CBSort.SelectedIndex = 0;
         }
 
         private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (txtSearch.Text == "")
+            {
+                switch (chooseFilter)
+                {
+                    case "Частота":
+                        FrequencyBtn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                        break;
 
+                    case "Площадь зоны покрытия":
+                        SBtn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                        break;
+
+                    case "Тип антенны":
+                        TypeAntennaBtn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                        break;
+
+                    case "Стандарт связи":
+                        CommunicationProtocolBtn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                        break;
+
+                    default:
+                        MouseButtonEventArgs args = new(Mouse.PrimaryDevice, 0, MouseButton.Left)
+                        {
+                            RoutedEvent = Image.MouseDownEvent
+                        };
+                        refreshBtn.RaiseEvent(args);
+                        break;
+                }
+            }
+            List<GetAllBaseStations_GET> findList = FindInfo.Find<GetAllBaseStations_GET>(membersDataGrid, txtSearch);
+            Update(findList);
         }
 
         private void CBSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            var result = ComboBoxSort.ChangeCB<GetAllBaseStations_GET>(CBSort, chooseFilter, membersDataGrid);
+            Update(result);
         }
 
         private void FrequencyBtn_Click(object sender, RoutedEventArgs e)
         {
+            chooseFilter = FilterBlock.ButtonThicknessChange(FrequencyBtn, btnStack);
+            ComboBoxSort.FillComboBox(chooseFilter, CBSort);
+            CBSort.SelectedIndex = 0;
 
+            Update(_equipment);
         }
 
         private void SBtn_Click(object sender, RoutedEventArgs e)
         {
+            chooseFilter = FilterBlock.ButtonThicknessChange(SBtn, btnStack);
+            ComboBoxSort.FillComboBox(chooseFilter, CBSort);
+            CBSort.SelectedIndex = 0;
 
+            Update(_equipment);
         }
 
         private void TypeAntennaBtn_Click(object sender, RoutedEventArgs e)
         {
+            ComboBoxSort.FillComboBox(ComboBoxSort.Antenna, CBSort);
+            chooseFilter = FilterBlock.ButtonThicknessChange(TypeAntennaBtn, btnStack);
+            CBSort.SelectedIndex = 0;
 
+            Update(_equipment);
         }
 
         private void CommunicationProtocolBtn_Click(object sender, RoutedEventArgs e)
         {
+            ComboBoxSort.FillComboBox(ComboBoxSort.Protocols, CBSort);
+            chooseFilter = FilterBlock.ButtonThicknessChange(CommunicationProtocolBtn, btnStack);
+            CBSort.SelectedIndex = 0;
 
+            Update(_equipment);
         }
 
         private void Delete_MouseDown(object sender, MouseButtonEventArgs e)
@@ -132,5 +165,6 @@ namespace TNS.Front_end.EQUIPMENT
             string messageBox = $"Вы точно хотите удалить оборудование \"{subscriber.BaseStationName}\"?";
         }
 
+        private void Update(List<GetAllBaseStations_GET> sub) => membersDataGrid.ItemsSource = sub;
     }
 }

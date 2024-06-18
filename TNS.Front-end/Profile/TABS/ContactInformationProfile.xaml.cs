@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TNS.Front_end.Employee.MODELS;
 
 namespace TNS.Front_end.Profile
 {
@@ -20,7 +21,7 @@ namespace TNS.Front_end.Profile
     /// </summary>
     public partial class ContactInformationProfile : Page
     {
-        public ContactInformationProfile()
+        public ContactInformationProfile(GetAllEmployees_GET _emp)
         {
             InitializeComponent();
         }

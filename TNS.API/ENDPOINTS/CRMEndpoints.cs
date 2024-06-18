@@ -42,7 +42,7 @@ public static class CRMEndpoints
 
     private static async Task<Microsoft.AspNetCore.Http.IResult> TestEquipment(CRMService _CRMService) => Results.Ok(_CRMService.TestCRMEquipment().Result);
 
-    private static async Task<Microsoft.AspNetCore.Http.IResult> DeleteCRM(CRMService _CRMService, [FromRoute] Guid id)
+    private static async Task<IResult> DeleteCRM(CRMService _CRMService, [FromRoute] Guid id)
     {
         var res = await _CRMService.DeleteCRM(id);
         if (res.IsFailure) return Results.BadRequest($"{res.Error}");
@@ -50,7 +50,7 @@ public static class CRMEndpoints
         return Results.Ok();
     }
 
-    private static async Task<Microsoft.AspNetCore.Http.IResult> EditCRM(
+    private static async Task<IResult> EditCRM(
         CRMService _CRMService, [FromRoute] Guid id, ServiceService serviceService, 
         ServiceTypeService serviceTypeService, ServiceProvidedService serviceProvidedService, SubscriberService subscriberService,
         EditCRM_PUT editCRM)
@@ -65,7 +65,7 @@ public static class CRMEndpoints
         return Results.Ok();
     }
 
-    private static async Task<Microsoft.AspNetCore.Http.IResult> AddCRM(
+    private static async Task<IResult> AddCRM(
         CRMService _CRMService, ServiceService serviceService, ServiceTypeService serviceTypeService, 
         ServiceProvidedService serviceProvidedService, SubscriberService subscriberService, AddCRM_POST editCRM)
     {
@@ -79,7 +79,7 @@ public static class CRMEndpoints
         return Results.Ok();
     }
 
-    private static async Task<Microsoft.AspNetCore.Http.IResult> GetCRMById(CRMService _CRMService, [FromRoute] Guid id)
+    private static async Task<IResult> GetCRMById(CRMService _CRMService, [FromRoute] Guid id)
     {
         var r = await _CRMService.GetByGuidCRM(id);
         if (r.IsFailure) return Results.BadRequest($"BadRequestBaseStation: {r.Error}");
@@ -89,7 +89,7 @@ public static class CRMEndpoints
         return Results.Ok(r.Value);
     }
 
-    private static async Task<Microsoft.AspNetCore.Http.IResult> GetAllCRM(CRMService _CRMService)
+    private static async Task<IResult> GetAllCRM(CRMService _CRMService)
     {
         var result = await _CRMService.GetAllCRM_Requests();
         if (result.IsFailure) return Results.BadRequest($"BadRequestBaseStation: {result.Error}");

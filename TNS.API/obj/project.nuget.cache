@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0J/zuXvbzEbKR7irnCdqZ2493TOIt/K3Wp/fGmcPm3liTAJwzWe8xJLZ+ULZH0kwHgJUrDpHesh2hp7jcNVUnQ==",
+  "dgSpecHash": "tJ9KzC714g5isBmsc5waXiOl4+4sXm2Jvgo2P110W9mbF6W+tlzGMZvcZu4EkR010fzRjVlvmnJ8+MIgzLzG8g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.API\\TNS.API.csproj",
+  "projectFilePath": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.API\\TNS.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\8-bit\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\8-bit\\.nuget\\packages\\csharpfunctionalextensions\\2.41.0\\csharpfunctionalextensions.2.41.0.nupkg.sha512",

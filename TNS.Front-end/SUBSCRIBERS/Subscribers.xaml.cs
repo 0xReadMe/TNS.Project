@@ -116,8 +116,11 @@ public partial class Subscribers : Page
                     break;
 
                 default:
-                    FilterBlock.ButtonThicknessChange(addButton, btnStack);
-                    Update(subscribers);
+                    MouseButtonEventArgs args = new(Mouse.PrimaryDevice, 0, MouseButton.Left)
+                    {
+                        RoutedEvent = Image.MouseDownEvent
+                    };
+                    refreshBtn.RaiseEvent(args);
                     break;
             }
         }
@@ -134,6 +137,7 @@ public partial class Subscribers : Page
 
     private void RefreshButton_Click(object sender, MouseButtonEventArgs e)
     {
+        chooseFilter = "";
         subscribers = ApiContext.Get<GetSubscriber_GET>($"https://localhost:{Configurator.GetPort().Normalize().TrimStart().TrimEnd()}/subscriber/getAll");
         Update(subscribers);
         FilterBlock.ButtonThicknessChange(addButton, btnStack);

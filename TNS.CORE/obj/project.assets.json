@@ -59,11 +59,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.Core\\TNS.CORE.csproj",
+      "projectUniqueName": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.Core\\TNS.CORE.csproj",
       "projectName": "TNS.CORE",
-      "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.Core\\TNS.CORE.csproj",
+      "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.Core\\TNS.CORE.csproj",
       "packagesPath": "C:\\Users\\8-bit\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.Core\\obj\\",
+      "outputPath": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\8-bit\\AppData\\Roaming\\NuGet\\NuGet.Config",

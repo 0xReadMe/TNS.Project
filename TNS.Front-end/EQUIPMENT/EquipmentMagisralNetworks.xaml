@@ -102,7 +102,7 @@
                     Style="{DynamicResource tabButton}"
                     Click="AddressBtn_Click"
                     />
-            <Image Source="/Sourse/На авторизацию_Обновление кода.png" 
+            <Image x:Name="refreshBtn" Source="/Sourse/На авторизацию_Обновление кода.png" 
                    VerticalAlignment="Center" 
                    Width="30" 
                    Height="30" 
@@ -116,7 +116,7 @@
                   RowStyle="{DynamicResource DataGridRowStyle1}"
                   Grid.Row="1"
                   Margin="100,65,5,5"
-                  x:Name="membersDataGrid" SelectionChanged="membersDataGrid_SelectionChanged">
+                  x:Name="membersDataGrid">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn CanUserResize="False"
                                         Width="auto"

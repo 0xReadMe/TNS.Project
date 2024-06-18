@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PslU4WpyZJe3jff4CqN64uii4J1TlK/vbPOd8RRwHuI08exWAG907nJl5v3jDRBV87YHe2+j4s/ArrUuybaT0w==",
+  "dgSpecHash": "UDdc9HcbLKbTFSdoYjqg80GzSJHcDtMABZL58MZTRmShjt0HUX993t9+eo5PY3riWHJ//f//9BQYXxwHOe/jgA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.Front-end\\TNS.Front-end.csproj",
+  "projectFilePath": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.Front-end\\TNS.Front-end.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\8-bit\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
     "C:\\Users\\8-bit\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512"

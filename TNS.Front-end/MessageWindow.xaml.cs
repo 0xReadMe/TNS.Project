@@ -13,6 +13,8 @@ namespace TNS.Front_end
     /// </summary>
     public partial class MessageWindow: Window 
     {
+        GetSubscriber_GET _sub;
+
         public MessageWindow(string message)
         {
             InitializeComponent();
@@ -24,6 +26,7 @@ namespace TNS.Front_end
         {
             InitializeComponent();
             MessageContainer.Text = message;
+            _sub = entity;
         }
 
         public MessageWindow(string message, GetAllBaseStations_GET entity)
@@ -52,5 +55,18 @@ namespace TNS.Front_end
 
         private void Image_MouseDown_Minimized(object sender, MouseButtonEventArgs e) => WindowState = WindowState.Minimized;                   //  свернуть окно
         private void Image_MouseDown_Close(object sender, MouseButtonEventArgs e) => Close();                                                   //  закрыть окно
+
+        private void Yes_Click(object sender, RoutedEventArgs e)
+        {
+            if (_sub != null) 
+            {
+                ApiContext.Delete($"https://localhost:{Configurator.GetPort().Normalize().TrimStart().TrimEnd()}/subscriber/delete/{_sub.SubscriberId}");
+            }
+        }
+
+        private void No_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TNS.Front_end.CRM;
+using TNS.Front_end.Employee.MODELS;
 
 namespace TNS.Front_end.Profile
 {
@@ -20,11 +21,21 @@ namespace TNS.Front_end.Profile
     /// </summary>
     public partial class ProfileUser : Window
     {
-        List<Page> pages = [new PersonalDataProfile(), new EventsProfile(), new ContactInformationProfile()];   // список страниц фрейма
+        static GetAllEmployees_GET _emp;
+        List<Page> pages;   // список страниц фрейма
 
-        public ProfileUser()
+        public ProfileUser(GetAllEmployees_GET employee)
         {
+            _emp = employee;
             InitializeComponent();
+
+            pages =
+            [
+                new PersonalDataProfile(_emp),
+                new EventsProfile(_emp),
+                new ContactInformationProfile(_emp)
+            ];
+
             ContentFrameProfile.Content = pages[0];
         }
         private void PersonalDataMouseDown(object sender, MouseButtonEventArgs e) => ContentFrameProfile.Content = pages[0];                            //  переход на страницу личных данных

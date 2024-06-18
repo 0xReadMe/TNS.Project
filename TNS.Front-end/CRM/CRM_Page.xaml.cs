@@ -13,95 +13,76 @@ namespace TNS.Front_end.CRM;
 /// </summary>
 public partial class CRM_Page : Page
 {
-    //List<string> services = [];
-    
-    //List<CRM_request> membersCopy;
-    //List<CRM_request> membersChanged;
     List<CRM_viewmodel> CRM;
+    string chooseFilter;
+
 
     public CRM_Page()
     {
         InitializeComponent();
-        //membersCopy = new(members);
-        //membersDataGrid.ItemsSource = members;
-
-        CRM = GetCRM();
 
         membersDataGrid.ItemsSource = CRM;
-    }
 
-    private static List<CRM_viewmodel> GetCRM()
-    {
-        using var httpClient = new HttpClient();
-        try
+        MouseButtonEventArgs args = new(Mouse.PrimaryDevice, 0, MouseButton.Left)
         {
-            var response = httpClient.GetAsync("https://localhost:7110/CRM/getAll").Result;
-            response.EnsureSuccessStatusCode();
-
-            var jsonResponse = response.Content.ReadAsStringAsync().Result;
-            var subscribers = JsonSerializer.Deserialize<List<GetAllCRM_GET>>(jsonResponse);
-            List<CRM_viewmodel> crmList = [];
-            foreach (var item in subscribers)
-            {
-                CRM_viewmodel model = new()
-                {
-                    Id = item.Id,
-                    CreationDate = item.CreationDate,
-                    ClosingDate = item.ClosingDate,
-                    Status = item.Status,
-                    TypeOfProblem = item.TypeOfProblem,
-                    ProblemDescription = item.ProblemDescription
-                };
-
-                response = httpClient.GetAsync($"https://localhost:7110/subscriber/get/{item.SubscriberId}").Result;
-                response.EnsureSuccessStatusCode();
-                jsonResponse = response.Content.ReadAsStringAsync().Result;
-                var sub = JsonSerializer.Deserialize<GetSubscriber_GET>(jsonResponse);
-
-                model.PersonalBill = sub.PersonalBill.ToString();
-                model.SubscriberNumber = sub.SubscriberNumber;
-                model.TypeOfEquipment = sub.TypeOfEquipment;
-
-                //TODO: service parse from api
-
-                crmList.Add(model);
-            }
-
-            return crmList;
-        }
-        catch (HttpRequestException ex)
-        {
-            // Обработка ошибок при запросе к API
-            MessageBox.Show($"Ошибка при получении CRM-заявок: {ex.Message}");
-            throw;
-        }
-        catch (JsonException ex)
-        {
-            // Обработка ошибок при десериализации JSON-ответа
-            MessageBox.Show($"Ошибка при десериализации JSON-ответа: {ex.Message}");
-            throw;
-        }
-
+            RoutedEvent = Image.MouseDownEvent
+        };
+        refreshBtn.RaiseEvent(args);
     }
 
     private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
     {
+        if (txtSearch.Text == "")
+        {
+            switch (chooseFilter)
+            {
+                case "Статус":
+                    StatusBtn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                    break;
 
+                case "Тип оборудования":
+                    TypeEquipmentBtn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                    break;
+
+                case "Услуги":
+                    ServicesBtn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                    break;
+
+                default:
+                    MouseButtonEventArgs args = new(Mouse.PrimaryDevice, 0, MouseButton.Left)
+                    {
+                        RoutedEvent = Image.MouseDownEvent
+                    };
+                    refreshBtn.RaiseEvent(args);
+                    break;
+            }
+        }
+        List<CRM_viewmodel> findList = FindInfo.Find<CRM_viewmodel>(membersDataGrid, txtSearch);
+        Update(findList);
     }
 
     private void CBSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-
+        var result = ComboBoxSort.ChangeCB<CRM_viewmodel>(CBSort, chooseFilter, membersDataGrid);
+        Update(result);
     }
 
     private void StatusBtn_Click(object sender, RoutedEventArgs e)
     {
+        ComboBoxSort.FillComboBox(ComboBoxSort.Status, CBSort);
+        chooseFilter = FilterBlock.ButtonThicknessChange(StatusBtn, btnStack);
+        CBSort.SelectedIndex = 0;
 
+        Update(CRM);
     }
 
     private void TypeEquipmentBtn_Click(object sender, RoutedEventArgs e)
     {
+        ComboBoxSort.FillComboBox(ComboBoxSort.TypeEquipment, CBSort);
+        chooseFilter = FilterBlock.ButtonThicknessChange(TypeEquipmentBtn, btnStack);
+        CBSort.SelectedIndex = 0;
 
+        Update(CRM);
     }
 
     private void AddButton(object sender, RoutedEventArgs e)
@@ -128,12 +109,21 @@ public partial class CRM_Page : Page
 
     private void RefreshButton_Click(object sender, MouseButtonEventArgs e)
     {
-
+        chooseFilter = "";
+        CRM = ApiContext.Get<CRM_viewmodel>($"https://localhost:{Configurator.GetPort().Normalize().TrimStart().TrimEnd()}/CRM/getAll");
+        Update(CRM);
+        FilterBlock.ButtonThicknessChange(addButton, btnStack);
+        ComboBoxSort.FillComboBox(ComboBoxSort.Filters, CBSort);
+        CBSort.SelectedIndex = 0;
     }
 
     private void ServicesBtn_Click(object sender, RoutedEventArgs e)
     {
+        ComboBoxSort.FillComboBox(ComboBoxSort.Services, CBSort);
+        chooseFilter = FilterBlock.ButtonThicknessChange(ServicesBtn, btnStack);
+        CBSort.SelectedIndex = 0;
 
+        Update(CRM);
     }
 
     private void testEquipmentButton_Click(object sender, RoutedEventArgs e)
@@ -146,4 +136,5 @@ public partial class CRM_Page : Page
     {
 
     }
+    private void Update(List<CRM_viewmodel> sub) => membersDataGrid.ItemsSource = sub;
 }

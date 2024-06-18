@@ -11,7 +11,7 @@ public class EmployeeEntity
     public          string                  Telegram    { get; set; } = string.Empty;   //  telegram
     public required Email                   Email       { get; set; }                   //  e-mail
     public required PhoneNumber             Login       { get; set; }                   //  авторизация
-    public required string                  PasswordHash{ get; set; }                   //  авторизация
+    public required string                  Password    { get; set; }                   //  авторизация
 
     public ICollection<RoleEntity> Roles { get; set; } = [];
 }

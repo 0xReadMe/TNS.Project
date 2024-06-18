@@ -5,14 +5,14 @@ namespace TNS.CORE.MODELS.EMPLOYEE;
 
 public class Employee
 {
-    public Guid         Id { get; private set; }                    //  id сотрудника
-    public string       FullName { get; }                    //  ФИО сотрудника
-    public string       PhotoId { get; }                    //  путь к фото
+    public Guid         Id          { get; private set; }       //  id сотрудника
+    public string       FullName    { get; }                    //  ФИО сотрудника
+    public string       PhotoId     { get; }                    //  путь к фото
     public DateOnly     DateOfBirth { get; }                    //  дата рождения
-    public string?      Telegram { get; }                    //  telegram
-    public Email        Email { get; }                    //  e-mail
-    public PhoneNumber  Login { get; }                    //  авторизация (номер телефона)
-    public string       PasswordHash { get; }                    //  авторизация (пароль)
+    public string?      Telegram    { get; }                    //  telegram
+    public Email        Email       { get; }                    //  e-mail
+    public PhoneNumber  Login       { get; }                    //  авторизация (номер телефона)
+    public string       Password    { get; }                    //  авторизация (пароль)
 
     private Employee(Guid id,
                      string fullName,
@@ -21,7 +21,7 @@ public class Employee
                      DateOnly dateOfBirth,
                      Email email,
                      PhoneNumber login,
-                     string passwordHash)
+                     string password)
     {
         Id = id;
         FullName = fullName;
@@ -30,7 +30,7 @@ public class Employee
         Email = email;
         DateOfBirth = dateOfBirth;
         Login = login;
-        PasswordHash = passwordHash;
+        Password = password;
     }
 
     public static Result<Employee> Create(string fullName,
@@ -39,7 +39,7 @@ public class Employee
                                           DateOnly DOB,
                                           Email email,
                                           PhoneNumber login,
-                                          string passwordHash)
+                                          string password)
     {
         if (!IsValidFullName(fullName))                 return Result.Failure<Employee>("Full Name invalid.");      //  валидация ФИО
         if (PhoneNumber.Create(login.Number).IsFailure) return Result.Failure<Employee>("Login invalid.");          //  повторная валидация логина (номер телефона)
@@ -47,7 +47,6 @@ public class Employee
         photoId ??= "our empty photo";                                                                              //  если фото = null, ставим заглушку
         if (!IsValidPhotoId(photoId))                   return Result.Failure<Employee>("Photo path invalid.");     //  валидация пути к фото
 
-        if (!IsValidPasswordHash(passwordHash))         return Result.Failure<Employee>("Password hash invalid.");  //  валидация хеша
         if (Email.Create(email.email).IsFailure)        return Result.Failure<Employee>("E-mail invalid");          //  валидация e-mail
         if (!IsValidDOB(DOB))                           return Result.Failure<Employee>("DOB invalid");
 
@@ -58,7 +57,7 @@ public class Employee
         if (!IsValidTelegram(telegram))                 return Result.Failure<Employee>("Telegram invalid.");       //  валидация телеграмм
 
         Guid id = Guid.NewGuid();
-        return Result.Success(new Employee(id, fullName, photoId, telegram, DOB, email, login, passwordHash));
+        return Result.Success(new Employee(id, fullName, photoId, telegram, DOB, email, login, password));
     }
 
     public void SetId(Guid id) 
@@ -158,7 +157,7 @@ public class Employee
         {
             if (string.IsNullOrWhiteSpace(passwordHash)) return false;   // Проверяем, что хеш не пустой
             if (passwordHash.Length != 64) return false;   // Проверяем, что длина хеша соответствует ожидаемой длине (например, 64 символа для SHA-256)
-            if (!System.Text.RegularExpressions.Regex.IsMatch(passwordHash, "^[0-9a-f]+$")) return false;   // Проверяем, что хеш состоит только из допустимых символов (0-9, a-f)
+            if (!Regex.IsMatch(passwordHash, "^[0-9a-f]+$")) return false;   // Проверяем, что хеш состоит только из допустимых символов (0-9, a-f)
             return true;
         }
         catch (Exception)

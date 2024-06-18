@@ -73,7 +73,7 @@
                     <StackPanel Orientation="Horizontal"
                                 Margin="5 10 0 0">
                         <Image Source="/Sourse/User.png"/>
-                        <TextBlock Text="ФИО"
+                        <TextBlock x:Name="profileBlock" Text="ФИО"
                                    VerticalAlignment="Center"
                                    Margin="20 0 0 0"/>
                     </StackPanel>

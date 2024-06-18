@@ -19,6 +19,7 @@ namespace TNS.API.ENDPOINTS
             app.MapGet("employee/get/{id:guid}", GetEmployeeById);
 
             app.MapPost("employee/login", Login);
+
             app.MapPost("employee/add", AddEmployee);
 
             app.MapPut("employee/edit/{id:guid}", EditEmployee);
@@ -28,9 +29,17 @@ namespace TNS.API.ENDPOINTS
             return app;
         }
 
-        private static async Task Login(HttpContext context)
+        private static async Task<Microsoft.AspNetCore.Http.IResult> Login(EmployeeService employeeService, [FromBody] Login_POST login)
         {
-            throw new NotImplementedException();
+            PhoneNumber number = PhoneNumber.Create(login.Login).Value;
+            var r = await employeeService.Login(number, login.Password);
+            if(r.IsFailure) return Results.BadRequest("Invalid login or password.");
+
+            var RoleId = await employeeService.GetRoleId(r.Value.Id);
+
+            GetAllEmployees_GET getEmployee = new(r.Value.Id, RoleId.Value, r.Value.FullName, r.Value.PhotoId, r.Value.DateOfBirth, r.Value.Telegram, r.Value.Email.email, r.Value.Login.Number, r.Value.Password);
+
+            return Results.Ok(getEmployee);
         }
 
         private static async Task<Microsoft.AspNetCore.Http.IResult> DeleteEmployee(EmployeeService employeeService, [FromRoute] Guid id)
@@ -48,7 +57,7 @@ namespace TNS.API.ENDPOINTS
             if (email.IsFailure) return Results.BadRequest($"{email.Error}");
 
             var password = employeeService.GetEmployeeByGuid(id);
-            Result<Employee> emp = Employee.Create(r.FullName, r.PhotoId, r.Telegram, r.DateOfBirth, email.Value, phone.Value, password.Result.Value.PasswordHash);
+            Result<Employee> emp = Employee.Create(r.FullName, r.PhotoId, r.Telegram, r.DateOfBirth, email.Value, phone.Value, password.Result.Value.Password);
             if (emp.IsFailure) return Results.BadRequest($"{emp.Error}");
             
             var result = await employeeService.UpdateEmployee(emp.Value, id);
@@ -78,9 +87,14 @@ namespace TNS.API.ENDPOINTS
         private static async Task<Microsoft.AspNetCore.Http.IResult> GetEmployeeById(EmployeeService employeeService, [FromRoute] Guid id)
         {
             var r = (await employeeService.GetEmployeeByGuid(id)).Value;
-            GetAllEmployees_GET getEmployee = new(r.Id, r.FullName, r.PhotoId, r.DateOfBirth, r.Telegram, r.Email.email, r.Login.Number, r.PasswordHash);
 
-            return Results.Ok(getEmployee);
+            //var roleId = await roleService.GetRole();
+
+            //GetAllEmployees_GET getEmployee = new(r.Id, r.FullName, r.PhotoId, r.DateOfBirth, r.Telegram, r.Email.email, r.Login.Number, r.Password);
+
+            //return Results.Ok(getEmployee);
+            return Results.Ok();
+
         }
 
         private static async Task<Microsoft.AspNetCore.Http.IResult> GetAllEmployees(EmployeeService employeeService)
@@ -88,11 +102,11 @@ namespace TNS.API.ENDPOINTS
             var res = (await employeeService.GetAllEmployees()).Value;
             List<GetAllEmployees_GET> getSubscribers = [];
 
-            foreach (var r in res) 
-            {
-                GetAllEmployees_GET getEmployee = new(r.Id, r.FullName, r.PhotoId, r.DateOfBirth, r.Telegram, r.Email.email, r.Login.Number, r.PasswordHash);
-                getSubscribers.Add(getEmployee);
-            }
+            //foreach (var r in res) 
+            //{
+            //    GetAllEmployees_GET getEmployee = new(r.Id, r.FullName, r.PhotoId, r.DateOfBirth, r.Telegram, r.Email.email, r.Login.Number, r.Password);
+            //    getSubscribers.Add(getEmployee);
+            //}
 
             return Results.Ok(getSubscribers);
         }

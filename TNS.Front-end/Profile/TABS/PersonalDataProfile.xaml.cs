@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows.Controls;
+using TNS.Front_end.Employee.MODELS;
 
 namespace TNS.Front_end.Profile
 {
@@ -20,9 +8,42 @@ namespace TNS.Front_end.Profile
     /// </summary>
     public partial class PersonalDataProfile : Page
     {
-        public PersonalDataProfile()
+        public PersonalDataProfile(GetAllEmployees_GET _emp)
         {
             InitializeComponent();
+            string firstName, lastName, patronymic;
+
+            SplitFullName(_emp.FullName, out firstName, out lastName, out patronymic);
+            
+            firstNameTb.Text = firstName;
+            lastNameTB.Text = lastName;
+            middleNameTB.Text = patronymic;
+
+            dobTB.Text = _emp.DateOfBirth.ToString();
+        }
+
+        public void SplitFullName(string fullName, out string firstName, out string lastName, out string patronymic)
+        {
+            string[] nameParts = fullName.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (nameParts.Length == 3)
+            {
+                firstName = nameParts[1];
+                lastName = nameParts[0];
+                patronymic = nameParts[2];
+            }
+            else if (nameParts.Length == 2)
+            {
+                firstName = nameParts[1];
+                lastName = nameParts[0];
+                patronymic = "";
+            }
+            else
+            {
+                firstName = "";
+                lastName = "";
+                patronymic = "";
+            }
         }
     }
 }

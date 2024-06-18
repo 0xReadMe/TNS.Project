@@ -74,7 +74,7 @@ class ApiContext
         }
     }
 
-    public static void Delete<T>(string url)
+    public static void Delete(string url)
     {
         using var httpClient = new HttpClient();
         try

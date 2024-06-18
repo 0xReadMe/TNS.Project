@@ -166,11 +166,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.Front-end\\TNS.Front-end.csproj",
+      "projectUniqueName": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.Front-end\\TNS.Front-end.csproj",
       "projectName": "TNS.Front-end",
-      "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.Front-end\\TNS.Front-end.csproj",
+      "projectPath": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.Front-end\\TNS.Front-end.csproj",
       "packagesPath": "C:\\Users\\8-bit\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.Front-end\\obj\\",
+      "outputPath": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.Front-end\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\8-bit\\AppData\\Roaming\\NuGet\\NuGet.Config",

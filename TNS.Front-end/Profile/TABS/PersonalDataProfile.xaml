@@ -13,13 +13,13 @@
             <GroupBox BorderBrush="#9CD8FB" Height="405" Width="500">
                 <StackPanel>
                     <TextBlock Style="{StaticResource TBlAddUser}"      Text="Фамилия" FontSize="15" Foreground="#9CD8FB" Margin="0 20 0 0"/>
-                    <TextBox   Style="{StaticResource textboxProfile}"  Text="Петров" IsReadOnly="True"  Margin="15,0,0,20" HorizontalAlignment="Left" Height="40"/>
+                    <TextBox x:Name="lastNameTB"   Style="{StaticResource textboxProfile}"  Text="Петров" IsReadOnly="True"  Margin="15,0,0,20" HorizontalAlignment="Left" Height="40"/>
                     <TextBlock Style="{StaticResource TBlAddUser}"      Text="Имя" FontSize="15" Foreground="#9CD8FB"/>
-                    <TextBox   Style="{StaticResource textboxProfile}"  Text="Сергей"  IsReadOnly="True" Margin="15,0,0,20" HorizontalAlignment="Left" Height="40"/>
+                    <TextBox  x:Name="firstNameTb" Style="{StaticResource textboxProfile}"  Text="Сергей"  IsReadOnly="True" Margin="15,0,0,20" HorizontalAlignment="Left" Height="40"/>
                     <TextBlock Style="{StaticResource TBlAddUser}"      Text="Отчество" FontSize="15" Foreground="#9CD8FB"/>
-                    <TextBox   Style="{StaticResource textboxProfile}"  Text="Сергеевич" IsReadOnly="True"  Margin="15,0,0,20" HorizontalAlignment="Left" Height="40"/>
+                    <TextBox x:Name="middleNameTB"  Style="{StaticResource textboxProfile}"  Text="Сергеевич" IsReadOnly="True"  Margin="15,0,0,20" HorizontalAlignment="Left" Height="40"/>
                     <TextBlock Style="{StaticResource TBlAddUser}"      Text="Дата рождения" FontSize="15" Foreground="#9CD8FB"/>
-                    <TextBox   Style="{StaticResource textboxProfile}"  Text="01.03.2004" IsReadOnly="True"  Margin="15,0,0,20" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="dobTB"  Style="{StaticResource textboxProfile}"  Text="01.03.2004" IsReadOnly="True"  Margin="15,0,0,20" HorizontalAlignment="Left"/>
                 </StackPanel>
             </GroupBox>
         </StackPanel>

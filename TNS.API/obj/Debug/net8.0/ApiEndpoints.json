@@ -234,6 +234,28 @@
     ]
   },
   {
+    "ContainingType": "TNS.API.ENDPOINTS.EmployeeEndpoints",
+    "Method": "Login",
+    "RelativePath": "employee/login",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "login",
+        "Type": "TNS.API.CONTRACTS.EMPLOYEES.Login_POST",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "TNS.API.ENDPOINTS.EquipmentEndpoints",
     "Method": "AddBaseStation",
     "RelativePath": "equipment/addBaseStation",

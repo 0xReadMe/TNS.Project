@@ -28,13 +28,13 @@ public partial class EmployeeConfiguration : IEntityTypeConfiguration<EmployeeEn
 
         builder.HasData(
             GenerateEmployee("Вячеслав Александрович Мордник", "SorsePhoto\\ProfilePhoto3.jpg", "@boss", new DateOnly(2003, 12, 12), 
-            Email.Create("yayaya@ya.ru").Value, PhoneNumber.Create("+79152145252").Value, "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"),
+            Email.Create("yayaya@ya.ru").Value, PhoneNumber.Create("+79152145252").Value, "Boss"),
             GenerateEmployee("Вячеслава Админовична Главных", "SorsePhoto\\ProfilePhoto1.jpg", "@admin", new DateOnly(2003, 12, 12),
-            Email.Create("yayaya@ya.ru").Value, PhoneNumber.Create("+79152145253").Value, "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"),
+            Email.Create("yayaya@ya.ru").Value, PhoneNumber.Create("+79152145253").Value, "Admin"),
             GenerateEmployee("Ангелина Инженеровна Техническая", "SorsePhoto\\ProfilePhoto2.jpg", "@engineer", new DateOnly(2003, 12, 12),
-            Email.Create("yayaya@ya.ru").Value, PhoneNumber.Create("+79152145254").Value, "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"),
+            Email.Create("yayaya@ya.ru").Value, PhoneNumber.Create("+79152145254").Value, "Support"),
             GenerateEmployee("Анастасия Игоревна Саппортина", "SorsePhoto\\ProfilePhoto3.jpg", "@support", new DateOnly(2003, 12, 12),
-            Email.Create("yayaya@ya.ru").Value, PhoneNumber.Create("+79152145255").Value, "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8")
+            Email.Create("yayaya@ya.ru").Value, PhoneNumber.Create("+79152145255").Value, "Engineer")
             );
     }
 
@@ -44,7 +44,7 @@ public partial class EmployeeConfiguration : IEntityTypeConfiguration<EmployeeEn
                                                    DateOnly DOB,
                                                    Email email,
                                                    PhoneNumber login,
-                                                   string passwordHash)
+                                                   string password)
     {
         Employee s = Employee.Create(
             fullName,
@@ -53,7 +53,7 @@ public partial class EmployeeConfiguration : IEntityTypeConfiguration<EmployeeEn
             DOB,
             email,
             login,
-            passwordHash).Value;
+            password).Value;
 
         return new EmployeeEntity
         {
@@ -63,7 +63,7 @@ public partial class EmployeeConfiguration : IEntityTypeConfiguration<EmployeeEn
             DateOfBirth = s.DateOfBirth,
             Email = s.Email,
             Login = s.Login,
-            PasswordHash = s.PasswordHash,
+            Password = s.Password,
             Telegram = s.Telegram
         };
     }

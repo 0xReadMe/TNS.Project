@@ -1,4 +1,5 @@
 ﻿using TNS.CORE.MODELS.EMPLOYEE;
+using TNS.CORE.VO;
 
 namespace TNS.CORE.INTERFACES.REPOSITORY.EMPLOYEE
 {
@@ -8,6 +9,8 @@ namespace TNS.CORE.INTERFACES.REPOSITORY.EMPLOYEE
         Task Delete(Guid id);
         Task Update(Employee employee, Guid id);
         Task<Employee> GetByGuid(Guid id);
+        Task<Employee> GetByLogin(PhoneNumber login);
+        Task<int> GetRoleId(Guid id);
         Task<List<Employee>> GetAllEmployees();
     }
 }

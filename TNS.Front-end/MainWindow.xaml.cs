@@ -6,6 +6,7 @@ using TNS.Front_end.CRM;
 using TNS.Front_end.Profile;
 using TNS.Front_end.Help;
 using TNS.Front_end.Employee;
+using TNS.Front_end.Employee.MODELS;
 
 namespace TNS.Front_end;
 
@@ -14,6 +15,7 @@ namespace TNS.Front_end;
 /// </summary>
 public partial class MainWindow : Window
 {
+    GetAllEmployees_GET _emp;
     const double panelWidth = 330;                                          // ======= выезжающее меню слева
     bool hidden = true;                                                     // =======
                                                                             // =======
@@ -33,11 +35,29 @@ public partial class MainWindow : Window
     /// <summary>
     /// Страница после авторизации - абоненты.
     /// </summary>
-    public MainWindow()
+    public MainWindow(GetAllEmployees_GET employee)
     {
         InitializeComponent();;
         ContentFrame.Content = pages[0];
         timer.Tick += Timer_Tick;
+        _emp = employee;
+        profileBlock.Text = _emp.FullName;
+        if (_emp.RoleId == 1) 
+        {
+            
+        }
+        if (_emp.RoleId == 2)
+        {
+
+        }
+        if (_emp.RoleId == 3)
+        {
+
+        }
+        if (_emp.RoleId == 4)
+        {
+
+        }
     }
 
     /// <summary>
@@ -77,7 +97,7 @@ public partial class MainWindow : Window
 
     private void Profile_MouseDown(object sender, MouseButtonEventArgs e)
     {
-        ProfileUser profile = new();
+        ProfileUser profile = new(_emp);
         profile.Show();
     }
 

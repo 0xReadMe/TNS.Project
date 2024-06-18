@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using CSharpFunctionalExtensions;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 using TNS.CORE.INTERFACES.REPOSITORY.EMPLOYEE;
 using TNS.CORE.MODELS.EMPLOYEE;
-using TNS.CORE.MODELS.SUBSCRIBER;
 using TNS.CORE.VO;
 using TNS.PERSISTENCE.ENTITIES.EMPLOYEE;
 
@@ -24,7 +24,7 @@ namespace TNS.PERSISTENCE.REPOSITORIES.EMPLOYEE
                 Telegram = employee.Telegram,
                 Email = employee.Email,
                 Login = employee.Login,
-                PasswordHash = employee.PasswordHash,
+                Password = employee.Password,
                 FullName = employee.FullName
             };
             EmployeeRoleEntity roleEntity = new() { EmployeeId = employeeEntity.Id, RoleId = roleId };
@@ -33,7 +33,11 @@ namespace TNS.PERSISTENCE.REPOSITORIES.EMPLOYEE
             await _context.SaveChangesAsync();
         }
 
-        public async Task Delete(Guid id) => await _context.Employees.Where(l => l.Id == id).ExecuteDeleteAsync();
+        public async Task Delete(Guid id) 
+        {
+            await _context.Employees.Where(l => l.Id == id).ExecuteDeleteAsync();
+            _context.Remove(_context.Find<EmployeeRoleEntity>(id));
+        } 
         
         public async Task<List<Employee>> GetAllEmployees()
         {
@@ -48,7 +52,7 @@ namespace TNS.PERSISTENCE.REPOSITORIES.EMPLOYEE
                     employeeEntity.DateOfBirth,
                     employeeEntity.Email,
                     employeeEntity.Login,
-                    employeeEntity.PasswordHash).Value;
+                    employeeEntity.Password).Value;
                 
                 emp.SetId(employeeEntity.Id);
                 employees.Add(emp);
@@ -62,6 +66,51 @@ namespace TNS.PERSISTENCE.REPOSITORIES.EMPLOYEE
             return _mapper.Map<Employee>(empEntity);
         }
 
+        public async Task<int> GetRoleId(Guid id) 
+        {
+            try
+            {
+                using var connection = _context.Database.GetDbConnection();
+                await connection.OpenAsync();
+
+                using var command = connection.CreateCommand();
+                command.CommandText = @"
+                    SELECT r.""Id""
+                    FROM ""EmployeeRoleEntity"" er
+                    JOIN ""Roles"" r ON er.""RoleId"" = r.""Id""
+                    WHERE er.""EmployeeId"" = @employeeId
+                    LIMIT 1";
+
+                var parameter = command.CreateParameter();
+                parameter.ParameterName = "@employeeId";
+                parameter.Value = id;
+                parameter.DbType = DbType.Guid;
+                command.Parameters.Add(parameter);
+
+                var result = await command.ExecuteScalarAsync();
+                if (result != null)
+                {
+                    return (int)result;
+                }
+                else
+                {
+                    return 0; // Или значение по умолчанию
+                }
+            }
+            catch (Npgsql.NpgsqlOperationInProgressException)
+            {
+                // Обрабатываем ошибку "операция в процессе"
+                await Task.Delay(500);
+                return await GetRoleId(id);
+            }
+        }
+
+        public async Task<Employee> GetByLogin(PhoneNumber login)
+        {
+            var empEntity = await _context.Employees.AsNoTracking().FirstOrDefaultAsync(l => l.Login == login);
+            return _mapper.Map<Employee>(empEntity);
+        }
+
         public async Task Update(Employee employee, Guid id)
         {
             Employee emp = Employee.Create(
@@ -71,7 +120,7 @@ namespace TNS.PERSISTENCE.REPOSITORIES.EMPLOYEE
                     employee.DateOfBirth,
                     employee.Email,
                     employee.Login,
-                    employee.PasswordHash).Value;
+                    employee.Password).Value;
 
             await _context.Employees
             .Where(l => l.Id == id)

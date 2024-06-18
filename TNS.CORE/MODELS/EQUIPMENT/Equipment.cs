@@ -43,8 +43,6 @@ public class Equipment
     {
         if (!IsValidSerialNumber(serialNumber)) return Result.Failure<Equipment>("Equipment SerialNumber invalid");             //  валидация серийного номера
         if (!IsValidName(name)) return Result.Failure<Equipment>("Equipment Name invalid");                     //  валидация названия оборудования
-        if (!IsValidFrequency(frequency)) return Result.Failure<Equipment>("Equipment Frequency invalid");                //  валидация частоты
-        if (!IsValidAttenuationCoefficient(attenuationCoefficient)) return Result.Failure<Equipment>("Equipment AttenuationCoefficient invalid");   //  валидация коэф. затухания
         if (!IsValidDTT(DTT)) return Result.Failure<Equipment>("Equipment Data Transfer Technology invalid"); //  валидация дтт
         if (!IsValidAddress(address)) return Result.Failure<Equipment>("Equipment Address invalid");                  //  валидация адреса
 
@@ -118,54 +116,7 @@ public class Equipment
             return false;                                                    // Возвращаем false, если возникла любая ошибка при проверке DTT
         }
     }
-
-    /// <summary>
-    /// Валидация коэффициента затухания
-    /// </summary>
-    /// <param name="attenuationCoefficient">Коэффициент затухания</param>
-    /// <returns>True - коэф. затухания корректен</returns>
-    private static bool IsValidAttenuationCoefficient(string attenuationCoefficient)
-    //string validAttenuationCoefficient = "10.5";
-    //string invalidAttenuationCoefficient1 = "";
-    //string invalidAttenuationCoefficient2 = "abc";
-    //string invalidAttenuationCoefficient3 = "-10";
-    //string invalidAttenuationCoefficient4 = "101";
-    {
-        string pattern = @"^-?\d+(\.\d+)?$";
-        try
-        {
-            double value = double.Parse(attenuationCoefficient);
-            if (string.IsNullOrWhiteSpace(attenuationCoefficient)) return false;   // коэффициент затухания не пустой
-            if (!Regex.IsMatch(attenuationCoefficient, pattern)) return false;   // коэффициент затухания содержит только допустимые символы (цифры, десятичная точка, знак минус)
-            if (value < 0 || value > 100) return false;   // Преобразуем коэффициент затухания в число и проверяем, что он находится в допустимом диапазоне
-            return true;
-        }
-        catch (Exception)
-        {
-            return false;                                                           // Возвращаем false, если возникла любая ошибка при проверке коэффициента затухания
-        }
-    }
-
-    /// <summary>
-    /// Валидация частоты оборудования
-    /// </summary>
-    /// <param name="frequency">Частота оборудования</param>
-    /// <returns>True - частота оборудования корректна</returns>
-    private static bool IsValidFrequency(double frequency)
-    {
-        string frequencyString = frequency.ToString("F2");
-        try
-        {
-            if (frequency < 0.1 || frequency > 1000) return false;   //  частота оборудования находится в диапазоне от 0.1 до 1000 ГГц
-            if (frequencyString.Length - frequencyString.IndexOf(".") - 1 > 2) return false;   //  частота оборудования не содержит более 2 знаков после запятой
-            return true;
-        }
-        catch (Exception)
-        {
-            return false;                // Возвращаем false, если возникла любая ошибка при проверке частоты
-        }
-    }
-
+       
     /// <summary>
     /// Валидация названия оборудования
     /// </summary>

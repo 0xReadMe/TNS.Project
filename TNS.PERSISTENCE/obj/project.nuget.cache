@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SGf3jm81WUY7m0N9uTPmerE8vssU6r36FU/SAITTv3MoXErZtnMKoSR2O/Wqf/Ezyf/k/c6WXj3Co/IvkW+OPA==",
+  "dgSpecHash": "jmajv3/s6r6VvN5SSEcUHH5B9xr+C0Fry+U1CFMEPREtq+98O29fEL7yXzlXXwbk486N0P8mNJEcUwTiy+5IYg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\8-bit\\Desktop\\делаю\\TNS.Project\\TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj",
+  "projectFilePath": "C:\\Users\\8-bit\\Desktop\\делаю\\диплом\\TNS.Project\\TNS.PERSISTENCE\\TNS.PERSISTENCE.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\8-bit\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\8-bit\\.nuget\\packages\\csharpfunctionalextensions\\2.41.0\\csharpfunctionalextensions.2.41.0.nupkg.sha512",

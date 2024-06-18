@@ -98,11 +98,12 @@
                    Style="{DynamicResource tabButton}"
                    Click="ServicesBtn_Click"/>
 
-            <Image Source="/Sourse/На авторизацию_Обновление кода.png" 
-                  VerticalAlignment="Center" 
-                  Width="30" 
-                  Height="30" 
-                  MouseDown="RefreshButton_Click"/>
+            <Image x:Name="refreshBtn"
+                   Source="/Sourse/На авторизацию_Обновление кода.png" 
+                   VerticalAlignment="Center" 
+                   Width="30" 
+                   Height="30" 
+                   MouseDown="RefreshButton_Click"/>
         </StackPanel>
 
         <DataGrid Panel.ZIndex="0"

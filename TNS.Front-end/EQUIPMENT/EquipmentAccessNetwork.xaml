@@ -102,7 +102,7 @@
                 Style="{DynamicResource tabButton}"
                 Click="CommunicationProtocolBtn_Click"
                 />
-            <Image Source="/Sourse/На авторизацию_Обновление кода.png" 
+            <Image x:Name="refreshBtn" Source="/Sourse/На авторизацию_Обновление кода.png" 
                VerticalAlignment="Center" 
                Width="30" 
                Height="30" 
