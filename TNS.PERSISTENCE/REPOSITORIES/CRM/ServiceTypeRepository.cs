@@ -1,32 +1,52 @@
-﻿using TNS.CORE.INTERFACES.REPOSITORY.CRM;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using TNS.CORE.INTERFACES.REPOSITORY.CRM;
 using TNS.CORE.MODELS.CRM;
+using TNS.PERSISTENCE.ENTITIES.CRM;
 
 namespace TNS.PERSISTENCE.REPOSITORIES.CRM;
 
-public class ServiceTypeRepository : IServiceTypeRepository
+public class ServiceTypeRepository(TNSDbContext context, IMapper mapper) : IServiceTypeRepository
 {
-    public Task Add(ServiceType serviceType)
+    private readonly TNSDbContext _context = context;
+    private readonly IMapper _mapper = mapper;
+
+    public async Task Add(ServiceType serviceType)
     {
-        throw new NotImplementedException();
+        var service = new ServiceEntity()
+        {
+            Id      = serviceType.Id,
+            Name    = serviceType.Name
+        };
+
+        await _context.Services.AddAsync(service);
+        await _context.SaveChangesAsync();
     }
 
-    public Task Delete(Guid id)
+    public async Task Delete(Guid id) => await _context.ServiceTypes.Where(l => l.Id == id).ExecuteDeleteAsync();
+
+    public async Task<List<ServiceType>> GetAllServiceTypes()
     {
-        throw new NotImplementedException();
+        List<ServiceType> crm = [];
+
+        await foreach (var s in _context.ServiceTypes)
+        {
+            crm.Add(_mapper.Map<ServiceType>(s));
+        }
+        return crm;
     }
 
-    public Task<List<ServiceType>> GetAllServiceTypes()
+    public async Task<ServiceType> GetByGuid(Guid id)
     {
-        throw new NotImplementedException();
+        var crm = await _context.ServiceTypes.AsNoTracking().FirstOrDefaultAsync(l => l.Id == id);
+        return _mapper.Map<ServiceType>(crm);
     }
 
-    public Task<ServiceType> GetByGuid(Guid id)
+    public async Task Update(ServiceType serviceType, Guid id)
     {
-        throw new NotImplementedException();
-    }
-
-    public Task Update(ServiceType serviceType, Guid id)
-    {
-        throw new NotImplementedException();
+        var result = await _context.ServiceTypes
+            .Where(p => p.Id == id)
+            .ExecuteUpdateAsync(s => s
+                .SetProperty(p => p.Name, serviceType.Name));
     }
 }

@@ -4,7 +4,7 @@ namespace TNS.Front_end.SUBSCRIBERS.MODELS;
 
 public class GetSubscriber_GET 
 {
-    [JsonPropertyName("id")]
+    [JsonPropertyName("subscriberId")]
     public Guid SubscriberId { get; set; }
 
     [JsonPropertyName("personId")]

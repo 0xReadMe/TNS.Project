@@ -2,6 +2,9 @@
 using TNS.API.CONTRACTS.CRM;
 using TNS.APPLICATION.SERVICES.CRM;
 using TNS.APPLICATION.SERVICES.SUBSCRIBER;
+using TNS.CORE.INTERFACES.SERVICES.SUBSCRIBER;
+using TNS.CORE.MODELS.CRM;
+using TNS.CORE.MODELS.SUBSCRIBER;
 
 namespace TNS.API.ENDPOINTS;
 
@@ -79,21 +82,68 @@ public static class CRMEndpoints
         return Results.Ok();
     }
 
-    private static async Task<IResult> GetCRMById(CRMService _CRMService, [FromRoute] Guid id)
+    private static async Task<IResult> GetCRMById(CRMService _CRMService, 
+        ServiceService serviceService, ServiceTypeService serviceTypeService, ServiceProvidedService serviceProvidedService, SubscriberService subscriberService, [FromRoute] Guid id)
     {
         var r = await _CRMService.GetByGuidCRM(id);
         if (r.IsFailure) return Results.BadRequest($"BadRequestBaseStation: {r.Error}");
 
-        //GetAllCRM_GET crm = new();
+        Subscriber subscriber = subscriberService.GetByGuidSubscriber(r.Value.SubscriberId).Result.Value;
+        Service service = serviceService.GetByGuidService(r.Value.ServiceId).Result.Value;
+        ServiceType serviceType = serviceTypeService.GetByGuidServiceType(r.Value.ServiceTypeId).Result.Value;
+        ServiceProvided serviceProvided = serviceProvidedService.GetByGuidServiceProvided(r.Value.ServiceProvidedId).Result.Value;
 
-        return Results.Ok(r.Value);
+        GetAllCRM_GET a = new GetAllCRM_GET(
+            r.Value.Id,
+            subscriber.SubscriberNumber,
+            subscriber.PersonalBill,
+            subscriber.TypeOfEquipment,
+            r.Value.CreationDate,
+            r.Value.ClosingDate,
+            service.Name,
+            serviceProvided.Name,
+            serviceType.Name,
+            r.Value.Status,
+            r.Value.TypeOfProblem,
+            r.Value.ProblemDescription
+            );
+
+        return Results.Ok(a);
     }
 
-    private static async Task<IResult> GetAllCRM(CRMService _CRMService)
+    private static async Task<IResult> GetAllCRM(CRMService _CRMService,
+        ServiceService serviceService, ServiceTypeService serviceTypeService, ServiceProvidedService serviceProvidedService, SubscriberService subscriberService)
     {
         var result = await _CRMService.GetAllCRM_Requests();
         if (result.IsFailure) return Results.BadRequest($"BadRequestBaseStation: {result.Error}");
 
-        return Results.Ok(result.Value);
+        List<GetAllCRM_GET> returnValue = [];
+
+        foreach (var r in result.Value) 
+        {
+            Subscriber subscriber = subscriberService.GetByGuidSubscriber(r.SubscriberId).Result.Value;
+            Service service = serviceService.GetByGuidService(r.ServiceId).Result.Value;
+            ServiceType serviceType = serviceTypeService.GetByGuidServiceType(r.ServiceTypeId).Result.Value;
+            ServiceProvided serviceProvided = serviceProvidedService.GetByGuidServiceProvided(r.ServiceProvidedId).Result.Value;
+
+            GetAllCRM_GET a = new GetAllCRM_GET(
+                r.Id,
+                subscriber.SubscriberNumber,
+                subscriber.PersonalBill,
+                subscriber.TypeOfEquipment,
+                r.CreationDate,
+                r.ClosingDate,
+                service.Name,
+                serviceProvided.Name,
+                serviceType.Name,
+                r.Status,
+                r.TypeOfProblem,
+                r.ProblemDescription
+                );
+
+            returnValue.Add(a);
+        }
+
+        return Results.Ok(returnValue);
     }
 }

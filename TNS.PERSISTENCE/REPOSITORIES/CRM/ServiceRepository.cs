@@ -1,32 +1,52 @@
-﻿using TNS.CORE.INTERFACES.REPOSITORY.CRM;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using TNS.CORE.INTERFACES.REPOSITORY.CRM;
 using TNS.CORE.MODELS.CRM;
+using TNS.PERSISTENCE.ENTITIES.CRM;
 
 namespace TNS.PERSISTENCE.REPOSITORIES.CRM;
 
-public class ServiceRepository : IServiceRepository
+public class ServiceRepository(TNSDbContext context, IMapper mapper) : IServiceRepository
 {
-    public Task Add(Service service)
+    private readonly TNSDbContext _context = context;
+    private readonly IMapper _mapper = mapper;
+
+    public async Task Add(Service serviceProvided)
     {
-        throw new NotImplementedException();
+        var service = new ServiceEntity()
+        {
+            Id = serviceProvided.Id,
+            Name = serviceProvided.Name
+        };
+
+        await _context.Services.AddAsync(service);
+        await _context.SaveChangesAsync();
     }
 
-    public Task Delete(Guid id)
+    public async Task Delete(Guid id) => await _context.Services.Where(l => l.Id == id).ExecuteDeleteAsync();
+
+    public async Task<List<Service>> GetAllServices()
     {
-        throw new NotImplementedException();
+        List<Service> crm = [];
+
+        await foreach (var s in _context.Services)
+        {
+            crm.Add(_mapper.Map<Service>(s));
+        }
+        return crm;
     }
 
-    public Task<List<Service>> GetAllServices()
+    public async Task<Service> GetByGuid(Guid id)
     {
-        throw new NotImplementedException();
+        var crm = await _context.Services.AsNoTracking().FirstOrDefaultAsync(l => l.Id == id);
+        return _mapper.Map<Service>(crm);
     }
 
-    public Task<Service> GetByGuid(Guid id)
+    public async Task Update(Service service, Guid id)
     {
-        throw new NotImplementedException();
-    }
-
-    public Task Update(Service service, Guid id)
-    {
-        throw new NotImplementedException();
+        var result = await _context.Services
+            .Where(p => p.Id == id)
+            .ExecuteUpdateAsync(s => s
+                .SetProperty(p => p.Name, service.Name));
     }
 }

@@ -14,50 +14,67 @@ namespace TNS.Front_end.Employee
     public partial class Employee_Page : Page
     {
         List<GetAllEmployees_GET> _employee;
+        string chooseFilter;
 
         public Employee_Page()
         {
             InitializeComponent();
 
-            _employee = GetEmployee();
-            membersDataGrid.ItemsSource = _employee;
-        }
-
-        private static List<GetAllEmployees_GET> GetEmployee()
-        {
-            using var httpClient = new HttpClient();
-            try
+            MouseButtonEventArgs args = new(Mouse.PrimaryDevice, 0, MouseButton.Left)
             {
-                var response = httpClient.GetAsync("https://localhost:7110/employee/getAll").Result;
-                response.EnsureSuccessStatusCode();
-
-                var jsonResponse = response.Content.ReadAsStringAsync().Result;
-                var subscribers = JsonSerializer.Deserialize<List<GetAllEmployees_GET>>(jsonResponse);
-
-                return subscribers;
-            }
-            catch (HttpRequestException ex)
-            {
-                // Обработка ошибок при запросе к API
-                MessageBox.Show($"Ошибка при получении подписчиков: {ex.Message}");
-                throw;
-            }
-            catch (JsonException ex)
-            {
-                // Обработка ошибок при десериализации JSON-ответа
-                MessageBox.Show($"Ошибка при десериализации JSON-ответа: {ex.Message}");
-                throw;
-            }
+                RoutedEvent = Image.MouseDownEvent
+            };
+            refreshBtn.RaiseEvent(args);
         }
 
         private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (txtSearch.Text == "")
+            {
+                switch (chooseFilter)
+                {
+                    case "Должность":
+                        PositionNameBtn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                        break;
 
+                    case "Телефон":
+                        PhoneBtn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                        break;
+
+                    case "E-mail":
+                        EmailBtn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                        break;
+
+                    case "Дата рождения":
+                        DateBirthBtn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                        break;
+
+                    case "ФИО":
+                        FullNameBtn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                        break;
+
+                    default:
+                        MouseButtonEventArgs args = new(Mouse.PrimaryDevice, 0, MouseButton.Left)
+                        {
+                            RoutedEvent = Image.MouseDownEvent
+                        };
+                        refreshBtn.RaiseEvent(args);
+                        break;
+                }
+            }
+
+            List<GetAllEmployees_GET> findList = FindInfo.Find<GetAllEmployees_GET>(membersDataGrid, txtSearch);
+            Update(findList);
         }
 
         private void RefreshButton_Click(object sender, MouseButtonEventArgs e)
         {
-
+            chooseFilter = "";
+            _employee = ApiContext.Get<GetAllEmployees_GET>($"https://localhost:{Configurator.GetPort().Normalize().TrimStart().TrimEnd()}/employee/getAll");
+            Update(_employee);
+            FilterBlock.ButtonThicknessChange(addButton, btnStack);
+            ComboBoxSort.FillComboBox(ComboBoxSort.Filters, CBSort);
+            CBSort.SelectedIndex = 0;
         }
 
         private void Open_MouseDown(object sender, MouseButtonEventArgs e)
@@ -89,32 +106,61 @@ namespace TNS.Front_end.Employee
 
         private void PositionNameBtn_Click(object sender, RoutedEventArgs e)
         {
+            chooseFilter = FilterBlock.ButtonThicknessChange(PositionNameBtn, btnStack);
+            ComboBoxSort.FillComboBox(chooseFilter, CBSort);
+            CBSort.SelectedIndex = 0;
+
+            Update(_employee);
 
         }
 
         private void PhoneBtn_Click(object sender, RoutedEventArgs e)
         {
+            chooseFilter = FilterBlock.ButtonThicknessChange(PhoneBtn, btnStack);
+            ComboBoxSort.FillComboBox(chooseFilter, CBSort);
+            CBSort.SelectedIndex = 0;
 
+            Update(_employee);
         }
 
         private void DateBirthBtn_Click(object sender, RoutedEventArgs e)
         {
+            chooseFilter = FilterBlock.ButtonThicknessChange(DateBirthBtn, btnStack);
+            ComboBoxSort.FillComboBox(chooseFilter, CBSort);
+            CBSort.SelectedIndex = 0;
 
+            Update(_employee);
         }
 
         private void EmailBtn_Click(object sender, RoutedEventArgs e)
         {
+            chooseFilter = FilterBlock.ButtonThicknessChange(EmailBtn, btnStack);
+            ComboBoxSort.FillComboBox(chooseFilter, CBSort);
+            CBSort.SelectedIndex = 0;
 
+            Update(_employee);
         }
 
         private void FullNameBtn_Click(object sender, RoutedEventArgs e)
         {
+            chooseFilter = FilterBlock.ButtonThicknessChange(FullNameBtn, btnStack);
+            ComboBoxSort.FillComboBox(chooseFilter, CBSort);
+            CBSort.SelectedIndex = 0;
 
+            Update(_employee);
         }
 
         private void Delete_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            var ellipse = sender as Ellipse;
+            var subscriber = ellipse.DataContext as GetAllEmployees_GET;
 
+            string message = $"Вы точно хотите удалить сотрудника \"{subscriber.FullName}\"?";
+            var dialog = new MessageWindow(message, subscriber);
+
+            addButton.IsEnabled = false;
         }
+
+        private void Update(List<GetAllEmployees_GET> sub) => membersDataGrid.ItemsSource = sub;
     }
 }

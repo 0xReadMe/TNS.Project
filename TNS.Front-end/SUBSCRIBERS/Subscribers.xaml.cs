@@ -182,6 +182,7 @@ public partial class Subscribers : Page
         var dialog = new MessageWindow(message, subscriber);
         
         addButton.IsEnabled = false;
+
     }
 
     private void Update(List<GetSubscriber_GET> sub) => membersDataGrid.ItemsSource = sub;

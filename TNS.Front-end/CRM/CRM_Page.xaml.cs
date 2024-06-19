@@ -126,7 +126,7 @@ public partial class CRM_Page : Page
         Update(CRM);
     }
 
-    private void testEquipmentButton_Click(object sender, RoutedEventArgs e)
+    private void TestEquipmentButton_Click(object sender, RoutedEventArgs e)
     {
         TestEquipment testEquipment = new TestEquipment();
         testEquipment.Show();
@@ -134,7 +134,13 @@ public partial class CRM_Page : Page
 
     private void Delete_MouseDown(object sender, MouseButtonEventArgs e)
     {
+        var ellipse = sender as Ellipse;
+        var subscriber = ellipse.DataContext as CRM_viewmodel;
 
+        string message = $"Вы точно хотите удалить CRM \"{subscriber.Id}\"?";
+        var dialog = new MessageWindow(message, subscriber);
+
+        addButton.IsEnabled = false;
     }
     private void Update(List<CRM_viewmodel> sub) => membersDataGrid.ItemsSource = sub;
 }

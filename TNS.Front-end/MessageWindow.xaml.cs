@@ -14,6 +14,10 @@ namespace TNS.Front_end
     public partial class MessageWindow: Window 
     {
         GetSubscriber_GET _sub;
+        GetAllBaseStations_GET _baseStation;
+        CRM_viewmodel _crm;
+        GetAllEmployees_GET _emp;
+        GetAllEquipments_GET _equip;
 
         public MessageWindow(string message)
         {
@@ -27,30 +31,39 @@ namespace TNS.Front_end
             InitializeComponent();
             MessageContainer.Text = message;
             _sub = entity;
+            ShowDialog();
         }
 
         public MessageWindow(string message, GetAllBaseStations_GET entity)
         {
             InitializeComponent();
             MessageContainer.Text = message;
+            _baseStation = entity;
+            ShowDialog();
         }
 
-        public MessageWindow(string message, GetAllCRM_GET entity)
+        public MessageWindow(string message, CRM_viewmodel entity)
         {
             InitializeComponent();
             MessageContainer.Text = message;
+            _crm = entity;
+            ShowDialog();
         }
 
         public MessageWindow(string message, GetAllEmployees_GET entity)
         {
             InitializeComponent();
             MessageContainer.Text = message;
+            _emp = entity;
+            ShowDialog();
         }
 
         public MessageWindow(string message, GetAllEquipments_GET entity)
         {
             InitializeComponent();
             MessageContainer.Text = message;
+            _equip = entity;
+            ShowDialog();
         }
 
         private void Image_MouseDown_Minimized(object sender, MouseButtonEventArgs e) => WindowState = WindowState.Minimized;                   //  свернуть окно
@@ -60,8 +73,25 @@ namespace TNS.Front_end
         {
             if (_sub != null) 
             {
-                ApiContext.Delete($"https://localhost:{Configurator.GetPort().Normalize().TrimStart().TrimEnd()}/subscriber/delete/{_sub.SubscriberId}");
+                ApiContext.Get($"https://localhost:{Configurator.GetPort().Normalize().TrimStart().TrimEnd()}/subscriber/delete/{_sub.SubscriberId}");
             }
+            if (_baseStation != null) 
+            {
+                ApiContext.Get($"https://localhost:{Configurator.GetPort().Normalize().TrimStart().TrimEnd()}/equipment/deleteBaseStation/{_baseStation.Id}");
+            }
+            if (_crm != null) 
+            {
+                ApiContext.Get($"https://localhost:{Configurator.GetPort().Normalize().TrimStart().TrimEnd()}/CRM/delete/{_crm.Id}");
+            }
+            if (_emp != null) 
+            {
+                ApiContext.Get($"https://localhost:{Configurator.GetPort().Normalize().TrimStart().TrimEnd()}/employee/delete/{_emp.Id}");
+            }
+            if (_equip != null) 
+            {
+                ApiContext.Get($"https://localhost:{Configurator.GetPort().Normalize().TrimStart().TrimEnd()}/equipment/deleteEquipment/{_equip.Id}");
+            }
+            Close();
         }
 
         private void No_Click(object sender, RoutedEventArgs e)

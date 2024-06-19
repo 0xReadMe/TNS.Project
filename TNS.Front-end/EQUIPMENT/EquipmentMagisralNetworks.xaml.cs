@@ -154,6 +154,8 @@ namespace TNS.Front_end.EQUIPMENT
             var ellipse = sender as Ellipse;
             var subscriber = ellipse.DataContext as GetAllEquipments_GET;
             string messageBox = $"Вы точно хотите удалить оборудование \"{subscriber.Name}\"?";
+
+            var dialog = new MessageWindow(messageBox, subscriber);
         }
 
         private void Update(List<GetAllEquipments_GET> sub) => membersDataGrid.ItemsSource = sub;

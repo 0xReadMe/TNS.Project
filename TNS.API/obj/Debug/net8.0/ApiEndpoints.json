@@ -552,14 +552,114 @@
   {
     "ContainingType": "TNS.API.ENDPOINTS.SubscriberEndpoints",
     "Method": "AddSubscriber",
-    "RelativePath": "subscriber/add",
-    "HttpMethod": "POST",
+    "RelativePath": "subscriber/add/\u0026ContractType={contractType}\u0026ReasonForTerminationOfContract={reasonForTerminationOfContract}\u0026PersonalBill={personalBill:int}\u0026Services={services}\u0026DateOfContractConclusion={dateOfContractConclusion}\u0026DateOfTerminationOfTheContract={dateOfTerminationOfTheContract}\u0026TypeOfEquipment={typeOfEquipment}\u0026FirstName={firstName}\u0026MiddleName={middleName}\u0026LastName={lastName}\u0026Gender={gender}\u0026DOB={dob:datetime}\u0026PhoneNumber={phoneNumber}\u0026Email={email}\u0026DivisionCode={divisionCode}\u0026IssuedBy={issuedBy}\u0026Series={series:int}\u0026Number={number:int}\u0026ResidenceAddress={residenceAddress}\u0026ResidentialAddress={residentialAddress}\u0026DateOfIssueOfPassport={dateOfIssueOfPassport}",
+    "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "r",
-        "Type": "TNS.API.CONTRACTS.SUBSCRIBERS.AddSubscriber_POST",
+        "Name": "contractType",
+        "Type": "System.Boolean",
+        "IsRequired": true
+      },
+      {
+        "Name": "reasonForTerminationOfContract",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "personalBill",
+        "Type": "System.UInt32",
+        "IsRequired": true
+      },
+      {
+        "Name": "services",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "dateOfContractConclusion",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      },
+      {
+        "Name": "dateOfTerminationOfTheContract",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      },
+      {
+        "Name": "typeOfEquipment",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "firstName",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "middleName",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "lastName",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "gender",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "dob",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      },
+      {
+        "Name": "phoneNumber",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "divisionCode",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "issuedBy",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "series",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "number",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "residenceAddress",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "residentialAddress",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "dateOfIssueOfPassport",
+        "Type": "System.DateTime",
         "IsRequired": true
       }
     ],
@@ -575,7 +675,7 @@
     "ContainingType": "TNS.API.ENDPOINTS.SubscriberEndpoints",
     "Method": "DeleteSubscriber",
     "RelativePath": "subscriber/delete/{id:guid}",
-    "HttpMethod": "DELETE",
+    "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
     "Parameters": [
@@ -597,7 +697,7 @@
     "ContainingType": "TNS.API.ENDPOINTS.SubscriberEndpoints",
     "Method": "EditSubscriber",
     "RelativePath": "subscriber/edit/{id:guid}",
-    "HttpMethod": "PUT",
+    "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
     "Parameters": [

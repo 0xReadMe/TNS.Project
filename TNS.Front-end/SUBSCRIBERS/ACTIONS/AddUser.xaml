@@ -29,8 +29,6 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
 
@@ -74,40 +72,36 @@
                    Margin="25 5"
                    FontSize="14"
                    Foreground="#339AF0"/>
-        <TextBlock Grid.Row="2" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Номер абонента"></TextBlock>
-        <TextBlock Grid.Row="3" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="ФИО"></TextBlock>
-        <TextBlock Grid.Row="4" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Серия паспорта"></TextBlock>
-        <TextBlock Grid.Row="5" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Номер паспорта"></TextBlock>
-        <TextBlock Grid.Row="6" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Дата выдачи паспорта"></TextBlock>
-        <TextBlock Grid.Row="7" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Кем выдан паспорт"></TextBlock>
-        <TextBlock Grid.Row="8" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Номер договора с абонентом"></TextBlock>
-        <TextBlock Grid.Row="9" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Дата заключения договора"></TextBlock>
-        <TextBlock Grid.Row="10" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Тип договора"></TextBlock>
-        <TextBlock Grid.Row="11" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Дата расторжения договора"></TextBlock>
-        <TextBlock Grid.Row="12" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Причина расторжения"></TextBlock>
-        <TextBlock Grid.Row="13" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Лицевой счет"></TextBlock>
-        <TextBlock Grid.Row="14" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Адрес"></TextBlock>
-        <TextBlock Grid.Row="15" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Услуги"></TextBlock>
-        <TextBlock Grid.Row="16" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Данные об оборудовании"></TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="ФИО"></TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Серия паспорта"></TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Номер паспорта"></TextBlock>
+        <TextBlock Grid.Row="5" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Дата выдачи паспорта"></TextBlock>
+        <TextBlock Grid.Row="6" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Кем выдан паспорт"></TextBlock>
+        <TextBlock Grid.Row="7" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Дата заключения договора"></TextBlock>
+        <TextBlock Grid.Row="8" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Тип договора"></TextBlock>
+        <TextBlock Grid.Row="9" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Дата расторжения договора"></TextBlock>
+        <TextBlock Grid.Row="10" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Причина расторжения"></TextBlock>
+        <TextBlock Grid.Row="11" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Лицевой счет"></TextBlock>
+        <TextBlock Grid.Row="12" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Адрес"></TextBlock>
+        <TextBlock Grid.Row="13" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Услуги"></TextBlock>
+        <TextBlock Grid.Row="14" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Данные об оборудовании"></TextBlock>
 
-        <TextBox Grid.Row="2" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
-        <TextBox Grid.Row="3" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
-        <TextBox Grid.Row="4" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
-        <TextBox Grid.Row="5" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
-        <TextBox Grid.Row="6" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
-        <TextBox Grid.Row="7" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
-        <TextBox Grid.Row="8" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
-        <DatePicker Grid.Row="9" Grid.Column="1" Template="{DynamicResource datePicker}"   Height="35" Margin="0,3,0,4" Width="265"    HorizontalAlignment="Center"/>
-        <ComboBox Grid.Row="10" Grid.Column="1"  Style="{StaticResource ComboBoxFlatStyle}" Height="35" Width="265"></ComboBox>
-        <DatePicker Grid.Row="11" Grid.Column="1" Template="{DynamicResource datePicker}"   Height="35" Margin="0,3,0,4" Width="265"    HorizontalAlignment="Center"/>
-        <TextBox Grid.Row="12" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
-        <TextBox Grid.Row="13" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
-        <TextBox Grid.Row="14" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
-        <ComboBox Grid.Row="15" Grid.Column="1" Style="{StaticResource ComboBoxFlatStyle}" Height="35" Width="265"></ComboBox>
-        <TextBox Grid.Row="16" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
+        <TextBox x:Name="fullNameTB"       Grid.Row="2" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
+        <TextBox x:Name="seriesPassportTB"   Grid.Row="3" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
+        <TextBox x:Name="numberPassportTB"  Grid.Row="4" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
+        <DatePicker x:Name="dateIssueDP"     Grid.Row="5" Grid.Column="1" FontSize="15" Padding="20 5" Template="{DynamicResource datePicker}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Center"></DatePicker>
+        <TextBox x:Name="issuedTB" Grid.Row="6" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
+        <DatePicker x:Name="dateConclusionDP" Grid.Row="7" Grid.Column="1" Template="{DynamicResource datePicker}"   Height="35" Margin="0,3,0,4" Width="265"    HorizontalAlignment="Center"/>
+        <ComboBox x:Name="typeContractCB" SelectedIndex="0" Grid.Row="8" Grid.Column="1"  Style="{StaticResource ComboBoxFlatStyle}" Height="35" Width="265" Foreground="#024C8C" FontSize="15"></ComboBox>
+        <DatePicker x:Name="dateOfTheTerminationDP" Grid.Row="9" Grid.Column="1" Template="{DynamicResource datePicker}"   Height="35" Margin="0,3,0,4" Width="265"    HorizontalAlignment="Center"/>
+        <ComboBox x:Name="reasonTerminationContractTB" SelectedIndex="0" Grid.Row="10" Grid.Column="1" Foreground="#024C8C" FontSize="15" Padding="20 5" Style="{StaticResource ComboBoxFlatStyle}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></ComboBox>
+        <TextBox x:Name="billTB"  Grid.Row="11" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
+        <TextBox x:Name="addressTB"  Grid.Row="12" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
+        <ComboBox x:Name="serviceCB" SelectedIndex="0" Grid.Row="13" Grid.Column="1" Foreground="#024C8C" FontSize="15" Style="{StaticResource ComboBoxFlatStyle}" Height="35" Width="265"></ComboBox>
+        <ComboBox x:Name="equipmentCB" SelectedIndex="0" Grid.Row="14" Grid.Column="1" Foreground="#024C8C" FontSize="15" Padding="20 5" Style="{StaticResource ComboBoxFlatStyle}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></ComboBox>
 
-        <Button  Grid.Row="17"                  Style="{StaticResource addButton}"     Width="270" Margin="0,4,5,11" Content="Очистить" HorizontalAlignment="Center"/>
-        <Button  Grid.Row="17" Grid.Column="1"  Style="{StaticResource addButton}"     Width="270" Margin="0,4,5,11" Content="Сохранить" HorizontalAlignment="Center"/>
+        <Button x:Name="clearB" Grid.Column ="0"  Grid.Row="16"                  Style="{StaticResource addButton}"     Width="270" Margin="0,4,5,11" Content="Очистить" HorizontalAlignment="Center" Click="Clear_Click"/>
+        <Button x:Name="saveB"  Grid.Row="16" Grid.Column="1"  Style="{StaticResource addButton}"     Width="270" Margin="0,4,5,11" Content="Сохранить" HorizontalAlignment="Center" Click="Save_Click"/>
     </Grid>
 
 </Window>

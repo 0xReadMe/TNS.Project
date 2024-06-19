@@ -88,25 +88,23 @@ namespace TNS.API.ENDPOINTS
         {
             var r = (await employeeService.GetEmployeeByGuid(id)).Value;
 
-            //var roleId = await roleService.GetRole();
+            var roleId = (await employeeService.GetRoleId(r.Id)).Value;
 
-            //GetAllEmployees_GET getEmployee = new(r.Id, r.FullName, r.PhotoId, r.DateOfBirth, r.Telegram, r.Email.email, r.Login.Number, r.Password);
+            GetAllEmployees_GET getEmployee = new(r.Id, roleId, r.FullName, r.PhotoId, r.DateOfBirth, r.Telegram, r.Email.email, r.Login.Number, r.Password);
 
-            //return Results.Ok(getEmployee);
-            return Results.Ok();
-
+            return Results.Ok(getEmployee);
         }
 
         private static async Task<Microsoft.AspNetCore.Http.IResult> GetAllEmployees(EmployeeService employeeService)
         {
-            var res = (await employeeService.GetAllEmployees()).Value;
+            List<Employee> res = (await employeeService.GetAllEmployees()).Value;
             List<GetAllEmployees_GET> getSubscribers = [];
 
-            //foreach (var r in res) 
-            //{
-            //    GetAllEmployees_GET getEmployee = new(r.Id, r.FullName, r.PhotoId, r.DateOfBirth, r.Telegram, r.Email.email, r.Login.Number, r.Password);
-            //    getSubscribers.Add(getEmployee);
-            //}
+            foreach (var r in res)
+            {
+                GetAllEmployees_GET getEmployee = new(r.Id, 0, r.FullName, r.PhotoId, r.DateOfBirth, r.Telegram, r.Email.email, r.Login.Number, r.Password);
+                getSubscribers.Add(getEmployee);
+            }
 
             return Results.Ok(getSubscribers);
         }

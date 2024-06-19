@@ -61,7 +61,7 @@
                          Margin="8 0 0 0"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="testEquipmentButton" Style="{StaticResource addButton}" Margin="0,120,28,-24" Click="testEquipmentButton_Click">
+            <Button x:Name="testEquipmentButton" Style="{StaticResource addButton}" Margin="0,120,28,-24" Click="TestEquipmentButton_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Sourse/Тестирование.png" 
                         Height="15" 

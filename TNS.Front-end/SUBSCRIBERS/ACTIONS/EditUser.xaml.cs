@@ -29,7 +29,16 @@ namespace TNS.Front_end
             tbTypeContract.SelectedIndex = 0;
 
             tbEndDate.SelectedDate = sub.DateOfTerminationOfTheContract.ToDateTime(TimeOnly.MinValue);
-            tbReasonTermination.Text = sub.ReasonForTerminationOfContract;
+            
+            string[] validReasons = [
+                                        "Истечение срока договора",
+                                        "Нарушение условий договора",
+                                        "Смена места жительства",
+                                        "Финансовые трудности",
+                                        "Не указана"];
+            tbReasonTermination.ItemsSource = validReasons;
+            tbReasonTermination.SelectedIndex = 0;
+
             tbPersonalAccount.Text = sub.PersonalBill.ToString();
             tbAddress.Text = sub.ResidenceAddress;
 
@@ -41,7 +50,22 @@ namespace TNS.Front_end
             tbServices.ItemsSource = servicesExist;
             tbServices.SelectedIndex = 0;
 
-            tbDataEquipment.Text = sub.TypeOfEquipment;
+            string[] existEquipmentTypes =
+                    [
+                        "Маршрутизатор",
+                        "Коммутатор",
+                        "Точка доступа",
+                        "Сервер",
+                        "Шлюз",
+                        "Модем",
+                        "Концентратор",
+                        "Принтер",
+                        "Телефон",
+                        "Ноутбук",
+                        "Планшет"
+                    ];
+            tbDataEquipment.ItemsSource = existEquipmentTypes;
+            tbDataEquipment.SelectedIndex = 0;
         }
 
         private void Image_MouseDown_Minimized(object sender, MouseButtonEventArgs e) => WindowState = WindowState.Minimized;

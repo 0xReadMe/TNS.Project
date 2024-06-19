@@ -1,33 +1,76 @@
 ﻿using CSharpFunctionalExtensions;
+using TNS.CORE.INTERFACES.REPOSITORY.CRM;
 using TNS.CORE.INTERFACES.SERVICES.CRM;
 using TNS.CORE.MODELS.CRM;
 
 namespace TNS.APPLICATION.SERVICES.CRM;
 
-public class ServiceTypeService : IServiceTypeService
+public class ServiceTypeService(IServiceTypeRepository crmRepository) : IServiceTypeService
 {
-    public Task<Result> AddServiceType(ServiceType service)
+    public readonly IServiceTypeRepository _serviceRepository = crmRepository;
+
+    public async Task<Result> AddServiceType(ServiceType service)
     {
-        throw new NotImplementedException();
+        try
+        {
+            await _serviceRepository.Add(service);
+            return Result.Success();
+        }
+        catch (Exception ex)
+        {
+            return Result.Failure($"Ошибка при добавлении: {ex}");
+        }
     }
 
-    public Task<Result> DeleteServiceType(Guid id)
+    public async Task<Result> DeleteServiceType(Guid id)
     {
-        throw new NotImplementedException();
+        try
+        {
+            await _serviceRepository.Delete(id);
+            return Result.Success();
+        }
+        catch (Exception ex)
+        {
+            return Result.Failure($"Ошибка при удалении: {ex}");
+        }
     }
 
-    public Task<Result<List<ServiceType>>> GetAllServiceType()
+    public async Task<Result<List<ServiceType>>> GetAllServiceType()
     {
-        throw new NotImplementedException();
+        try
+        {
+            List<ServiceType> sub = await _serviceRepository.GetAllServiceTypes();
+            return Result.Success(sub);
+        }
+        catch (Exception ex)
+        {
+            return Result.Failure<List<ServiceType>>($"Ошибка при получении данных: {ex}");
+        }
     }
 
-    public Task<Result<ServiceType>> GetByGuidServiceType(Guid id)
+    public async Task<Result<ServiceType>> GetByGuidServiceType(Guid id)
     {
-        throw new NotImplementedException();
+        try
+        {
+            ServiceType sub = await _serviceRepository.GetByGuid(id);
+            return Result.Success(sub);
+        }
+        catch (Exception ex)
+        {
+            return Result.Failure<ServiceType>($"Ошибка при получении данных: {ex}");
+        }
     }
 
-    public Task<Result> UpdateServiceType(ServiceType service, Guid id)
+    public async Task<Result> UpdateServiceType(ServiceType service, Guid id)
     {
-        throw new NotImplementedException();
+        try
+        {
+            await _serviceRepository.Update(service, id);
+            return Result.Success();
+        }
+        catch (Exception ex)
+        {
+            return Result.Failure($"Ошибка при обновлении данных: {ex}");
+        }
     }
 }

@@ -17,6 +17,8 @@ class ComboBoxSort
     public static List<string> DTT { get; } = ["Ethernet", "Wi-Fi", "Bluetooth", "USB", "Optical Fiber", "SHDSL", "ADSL", "VDSL", "G.Fast", "LTE", "5G"];
     public static List<string> Status { get; } = ["Новая", "В работе", "Закрыта"];
     public static List<string> TypeEquipment { get; } = ["Маршрутизатор", "Коммутатор", "Точка доступа", "Сервер", "Шлюз", "Модем", "Концентратор", "Принтер", "Телефон", "Ноутбук", "Планшет"];
+    public static List<string> TypeContract { get; } = ["Без пролонгации", "С пролонгацией"];
+    public static List<string> ReasonsForTermination { get; } = ["Истечение срока договора", "Нарушение условий договора", "Смена места жительства", "Финансовые трудности", "Не указана"];
     
     public static void FillComboBox(List<string> input, ComboBox cb)
     {

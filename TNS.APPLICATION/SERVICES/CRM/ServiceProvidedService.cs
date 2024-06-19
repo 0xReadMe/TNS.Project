@@ -1,32 +1,51 @@
 ﻿using CSharpFunctionalExtensions;
+using TNS.CORE.INTERFACES.REPOSITORY.CRM;
 using TNS.CORE.INTERFACES.SERVICES.CRM;
 using TNS.CORE.MODELS.CRM;
 
 namespace TNS.APPLICATION.SERVICES.CRM;
 
-public class ServiceProvidedService : IServiceProvidedService
+public class ServiceProvidedService(IServiceProvidedRepository crmRepository) : IServiceProvidedService
 {
-    public Task<Result> AddServiceProvided(ServiceProvided service)
+    public readonly IServiceProvidedRepository _serviceRepository = crmRepository;
+
+    public async Task<Result> AddServiceProvided(ServiceProvided service)
     {
         throw new NotImplementedException();
     }
 
-    public Task<Result> DeleteServiceProvided(Guid id)
+    public async Task<Result> DeleteServiceProvided(Guid id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<Result<List<ServiceProvided>>> GetAllServiceProvided()
+    public async Task<Result<List<ServiceProvided>>> GetAllServiceProvided()
     {
-        throw new NotImplementedException();
+        try
+        {
+            List<ServiceProvided> sub = await _serviceRepository.GetAllServicesProvided();
+            return Result.Success(sub);
+        }
+        catch (Exception ex)
+        {
+            return Result.Failure<List<ServiceProvided>>($"Ошибка при получении данных: {ex}");
+        }
     }
 
-    public Task<Result<ServiceProvided>> GetByGuidServiceProvided(Guid id)
+    public async Task<Result<ServiceProvided>> GetByGuidServiceProvided(Guid id)
     {
-        throw new NotImplementedException();
+        try
+        {
+            ServiceProvided sub = await _serviceRepository.GetByGuid(id);
+            return Result.Success(sub);
+        }
+        catch (Exception ex)
+        {
+            return Result.Failure<ServiceProvided>($"Ошибка при получении данных: {ex}");
+        }
     }
 
-    public Task<Result> UpdateServiceProvided(ServiceProvided service, Guid id)
+    public async Task<Result> UpdateServiceProvided(ServiceProvided service, Guid id)
     {
         throw new NotImplementedException();
     }

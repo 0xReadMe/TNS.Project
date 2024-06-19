@@ -57,7 +57,7 @@ namespace TNS.APPLICATION.SERVICES.EMPLOYEE
         {
             try
             {
-                int sub = await _employeeRepository.GetRoleId(id);
+                int sub = (await _employeeRepository.GetRoleId(id)).Value;
                 return Result.Success(sub);
             }
             catch (Exception ex)

@@ -55,6 +55,7 @@ namespace TNS.PERSISTENCE.REPOSITORIES.SUBSCRIBER
             await _context.Subscribers
             .Where(l => l.Id == id)
             .ExecuteUpdateAsync(s => s
+            .SetProperty(s => s.PersonId, subscriber.PersonId)
             .SetProperty(s => s.Services, subscriber.Services)
             .SetProperty(s => s.DateOfContractConclusion, subscriber.DateOfContractConclusion)
             .SetProperty(s => s.DateOfTerminationOfTheContract, subscriber.DateOfTerminationOfTheContract)

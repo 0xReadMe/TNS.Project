@@ -75,7 +75,7 @@ namespace TNS.Front_end.CRM
             tbTypeOfProblem.SelectedIndex = 0;
 
             tbProblemDescription.Text = model.ProblemDescription.ToString();
-            tbEndDate.SelectedDate = model.ClosingDate;
+            tbEndDate.SelectedDate = model.ClosingDate.ToDateTime(TimeOnly.MinValue);
         }
 
         private void Image_MouseDown_Minimized(object sender, MouseButtonEventArgs e) => WindowState = WindowState.Minimized;                   //  свернуть окно

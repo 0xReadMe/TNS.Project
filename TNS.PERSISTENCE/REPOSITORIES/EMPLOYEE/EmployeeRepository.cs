@@ -66,12 +66,15 @@ namespace TNS.PERSISTENCE.REPOSITORIES.EMPLOYEE
             return _mapper.Map<Employee>(empEntity);
         }
 
-        public async Task<int> GetRoleId(Guid id) 
+        public async Task<Result<int>> GetRoleId(Guid id)
         {
             try
             {
                 using var connection = _context.Database.GetDbConnection();
-                await connection.OpenAsync();
+                if (connection.State != ConnectionState.Open)
+                {
+                    await connection.OpenAsync();
+                }
 
                 using var command = connection.CreateCommand();
                 command.CommandText = @"
@@ -88,20 +91,20 @@ namespace TNS.PERSISTENCE.REPOSITORIES.EMPLOYEE
                 command.Parameters.Add(parameter);
 
                 var result = await command.ExecuteScalarAsync();
+                await connection.CloseAsync();
                 if (result != null)
                 {
-                    return (int)result;
+                    return Result.Success((int)result);
                 }
                 else
                 {
-                    return 0; // Или значение по умолчанию
+                    return Result.Failure<int>("No role found for the given employee ID.");
                 }
             }
-            catch (Npgsql.NpgsqlOperationInProgressException)
+            catch (Exception ex)
             {
-                // Обрабатываем ошибку "операция в процессе"
-                await Task.Delay(500);
-                return await GetRoleId(id);
+                // Обрабатываем другие исключения
+                return Result.Failure<int>($"Error getting role ID: {ex.Message}");
             }
         }
 

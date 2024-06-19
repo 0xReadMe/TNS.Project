@@ -17,9 +17,9 @@ namespace TNS.Front_end.CRM
             tbSubscriberNumber.Text = model.SubscriberNumber.ToString();
             tbBilling.Text = model.PersonalBill.ToString();
             tbCreationDate.Text = model.CreationDate.ToString();
-            tbService.Text = "Интернет";
-            tbServiceProvided.Text = "Подключение";
-            tbServiceType.Text = "Подключение услуг с новой инфраструктурой";
+            tbService.Text = model.Service;
+            tbServiceProvided.Text = model.ServiceProvided;
+            tbServiceType.Text = model.ServiceType;
             tbStatus.Text = model.Status.ToString();
             tbTypeOfEquipment.Text = model.TypeOfEquipment.ToString();
             tbTypeOfProblem.Text = model.TypeOfProblem.ToString();

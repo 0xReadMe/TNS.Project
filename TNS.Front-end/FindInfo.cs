@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Data;
 using TNS.Front_end.CRM.MODELS;
+using TNS.Front_end.Employee.MODELS;
 using TNS.Front_end.EQUIPMENT.BASESTATIONS.MODELS;
 using TNS.Front_end.EQUIPMENT.MODELS.EQUIPMENT;
 using TNS.Front_end.SUBSCRIBERS.MODELS;
@@ -63,6 +64,18 @@ class FindInfo
                                 sub.ProblemDescription.Contains(search.Text, StringComparison.CurrentCultureIgnoreCase) ||
                                 sub.TypeOfEquipment.Contains(search.Text, StringComparison.CurrentCultureIgnoreCase) ||
                                 sub.Status.Contains(search.Text, StringComparison.CurrentCultureIgnoreCase)).ToList();
+
+            return result as List<T>;
+        }
+
+        if (typeof(T) == typeof(GetAllEmployees_GET))
+        {
+            List<GetAllEmployees_GET> result = (List<GetAllEmployees_GET>)Convert.ChangeType(currentItems, typeof(List<GetAllEmployees_GET>));
+            result = result.Where(sub =>
+                                sub.FullName.Contains(search.Text, StringComparison.CurrentCultureIgnoreCase) ||
+                                sub.Email.Contains(search.Text, StringComparison.CurrentCultureIgnoreCase) ||
+                                sub.Login.Contains(search.Text, StringComparison.CurrentCultureIgnoreCase) ||
+                                sub.Telegram.Contains(search.Text, StringComparison.CurrentCultureIgnoreCase)).ToList();
 
             return result as List<T>;
         }

@@ -1,32 +1,69 @@
-﻿namespace TNS.Front_end.SUBSCRIBERS.MODELS;
+﻿using System.Text.Json.Serialization;
 
-public record EditSubscriber_PUT
-(
-    Guid SubscriberId,
-    string SubscriberNumber,
-    string ContractNumber,
-    bool ContractType,
-    string ReasonForTerminationOfContract,
-    uint PersonalBill,
-    string Services,
-    DateOnly DateOfContractConclusion,
-    DateOnly DateOfTerminationOfTheContract,
-    string TypeOfEquipment,
-    Guid PersonId,
-    string FirstName,
-    string MiddleName,
-    string LastName,
-    char Gender,
-    DateOnly DOB,
-    string PhoneNumber,
-    string Email,
-    string DivisionCode,
-    string IssuedBy,
-    int Series,
-    int Number,
-    string ResidenceAddress,
-    string ResidentialAddress,
-    DateOnly DateOfIssueOfPassport
-);
+namespace TNS.Front_end.SUBSCRIBERS.MODELS;
 
+public class EditSubscriber_PUT
+{
+    [JsonPropertyName("contractType")]
+    public bool ContractType { get; set; }
 
+    [JsonPropertyName("reasonForTerminationOfContract")]
+    public string ReasonForTerminationOfContract { get; set; }
+
+    [JsonPropertyName("personalBill")]
+    public decimal PersonalBill { get; set; }
+
+    [JsonPropertyName("services")]
+    public string Services { get; set; }
+
+    [JsonPropertyName("dateOfContractConclusion")]
+    public DateOnly DateOfContractConclusion { get; set; }
+
+    [JsonPropertyName("dateOfTerminationOfTheContract")]
+    public DateOnly DateOfTerminationOfTheContract { get; set; }
+
+    [JsonPropertyName("typeOfEquipment")]
+    public string TypeOfEquipment { get; set; }
+
+    [JsonPropertyName("firstName")]
+    public string FirstName { get; set; }
+
+    [JsonPropertyName("middleName")]
+    public string MiddleName { get; set; }
+
+    [JsonPropertyName("lastName")]
+    public string LastName { get; set; }
+
+    [JsonPropertyName("gender")]
+    public string Gender { get; set; }
+
+    [JsonPropertyName("dob")]
+    public DateOnly Dob { get; set; }
+
+    [JsonPropertyName("phoneNumber")]
+    public string PhoneNumber { get; set; }
+
+    [JsonPropertyName("email")]
+    public string Email { get; set; }
+
+    [JsonPropertyName("divisionCode")]
+    public string DivisionCode { get; set; }
+
+    [JsonPropertyName("issuedBy")]
+    public string IssuedBy { get; set; }
+
+    [JsonPropertyName("series")]
+    public int Series { get; set; }
+
+    [JsonPropertyName("number")]
+    public int Number { get; set; }
+
+    [JsonPropertyName("residenceAddress")]
+    public string ResidenceAddress { get; set; }
+
+    [JsonPropertyName("residentialAddress")]
+    public string ResidentialAddress { get; set; }
+
+    [JsonPropertyName("dateOfIssueOfPassport")]
+    public DateOnly DateOfIssueOfPassport { get; set; }
+};

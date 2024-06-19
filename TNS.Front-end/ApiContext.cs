@@ -1,5 +1,6 @@
 ﻿using System.Net.Http;
 using System.Net.Http.Json;
+using System.Text;
 using System.Text.Json;
 using System.Windows;
 using TNS.Front_end.SUBSCRIBERS.MODELS;
@@ -33,46 +34,73 @@ class ApiContext
         }
     }
 
-    public static void Put<T>(string url, T model)
+    public static bool Get(string url)
     {
         using var httpClient = new HttpClient();
         try
         {
-            var response = httpClient.PutAsJsonAsync(url, model);
-            //if (response.IsSuccessStatusCode)
+            var response = httpClient.GetAsync(url).Result;
+            response.EnsureSuccessStatusCode();
+
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
         }
         catch (HttpRequestException ex)
         {
-            var dialog = new MessageWindow($"Ошибка при обновлении данных: {ex.Message}");
+            var dialog = new MessageWindow($"Ошибка при получении данных: {ex.Message}");
             throw;
         }
         catch (JsonException ex)
         {
-            var dialog = new MessageWindow($"JSON-serailization error: {ex.Message}");
+            var dialog = new MessageWindow($"JSON-deserailization error: {ex.Message}");
             throw;
         }
     }
 
-    public static void Post<T>(string url, T model)
-    {
-        using var httpClient = new HttpClient();
-        try
-        {
-            var response = httpClient.PostAsJsonAsync(url, model);
-            //if (response.IsSuccessStatusCode)
+    //public static void Put<T>(string url, T model)
+    //{
+    //    using var httpClient = new HttpClient();
+    //    try
+    //    {
+    //        var response = httpClient.PutAsJsonAsync(url, model);
+    //        //if (response.IsSuccessStatusCode)
+    //    }
+    //    catch (HttpRequestException ex)
+    //    {
+    //        var dialog = new MessageWindow($"Ошибка при обновлении данных: {ex.Message}");
+    //        throw;
+    //    }
+    //    catch (JsonException ex)
+    //    {
+    //        var dialog = new MessageWindow($"JSON-serailization error: {ex.Message}");
+    //        throw;
+    //    }
+    //}
 
-        }
-        catch (HttpRequestException ex)
-        {
-            var dialog = new MessageWindow($"Ошибка при добавлении данных: {ex.Message}");
-            throw;
-        }
-        catch (JsonException ex)
-        {
-            var dialog = new MessageWindow($"JSON-serailization error: {ex.Message}");
-            throw;
-        }
-    }
+    //public static void Post<T>(string url, T model)
+    //{
+    //    using var httpClient = new HttpClient();
+    //    try
+    //    {
+    //        var response = httpClient.PostAsJsonAsync(url, model);
+    //    }
+    //    catch (HttpRequestException ex)
+    //    {
+    //        var dialog = new MessageWindow($"Ошибка при добавлении данных: {ex.Message}");
+    //        throw;
+    //    }
+    //    catch (JsonException ex)
+    //    {
+    //        var dialog = new MessageWindow($"JSON-serailization error: {ex.Message}");
+    //        throw;
+    //    }
+    //}
 
     public static void Delete(string url)
     {
@@ -80,7 +108,6 @@ class ApiContext
         try
         {
             var response = httpClient.DeleteAsync(url);
-            //if (response.IsSuccessStatusCode)
         }
         catch (HttpRequestException ex)
         {

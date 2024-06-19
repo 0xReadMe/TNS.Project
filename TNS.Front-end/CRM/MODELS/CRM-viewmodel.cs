@@ -11,16 +11,16 @@ namespace TNS.Front_end.CRM.MODELS
         public string SubscriberNumber { get; set; }
 
         [JsonPropertyName("personalBill")]
-        public string PersonalBill { get; set; }
+        public uint PersonalBill { get; set; }
 
         [JsonPropertyName("typeOfEquipment")]
         public string TypeOfEquipment { get; set; }
 
         [JsonPropertyName("creationDate")]
-        public DateTime CreationDate { get; set; }
+        public DateOnly CreationDate { get; set; }
 
         [JsonPropertyName("closingDate")]
-        public DateTime ClosingDate { get; set; }
+        public DateOnly ClosingDate { get; set; }
 
         [JsonPropertyName("service")]
         public string Service { get; set; }
