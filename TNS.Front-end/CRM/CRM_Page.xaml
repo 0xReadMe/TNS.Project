@@ -49,41 +49,18 @@
                  HorizontalAlignment="Right" 
                  Margin="0 0 15 0"/>
             </Grid>
-            <Button x:Name="addButton" Style="{StaticResource addButton}" Margin="0,69,28,26" Click="AddButton">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/Sourse/Добавить.png" 
-                     Height="15" 
-                     Width="15"
-                     VerticalAlignment="Center" 
-                     HorizontalAlignment="Left" 
-                     Margin="0 1 0 1"/>
-                    <TextBlock Text="Добавить заявку"
-                         Margin="8 0 0 0"/>
-                </StackPanel>
-            </Button>
-            <Button x:Name="testEquipmentButton" Style="{StaticResource addButton}" Margin="0,120,28,-24" Click="TestEquipmentButton_Click">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/Sourse/Тестирование.png" 
-                        Height="15" 
-                        Width="15"
-                        VerticalAlignment="Center" 
-                        HorizontalAlignment="Left" 
-                        Margin="0 1 0 1"/>
-                    <TextBlock Text="Тест оборудования"
-                        Margin="8 0 0 0"/>
-                </StackPanel>
-            </Button>
+
         </Grid>
         <Separator Height="1"
                   Background="#9CD8FB"
-                  Margin="540,34,604,768"
+                  Margin="540,34,549,768"
                   Grid.Row="1"/>
 
         <StackPanel Margin="550,0,0,764"
                    Orientation="Horizontal"
                    HorizontalAlignment="Left"
                    Grid.Row="1"
-                   x:Name="btnStack" Width="290">
+                   x:Name="btnStack" Width="350">
 
             <Button x:Name="StatusBtn"
                    Content="Статус"
@@ -94,7 +71,7 @@
                    Style="{DynamicResource tabButton}"
                    Click="TypeEquipmentBtn_Click"/>
             <Button x:Name="ServicesBtn"
-                   Content="Услуги"
+                   Content="Тип проблемы"
                    Style="{DynamicResource tabButton}"
                    Click="ServicesBtn_Click"/>
 
@@ -134,20 +111,20 @@
                                    IsReadOnly="True" 
                                    Width="*" 
                                    Binding="{Binding SubscriberNumber}"/>
-                
-                <DataGridTextColumn Header="Описание проблемы"
+
+                <DataGridTextColumn Header="Тип проблемы"
                                    IsReadOnly="True"
                                    Width="*"
                                    Binding="{Binding TypeOfProblem}"/>
                 <DataGridTextColumn Header="Тип оборудования клиента"
                                    IsReadOnly="True" 
-                                   Width="auto"
+                                   Width="1.3*"
                                    Binding="{Binding TypeOfEquipment}"/>
                 <DataGridTextColumn Header="Статус" 
                    IsReadOnly="True" 
                    Width="*" 
                    Binding="{Binding Status}"/>
-                
+
                 <DataGridTemplateColumn x:Name="dgBtnStack" Header="Операции"
                                        IsReadOnly="True" 
                                        Width="auto">
@@ -157,7 +134,7 @@
                                 <Border Width="30"
                                        Height="30"
                                        CornerRadius="50"
-                                       Margin="5 0 0 0">
+                                       Margin="5 0 5 0">
                                     <Ellipse x:Name="openBtn" Cursor="Hand" MouseDown="Open_MouseDown">
                                         <Ellipse.ToolTip>
                                             <ToolTip Style="{StaticResource toolTip}">
@@ -166,21 +143,6 @@
                                         </Ellipse.ToolTip>
                                         <Ellipse.Fill>
                                             <ImageBrush  ImageSource="/Sourse/Открыть.png"/>
-                                        </Ellipse.Fill>
-                                    </Ellipse>
-                                </Border>
-                                <Border Width="30"
-                                       Height="30"
-                                       CornerRadius="50"
-                                       Margin="5 0 5 0">
-                                    <Ellipse Cursor="Hand" MouseDown="Edit_MouseDown">
-                                        <Ellipse.ToolTip>
-                                            <ToolTip Style="{StaticResource toolTip}">
-                                                <TextBlock Text="Редактировать"/>
-                                            </ToolTip>
-                                        </Ellipse.ToolTip>
-                                        <Ellipse.Fill>
-                                            <ImageBrush ImageSource="/Sourse/Редактировать.png"/>
                                         </Ellipse.Fill>
                                     </Ellipse>
                                 </Border>
@@ -216,5 +178,6 @@
                   Height="30"
                   SelectionChanged="CBSort_SelectionChanged" Grid.Row="1"
                   HorizontalContentAlignment="Center"/>
+            
     </Grid>
 </Page>

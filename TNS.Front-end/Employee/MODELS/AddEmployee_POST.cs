@@ -1,13 +1,30 @@
-﻿namespace TNS.Front_end.Employee.MODELS;
+﻿using System.Text.Json.Serialization;
 
-public record AddEmployee_POST
-(
-    int        RoleId,                 // id должности
-    string      FullName,                   // ФИО сотрудника
-    string      PhotoId,                    // путь к фото
-    DateOnly    DateOfBirth,                // дата рождения
-    string?     Telegram,                   // telegram
-    string       Email,                      // e-mail
-    string Login,                      // авторизация (номер телефона)
-    string      PasswordHash                // авторизация (пароль)
-);
+namespace TNS.Front_end.Employee.MODELS;
+
+public class AddEmployee_POST
+{
+    [JsonPropertyName("roleId")]
+    public int RoleId { get; set; }
+
+    [JsonPropertyName("fullName")]
+    public string FullName { get; set; }
+
+    [JsonPropertyName("photoId")]
+    public string PhotoId { get; set; }
+
+    [JsonPropertyName("dateOfBirth")]
+    public string DateOfBirth { get; set; }
+
+    [JsonPropertyName("telegram")]
+    public string Telegram { get; set; }
+
+    [JsonPropertyName("email")]
+    public string Email { get; set; }
+
+    [JsonPropertyName("login")]
+    public string Login { get; set; }
+
+    [JsonPropertyName("password")]
+    public string Password { get; set; }
+};

@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="SorsePhoto\default.jpg" />
     <None Remove="SorsePhoto\ProfilePhoto2.jpg" />
     <None Remove="SorsePhoto\ProfilePhoto3.jpg" />
     <None Remove="SorsePhoto\ProfilPhoto1.jpg" />
@@ -53,6 +54,7 @@
     <Resource Include="SorsePhoto\ProfilPhoto1.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="SorsePhoto\default.jpg" />
     <Resource Include="Sourse\CRM.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

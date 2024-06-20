@@ -11,6 +11,7 @@
     <Page.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
         <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+        <local:StringToFirstCharConverter x:Key="StringToFirstCharConverter" />
     </Page.Resources>
 
     <Grid>
@@ -65,19 +66,16 @@
         </Grid>
         <Separator Height="1"
               Background="#9CD8FB"
-              Margin="530,32,520,766"
+              Margin="550,32,520,766"
               Grid.Row="1"/>
 
-        <StackPanel Margin="530,0,0,764"
+        <StackPanel Margin="580,0,0,764"
                Orientation="Horizontal"
                HorizontalAlignment="Left"
                Grid.Row="1"
                x:Name="btnStack" Width="540">
 
-            <Button x:Name="PositionNameBtn"
-               Content="Должность"
-               Style="{DynamicResource tabButton}"
-               Click="PositionNameBtn_Click"/>
+            
             <Button x:Name="PhoneBtn"
                Content="Телефон"
                Style="{DynamicResource tabButton}"
@@ -132,7 +130,7 @@
                                    CornerRadius="50"
                                    Margin="0 0 10 0"
                                    Background="#9CD8FB">
-                                    <TextBlock Text="{Binding Character}"
+                                    <TextBlock Text="{Binding FullName, Converter={StaticResource StringToFirstCharConverter}}"
                                           VerticalAlignment="Center" 
                                           HorizontalAlignment="Center" 
                                           Foreground="#024C8C"

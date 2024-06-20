@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="OpenEquipmentMagisralNetworks"  Height="715" Width="600" 
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize" 
-        WindowStyle="None" BorderBrush="#9CD8FB" BorderThickness="3">
+        WindowStyle="None" BorderBrush="#9CD8FB" BorderThickness="3" Topmost="True">
 
     <Grid>
         <Grid.ColumnDefinitions>

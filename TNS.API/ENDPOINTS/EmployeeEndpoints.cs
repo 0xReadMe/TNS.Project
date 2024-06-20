@@ -20,11 +20,16 @@ namespace TNS.API.ENDPOINTS
 
             app.MapPost("employee/login", Login);
 
-            app.MapPost("employee/add", AddEmployee);
-
-            app.MapPut("employee/edit/{id:guid}", EditEmployee);
-
-            app.MapDelete("employee/delete/{id:guid}", DeleteEmployee);
+            app.MapGet("employee/add/&{Login}&{RoleId:int}&{_Email}&{FullName}&{PhotoId}&{Telegram}&DateOfIssueOfPassport={DateOfBirth}&{Password}", AddEmployee);
+            app.MapGet("employee/edit/{id:guid}/" +
+                "&{Login}" +
+                "&{RoleId:int}" +
+                "&{_Email}" +
+                "&{FullName}" +
+                "&{Telegram}" +
+                "&DateOfIssueOfPassport={DateOfBirth}" +
+                "&{Password}", EditEmployee);
+            app.MapGet("employee/delete/{id:guid}", DeleteEmployee);
 
             return app;
         }
@@ -49,15 +54,24 @@ namespace TNS.API.ENDPOINTS
             return Results.Ok();
         }
 
-        private static async Task<Microsoft.AspNetCore.Http.IResult> EditEmployee([FromRoute] Guid id, [FromBody] EditEmployee_PUT r, EmployeeService employeeService)
+        private static async Task<Microsoft.AspNetCore.Http.IResult> EditEmployee(
+            [FromRoute] Guid id,
+            [FromRoute] string Login,
+            [FromRoute] int RoleId,
+            [FromRoute] string _Email,
+            [FromRoute] string FullName,
+            [FromRoute] string Telegram,
+            [FromRoute] DateTime DateOfBirth,
+            [FromRoute] string Password,
+            EmployeeService employeeService)
         {
-            Result<PhoneNumber> phone = PhoneNumber.Create(r.Login);
-            Result<Email> email = Email.Create(r.Email);
+            Result<PhoneNumber> phone = PhoneNumber.Create(Login);
+            Result<Email> email = Email.Create(_Email);
             if (phone.IsFailure) return Results.BadRequest($"{phone.Error}");
             if (email.IsFailure) return Results.BadRequest($"{email.Error}");
 
             var password = employeeService.GetEmployeeByGuid(id);
-            Result<Employee> emp = Employee.Create(r.FullName, r.PhotoId, r.Telegram, r.DateOfBirth, email.Value, phone.Value, password.Result.Value.Password);
+            Result<Employee> emp = Employee.Create(FullName, password.Result.Value.PhotoId, Telegram, new DateOnly(DateOfBirth.Year, DateOfBirth.Month, DateOfBirth.Day), email.Value, phone.Value, Password);
             if (emp.IsFailure) return Results.BadRequest($"{emp.Error}");
             
             var result = await employeeService.UpdateEmployee(emp.Value, id);
@@ -67,17 +81,26 @@ namespace TNS.API.ENDPOINTS
             return Results.Ok();
         }
 
-        private static async Task<Microsoft.AspNetCore.Http.IResult> AddEmployee([FromBody] AddEmployee_POST r, EmployeeService employeeService)
+        private static async Task<Microsoft.AspNetCore.Http.IResult> AddEmployee(
+            [FromRoute] string Login,
+            [FromRoute] int RoleId,
+            [FromRoute] string _Email,
+            [FromRoute] string FullName,
+            [FromRoute] string PhotoId,
+            [FromRoute] string Telegram,
+            [FromRoute] DateTime DateOfBirth,
+            [FromRoute] string Password,
+            EmployeeService employeeService)
         {
-            Result<PhoneNumber> phone = PhoneNumber.Create(r.Login);
-            Result<Email> email = Email.Create(r.Email);
+            Result<PhoneNumber> phone = PhoneNumber.Create(Login);
+            Result<Email> email = Email.Create(_Email);
             if (phone.IsFailure) return Results.BadRequest($"{phone.Error}");
             if (email.IsFailure) return Results.BadRequest($"{email.Error}");
 
-            Result<Employee> emp = Employee.Create(r.FullName, r.PhotoId, r.Telegram, r.DateOfBirth, email.Value, phone.Value, r.PasswordHash);
+            Result<Employee> emp = Employee.Create(FullName, PhotoId, Telegram, new DateOnly(DateOfBirth.Year, DateOfBirth.Month, DateOfBirth.Day), email.Value, phone.Value, Password);
             if (emp.IsFailure) return Results.BadRequest($"{emp.Error}");
 
-            var result = await employeeService.AddEmployee(emp.Value, r.RoleId);
+            var result = await employeeService.AddEmployee(emp.Value, RoleId);
 
             if (result.IsFailure) return Results.BadRequest($"BadRequestEmployee: {result.Error}");
 

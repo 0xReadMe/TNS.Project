@@ -10,6 +10,7 @@
     <Page.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
         <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+        <local:StringToFirstCharConverter x:Key="StringToFirstCharConverter" />
     </Page.Resources>
 
     <Grid>
@@ -134,7 +135,7 @@
                                        CornerRadius="50"
                                        Margin="0 0 10 0"
                                        Background="#9CD8FB">
-                                    <TextBlock Text="{Binding Character}"
+                                    <TextBlock Text="{Binding LastName, Converter={StaticResource StringToFirstCharConverter}}"
                                               VerticalAlignment="Center" 
                                               HorizontalAlignment="Center" 
                                               Foreground="#024C8C"
@@ -143,9 +144,9 @@
                                 <TextBlock VerticalAlignment="Center">
                                     <TextBlock.Text>
                                         <MultiBinding StringFormat=" {0} {1} {2}">
+                                            <Binding Path="LastName" />
                                             <Binding Path="FirstName" />
                                             <Binding Path="MiddleName" />
-                                            <Binding Path="LastName" />
                                         </MultiBinding>
                                     </TextBlock.Text>
                                 </TextBlock>
@@ -168,7 +169,7 @@
                                    Binding="{Binding Services}"/>
                 <DataGridTextColumn Header="Номер договора с абонентом"
                                    IsReadOnly="True" 
-                                   Width="auto"
+                                   Width="1.3*"
                                    Binding="{Binding ContractNumber}"/>
                 <DataGridTemplateColumn x:Name="dgBtnStack" Header="Операции"
                                        IsReadOnly="True" 

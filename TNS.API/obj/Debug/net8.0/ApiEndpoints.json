@@ -127,14 +127,49 @@
   {
     "ContainingType": "TNS.API.ENDPOINTS.EmployeeEndpoints",
     "Method": "AddEmployee",
-    "RelativePath": "employee/add",
-    "HttpMethod": "POST",
+    "RelativePath": "employee/add/\u0026{Login}\u0026{RoleId:int}\u0026{_Email}\u0026{FullName}\u0026{PhotoId}\u0026{Telegram}\u0026DateOfIssueOfPassport={DateOfBirth}\u0026{Password}",
+    "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "r",
-        "Type": "TNS.API.CONTRACTS.EMPLOYEES.AddEmployee_POST",
+        "Name": "Login",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "RoleId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "_Email",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "FullName",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "PhotoId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "Telegram",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "DateOfBirth",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      },
+      {
+        "Name": "Password",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -150,7 +185,7 @@
     "ContainingType": "TNS.API.ENDPOINTS.EmployeeEndpoints",
     "Method": "DeleteEmployee",
     "RelativePath": "employee/delete/{id:guid}",
-    "HttpMethod": "DELETE",
+    "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
     "Parameters": [
@@ -171,8 +206,8 @@
   {
     "ContainingType": "TNS.API.ENDPOINTS.EmployeeEndpoints",
     "Method": "EditEmployee",
-    "RelativePath": "employee/edit/{id:guid}",
-    "HttpMethod": "PUT",
+    "RelativePath": "employee/edit/{id:guid}/\u0026{Login}\u0026{RoleId:int}\u0026{_Email}\u0026{FullName}\u0026{Telegram}\u0026DateOfIssueOfPassport={DateOfBirth}\u0026{Password}",
+    "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
     "Parameters": [
@@ -182,8 +217,38 @@
         "IsRequired": true
       },
       {
-        "Name": "r",
-        "Type": "TNS.API.CONTRACTS.EMPLOYEES.EditEmployee_PUT",
+        "Name": "Login",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "RoleId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "_Email",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "FullName",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "Telegram",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "DateOfBirth",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      },
+      {
+        "Name": "Password",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -258,14 +323,54 @@
   {
     "ContainingType": "TNS.API.ENDPOINTS.EquipmentEndpoints",
     "Method": "AddBaseStation",
-    "RelativePath": "equipment/addBaseStation",
-    "HttpMethod": "POST",
+    "RelativePath": "equipment/addBaseStation/\u0026{Address}\u0026{Location}\u0026{BaseStationName}\u0026{S}\u0026{Frequency}\u0026{TypeAntenna}\u0026{Handover}\u0026{CommunicationProtocol}\u0026{IsWorking:bool}",
+    "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "r",
-        "Type": "TNS.API.CONTRACTS.EQUIPMENT.BASESTATIONS.AddBaseStation_POST",
+        "Name": "Address",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "Location",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "BaseStationName",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "S",
+        "Type": "System.Double",
+        "IsRequired": true
+      },
+      {
+        "Name": "Frequency",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "TypeAntenna",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "Handover",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "CommunicationProtocol",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "IsWorking",
+        "Type": "System.Boolean",
         "IsRequired": true
       }
     ],
@@ -280,14 +385,44 @@
   {
     "ContainingType": "TNS.API.ENDPOINTS.EquipmentEndpoints",
     "Method": "AddEquipment",
-    "RelativePath": "equipment/addEquipment",
-    "HttpMethod": "POST",
+    "RelativePath": "equipment/addEquipment/\u0026{SerialNumber}\u0026{Name}\u0026{Frequency}\u0026{AttenuationCoefficient}\u0026{DTT}\u0026{Address}\u0026{IsWorking:bool}",
+    "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "r",
-        "Type": "TNS.API.CONTRACTS.EQUIPMENT.EQUIPMENT.AddEquipment_POST",
+        "Name": "SerialNumber",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "Frequency",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "AttenuationCoefficient",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "DTT",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "Address",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "IsWorking",
+        "Type": "System.Boolean",
         "IsRequired": true
       }
     ],
@@ -303,7 +438,7 @@
     "ContainingType": "TNS.API.ENDPOINTS.EquipmentEndpoints",
     "Method": "DeleteBaseStation",
     "RelativePath": "equipment/deleteBaseStation/{id:guid}",
-    "HttpMethod": "DELETE",
+    "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
     "Parameters": [
@@ -325,7 +460,7 @@
     "ContainingType": "TNS.API.ENDPOINTS.EquipmentEndpoints",
     "Method": "DeleteEquipment",
     "RelativePath": "equipment/deleteEquipment/{id:guid}",
-    "HttpMethod": "DELETE",
+    "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
     "Parameters": [
@@ -346,19 +481,59 @@
   {
     "ContainingType": "TNS.API.ENDPOINTS.EquipmentEndpoints",
     "Method": "EditBaseStation",
-    "RelativePath": "equipment/editBaseStation/{id:guid}",
-    "HttpMethod": "PUT",
+    "RelativePath": "equipment/editBaseStation/{id:guid}/\u0026{Address}\u0026{Location}\u0026{BaseStationName}\u0026{S}\u0026{Frequency}\u0026{TypeAntenna}\u0026{Handover}\u0026{CommunicationProtocol}\u0026{IsWorking:bool}",
+    "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "r",
-        "Type": "TNS.API.CONTRACTS.EQUIPMENT.BASESTATIONS.EditBaseStation_PUT",
+        "Name": "id",
+        "Type": "System.Guid",
         "IsRequired": true
       },
       {
-        "Name": "id",
-        "Type": "System.Guid",
+        "Name": "Address",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "Location",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "BaseStationName",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "S",
+        "Type": "System.Double",
+        "IsRequired": true
+      },
+      {
+        "Name": "Frequency",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "TypeAntenna",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "Handover",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "CommunicationProtocol",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "IsWorking",
+        "Type": "System.Boolean",
         "IsRequired": true
       }
     ],
@@ -373,19 +548,49 @@
   {
     "ContainingType": "TNS.API.ENDPOINTS.EquipmentEndpoints",
     "Method": "EditEquipment",
-    "RelativePath": "equipment/editEquipment/{id:guid}",
-    "HttpMethod": "PUT",
+    "RelativePath": "equipment/editEquipment/{id:guid}/\u0026{SerialNumber}\u0026{Name}\u0026{Frequency}\u0026{AttenuationCoefficient}\u0026{DTT}\u0026{Address}\u0026{IsWorking:bool}",
+    "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "r",
-        "Type": "TNS.API.CONTRACTS.EQUIPMENT.EQUIPMENT.EditEquipment_PUT",
+        "Name": "id",
+        "Type": "System.Guid",
         "IsRequired": true
       },
       {
-        "Name": "id",
-        "Type": "System.Guid",
+        "Name": "SerialNumber",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "Frequency",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "AttenuationCoefficient",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "DTT",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "Address",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "IsWorking",
+        "Type": "System.Boolean",
         "IsRequired": true
       }
     ],
@@ -696,7 +901,7 @@
   {
     "ContainingType": "TNS.API.ENDPOINTS.SubscriberEndpoints",
     "Method": "EditSubscriber",
-    "RelativePath": "subscriber/edit/{id:guid}",
+    "RelativePath": "subscriber/edit/\u0026{id:guid}\u0026ContractType={contractType}\u0026ReasonForTerminationOfContract={reasonForTerminationOfContract}\u0026Services={services}\u0026DateOfContractConclusion={dateOfContractConclusion}\u0026DateOfTerminationOfTheContract={dateOfTerminationOfTheContract}\u0026TypeOfEquipment={typeOfEquipment}\u0026FirstName={firstName}\u0026MiddleName={middleName}\u0026LastName={lastName}\u0026Gender={gender}\u0026DOB={dob:datetime}\u0026PhoneNumber={phoneNumber}\u0026Email={email}\u0026DivisionCode={divisionCode}\u0026IssuedBy={issuedBy}\u0026Series={series:int}\u0026Number={number:int}\u0026ResidenceAddress={residenceAddress}\u0026ResidentialAddress={residentialAddress}\u0026DateOfIssueOfPassport={dateOfIssueOfPassport}",
     "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
@@ -707,8 +912,103 @@
         "IsRequired": true
       },
       {
-        "Name": "r",
-        "Type": "TNS.API.CONTRACTS.SUBSCRIBERS.EditSubscriber_PUT",
+        "Name": "contractType",
+        "Type": "System.Boolean",
+        "IsRequired": true
+      },
+      {
+        "Name": "reasonForTerminationOfContract",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "services",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "dateOfContractConclusion",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      },
+      {
+        "Name": "dateOfTerminationOfTheContract",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      },
+      {
+        "Name": "typeOfEquipment",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "firstName",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "middleName",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "lastName",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "gender",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "dob",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      },
+      {
+        "Name": "phoneNumber",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "divisionCode",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "issuedBy",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "series",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "number",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "residenceAddress",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "residentialAddress",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "dateOfIssueOfPassport",
+        "Type": "System.DateTime",
         "IsRequired": true
       }
     ],

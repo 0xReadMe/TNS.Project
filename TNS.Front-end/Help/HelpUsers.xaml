@@ -17,7 +17,7 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        
+
         <Grid Name="ToolBar" Grid.Row="0" Grid.Column="1">
             <TextBlock Text="Обратная связь" 
                        VerticalAlignment="Center"
@@ -72,7 +72,7 @@
                        Panel.ZIndex="1" Text="Ваше сообщение..."
                        Visibility="{Binding ElementName=txtSearch, 
                                              Path=Text.IsEmpty, 
-                                             Converter={StaticResource BoolToVis}}"/>
+                                            Converter={StaticResource BoolToVis}}"/>
             <TextBox x:Name="txtSearch" 
                      Style="{StaticResource textboxSearch}"
                      Height="80"
@@ -81,7 +81,8 @@
                      Margin="0 0 70 0"
                      TextWrapping="Wrap"
                      AcceptsReturn="True"
-                     VerticalScrollBarVisibility="Hidden"/>
+                     VerticalScrollBarVisibility="Hidden"
+                     TextChanged="txtSearch_TextChanged"/>
 
             <Image Source="/Sourse/Send.png"
                    Height="20"
@@ -89,7 +90,9 @@
                    Margin="490 0 25 0"
                    VerticalAlignment="Center"
                    MouseDown="SendMouseDown"/>
+
         </Grid>
+        <TextBlock x:Name="notification" Style="{StaticResource TBlAddUser}" Visibility="Hidden" Text="Ваше сообщение успешно отправлено!" Margin="72,64,72,0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
     </Grid>
 </Window>

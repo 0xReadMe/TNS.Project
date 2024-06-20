@@ -1,29 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows.Controls;
 using TNS.Front_end.Employee.MODELS;
 
-namespace TNS.Front_end.Profile
+namespace TNS.Front_end.Profile;
+
+public partial class ContactInformationProfile : Page
 {
-    /// <summary>
-    /// Логика взаимодействия для ContactInformationProfile.xaml
-    /// </summary>
-    public partial class ContactInformationProfile : Page
+    public ContactInformationProfile(GetAllEmployees_GET _emp)
     {
-        public ContactInformationProfile(GetAllEmployees_GET _emp)
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+
+        emailTB.Text = _emp.Email;
+        phoneTB.Text = _emp.Login;
+        telegramTB.Text = _emp.Telegram;
     }
 }

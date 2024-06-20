@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TNS.Front_end"
         mc:Ignorable="d"
-        Title="Autorization" Height="515" Width="365" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen"
+        Title="Autorization" Height="500" Width="365" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen"
         BorderBrush="#e7f3fd" BorderThickness="3">
     <Window.Resources>
         <Style x:Key="TB" TargetType="TextBox">
@@ -59,7 +59,6 @@
             <RowDefinition Height ="30"/>
             <RowDefinition Height ="120"/>
             <RowDefinition Height="300"/>
-            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid Name="ToolBar" Grid.Row="0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
@@ -103,7 +102,7 @@
             </StackPanel>
         </Grid>
 
-        <TextBox x:Name="number" Grid.Row="2" Style="{StaticResource TB}" Margin="20,20,20,186"/>
+        <TextBox x:Name="number" Grid.Row="2" Style="{StaticResource TB}" TextChanged="Number_TextChanged" Margin="20,20,20,186"/>
         <TextBlock IsHitTestVisible="False" FontSize="20" Text="Номер" Foreground="#024C8C" Grid.Row="2" Margin="50,54,50,0" VerticalAlignment="Top" TextAlignment="Center">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
@@ -135,7 +134,7 @@
         <TextBlock IsHitTestVisible="False" FontSize="20" Text="Авторизация" Foreground="White" Grid.Row="2" Margin="0,130,0,14" VerticalAlignment="Center" TextAlignment="Center">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Setter Property="Visibility" Value="Visible"/>
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding Text, ElementName=code}" Value="">
                             <Setter Property="Visibility" Value="Visible"/>
@@ -145,19 +144,5 @@
             </TextBlock.Style>
         </TextBlock>
 
-        <TextBox x:Name="code" Grid.Row="3" Style="{StaticResource TB}" Width="270" HorizontalAlignment="Left" Margin="32 0 0 0" Padding="11 6 0 0"/>
-        <TextBlock x:Name="textCode" IsHitTestVisible="False" FontSize="20" Text="Код" Foreground="#024C8C" Grid.Row="3" Margin="50,0,80,0" VerticalAlignment="Center" TextAlignment="Center">
-            <TextBlock.Style>
-                <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Visibility" Value="Collapsed"/>
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding Text, ElementName=code}" Value="">
-                            <Setter Property="Visibility" Value="Visible"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBlock.Style>
-        </TextBlock>
-        <Image x:Name="refreshButton" Source="/Sourse/На авторизацию_Обновление кода.png" Margin="302,5,10,5" Grid.Row="3" MouseDown="Image_MouseDown_Del"/>
     </Grid>
 </Window>

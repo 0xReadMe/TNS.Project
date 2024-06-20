@@ -3,16 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\TNS.Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2DE807EB-174D-4788-AF07-DA93D48D1088}|TNS.Front-end\\TNS.Front-end.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\tns.project\\tns.front-end\\subscribers\\actions\\adduser.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DE807EB-174D-4788-AF07-DA93D48D1088}|TNS.Front-end\\TNS.Front-end.csproj|solutionrelative:tns.front-end\\subscribers\\actions\\adduser.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2DE807EB-174D-4788-AF07-DA93D48D1088}|TNS.Front-end\\TNS.Front-end.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\tns.project\\tns.front-end\\findinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DE807EB-174D-4788-AF07-DA93D48D1088}|TNS.Front-end\\TNS.Front-end.csproj|solutionrelative:tns.front-end\\findinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96FE4034-4D6D-487A-AE32-ABABE20282BB}|TNS.API\\TNS.API.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\tns.project\\tns.api\\endpoints\\subscriberendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96FE4034-4D6D-487A-AE32-ABABE20282BB}|TNS.API\\TNS.API.csproj|solutionrelative:tns.api\\endpoints\\subscriberendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2DE807EB-174D-4788-AF07-DA93D48D1088}|TNS.Front-end\\TNS.Front-end.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\tns.project\\tns.front-end\\crm\\crm_page.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DE807EB-174D-4788-AF07-DA93D48D1088}|TNS.Front-end\\TNS.Front-end.csproj|solutionrelative:tns.front-end\\crm\\crm_page.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96FE4034-4D6D-487A-AE32-ABABE20282BB}|TNS.API\\TNS.API.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\tns.project\\tns.api\\endpoints\\employeeendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96FE4034-4D6D-487A-AE32-ABABE20282BB}|TNS.API\\TNS.API.csproj|solutionrelative:tns.api\\endpoints\\employeeendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2DE807EB-174D-4788-AF07-DA93D48D1088}|TNS.Front-end\\TNS.Front-end.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\tns.project\\tns.front-end\\crm\\crm_page.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2DE807EB-174D-4788-AF07-DA93D48D1088}|TNS.Front-end\\TNS.Front-end.csproj|solutionrelative:tns.front-end\\crm\\crm_page.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DE807EB-174D-4788-AF07-DA93D48D1088}|TNS.Front-end\\TNS.Front-end.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\tns.project\\tns.front-end\\employee\\employee_page.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DE807EB-174D-4788-AF07-DA93D48D1088}|TNS.Front-end\\TNS.Front-end.csproj|solutionrelative:tns.front-end\\employee\\employee_page.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DE807EB-174D-4788-AF07-DA93D48D1088}|TNS.Front-end\\TNS.Front-end.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\tns.project\\tns.front-end\\crm\\models\\crm-viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DE807EB-174D-4788-AF07-DA93D48D1088}|TNS.Front-end\\TNS.Front-end.csproj|solutionrelative:tns.front-end\\crm\\models\\crm-viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DE807EB-174D-4788-AF07-DA93D48D1088}|TNS.Front-end\\TNS.Front-end.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\tns.project\\tns.front-end\\comboboxsort.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DE807EB-174D-4788-AF07-DA93D48D1088}|TNS.Front-end\\TNS.Front-end.csproj|solutionrelative:tns.front-end\\comboboxsort.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DE807EB-174D-4788-AF07-DA93D48D1088}|TNS.Front-end\\TNS.Front-end.csproj|c:\\users\\8-bit\\desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\tns.project\\tns.front-end\\employee\\employee_page.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2DE807EB-174D-4788-AF07-DA93D48D1088}|TNS.Front-end\\TNS.Front-end.csproj|solutionrelative:tns.front-end\\employee\\employee_page.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,39 +43,91 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AddUser.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\TNS.Project\\TNS.Front-end\\SUBSCRIBERS\\ACTIONS\\AddUser.xaml.cs",
-              "RelativeDocumentMoniker": "TNS.Front-end\\SUBSCRIBERS\\ACTIONS\\AddUser.xaml.cs",
-              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\TNS.Project\\TNS.Front-end\\SUBSCRIBERS\\ACTIONS\\AddUser.xaml.cs",
-              "RelativeToolTip": "TNS.Front-end\\SUBSCRIBERS\\ACTIONS\\AddUser.xaml.cs",
-              "ViewState": "AQIAAEMAAAAAAAAAAAAmwDEAAAAQAAAA",
+              "Title": "FindInfo.cs",
+              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\TNS.Project\\TNS.Front-end\\FindInfo.cs",
+              "RelativeDocumentMoniker": "TNS.Front-end\\FindInfo.cs",
+              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\TNS.Project\\TNS.Front-end\\FindInfo.cs",
+              "RelativeToolTip": "TNS.Front-end\\FindInfo.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAAD4AAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T11:05:43.474Z",
+              "WhenOpened": "2024-06-20T01:00:30.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CRM-viewmodel.cs",
+              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\TNS.Project\\TNS.Front-end\\CRM\\MODELS\\CRM-viewmodel.cs",
+              "RelativeDocumentMoniker": "TNS.Front-end\\CRM\\MODELS\\CRM-viewmodel.cs",
+              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\TNS.Project\\TNS.Front-end\\CRM\\MODELS\\CRM-viewmodel.cs",
+              "RelativeToolTip": "TNS.Front-end\\CRM\\MODELS\\CRM-viewmodel.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB8AAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T00:51:10.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CRM_Page.xaml",
+              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\TNS.Project\\TNS.Front-end\\CRM\\CRM_Page.xaml",
+              "RelativeDocumentMoniker": "TNS.Front-end\\CRM\\CRM_Page.xaml",
+              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\TNS.Project\\TNS.Front-end\\CRM\\CRM_Page.xaml",
+              "RelativeToolTip": "TNS.Front-end\\CRM\\CRM_Page.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-20T00:46:27.704Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SubscriberEndpoints.cs",
-              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\TNS.Project\\TNS.API\\ENDPOINTS\\SubscriberEndpoints.cs",
-              "RelativeDocumentMoniker": "TNS.API\\ENDPOINTS\\SubscriberEndpoints.cs",
-              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\TNS.Project\\TNS.API\\ENDPOINTS\\SubscriberEndpoints.cs",
-              "RelativeToolTip": "TNS.API\\ENDPOINTS\\SubscriberEndpoints.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAABUAAAAwAAAA",
+              "Title": "CRM_Page.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\TNS.Project\\TNS.Front-end\\CRM\\CRM_Page.xaml.cs",
+              "RelativeDocumentMoniker": "TNS.Front-end\\CRM\\CRM_Page.xaml.cs",
+              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\TNS.Project\\TNS.Front-end\\CRM\\CRM_Page.xaml.cs",
+              "RelativeToolTip": "TNS.Front-end\\CRM\\CRM_Page.xaml.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAADgAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T09:31:53.73Z"
+              "WhenOpened": "2024-06-20T00:45:35.914Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EmployeeEndpoints.cs",
-              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\TNS.Project\\TNS.API\\ENDPOINTS\\EmployeeEndpoints.cs",
-              "RelativeDocumentMoniker": "TNS.API\\ENDPOINTS\\EmployeeEndpoints.cs",
-              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\TNS.Project\\TNS.API\\ENDPOINTS\\EmployeeEndpoints.cs",
-              "RelativeToolTip": "TNS.API\\ENDPOINTS\\EmployeeEndpoints.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 6,
+              "Title": "Employee_Page.xaml",
+              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\TNS.Project\\TNS.Front-end\\EMPLOYEE\\Employee_Page.xaml",
+              "RelativeDocumentMoniker": "TNS.Front-end\\EMPLOYEE\\Employee_Page.xaml",
+              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\TNS.Project\\TNS.Front-end\\EMPLOYEE\\Employee_Page.xaml",
+              "RelativeToolTip": "TNS.Front-end\\EMPLOYEE\\Employee_Page.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-20T00:41:49.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ComboBoxSort.cs",
+              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\TNS.Project\\TNS.Front-end\\ComboBoxSort.cs",
+              "RelativeDocumentMoniker": "TNS.Front-end\\ComboBoxSort.cs",
+              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\TNS.Project\\TNS.Front-end\\ComboBoxSort.cs",
+              "RelativeToolTip": "TNS.Front-end\\ComboBoxSort.cs",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAcwGgAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T10:07:36.504Z"
+              "WhenOpened": "2024-06-20T00:40:05.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Employee_Page.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\TNS.Project\\TNS.Front-end\\EMPLOYEE\\Employee_Page.xaml.cs",
+              "RelativeDocumentMoniker": "TNS.Front-end\\EMPLOYEE\\Employee_Page.xaml.cs",
+              "ToolTip": "C:\\Users\\8-bit\\Desktop\\\u0434\u0435\u043B\u0430\u044E\\\u0434\u0438\u043F\u043B\u043E\u043C\\TNS.Project\\TNS.Front-end\\EMPLOYEE\\Employee_Page.xaml.cs",
+              "RelativeToolTip": "TNS.Front-end\\EMPLOYEE\\Employee_Page.xaml.cs",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAEUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T00:39:34.264Z",
+              "EditorCaption": ""
             }
           ]
         }

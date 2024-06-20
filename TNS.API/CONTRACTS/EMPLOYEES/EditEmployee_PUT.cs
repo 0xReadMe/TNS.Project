@@ -6,7 +6,7 @@ public record EditEmployee_PUT
 (
     int RoleId,
     string      FullName,                       // ФИО сотрудника
-    string      PhotoId,                        // путь к фото
+    string      Password,                       
     DateOnly    DateOfBirth,                    // дата рождения
     string?     Telegram,                       // telegram
     string      Email,                          // e-mail

@@ -1,6 +1,4 @@
-﻿using System.Net.Http;
-using System.Text.Json;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Shapes;
@@ -33,10 +31,7 @@ namespace TNS.Front_end.Employee
             {
                 switch (chooseFilter)
                 {
-                    case "Должность":
-                        PositionNameBtn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
-                        break;
-
+                    
                     case "Телефон":
                         PhoneBtn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
                         break;
@@ -95,7 +90,8 @@ namespace TNS.Front_end.Employee
 
         private void CBSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            var result = ComboBoxSort.ChangeCB<GetAllEmployees_GET>(CBSort, chooseFilter, membersDataGrid);
+            Update(result);
         }
 
         private void AddButton(object sender, RoutedEventArgs e)
@@ -104,15 +100,6 @@ namespace TNS.Front_end.Employee
             addEmployee.Show();
         }
 
-        private void PositionNameBtn_Click(object sender, RoutedEventArgs e)
-        {
-            chooseFilter = FilterBlock.ButtonThicknessChange(PositionNameBtn, btnStack);
-            ComboBoxSort.FillComboBox(chooseFilter, CBSort);
-            CBSort.SelectedIndex = 0;
-
-            Update(_employee);
-
-        }
 
         private void PhoneBtn_Click(object sender, RoutedEventArgs e)
         {

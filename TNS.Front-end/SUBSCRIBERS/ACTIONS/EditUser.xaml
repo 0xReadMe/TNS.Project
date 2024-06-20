@@ -35,9 +35,9 @@
         <Grid Name="ToolBar" Grid.Row="0" Grid.Column="1">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Image Height="30" 
-       Width="30" 
-       MouseDown="Image_MouseDown_Minimized"
-       Name="MinimizedBtn">
+                       Width="30" 
+                       MouseDown="Image_MouseDown_Minimized"
+                       Name="MinimizedBtn">
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
                             <Setter Property="Source" Value="/Sourse/На авторизацию_Свернуь.png"/>
@@ -50,9 +50,9 @@
                     </Image.Style>
                 </Image>
                 <Image Height="30" 
-       Width="30"
-       MouseDown="Image_MouseDown_Close"
-       Name="CloseBtn">
+                       Width="30"
+                       MouseDown="Image_MouseDown_Close"
+                       Name="CloseBtn">
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
                             <Setter Property="Source" Value="/Sourse/На авторизацию_Закрыть.png"/>
@@ -100,8 +100,8 @@
         <ComboBox x:Name="tbServices" Grid.Row="13" Grid.Column="1" Foreground="#024C8C" FontSize="15" Style="{StaticResource ComboBoxFlatStyle}" Height="35" Width="265"></ComboBox>
         <ComboBox x:Name="tbDataEquipment" Grid.Row="14" Grid.Column="1" Padding="20 5" Style="{StaticResource ComboBoxFlatStyle}" Height="35" Margin="15,0,0,0" Width="265"   Foreground="#024C8C" FontSize="15"     HorizontalAlignment="Left"></ComboBox>
 
-        <Button  Grid.Row="17"                  Style="{StaticResource addButton}"     Width="270" Margin="0,4,5,11" Content="Очистить" HorizontalAlignment="Center"/>
-        <Button Click="ClearButton" Grid.Row="17" Grid.Column="1"  Style="{StaticResource addButton}"     Width="270" Margin="0,4,5,11" Content="Сохранить" HorizontalAlignment="Center"/>
+        <Button Click="ClearButton" Grid.Row="17"                  Style="{StaticResource addButton}"     Width="270" Margin="0,4,5,11" Content="Очистить" HorizontalAlignment="Center"/>
+        <Button Click="Save_Click" Grid.Row="17" Grid.Column="1"  Style="{StaticResource addButton}"     Width="270" Margin="0,4,5,11" Content="Сохранить" HorizontalAlignment="Center"/>
     </Grid>
 </Window>
 

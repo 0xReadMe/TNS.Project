@@ -63,6 +63,7 @@ class FindInfo
                                 sub.SubscriberNumber.Contains(search.Text, StringComparison.CurrentCultureIgnoreCase) ||
                                 sub.ProblemDescription.Contains(search.Text, StringComparison.CurrentCultureIgnoreCase) ||
                                 sub.TypeOfEquipment.Contains(search.Text, StringComparison.CurrentCultureIgnoreCase) ||
+                                sub.TypeOfProblem.Contains(search.Text, StringComparison.CurrentCultureIgnoreCase) ||
                                 sub.Status.Contains(search.Text, StringComparison.CurrentCultureIgnoreCase)).ToList();
 
             return result as List<T>;

@@ -1,10 +1,7 @@
-﻿using System.Net.Http;
-using System.Text.Json;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Shapes;
-using TNS.Front_end.CRM;
 using TNS.Front_end.EQUIPMENT.MODELS.EQUIPMENT;
 
 
@@ -36,14 +33,18 @@ namespace TNS.Front_end.EQUIPMENT
 
         private void AddButton(object sender, RoutedEventArgs e)
         {
-            AddEquipmentMagisralNetworks addWindow = new AddEquipmentMagisralNetworks();
+            AddEquipmentMagisralNetworks addWindow = new();
             addWindow.Show();
         }
 
-        private void testEquipmentButton_Click(object sender, RoutedEventArgs e)
+        private void TestEquipmentButton_Click(object sender, RoutedEventArgs e)
         {
-            TestEquipment testWindow = new TestEquipment();
-            testWindow.Show();
+            chooseFilter = "";
+            _equipment = ApiContext.Get<GetAllEquipments_GET>($"https://localhost:{Configurator.GetPort().Normalize().TrimStart().TrimEnd()}/equipment/testAllEquipment");
+            Update(_equipment);
+            FilterBlock.ButtonThicknessChange(addButton, btnStack);
+            ComboBoxSort.FillComboBox(ComboBoxSort.Filters, CBSort);
+            CBSort.SelectedIndex = 0;
         }
 
         private void Open_MouseDown(object sender, MouseButtonEventArgs e)
@@ -58,7 +59,7 @@ namespace TNS.Front_end.EQUIPMENT
         {
             var ellipse = sender as Ellipse;
             var subscriber = ellipse.DataContext as GetAllEquipments_GET;
-            EditEquipmentMagisralNetworks editWindow = new EditEquipmentMagisralNetworks(this, subscriber);
+            EditEquipmentMagisralNetworks editWindow = new(this, subscriber);
             editWindow.Show();
         }
 
@@ -133,8 +134,8 @@ namespace TNS.Front_end.EQUIPMENT
 
         private void DTTBtn_Click(object sender, RoutedEventArgs e)
         {
-            ComboBoxSort.FillComboBox(ComboBoxSort.DTT, CBSort);
             chooseFilter = FilterBlock.ButtonThicknessChange(DTTBtn, btnStack);
+            ComboBoxSort.FillComboBox(chooseFilter, CBSort);
             CBSort.SelectedIndex = 0;
 
             Update(_equipment);

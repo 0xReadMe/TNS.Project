@@ -54,7 +54,7 @@
                     <Border Width="175" Height="176" Padding="3" Background="White" CornerRadius="100">
                         <Ellipse>
                             <Ellipse.Fill>
-                                <ImageBrush  RenderOptions.EdgeMode="Aliased"  ImageSource="/SorsePhoto/ProfilePhoto3.jpg"/>
+                                <ImageBrush x:Name="photoEmployee" RenderOptions.EdgeMode="Aliased" ImageSource="/SorsePhoto/default.jpg"/>
                             </Ellipse.Fill>
                         </Ellipse>
                     </Border>

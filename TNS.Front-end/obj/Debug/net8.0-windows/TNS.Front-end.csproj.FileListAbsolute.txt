@@ -167,8 +167,6 @@ C:\Users\8-bit\Desktop\делаю\диплом\TNS.Project\TNS.Front-end\bin\Deb
 C:\Users\8-bit\Desktop\делаю\диплом\TNS.Project\TNS.Front-end\bin\Debug\net8.0-windows\TNS.Front-end.pdb
 C:\Users\8-bit\Desktop\делаю\диплом\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\MainWindow.baml
 C:\Users\8-bit\Desktop\делаю\диплом\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\Autorization.g.cs
-C:\Users\8-bit\Desktop\делаю\диплом\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\CRM\ACTIONS\AddCRM.g.cs
-C:\Users\8-bit\Desktop\делаю\диплом\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\CRM\ACTIONS\EditCRM.g.cs
 C:\Users\8-bit\Desktop\делаю\диплом\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\CRM\ACTIONS\OpenCRM.g.cs
 C:\Users\8-bit\Desktop\делаю\диплом\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\CRM\ACTIONS\TestEquipment.g.cs
 C:\Users\8-bit\Desktop\делаю\диплом\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\CRM\CRM_Page.g.cs
@@ -201,8 +199,6 @@ C:\Users\8-bit\Desktop\делаю\диплом\TNS.Project\TNS.Front-end\obj\Deb
 C:\Users\8-bit\Desktop\делаю\диплом\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\TNS.Front-end_MarkupCompile.lref
 C:\Users\8-bit\Desktop\делаю\диплом\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\App.baml
 C:\Users\8-bit\Desktop\делаю\диплом\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\Autorization.baml
-C:\Users\8-bit\Desktop\делаю\диплом\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\CRM\ACTIONS\AddCRM.baml
-C:\Users\8-bit\Desktop\делаю\диплом\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\CRM\ACTIONS\EditCRM.baml
 C:\Users\8-bit\Desktop\делаю\диплом\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\CRM\ACTIONS\OpenCRM.baml
 C:\Users\8-bit\Desktop\делаю\диплом\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\CRM\ACTIONS\TestEquipment.baml
 C:\Users\8-bit\Desktop\делаю\диплом\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\CRM\CRM_Page.baml
@@ -240,3 +236,4 @@ C:\Users\8-bit\Desktop\делаю\диплом\TNS.Project\TNS.Front-end\obj\Deb
 C:\Users\8-bit\Desktop\делаю\диплом\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\TNS.Front-end.pdb
 C:\Users\8-bit\Desktop\делаю\диплом\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\TNS.Front-end.genruntimeconfig.cache
 C:\Users\8-bit\Desktop\делаю\диплом\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\ref\TNS.Front-end.dll
+C:\Users\8-bit\Desktop\делаю\диплом\TNS.Project\TNS.Front-end\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs

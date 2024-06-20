@@ -11,12 +11,14 @@ namespace TNS.Front_end
     public partial class EditUser : Window
     {
         Subscribers _mainFrame;
+        GetSubscriber_GET _sub;
 
         public EditUser(GetSubscriber_GET sub, Subscribers mainFrame)
         {
             InitializeComponent();
 
             _mainFrame = mainFrame;
+            _sub = sub;
             tbFullName.Text = $"{sub.FirstName} {sub.MiddleName} {sub.LastName}";
             tbPassportSeries.Text = sub.Series.ToString();
             tbPassportNumber.Text = sub.Number.ToString();
@@ -24,48 +26,30 @@ namespace TNS.Front_end
             tbPassportWhoIssued.Text = sub.IssuedBy;
             tbStartDate.SelectedDate = sub.DateOfContractConclusion.ToDateTime(TimeOnly.MinValue);
 
-            List<string> typeContract = ["С пролонгацией", "Без пролонгации"];
-            tbTypeContract.ItemsSource = typeContract;
-            tbTypeContract.SelectedIndex = 0;
+            tbTypeContract.ItemsSource = ComboBoxSort.TypeContract;
+
+            if (sub.ContractType == true) 
+            {
+                tbTypeContract.SelectedValue = "С пролонгацией";
+            }
+            else
+            {
+                tbTypeContract.SelectedValue = "Без пролонгации";
+            }
 
             tbEndDate.SelectedDate = sub.DateOfTerminationOfTheContract.ToDateTime(TimeOnly.MinValue);
             
-            string[] validReasons = [
-                                        "Истечение срока договора",
-                                        "Нарушение условий договора",
-                                        "Смена места жительства",
-                                        "Финансовые трудности",
-                                        "Не указана"];
-            tbReasonTermination.ItemsSource = validReasons;
-            tbReasonTermination.SelectedIndex = 0;
+            tbReasonTermination.ItemsSource = ComboBoxSort.ReasonsForTermination;
+            tbReasonTermination.SelectedValue = sub.ReasonForTerminationOfContract;
 
             tbPersonalAccount.Text = sub.PersonalBill.ToString();
             tbAddress.Text = sub.ResidenceAddress;
 
-            List<string> servicesExist = [
-                "Интернет",
-                "Мобильная связь",
-                "Телевидение",
-                "Видеонаблюдение"];
-            tbServices.ItemsSource = servicesExist;
-            tbServices.SelectedIndex = 0;
+            tbServices.ItemsSource = ComboBoxSort.Services;
+            tbServices.SelectedValue = sub.Services;
 
-            string[] existEquipmentTypes =
-                    [
-                        "Маршрутизатор",
-                        "Коммутатор",
-                        "Точка доступа",
-                        "Сервер",
-                        "Шлюз",
-                        "Модем",
-                        "Концентратор",
-                        "Принтер",
-                        "Телефон",
-                        "Ноутбук",
-                        "Планшет"
-                    ];
-            tbDataEquipment.ItemsSource = existEquipmentTypes;
-            tbDataEquipment.SelectedIndex = 0;
+            tbDataEquipment.ItemsSource = ComboBoxSort.TypeEquipment;
+            tbDataEquipment.SelectedValue = sub.TypeOfEquipment;
         }
 
         private void Image_MouseDown_Minimized(object sender, MouseButtonEventArgs e) => WindowState = WindowState.Minimized;
@@ -77,25 +61,106 @@ namespace TNS.Front_end
 
         private void ClearButton(object sender, RoutedEventArgs e)
         {
-            //tbFullName.Clear();
-            //tbPassportSeries.Clear();
-            //tbPassportNumber.Clear();
-            //tbPassportIssueDate.SelectedDate = DateTime.Now;
-            //tbPassportWhoIssued.Clear();
-            //tbStartDate.SelectedDate = sub.DateOfContractConclusion.ToDateTime(TimeOnly.MinValue);
+            tbFullName.Clear();
+            tbPassportSeries.Clear();
+            tbPassportNumber.Clear();
+            tbPassportIssueDate.SelectedDate = DateTime.Now;
+            tbPassportWhoIssued.Clear();
+            tbStartDate.SelectedDate = _sub.DateOfContractConclusion.ToDateTime(TimeOnly.MinValue);
 
-            //List<string> typeContract = ["С пролонгацией", "Без пролонгации"];
-            //tbTypeContract.ItemsSource = typeContract;
+            tbTypeContract.ItemsSource = ComboBoxSort.TypeContract;
+            if (_sub.ContractType == true)
+            {
+                tbTypeContract.SelectedValue = "С пролонгацией";
+            }
+            else
+            {
+                tbTypeContract.SelectedValue = "Без пролонгации";
+            }
 
-            //tbEndDate.Text = sub.DateOfTerminationOfTheContract.ToString();
-            //tbReasonTermination.Text = sub.ReasonForTerminationOfContract;
-            //tbPersonalAccount.Text = sub.PersonalBill.ToString();
-            //tbAddress.Text = sub.ResidenceAddress;
+            tbEndDate.Text = _sub.DateOfTerminationOfTheContract.ToString();
+            tbReasonTermination.ItemsSource = ComboBoxSort.ReasonsForTermination;
+            tbReasonTermination.SelectedValue = _sub.ReasonForTerminationOfContract;
+            tbPersonalAccount.Text = _sub.PersonalBill.ToString();
+            tbAddress.Text = _sub.ResidenceAddress;
 
-            //List<string> servicesExist = ["С пролонгацией", "Без пролонгации"];
-            //tbServices.ItemsSource = servicesExist;
+            tbServices.ItemsSource = ComboBoxSort.Services;
+            tbServices.SelectedValue = _sub.Services;
+            tbDataEquipment.ItemsSource = ComboBoxSort.TypeEquipment;
+            tbDataEquipment.SelectedValue = _sub.TypeOfEquipment;
 
-            //tbDataEquipment.Text = sub.TypeOfEquipment;
+        }
+
+        string firstName, lastName, patronymic;
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            bool ctype;
+            if (tbTypeContract.SelectedValue == "Без пролонгации")
+            {
+                ctype = false;
+            }
+            else
+            {
+                ctype = true;
+            }
+            try
+            {
+                SplitFullName(tbFullName.Text, out firstName, out lastName, out patronymic);
+
+                ApiContext.Get($"https://localhost:{Configurator.GetPort().Normalize().TrimStart().TrimEnd()}/subscriber/edit/&{_sub.SubscriberId}" +
+                $"&ContractType={ctype}" +
+                $"&ReasonForTerminationOfContract={tbReasonTermination.SelectedValue}" +
+                $"&Services={tbServices.SelectedValue}" +
+                $"&DateOfContractConclusion={tbStartDate.SelectedDate.Value.Year}-{tbStartDate.SelectedDate.Value.Month}-{tbStartDate.SelectedDate.Value.Day}" +
+                $"&DateOfTerminationOfTheContract={tbEndDate.SelectedDate.Value.Year}-{tbEndDate.SelectedDate.Value.Month}-{tbEndDate.SelectedDate.Value.Day}" +
+                $"&TypeOfEquipment={tbDataEquipment.SelectedValue}" +
+                $"&FirstName={firstName}" +
+                $"&MiddleName={patronymic}" +
+                $"&LastName={lastName}" +
+                $"&Gender=М" +
+                $"&DOB={DateTime.Now.Year - 18}-{DateTime.Now.Month}-{DateTime.Now.Day}" +
+                $"&PhoneNumber=89065787986" +
+                $"&Email=xxx.is.04@mail.ru" +
+                $"&DivisionCode=500-046" +
+                $"&IssuedBy={tbPassportWhoIssued.Text}" +
+                $"&Series={Convert.ToInt32(tbPassportSeries.Text)}" +
+                $"&Number={Convert.ToInt32(tbPassportNumber.Text)}" +
+                $"&ResidenceAddress={tbAddress.Text}" +
+                $"&ResidentialAddress={tbAddress.Text}" +
+                $"&DateOfIssueOfPassport={tbPassportIssueDate.SelectedDate.Value.Year}-{tbPassportIssueDate.SelectedDate.Value.Month}-{tbPassportIssueDate.SelectedDate.Value.Day}");
+
+                _mainFrame.addButton.IsEnabled = true;
+                Close();
+            }
+            catch (Exception ex)
+            {
+                _mainFrame.addButton.IsEnabled = true;
+                var dialog = new MessageWindow($"{ex}");
+            }
+        }
+
+        public void SplitFullName(string fullName, out string firstName, out string lastName, out string patronymic)
+        {
+            string[] nameParts = fullName.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (nameParts.Length == 3)
+            {
+                firstName = nameParts[1];
+                lastName = nameParts[0];
+                patronymic = nameParts[2];
+            }
+            else if (nameParts.Length == 2)
+            {
+                firstName = nameParts[1];
+                lastName = nameParts[0];
+                patronymic = "";
+            }
+            else
+            {
+                firstName = "";
+                lastName = "";
+                patronymic = "";
+            }
         }
     }
 }

@@ -15,17 +15,17 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="10"></RowDefinition>
+            <RowDefinition Height="1.5*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="1.5*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="1.5*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
@@ -82,17 +82,17 @@
         <TextBlock Grid.Row="12" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Описание проблемы"></TextBlock>
         <TextBlock Grid.Row="13" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Дата закрытия"></TextBlock>
 
-        <TextBox x:Name="tbId"        Grid.Row="2"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="tbId"        Grid.Row="2"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="55" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True" TextWrapping="Wrap" VerticalContentAlignment="Center"></TextBox >
         <TextBox x:Name="tbSubscriberNumber"          Grid.Row="3"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
         <TextBox x:Name="tbBilling"    Grid.Row="4"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
         <TextBox x:Name="tbCreationDate"    Grid.Row="5"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
         <TextBox x:Name="tbService" Grid.Row="6"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
-        <TextBox x:Name="tbServiceProvided" Grid.Row="7"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="tbServiceProvided" Grid.Row="7"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="55" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True" TextWrapping="Wrap" VerticalContentAlignment="Center"></TextBox>
         <TextBox x:Name="tbServiceType"    Grid.Row="8"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
         <TextBox x:Name="tbStatus"         Grid.Row="9"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
         <TextBox x:Name="tbTypeOfEquipment"      Grid.Row="10" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
         <TextBox x:Name="tbTypeOfProblem"           Grid.Row="11" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
-        <TextBox x:Name="tbProblemDescription" Grid.Row="12" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
+        <TextBox x:Name="tbProblemDescription" Grid.Row="12" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="55" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True" TextWrapping="Wrap" VerticalContentAlignment="Center"></TextBox>
         <TextBox x:Name="tbEndDate"   Grid.Row="13" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" IsReadOnly="True"></TextBox>
 
     </Grid>

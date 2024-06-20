@@ -83,24 +83,24 @@ class ApiContext
     //    }
     //}
 
-    //public static void Post<T>(string url, T model)
-    //{
-    //    using var httpClient = new HttpClient();
-    //    try
-    //    {
-    //        var response = httpClient.PostAsJsonAsync(url, model);
-    //    }
-    //    catch (HttpRequestException ex)
-    //    {
-    //        var dialog = new MessageWindow($"Ошибка при добавлении данных: {ex.Message}");
-    //        throw;
-    //    }
-    //    catch (JsonException ex)
-    //    {
-    //        var dialog = new MessageWindow($"JSON-serailization error: {ex.Message}");
-    //        throw;
-    //    }
-    //}
+    public static void Post<T>(string url, T model)
+    {
+        using var httpClient = new HttpClient();
+        try
+        {
+            var response = httpClient.PostAsJsonAsync(url, model);
+        }
+        catch (HttpRequestException ex)
+        {
+            var dialog = new MessageWindow($"Ошибка при добавлении данных: {ex.Message}");
+            throw;
+        }
+        catch (JsonException ex)
+        {
+            var dialog = new MessageWindow($"JSON-serailization error: {ex.Message}");
+            throw;
+        }
+    }
 
     public static void Delete(string url)
     {

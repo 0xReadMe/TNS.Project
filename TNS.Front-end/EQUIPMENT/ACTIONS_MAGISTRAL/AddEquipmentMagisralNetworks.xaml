@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="AddEquipmentMagisralNetworks" Height="715" Width="600" 
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize" 
-        WindowStyle="None" BorderBrush="#9CD8FB" BorderThickness="3">
+        WindowStyle="None" BorderBrush="#9CD8FB" BorderThickness="3" Topmost="True">
     
     <Grid>
         <Grid.ColumnDefinitions>
@@ -73,13 +73,13 @@
         <TextBlock Grid.Row="5" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Технология передачи данных"></TextBlock>
         <TextBlock Grid.Row="6" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Расположение"></TextBlock>
 
-        <TextBox    Grid.Row="2"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left"></TextBox>
-        <TextBox    Grid.Row="3"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left"></TextBox>
-        <TextBox    Grid.Row="4"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left"></TextBox>
-        <ComboBox   Grid.Row="5"  Grid.Column="1"                              Style="{StaticResource ComboBoxFlatStyle}" Height="35"                   Width="265"></ComboBox>
-        <TextBox    Grid.Row="6"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left"></TextBox>
+        <TextBox  x:Name="tbName"  Grid.Row="2"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left"></TextBox>
+        <TextBox  x:Name="tbFrequency"  Grid.Row="3"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left"></TextBox>
+        <TextBox  x:Name="tbCoefficien"  Grid.Row="4"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left"></TextBox>
+        <ComboBox x:Name="cbDTT" Grid.Row="5"  Grid.Column="1"                              Style="{StaticResource ComboBoxFlatStyle}" Height="35"  Foreground="#024C8C" FontSize="15" Width="265"></ComboBox>
+        <TextBox  x:Name="tbAddress"  Grid.Row="6"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left"></TextBox>
        
-        <Button  Grid.Row="7"                  Style="{StaticResource addButton}"     Width="270" Margin="0,4,5,11" Content="Очистить"  HorizontalAlignment="Center"/>
-        <Button  Grid.Row="7" Grid.Column="1"  Style="{StaticResource addButton}"     Width="270" Margin="0,4,5,11" Content="Сохранить" HorizontalAlignment="Center"/>
+        <Button  Click="Clear_Click" Grid.Row="7"                  Style="{StaticResource addButton}"     Width="270" Margin="0,4,5,11" Content="Очистить"  HorizontalAlignment="Center"/>
+        <Button Click="Save_Click" Grid.Row="7" Grid.Column="1"  Style="{StaticResource addButton}"     Width="270" Margin="0,4,5,11" Content="Сохранить" HorizontalAlignment="Center"/>
     </Grid>
 </Window>

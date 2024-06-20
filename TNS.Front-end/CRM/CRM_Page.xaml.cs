@@ -1,11 +1,8 @@
-﻿using System.Net.Http;
-using System.Text.Json;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Shapes;
 using TNS.Front_end.CRM.MODELS;
-using TNS.Front_end.SUBSCRIBERS.MODELS;
 namespace TNS.Front_end.CRM;
 
 /// <summary>
@@ -44,7 +41,7 @@ public partial class CRM_Page : Page
                     TypeEquipmentBtn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
                     break;
 
-                case "Услуги":
+                case "Тип проблемы":
                     ServicesBtn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
                     break;
 
@@ -69,8 +66,8 @@ public partial class CRM_Page : Page
 
     private void StatusBtn_Click(object sender, RoutedEventArgs e)
     {
-        ComboBoxSort.FillComboBox(ComboBoxSort.Status, CBSort);
         chooseFilter = FilterBlock.ButtonThicknessChange(StatusBtn, btnStack);
+        ComboBoxSort.FillComboBox(chooseFilter, CBSort);
         CBSort.SelectedIndex = 0;
 
         Update(CRM);
@@ -78,25 +75,11 @@ public partial class CRM_Page : Page
 
     private void TypeEquipmentBtn_Click(object sender, RoutedEventArgs e)
     {
-        ComboBoxSort.FillComboBox(ComboBoxSort.TypeEquipment, CBSort);
         chooseFilter = FilterBlock.ButtonThicknessChange(TypeEquipmentBtn, btnStack);
+        ComboBoxSort.FillComboBox(chooseFilter, CBSort);
         CBSort.SelectedIndex = 0;
 
         Update(CRM);
-    }
-
-    private void AddButton(object sender, RoutedEventArgs e)
-    {
-        AddCRM addCRM = new();
-        addCRM.Show();
-    }
-
-    private void Edit_MouseDown(object sender, MouseButtonEventArgs e)
-    {
-        var ellipse = sender as Ellipse;
-        var subscriber = ellipse.DataContext as CRM_viewmodel;
-        EditCRM editCRM = new(this, subscriber);
-        editCRM.Show();
     }
 
     private void Open_MouseDown(object sender, MouseButtonEventArgs e)
@@ -112,26 +95,20 @@ public partial class CRM_Page : Page
         chooseFilter = "";
         CRM = ApiContext.Get<CRM_viewmodel>($"https://localhost:{Configurator.GetPort().Normalize().TrimStart().TrimEnd()}/CRM/getAll");
         Update(CRM);
-        FilterBlock.ButtonThicknessChange(addButton, btnStack);
         ComboBoxSort.FillComboBox(ComboBoxSort.Filters, CBSort);
         CBSort.SelectedIndex = 0;
     }
 
     private void ServicesBtn_Click(object sender, RoutedEventArgs e)
     {
-        ComboBoxSort.FillComboBox(ComboBoxSort.Services, CBSort);
         chooseFilter = FilterBlock.ButtonThicknessChange(ServicesBtn, btnStack);
+
+        ComboBoxSort.FillComboBox(chooseFilter, CBSort);
         CBSort.SelectedIndex = 0;
 
         Update(CRM);
     }
-
-    private void TestEquipmentButton_Click(object sender, RoutedEventArgs e)
-    {
-        TestEquipment testEquipment = new TestEquipment();
-        testEquipment.Show();
-    }
-
+        
     private void Delete_MouseDown(object sender, MouseButtonEventArgs e)
     {
         var ellipse = sender as Ellipse;
@@ -139,8 +116,6 @@ public partial class CRM_Page : Page
 
         string message = $"Вы точно хотите удалить CRM \"{subscriber.Id}\"?";
         var dialog = new MessageWindow(message, subscriber);
-
-        addButton.IsEnabled = false;
     }
     private void Update(List<CRM_viewmodel> sub) => membersDataGrid.ItemsSource = sub;
 }

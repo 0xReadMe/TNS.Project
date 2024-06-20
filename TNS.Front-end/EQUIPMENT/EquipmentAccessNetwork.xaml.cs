@@ -45,14 +45,18 @@ namespace TNS.Front_end.EQUIPMENT
 
         private void AddButton(object sender, RoutedEventArgs e)
         {
-            AddEquipmentAccessNetwork addWindow = new();
+            AddEquipmentAccessNetwork addWindow = new(this);
             addWindow.Show();
         }
 
         private void testEquipmentButton_Click(object sender, RoutedEventArgs e)
         {
-            TestEquipment testWindow = new TestEquipment();
-            testWindow.Show();
+            chooseFilter = "";
+            _equipment = ApiContext.Get<GetAllBaseStations_GET>($"https://localhost:{Configurator.GetPort().Normalize().TrimStart().TrimEnd()}/equipment/testAllBaseStations");
+            Update(_equipment);
+            FilterBlock.ButtonThicknessChange(addButton, btnStack);
+            ComboBoxSort.FillComboBox(ComboBoxSort.Filters, CBSort);
+            CBSort.SelectedIndex = 0;
         }
 
         private void Open_MouseDown(object sender, MouseButtonEventArgs e)
@@ -67,7 +71,7 @@ namespace TNS.Front_end.EQUIPMENT
         {
             var ellipse = sender as Ellipse;
             var subscriber = ellipse.DataContext as GetAllBaseStations_GET;
-            EditEquipmentAccessNetwork editWindow = new EditEquipmentAccessNetwork(this, subscriber);
+            EditEquipmentAccessNetwork editWindow = new(this, subscriber);
             editWindow.Show();
         }
 
@@ -142,8 +146,9 @@ namespace TNS.Front_end.EQUIPMENT
 
         private void TypeAntennaBtn_Click(object sender, RoutedEventArgs e)
         {
-            ComboBoxSort.FillComboBox(ComboBoxSort.Antenna, CBSort);
             chooseFilter = FilterBlock.ButtonThicknessChange(TypeAntennaBtn, btnStack);
+            ComboBoxSort.FillComboBox(chooseFilter, CBSort);
+
             CBSort.SelectedIndex = 0;
 
             Update(_equipment);
@@ -151,8 +156,9 @@ namespace TNS.Front_end.EQUIPMENT
 
         private void CommunicationProtocolBtn_Click(object sender, RoutedEventArgs e)
         {
-            ComboBoxSort.FillComboBox(ComboBoxSort.Protocols, CBSort);
             chooseFilter = FilterBlock.ButtonThicknessChange(CommunicationProtocolBtn, btnStack);
+            ComboBoxSort.FillComboBox(chooseFilter, CBSort);
+
             CBSort.SelectedIndex = 0;
 
             Update(_equipment);

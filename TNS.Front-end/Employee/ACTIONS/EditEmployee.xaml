@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="EditEmployee"  Height="715" Width="600" 
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize" 
-        WindowStyle="None" BorderBrush="#9CD8FB" BorderThickness="3">
+        WindowStyle="None" BorderBrush="#9CD8FB" BorderThickness="3" Topmost="True">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -16,7 +16,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="10"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="1.5*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
@@ -74,15 +74,15 @@
         <TextBlock Grid.Row="7" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Пароль"></TextBlock>
         <TextBlock Grid.Row="8" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Телеграмм"></TextBlock>
 
-        <TextBox  x:Name="tbFullName"  Grid.Row="2"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left"></TextBox>
-        <ComboBox x:Name="cbPosition"  Grid.Row="3"  Grid.Column="1"                              Style="{StaticResource ComboBoxFlatStyle}" Height="35"                   Width="265"></ComboBox>
+        <TextBox  x:Name="tbFullName"  Grid.Row="2"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="55" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalContentAlignment="Center"></TextBox>
+        <ComboBox x:Name="cbPosition"  Grid.Row="3"  Grid.Column="1"                              Style="{StaticResource ComboBoxFlatStyle}" Height="35" Foreground="#024C8C" FontSize="15"  Width="270"></ComboBox>
         <TextBox   x:Name="tbPhone" Grid.Row="4"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left"></TextBox>
         <TextBox   x:Name="tbEmail" Grid.Row="5"  Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left"></TextBox>
         <DatePicker x:Name="tbDOB" Grid.Row="6"  Grid.Column="1"                              Template="{DynamicResource datePicker}"    Height="35" Margin="0,3,0,4"  Width="265" HorizontalAlignment="Center"/>
         <TextBox  x:Name="tbPassword"  Grid.Row="7" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left"></TextBox>
         <TextBox  x:Name="tbTelegramm"  Grid.Row="8" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}"     Height="35" Margin="15,0,0,0" Width="265" HorizontalAlignment="Left"></TextBox>
 
-        <Button  Grid.Row="17"                  Style="{StaticResource addButton}"     Width="270" Margin="0,4,5,11" Content="Очистить"  HorizontalAlignment="Center"/>
-        <Button  Grid.Row="17" Grid.Column="1"  Style="{StaticResource addButton}"     Width="270" Margin="0,4,5,11" Content="Сохранить" HorizontalAlignment="Center"/>
+        <Button Click="Clear_Click" Grid.Row="17"                  Style="{StaticResource addButton}"     Width="270" Margin="0,4,5,11" Content="Очистить"  HorizontalAlignment="Center"/>
+        <Button Click="Save_Click" Grid.Row="17" Grid.Column="1"  Style="{StaticResource addButton}"     Width="270" Margin="0,4,5,11" Content="Сохранить" HorizontalAlignment="Center"/>
     </Grid>
 </Window>

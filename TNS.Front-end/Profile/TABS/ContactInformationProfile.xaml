@@ -12,12 +12,12 @@
         <StackPanel  Margin="10 60 10 10">
             <GroupBox BorderBrush="#9CD8FB" Height="405" Width="500">
                 <StackPanel>
-                    <TextBlock Style="{StaticResource TBlAddUser}"      Text="E-mail" FontSize="15" Foreground="#9CD8FB" Margin="0 65 0 0"/>
-                    <TextBox   Style="{StaticResource textboxProfile}"  Text="yayaya@ya.ru" IsReadOnly="True"  Margin="15,0,0,20" HorizontalAlignment="Left" Height="40"/>
-                    <TextBlock Style="{StaticResource TBlAddUser}"      Text="Телефон" FontSize="15" Foreground="#9CD8FB"/>
-                    <TextBox   Style="{StaticResource textboxProfile}"  Text="89055263751" IsReadOnly="True" Margin="15,0,0,20" HorizontalAlignment="Left"/>
-                    <TextBlock Style="{StaticResource TBlAddUser}"      Text="Telegram" FontSize="15" Foreground="#9CD8FB"/>
-                    <TextBox   Style="{StaticResource textboxProfile}"  Text="@Telegram" IsReadOnly="True"  Margin="15,0,0,20" HorizontalAlignment="Left" Height="40"/>
+                    <TextBlock Style="{StaticResource TBlAddUser}"      Text="E-mail" FontSize="15" Foreground="#339AF0" Margin="0 65 0 0"/>
+                    <TextBox x:Name="emailTB"  Style="{StaticResource textboxProfile}"  Text="yayaya@ya.ru" IsReadOnly="True"  Margin="15,0,0,20" HorizontalAlignment="Left" Height="40"/>
+                    <TextBlock Style="{StaticResource TBlAddUser}"      Text="Телефон" FontSize="15" Foreground="#339AF0"/>
+                    <TextBox x:Name="phoneTB"  Style="{StaticResource textboxProfile}"  Text="89055263751" IsReadOnly="True" Margin="15,0,0,20" HorizontalAlignment="Left"/>
+                    <TextBlock Style="{StaticResource TBlAddUser}"      Text="Telegram" FontSize="15" Foreground="#339AF0"/>
+                    <TextBox x:Name="telegramTB"  Style="{StaticResource textboxProfile}"  Text="@Telegram" IsReadOnly="True"  Margin="15,0,0,20" HorizontalAlignment="Left" Height="40"/>
                 </StackPanel>
             </GroupBox>
         </StackPanel>

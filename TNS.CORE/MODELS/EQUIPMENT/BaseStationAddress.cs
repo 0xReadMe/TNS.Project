@@ -4,7 +4,7 @@ namespace TNS.CORE.MODELS.EQUIPMENT;
 
 public class BaseStationAddress
 {
-    public Guid Id { get; }    //  id
+    public Guid Id { get; set; }    //  id
     public string Address { get; }    //  адрес площадки
     public string Location { get; }    //  место расположения
 

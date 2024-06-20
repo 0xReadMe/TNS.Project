@@ -7,12 +7,6 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="CRM\ACTIONS\AddCRM.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="CRM\ACTIONS\EditCRM.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="CRM\ACTIONS\OpenCRM.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -96,12 +90,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="CRM\ACTIONS\AddCRM.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="CRM\ACTIONS\EditCRM.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="CRM\ACTIONS\OpenCRM.xaml">
       <SubType>Designer</SubType>
     </Page>

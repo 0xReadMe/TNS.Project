@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Data;
 using TNS.Front_end.CRM.MODELS;
+using TNS.Front_end.Employee.MODELS;
 using TNS.Front_end.EQUIPMENT.BASESTATIONS.MODELS;
 using TNS.Front_end.EQUIPMENT.MODELS.EQUIPMENT;
 using TNS.Front_end.SUBSCRIBERS.MODELS;
@@ -13,13 +14,14 @@ class ComboBoxSort
     public static List<string> Filters { get; } = ["Выберите сортировку", "По возрастанию", "По убыванию"];
     public static List<string> Services { get; } = ["Интернет", "Мобильная связь", "Телевидение", "Видеонаблюдение"];
     public static List<string> Antenna { get; } = ["Всенаправленная", "Направленная", "Параболическая", "Яги", "Патч", "Дипольная", "Бинаправленная", "Логопериодическая"];
-    public static List<string> Protocols { get; } = ["TCP/IP", "UDP", "ICMP", "SNMP", "HTTP", "HTTPS", "FTP", "SFTP", "TELNET", "SSH", "SIP", "RTP", "RTSP"];
-    public static List<string> DTT { get; } = ["Ethernet", "Wi-Fi", "Bluetooth", "USB", "Optical Fiber", "SHDSL", "ADSL", "VDSL", "G.Fast", "LTE", "5G"];
+    public static List<string> Protocols { get; } = ["UDP", "ICMP", "SNMP", "HTTP", "HTTPS", "FTP", "SFTP", "TELNET", "SSH", "SIP", "RTP", "RTSP"];
+    public static List<string> DTT { get; } = ["Ethernet", "Bluetooth", "USB", "Optical Fiber", "SHDSL", "ADSL", "VDSL", "LTE", "5G"];
     public static List<string> Status { get; } = ["Новая", "В работе", "Закрыта"];
     public static List<string> TypeEquipment { get; } = ["Маршрутизатор", "Коммутатор", "Точка доступа", "Сервер", "Шлюз", "Модем", "Концентратор", "Принтер", "Телефон", "Ноутбук", "Планшет"];
     public static List<string> TypeContract { get; } = ["Без пролонгации", "С пролонгацией"];
     public static List<string> ReasonsForTermination { get; } = ["Истечение срока договора", "Нарушение условий договора", "Смена места жительства", "Финансовые трудности", "Не указана"];
-    
+    public static List<string> Roles { get; } = ["Админ", "Босс", "Инженер", "Оператор технической поддержки"];
+
     public static void FillComboBox(List<string> input, ComboBox cb)
     {
         cb.Items.Clear();
@@ -94,14 +96,27 @@ class ComboBoxSort
                         return sorteDequipment;
                     }
 
-                    if (typeof(T) == typeof(GetAllEquipments_GET))
+                    if (typeof(T) == typeof(CRM_viewmodel))
                     {
                         List<T>? sorteDequipment = chooseFilter switch
                         {
                             "Статус" => Filter(filter, x => x.Status, currentItems as List<CRM_viewmodel>) as List<T>,
                             "Тип оборудования" => Filter(filter, x => x.TypeOfEquipment, currentItems as List<CRM_viewmodel>) as List<T>,
-                            "Услуги" => Filter(filter, x => x.Service, currentItems as List<CRM_viewmodel>) as List<T>,
+                            "Тип проблемы" => Filter(filter, x => x.TypeOfProblem, currentItems as List<CRM_viewmodel>) as List<T>,
                             _ => Filter(filter, x => x.SubscriberNumber, currentItems as List<CRM_viewmodel>) as List<T>,
+                        };
+                        return sorteDequipment;
+                    }
+
+                    if (typeof(T) == typeof(GetAllEmployees_GET))
+                    {
+                        List<T>? sorteDequipment = chooseFilter switch
+                        {
+                            "Телефон" => Filter(filter, x => x.Login, currentItems as List<GetAllEmployees_GET>) as List<T>,
+                            "E-mail" => Filter(filter, x => x.Email, currentItems as List<GetAllEmployees_GET>) as List<T>,
+                            "Дата рождения" => Filter(filter, x => x.DateOfBirth.ToString(), currentItems as List<GetAllEmployees_GET>) as List<T>,
+                            "ФИО" => Filter(filter, x => x.FullName, currentItems as List<GetAllEmployees_GET>) as List<T>,
+                            _ => Filter(filter, x => x.FullName, currentItems as List<GetAllEmployees_GET>) as List<T>,
                         };
                         return sorteDequipment;
                     }
@@ -120,16 +135,6 @@ class ComboBoxSort
             _ => new(sort),
         };
         return filtersMembersChanged;
-
-        //if (servicesPressed)
-        //{
-        //    localMembers = membersCopy.Where(
-        //        m => m.Services == tb.Text)
-        //        .ToList();
-        //    membersChanged = localMembers;
-        //    SubscribersUtils.UpdateList(membersDataGrid, localMembers);
-        //    servicesPressed = false;
-        //}
     }
 
     static List<T> Filter<T>(string filter, Func<T, int> predicate, List<T> sort)

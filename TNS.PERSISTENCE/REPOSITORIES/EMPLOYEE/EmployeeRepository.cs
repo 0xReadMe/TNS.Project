@@ -36,7 +36,6 @@ namespace TNS.PERSISTENCE.REPOSITORIES.EMPLOYEE
         public async Task Delete(Guid id) 
         {
             await _context.Employees.Where(l => l.Id == id).ExecuteDeleteAsync();
-            _context.Remove(_context.Find<EmployeeRoleEntity>(id));
         } 
         
         public async Task<List<Employee>> GetAllEmployees()

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\8-bit\Desktop\делаю\диплом\TNS.Project\TNS.Front-end\App.xaml
-30-472725833
+28-1834728603
 
-57466510821
+571920064840
 1981451641563
-Autorization.xaml;CRM\ACTIONS\AddCRM.xaml;CRM\ACTIONS\EditCRM.xaml;CRM\ACTIONS\OpenCRM.xaml;CRM\ACTIONS\TestEquipment.xaml;CRM\CRM_Page.xaml;EMPLOYEE\ACTIONS\AddEmployee.xaml;EMPLOYEE\ACTIONS\EditEmployee.xaml;EMPLOYEE\ACTIONS\OpenEmployee.xaml;EMPLOYEE\Employee_Page.xaml;EQUIPMENT\ACTIONS_ACCESS\AddEquipmentAccessNetwork.xaml;EQUIPMENT\ACTIONS_ACCESS\EditEquipmentAccessNetwork.xaml;EQUIPMENT\ACTIONS_ACCESS\OpenEquipmentAccessNetwork.xaml;EQUIPMENT\ACTIONS_MAGISTRAL\AddEquipmentMagisralNetworks.xaml;EQUIPMENT\ACTIONS_MAGISTRAL\EditEquipmentMagisralNetworks.xaml;EQUIPMENT\ACTIONS_MAGISTRAL\OpenEquipmentMagisralNetworks.xaml;EQUIPMENT\Equipment.xaml;EQUIPMENT\EquipmentAccessNetwork.xaml;EQUIPMENT\EquipmentMagisralNetworks.xaml;HELP\HelpUsers.xaml;MainWindow.xaml;MessageWindow.xaml;PROFILE\ProfileUser.xaml;PROFILE\TABS\ContactInformationProfile.xaml;PROFILE\TABS\EventsProfile.xaml;PROFILE\TABS\PersonalDataProfile.xaml;SUBSCRIBERS\ACTIONS\AddUser.xaml;SUBSCRIBERS\ACTIONS\EditUser.xaml;SUBSCRIBERS\ACTIONS\OpenUser.xaml;SUBSCRIBERS\Subscribers.xaml;
+Autorization.xaml;CRM\ACTIONS\OpenCRM.xaml;CRM\ACTIONS\TestEquipment.xaml;CRM\CRM_Page.xaml;EMPLOYEE\ACTIONS\AddEmployee.xaml;EMPLOYEE\ACTIONS\EditEmployee.xaml;EMPLOYEE\ACTIONS\OpenEmployee.xaml;EMPLOYEE\Employee_Page.xaml;EQUIPMENT\ACTIONS_ACCESS\AddEquipmentAccessNetwork.xaml;EQUIPMENT\ACTIONS_ACCESS\EditEquipmentAccessNetwork.xaml;EQUIPMENT\ACTIONS_ACCESS\OpenEquipmentAccessNetwork.xaml;EQUIPMENT\ACTIONS_MAGISTRAL\AddEquipmentMagisralNetworks.xaml;EQUIPMENT\ACTIONS_MAGISTRAL\EditEquipmentMagisralNetworks.xaml;EQUIPMENT\ACTIONS_MAGISTRAL\OpenEquipmentMagisralNetworks.xaml;EQUIPMENT\Equipment.xaml;EQUIPMENT\EquipmentAccessNetwork.xaml;EQUIPMENT\EquipmentMagisralNetworks.xaml;HELP\HelpUsers.xaml;MainWindow.xaml;MessageWindow.xaml;PROFILE\ProfileUser.xaml;PROFILE\TABS\ContactInformationProfile.xaml;PROFILE\TABS\EventsProfile.xaml;PROFILE\TABS\PersonalDataProfile.xaml;SUBSCRIBERS\ACTIONS\AddUser.xaml;SUBSCRIBERS\ACTIONS\EditUser.xaml;SUBSCRIBERS\ACTIONS\OpenUser.xaml;SUBSCRIBERS\Subscribers.xaml;
 
 False
 

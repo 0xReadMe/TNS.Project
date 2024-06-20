@@ -1,6 +1,7 @@
 ﻿using CSharpFunctionalExtensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
+using System.Net;
 using TNS.API.CONTRACTS.EQUIPMENT.BASESTATIONS;
 using TNS.API.CONTRACTS.EQUIPMENT.EQUIPMENT;
 using TNS.APPLICATION.SERVICES.EQUIPMENT;
@@ -24,14 +25,14 @@ public static class EquipmentEndpoints
         app.MapGet("equipment/getBaseStation/{id:guid}", GetBaseStationById);
         app.MapGet("equipment/testBaseStations{id:guid}", TestBaseStation);
 
-        app.MapPost("equipment/addEquipment", AddEquipment);
-        app.MapPost("equipment/addBaseStation", AddBaseStation);
+        app.MapGet("equipment/addEquipment/&{SerialNumber}&{Name}&{Frequency}&{AttenuationCoefficient}&{DTT}&{Address}&{IsWorking:bool}", AddEquipment);
+        app.MapGet("equipment/addBaseStation/&{Address}&{Location}&{BaseStationName}&{S}&{Frequency}&{TypeAntenna}&{Handover}&{CommunicationProtocol}&{IsWorking:bool}", AddBaseStation);
 
-        app.MapPut("equipment/editEquipment/{id:guid}", EditEquipment);
-        app.MapPut("equipment/editBaseStation/{id:guid}", EditBaseStation);
+        app.MapGet("equipment/editEquipment/{id:guid}/&{SerialNumber}&{Name}&{Frequency+79152145255}&{AttenuationCoefficient}&{DTT}&{Address}&{IsWorking:bool}", EditEquipment);
+        app.MapGet("equipment/editBaseStation/{id:guid}/&{Address}&{Location}&{BaseStationName}&{S}&{Frequency}&{TypeAntenna}&{Handover}&{CommunicationProtocol}&{IsWorking:bool}", EditBaseStation);
 
-        app.MapDelete("equipment/deleteEquipment/{id:guid}", DeleteEquipment);
-        app.MapDelete("equipment/deleteBaseStation/{id:guid}", DeleteBaseStation);
+        app.MapGet("equipment/deleteEquipment/{id:guid}", DeleteEquipment);
+        app.MapGet("equipment/deleteBaseStation/{id:guid}", DeleteBaseStation);
 
         return app;
     }
@@ -68,18 +69,31 @@ public static class EquipmentEndpoints
         return Results.Ok();
     }
 
-    private static async Task<Microsoft.AspNetCore.Http.IResult> EditBaseStation([FromBody] EditBaseStation_PUT r, [FromRoute] Guid id, BaseStationService baseStationService)
+    private static async Task<Microsoft.AspNetCore.Http.IResult> EditBaseStation(
+        [FromRoute] Guid id,
+        [FromRoute] string Address,
+        [FromRoute] string Location,
+        [FromRoute] string BaseStationName,
+        [FromRoute] double S,
+        [FromRoute] int Frequency,
+        [FromRoute] string TypeAntenna,
+        [FromRoute] int Handover,
+        [FromRoute] string CommunicationProtocol,
+        [FromRoute] bool IsWorking, BaseStationService baseStationService, BaseStationAddressService baseStationAddressService)
     {
+        Result<BaseStationAddress> bsAdd = BaseStationAddress.Create(Address, Location);
+        if (bsAdd.IsFailure) return Results.BadRequest($"{bsAdd.Error}");
+        await baseStationAddressService.UpdateBaseStationAddress(bsAdd.Value, baseStationService.GetByGuidBaseStation(id).Result.Value.AddressId);
+
         Result<BaseStation> sub = BaseStation.Create(
-            r.AddressId,
-            r.BaseStationName,
-            r.S,
-            r.Frequency,
-            r.TypeAntenna,
-            r.Handover,
-            r.CommunicationProtocol,
-            r.IsWorking
-            );
+            baseStationService.GetByGuidBaseStation(id).Result.Value.AddressId,
+            BaseStationName,
+            S,
+            Frequency,
+            TypeAntenna,
+            Handover,
+            CommunicationProtocol,
+            IsWorking);
 
         if (sub.IsFailure) return Results.BadRequest($"{sub.Error}");
 
@@ -89,16 +103,25 @@ public static class EquipmentEndpoints
         return Results.Ok();
     }
 
-    private static async Task<Microsoft.AspNetCore.Http.IResult> EditEquipment([FromBody] EditEquipment_PUT r, [FromRoute] Guid id, EquipmentService baseStationService)
+    private static async Task<Microsoft.AspNetCore.Http.IResult> EditEquipment(
+        [FromRoute] Guid id,
+        [FromRoute] string SerialNumber,
+        [FromRoute] string Name,
+        [FromRoute] int Frequency,
+        [FromRoute] string AttenuationCoefficient,
+        [FromRoute] string DTT,
+        [FromRoute] string Address,
+        [FromRoute] bool IsWorking, 
+        EquipmentService baseStationService)
     {
         Result<Equipment> sub = Equipment.Create(
-            r.SerialNumber,
-            r.Name,
-            r.Frequency,
-            r.AttenuationCoefficient,
-            r.DTT,
-            r.Address,
-            r.IsWorking);
+            SerialNumber,
+            Name,
+            Frequency,
+            AttenuationCoefficient,
+            DTT,
+            Address,
+            IsWorking);
 
         if (sub.IsFailure) return Results.BadRequest($"{sub.Error}");
 
@@ -108,36 +131,58 @@ public static class EquipmentEndpoints
         return Results.Ok();
     }
 
-    private static async Task<Microsoft.AspNetCore.Http.IResult> AddBaseStation([FromBody] AddBaseStation_POST r,BaseStationService baseStationService)
+    private static async Task<Microsoft.AspNetCore.Http.IResult> AddBaseStation(
+        [FromRoute] string Address,
+        [FromRoute] string Location,
+        [FromRoute] string BaseStationName,
+        [FromRoute] double S,
+        [FromRoute] int Frequency,
+        [FromRoute] string TypeAntenna,
+        [FromRoute] int Handover,
+        [FromRoute] string CommunicationProtocol,
+        [FromRoute] bool IsWorking,
+        BaseStationService baseStationService,
+        BaseStationAddressService baseStationAddressService)
     {
+        Result<BaseStationAddress> bsAdd = BaseStationAddress.Create(Address, Location);
         Result<BaseStation> sub = BaseStation.Create(
-            r.AddressId,
-            r.BaseStationName,
-            r.S,
-            r.Frequency,
-            r.TypeAntenna,
-            r.Handover,
-            r.CommunicationProtocol,
-            r.IsWorking);
+            bsAdd.Value.Id,
+            BaseStationName,
+            S,
+            Frequency,
+            TypeAntenna,
+            Handover,
+            CommunicationProtocol,
+            IsWorking);
 
+        if (bsAdd.IsFailure) return Results.BadRequest($"{sub.Error}");
         if (sub.IsFailure) return Results.BadRequest($"{sub.Error}");
 
+        var res = await baseStationAddressService.AddBaseStationAddress(bsAdd.Value);
         var result = await baseStationService.AddBaseStation(sub.Value);
         if (result.IsFailure) return Results.BadRequest($"BadRequestBaseStation: {result.Error}");
 
         return Results.Ok();
     }
 
-    private static async Task<Microsoft.AspNetCore.Http.IResult> AddEquipment([FromBody] AddEquipment_POST r, EquipmentService baseStationService)
+    private static async Task<Microsoft.AspNetCore.Http.IResult> AddEquipment(
+        [FromRoute] string SerialNumber,
+        [FromRoute] string Name,
+        [FromRoute] int Frequency,
+        [FromRoute] string AttenuationCoefficient,
+        [FromRoute] string DTT,
+        [FromRoute] string Address,
+        [FromRoute] bool IsWorking,
+        EquipmentService baseStationService)
     {
         Result<Equipment> sub = Equipment.Create(
-            r.SerialNumber,
-            r.Name,
-            r.Frequency,
-            r.AttenuationCoefficient,
-            r.DTT,
-            r.Address,
-            r.IsWorking);
+            SerialNumber,
+            Name,
+            Frequency,
+            AttenuationCoefficient,
+            DTT,
+            Address,
+            IsWorking);
 
         if (sub.IsFailure) return Results.BadRequest($"{sub.Error}");
 

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Shapes;
@@ -18,7 +19,7 @@ public partial class Subscribers : Page
     public Subscribers()
     {
         InitializeComponent();
-
+        
         MouseButtonEventArgs args = new(Mouse.PrimaryDevice, 0, MouseButton.Left)
         {
             RoutedEvent = Image.MouseDownEvent
@@ -52,8 +53,8 @@ public partial class Subscribers : Page
 
     private void ServicesBtn_Click(object sender, RoutedEventArgs e)
     {
-        ComboBoxSort.FillComboBox(ComboBoxSort.Services, CBSort);
         chooseFilter = FilterBlock.ButtonThicknessChange(ServicesBtn, btnStack);
+        ComboBoxSort.FillComboBox(chooseFilter, CBSort);
         CBSort.SelectedIndex = 0;
 
         Update(subscribers);
@@ -147,7 +148,7 @@ public partial class Subscribers : Page
 
     private async void AddButton(object sender, RoutedEventArgs e)
     {
-        AddUser addUser = new();
+        AddUser addUser = new(this);
         addUser.Show();
     }
 

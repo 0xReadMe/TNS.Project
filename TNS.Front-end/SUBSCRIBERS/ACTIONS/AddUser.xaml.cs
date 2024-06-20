@@ -10,11 +10,12 @@ namespace TNS.Front_end
     public partial class AddUser : Window
     {
         string firstName, lastName, patronymic;
+        Subscribers _mainFrame;
 
-        public AddUser()
+        public AddUser(Subscribers mainFrame)
         {
             InitializeComponent();
-            
+            _mainFrame = mainFrame;
             
             typeContractCB.ItemsSource = ComboBoxSort.TypeContract;
             serviceCB.ItemsSource = ComboBoxSort.Services;
@@ -25,7 +26,10 @@ namespace TNS.Front_end
         private void Image_MouseDown_Minimized(object sender, MouseButtonEventArgs e)
             => WindowState = WindowState.Minimized;
         private void Image_MouseDown_Close(object sender, MouseButtonEventArgs e)
-            => Close();
+        {
+            _mainFrame.addButton.IsEnabled = true;
+            Close();
+        }
 
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
@@ -51,7 +55,7 @@ namespace TNS.Front_end
                 $"&ContractType={ctype}" +
                 $"&ReasonForTerminationOfContract={reasonTerminationContractTB.SelectedValue}" +
                 $"&PersonalBill={Convert.ToUInt32(billTB.Text)}" +
-                $"&Services={serviceCB.Text}" +
+                $"&Services={serviceCB.SelectedValue}" +
                 $"&DateOfContractConclusion={dateConclusionDP.SelectedDate.Value.Year}-{dateConclusionDP.SelectedDate.Value.Month}-{dateConclusionDP.SelectedDate.Value.Day}" +
                 $"&DateOfTerminationOfTheContract={dateOfTheTerminationDP.SelectedDate.Value.Year}-{dateOfTheTerminationDP.SelectedDate.Value.Month}-{dateOfTheTerminationDP.SelectedDate.Value.Day}" +
                 $"&TypeOfEquipment={equipmentCB.SelectedValue}" +
@@ -70,10 +74,12 @@ namespace TNS.Front_end
                 $"&ResidentialAddress={addressTB.Text}" +
                 $"&DateOfIssueOfPassport={dateIssueDP.SelectedDate.Value.Year}-{dateIssueDP.SelectedDate.Value.Month}-{dateIssueDP.SelectedDate.Value.Day}");
 
+                _mainFrame.addButton.IsEnabled = true;
                 Close();
             }
             catch (Exception ex)
             {
+                _mainFrame.addButton.IsEnabled = true;
                 var dialog = new MessageWindow($"{ex}");
             }
         }

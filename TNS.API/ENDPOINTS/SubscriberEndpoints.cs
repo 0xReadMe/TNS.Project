@@ -39,7 +39,27 @@ namespace TNS.API.ENDPOINTS
                 "&ResidentialAddress={residentialAddress}" +
                 "&DateOfIssueOfPassport={dateOfIssueOfPassport}", AddSubscriber);
 
-            app.MapGet("subscriber/edit/{id:guid}", EditSubscriber);
+            app.MapGet("subscriber/edit/&{id:guid}" +
+                "&ContractType={contractType}" +
+                "&ReasonForTerminationOfContract={reasonForTerminationOfContract}" +
+                "&Services={services}" +
+                "&DateOfContractConclusion={dateOfContractConclusion}" +
+                "&DateOfTerminationOfTheContract={dateOfTerminationOfTheContract}" +
+                "&TypeOfEquipment={typeOfEquipment}" +
+                "&FirstName={firstName}" +
+                "&MiddleName={middleName}" +
+                "&LastName={lastName}" +
+                "&Gender={gender}" +
+                "&DOB={dob:datetime}" +
+                "&PhoneNumber={phoneNumber}" +
+                "&Email={email}" +
+                "&DivisionCode={divisionCode}" +
+                "&IssuedBy={issuedBy}" +
+                "&Series={series:int}" +
+                "&Number={number:int}" +
+                "&ResidenceAddress={residenceAddress}" +
+                "&ResidentialAddress={residentialAddress}" +
+                "&DateOfIssueOfPassport={dateOfIssueOfPassport}", EditSubscriber);
 
 
             return app;
@@ -57,42 +77,72 @@ namespace TNS.API.ENDPOINTS
         }
 
         private static async Task<Microsoft.AspNetCore.Http.IResult> EditSubscriber(
-            [FromRoute] Guid id, [FromBody] EditSubscriber_PUT r, SubscriberService subscriberService, PersonService personService)
+            [FromRoute] Guid id, 
+            [FromRoute] bool contractType,
+            [FromRoute] string reasonForTerminationOfContract,
+            [FromRoute] string services,
+            [FromRoute] DateTime dateOfContractConclusion,
+            [FromRoute] DateTime dateOfTerminationOfTheContract,
+            [FromRoute] string typeOfEquipment,
+            [FromRoute] string firstName,
+            [FromRoute] string middleName,
+            [FromRoute] string lastName,
+            [FromRoute] string gender,
+            [FromRoute] DateTime dob,
+            [FromRoute] string phoneNumber,
+            [FromRoute] string email,
+            [FromRoute] string divisionCode,
+            [FromRoute] string issuedBy,
+            [FromRoute] int series,
+            [FromRoute] int number,
+            [FromRoute] string residenceAddress,
+            [FromRoute] string residentialAddress,
+            [FromRoute] DateTime dateOfIssueOfPassport, SubscriberService subscriberService, PersonService personService)
         {
-            Result<Subscriber> sub = Subscriber.Create(r.DateOfContractConclusion,
-                                               r.DateOfTerminationOfTheContract,
-                                               r.ReasonForTerminationOfContract,
-                                               r.TypeOfEquipment,
-                                               r.Services,
-                                               r.ContractType,
-                                               r.PersonalBill);
+            Result<Subscriber> sub = Subscriber.Create(new DateOnly(dateOfContractConclusion.Year, dateOfContractConclusion.Month, dateOfContractConclusion.Day),
+                                               new DateOnly(dateOfTerminationOfTheContract.Year, dateOfTerminationOfTheContract.Month, dateOfTerminationOfTheContract.Day),
+                                               reasonForTerminationOfContract,
+                                               typeOfEquipment,
+                                               services,
+                                               contractType,
+                                               subscriberService.GetByGuidSubscriber(id).Result.Value.PersonalBill);
 
-            Result<PhoneNumber> phone = PhoneNumber.Create(r.PhoneNumber);
+            Result<PhoneNumber> phone = PhoneNumber.Create(phoneNumber);
 
-            Result<Email> email = Email.Create(r.Email);
+            Result<Email> _email = Email.Create(email);
 
-            Result<Passport> passport = Passport.Create(r.DivisionCode,
-                                                r.IssuedBy,
-                                                r.Series,
-                                                r.Number,
-                                                r.ResidenceAddress,
-                                                r.ResidentialAddress,
-                                                r.DateOfIssueOfPassport);
+            Result<Passport> passport = Passport.Create(divisionCode,
+                                                issuedBy,
+                                                series,
+                                                number,
+                                                residenceAddress,
+                                                residentialAddress,
+                                                new DateOnly(dateOfIssueOfPassport.Year, dateOfIssueOfPassport.Month, dateOfIssueOfPassport.Day));
 
-            Result<Person> person = Person.Create(r.FirstName, r.MiddleName, r.LastName, r.Gender, r.DOB, phone.Value, email.Value, passport.Value);
-            person  = Person.AddSubscriberId(person.Value, sub.Value.Id);
-            sub     = Subscriber.AddPersonId(sub.Value, person.Value.Id);
+
+            char _gen = 'М';
+            if (gender == "М")
+            {
+                _gen = 'М';
+            }
+            if (gender == "Ж")
+            {
+                _gen = 'Ж';
+            }
+            Result<Person> person = Person.Create(firstName, middleName, lastName, _gen, new DateOnly(dob.Year, dob.Month, dob.Day), phone.Value, _email.Value, passport.Value);
+            person  = Person.AddSubscriberId(person.Value, id);
 
             if (sub.IsFailure)          return Results.BadRequest($"{sub.Error}");
             if (phone.IsFailure)        return Results.BadRequest($"{phone.Error}");
-            if (email.IsFailure)        return Results.BadRequest($"{email.Error}");
+            if (_email.IsFailure)        return Results.BadRequest($"{_email.Error}");
             if (passport.IsFailure)     return Results.BadRequest($"{passport.Error}");
             if (person.IsFailure)       return Results.BadRequest($"{person.Error}");
 
-            var result                  = await subscriberService.UpdateSubscriber(sub.Value, id);
-            var resultPerson            = await personService.UpdatePerson(person.Value, subscriberService.GetByGuidSubscriber(id).Result.Value.PersonId);
-            sub = Subscriber.AddPersonId(sub.Value, person.Value.Id);
+            sub = Subscriber.AddPersonId(sub.Value, subscriberService.GetByGuidSubscriber(id).Result.Value.PersonId);
             subscriberService.UpdateSubscriber(sub.Value, sub.Value.Id);
+
+            var result = await subscriberService.UpdateSubscriber(sub.Value, id);
+            var resultPerson = await personService.UpdatePerson(person.Value, subscriberService.GetByGuidSubscriber(id).Result.Value.PersonId);
 
             if (result.IsFailure)       return Results.BadRequest($"BadRequestSubscriber: {result.Error}");
             if (resultPerson.IsFailure) return Results.BadRequest($"BadRequestPerson: {resultPerson.Error}");
@@ -122,7 +172,7 @@ namespace TNS.API.ENDPOINTS
             [FromRoute] int number,
             [FromRoute] string residenceAddress,
             [FromRoute] string residentialAddress,
-                        [FromRoute] DateTime dateOfIssueOfPassport,
+            [FromRoute] DateTime dateOfIssueOfPassport,
             SubscriberService subscriberService, PersonService personService)
         {
             Result<Subscriber> sub = Subscriber.Create(new DateOnly(dateOfContractConclusion.Year, dateOfContractConclusion.Month, dateOfContractConclusion.Day),

@@ -13,7 +13,7 @@ namespace TNS.Front_end.CRM.MODELS
         [JsonPropertyName("personalBill")]
         public uint PersonalBill { get; set; }
 
-        [JsonPropertyName("typeOfEquipment")]
+        [JsonPropertyName("typeOfEquipmentDateTime")]
         public string TypeOfEquipment { get; set; }
 
         [JsonPropertyName("creationDate")]

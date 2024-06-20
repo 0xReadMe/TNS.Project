@@ -16,6 +16,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="10"></RowDefinition>
+            <RowDefinition Height="1.5*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
@@ -25,8 +26,7 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="1.5*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
@@ -86,7 +86,7 @@
         <TextBlock Grid.Row="13" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Услуги"></TextBlock>
         <TextBlock Grid.Row="14" Grid.Column="0"  Style="{StaticResource TBlAddUser}" Text="Данные об оборудовании"></TextBlock>
 
-        <TextBox x:Name="fullNameTB"       Grid.Row="2" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
+        <TextBox x:Name="fullNameTB"       Grid.Row="2" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="55" Margin="15,0,0,0" Width="265"  TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalAlignment="Left"></TextBox>
         <TextBox x:Name="seriesPassportTB"   Grid.Row="3" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
         <TextBox x:Name="numberPassportTB"  Grid.Row="4" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
         <DatePicker x:Name="dateIssueDP"     Grid.Row="5" Grid.Column="1" FontSize="15" Padding="20 5" Template="{DynamicResource datePicker}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Center"></DatePicker>
@@ -96,7 +96,7 @@
         <DatePicker x:Name="dateOfTheTerminationDP" Grid.Row="9" Grid.Column="1" Template="{DynamicResource datePicker}"   Height="35" Margin="0,3,0,4" Width="265"    HorizontalAlignment="Center"/>
         <ComboBox x:Name="reasonTerminationContractTB" SelectedIndex="0" Grid.Row="10" Grid.Column="1" Foreground="#024C8C" FontSize="15" Padding="20 5" Style="{StaticResource ComboBoxFlatStyle}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></ComboBox>
         <TextBox x:Name="billTB"  Grid.Row="11" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
-        <TextBox x:Name="addressTB"  Grid.Row="12" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></TextBox>
+        <TextBox x:Name="addressTB"  Grid.Row="12" Grid.Column="1" FontSize="15" Padding="20 5" Style="{StaticResource textboxSearch}" Height="55" Margin="15,0,0,0" Width="265" TextWrapping="Wrap" VerticalContentAlignment="Center"   HorizontalAlignment="Left"></TextBox>
         <ComboBox x:Name="serviceCB" SelectedIndex="0" Grid.Row="13" Grid.Column="1" Foreground="#024C8C" FontSize="15" Style="{StaticResource ComboBoxFlatStyle}" Height="35" Width="265"></ComboBox>
         <ComboBox x:Name="equipmentCB" SelectedIndex="0" Grid.Row="14" Grid.Column="1" Foreground="#024C8C" FontSize="15" Padding="20 5" Style="{StaticResource ComboBoxFlatStyle}" Height="35" Margin="15,0,0,0" Width="265"        HorizontalAlignment="Left"></ComboBox>
 

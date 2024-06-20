@@ -22,6 +22,7 @@ namespace TNS.Front_end.CRM
         public TestEquipment()
         {
             InitializeComponent();
+
         }
        
     }

@@ -510,6 +510,14 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="DataGridRowStyle" TargetType="DataGridRow">
+            <Setter Property="Background" Value="White" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsWorking}" Value="false">
+                    <Setter Property="Background" Value="red" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
         <Style x:Key="DataGridRowStyle1" TargetType="{x:Type DataGridRow}">
             <Setter Property="Background" Value="White"/>
             <Setter Property="Margin" Value="0 4 0 0"/>
@@ -548,7 +556,9 @@
                     <Setter Property="Background" Value="#FF0F84E9"/>
                     <Setter Property="Foreground" Value="#ffffff"/>
                 </Trigger>
-                
+                <DataTrigger Binding="{Binding IsWorking}" Value="false">
+                    <Setter Property="Background" Value="#FF9BAA" />
+                </DataTrigger>
                 <Trigger Property="IsSelected" Value="True">
                     <Setter Property="Background" Value="#FF0F84E9"/>
                     <Setter Property="Foreground" Value="#ffffff"/>
